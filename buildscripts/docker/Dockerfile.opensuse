@@ -15,10 +15,21 @@
 
 FROM opensuse/leap:latest
 
-RUN zypper install --no-recommends -y \
+RUN zypper install -y \
     git \
     libexif-devel \
     libopus-devel \
+    libcurl-devel \
+    libnghttp2-devel \
+    libidn2-devel \
+    libssh2-devel \
+    libssh-devel \
+    libpsl-devel \
+    libbrotli-devel \
+    krb5-devel \
+    libcom_err-devel \
+    openldap2-devel \
+    libzstd-devel \
     libQt5Concurrent-devel \
     libqt5-linguist-devel \
     libqt5-qtbase-common-devel \

@@ -67,6 +67,14 @@ RUN mkdir -p /src/openssl && \
   /build/build_openssl.sh --arch ${SCRIPT_ARCH} && \
   rm -fr /src/openssl
 
+COPY download/download_libcurl.sh /build/download/download_libcurl.sh
+COPY build_libcurl_windows.sh /build/build_libcurl_windows.sh
+
+RUN mkdir -p /src/curl && \
+  cd /src/curl && \
+  /build/build_libcurl_windows.sh --arch ${SCRIPT_ARCH} && \
+  rm -fr /src/curl
+
 COPY download/download_qt.sh /build/download/download_qt.sh
 COPY build_qt_windows.sh /build/build_qt_windows.sh
 

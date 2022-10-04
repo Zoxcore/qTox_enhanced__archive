@@ -31,6 +31,17 @@ RUN dnf --nodocs -y install dnf-plugins-core && \
         qt5-qtsvg-devel \
         extra-cmake-modules \
         opus-devel \
+        libcurl-devel \
+        libnghttp2-devel \
+        libidn2-devel \
+        libssh-devel \
+        krb5-devel \
+        libssh2-devel \
+        libpsl-devel \
+        openssl-devel \
+        zlib-devel \
+        brotli-devel \
+        openldap-devel \
         libsodium-devel \
         libasan \
         ffmpeg-devel \

@@ -34,6 +34,7 @@ apt_install() {
         libgtk2.0-dev
         libopenal-dev
         libopus-dev
+        libcurl4-gnutls-dev
         libqrencode-dev
         libqt5opengl5-dev
         libqt5svg5-dev
@@ -60,6 +61,7 @@ pacman_install() {
         libxss
         openal
         opus
+        curl
         qrencode
         qt5
         sqlcipher
@@ -96,6 +98,7 @@ dnf_install() {
         openal-soft-devel
         openssl-devel
         opus-devel
+        libcurl-devel
         qrencode-devel
         qt5-devel
         qt5-qtdoc
@@ -136,6 +139,7 @@ zypper_install() {
         libavcodec-devel
         libavdevice-devel
         libopus-devel
+        libcurl-devel
         libexif-devel
         libQt5Concurrent-devel
         libqt5-linguist

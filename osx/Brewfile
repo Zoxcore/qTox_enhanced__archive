@@ -13,6 +13,7 @@ brew "qrencode"
 brew "qt@5"
 brew "sqlcipher"
 brew "openal-soft"
+brew "curl"
 # accelerate builds with ccache
 brew "ccache"
 
