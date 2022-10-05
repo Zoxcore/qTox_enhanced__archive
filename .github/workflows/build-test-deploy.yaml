@@ -1,5 +1,12 @@
 name: Build, test, and deploy
-on: [pull_request, push]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: dummy
+        default: dummy
 jobs:
   update-nightly-tag:
     name: Update nightly release tag
