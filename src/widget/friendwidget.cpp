@@ -46,6 +46,10 @@
 #include <QInputDialog>
 #include <QMenu>
 #include <QMimeData>
+// zoff
+#include <QFile>
+#include <QDir>
+// zoff
 
 #include <cassert>
 
@@ -79,6 +83,24 @@ FriendWidget::FriendWidget(std::shared_ptr<FriendChatroom> chatroom_, bool compa
     connect(frnd, &Friend::displayedNameChanged, nameLabel, &CroppingLabel::setText);
     connect(chatroom.get(), &FriendChatroom::activeChanged, this, &FriendWidget::setActive);
     statusMessageLabel->setTextFormat(Qt::PlainText);
+
+    // zoff
+    if (frnd->getStatus() == Status::Status::Offline)
+    {
+        const auto friendPk = frnd->getPublicKey();
+        QString push_filename(QDir::tempPath() + QDir::separator() + "push_" + friendPk.toString());
+
+        QFile file(push_filename);
+        if (file.open(QIODevice::ReadOnly))
+        {
+            // friend has push url
+            qDebug() << "updateStatusLight:INIT:push_filename=" << push_filename;
+            // show yellow circle icon as connection status for friend
+            statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Away)));
+            file.close();
+        }
+    }
+    // zoff
 }
 
 /**
@@ -330,6 +352,24 @@ void FriendWidget::updateStatusLight()
 
         emit updateFriendActivity(*frnd);
     }
+
+    // zoff
+    if (frnd->getStatus() == Status::Status::Offline)
+    {
+        const auto friendPk = frnd->getPublicKey();
+        QString push_filename(QDir::tempPath() + QDir::separator() + "push_" + friendPk.toString());
+
+        QFile file(push_filename);
+        if (file.open(QIODevice::ReadOnly))
+        {
+            // friend has push url
+            qDebug() << "updateStatusLight:UPDATE:push_filename=" << push_filename;
+            // show yellow circle icon as connection status for friend
+            statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Away, event)));
+            file.close();
+        }
+    }
+    // zoff
 
     statusPic.setMargin(event ? 1 : 3);
 }

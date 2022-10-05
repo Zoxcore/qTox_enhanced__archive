@@ -51,6 +51,9 @@ private slots:
     void onFriendOnlineOfflineChanged(const ToxPk& friendPk, bool isOnline);
 
 private:
+    // zoff
+    void wakeupMobile(const QString& friendPublicKeyStr);
+    // zoff
     void sendProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete);
     void sendExtendedProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete);
     void sendCoreProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete);

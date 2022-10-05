@@ -38,6 +38,10 @@
 
 #include <QCoreApplication>
 #include <QDateTime>
+// zoff
+#include <QFile>
+#include <QDir>
+// zoff
 #include <QRegularExpression>
 #include <QString>
 #include <QStringBuilder>
@@ -606,6 +610,35 @@ void Core::onLosslessPacket(Tox* tox, uint32_t friendId,
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
     core->ext->onLosslessPacket(friendId, data, length);
+
+    // zoff
+    // qDebug() << "onLosslessPacket:fn=" << friendId << " data:" << (int)data[0] << (int)data[1] << (int)data[2];
+    if (data[0] == 181) // HINT: pkt id for CONTROL_PROXY_MESSAGE_TYPE_PUSH_URL_FOR_FRIEND == 181
+    {
+        const ToxPk friendPublicKey = core->getFriendPublicKey(friendId);
+        QString push_filename(QDir::tempPath() + QDir::separator() + "push_" + friendPublicKey.toString());
+        if (length > 5)
+        {
+            QFile file(push_filename);
+            if (file.open(QIODevice::Truncate | QIODevice::WriteOnly))
+            {
+                qDebug() << "onLosslessPacket:ADD:push_filename=" << push_filename;
+                const uint8_t* data_str = data + 1;
+                file.write(reinterpret_cast<const char*>(data_str), (length - 1));
+                file.close();
+            }
+        }
+        else
+        {
+            if(QFile::exists(push_filename))
+            {
+                qDebug() << "onLosslessPacket:DEL:push_filename=" << push_filename;
+                QFile file(push_filename);
+                file.remove();
+            }
+        }
+    }
+    // zoff
 }
 
 void Core::onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core)
