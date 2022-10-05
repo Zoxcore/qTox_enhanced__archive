@@ -163,6 +163,9 @@ void FriendMessageDispatcher::wakeupMobile(const QString& friendPublicKeyStr)
             if (curl)
             {
                 const char *url_c_str = url.toUtf8().constData();
+#if defined(Q_OS_WIN32)
+                curl_easy_setopt(curl, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+#endif
                 curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "ping=1");
                 curl_easy_setopt(curl, CURLOPT_URL, url_c_str);
                 curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0");
