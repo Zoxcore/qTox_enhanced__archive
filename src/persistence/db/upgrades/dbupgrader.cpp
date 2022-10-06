@@ -624,7 +624,7 @@ bool DbUpgrader::dbSchema11to12(RawDatabase& db)
     QVector<RawDatabase::Query> upgradeQueries;
 
     upgradeQueries += RawDatabase::Query{QString("ALTER TABLE authors "
-                                                 "ADD COLUMN push_token display_name BLOB "
+                                                 "ADD COLUMN push_token BLOB "
                                                  "DEFAULT NULL;")};
 
     upgradeQueries += RawDatabase::Query{QString("ALTER TABLE authors "
