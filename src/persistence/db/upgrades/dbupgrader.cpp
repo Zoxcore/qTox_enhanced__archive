@@ -252,7 +252,8 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
     std::vector<DbSchemaUpgradeFn> upgradeFns = {dbSchema0to1, dbSchema1to2, dbSchema2to3,
                                                  dbSchema3to4, dbSchema4to5, dbSchema5to6,
                                                  dbSchema6to7, dbSchema7to8, dbSchema8to9,
-                                                 dbSchema9to10, DbTo11::dbSchema10to11};
+                                                 dbSchema9to10, DbTo11::dbSchema10to11,
+                                                 dbSchema11to12};
 
     assert(databaseSchemaVersion < static_cast<int>(upgradeFns.size()));
     assert(upgradeFns.size() == SCHEMA_VERSION);
@@ -615,6 +616,26 @@ bool DbUpgrader::dbSchema9to10(RawDatabase& db)
     upgradeQueries += RawDatabase::Query(QStringLiteral("UPDATE file_transfers SET file_restart_id = ? WHERE LENGTH(file_restart_id) != 32;"),
         {dummyResumeId});
     upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 10;"));
+    return db.execNow(upgradeQueries);
+}
+
+bool DbUpgrader::dbSchema11to12(RawDatabase& db)
+{
+    QVector<RawDatabase::Query> upgradeQueries;
+
+    upgradeQueries += RawDatabase::Query{QString("ALTER TABLE authors "
+                                                 "ADD COLUMN push_token display_name BLOB "
+                                                 "DEFAULT NULL;")};
+
+    upgradeQueries += RawDatabase::Query{QString("ALTER TABLE authors "
+                                                 "ADD COLUMN capabilities INTEGER NOT NULL "
+                                                 "DEFAULT 0;")};
+
+    upgradeQueries += RawDatabase::Query{QString("ALTER TABLE text_messages "
+                                                 "ADD COLUMN msgv3hash BLOB "
+                                                 "DEFAULT NULL;")};
+
+    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 12;"));
     return db.execNow(upgradeQueries);
 }
 
