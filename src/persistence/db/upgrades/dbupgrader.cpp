@@ -29,7 +29,7 @@
 #include <QTranslator>
 
 namespace {
-constexpr int SCHEMA_VERSION = 11;
+constexpr int SCHEMA_VERSION = 12;
 
 std::vector<DbUpgrader::BadEntry> getInvalidPeers(RawDatabase& db)
 {
