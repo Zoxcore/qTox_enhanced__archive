@@ -25,6 +25,12 @@ build_toxcore() {
 
     "${SCRIPT_DIR}/download/download_toxcore.sh"
 
+    echo "Applying msgv3_addon.patch"
+    patch -p1 < "${SCRIPT_DIR}/patches/msgv3_addon.patch"
+
+    echo "Applying tc___capabilites.patch"
+    patch -p1 < "${SCRIPT_DIR}/patches/tc___capabilites.patch"
+
     cmake . \
         -DBOOTSTRAP_DAEMON=OFF \
         -DCMAKE_BUILD_TYPE=Release \
