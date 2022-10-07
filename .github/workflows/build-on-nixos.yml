@@ -8,8 +8,8 @@ on:
         description: dummy
         default: dummy
 jobs:
-  build-appimage:
-    name: Appimage
+  build-nixos:
+    name: nixos
     runs-on: nixos/nix
     permissions:
       contents: write
