@@ -225,6 +225,9 @@ public:
                        const QDateTime& time, bool isDelivered, ExtensionSet extensions,
                        QString dispName, const std::function<void(RowId)>& insertIdCallback = {});
 
+    void addPushtoken(const ToxPk& sender, const QString& pushtoken);
+    void pushtokenPing(const ToxPk& sender);
+
     void addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,
                            const QString& fileName, const QString& filePath, int64_t size,
                            const ToxPk& sender, const QDateTime& time, QString const& dispName);

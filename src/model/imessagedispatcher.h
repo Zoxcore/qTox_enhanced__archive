@@ -64,6 +64,16 @@ signals:
     void messageReceived(const ToxPk& sender, const Message& message);
 
     /**
+     * @brief Emitted when a Pushtoken is received
+     */
+    void pushtokenReceived(const ToxPk& sender, const QString& pushtoken);
+
+    /**
+     * @brief Emitted when a Pushtoken should be pinged (via HTTPS, using PROXY if set)
+     */
+    void pushtokenPing(const ToxPk& sender);
+
+    /**
      * @brief Emitted when a message is processed and sent
      * @param id message id for completion
      * @param message sent message

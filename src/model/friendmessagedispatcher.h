@@ -43,6 +43,7 @@ public:
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendExtendedMessage(const QString& content, ExtensionSet extensions) override;
     void onMessageReceived(bool isAction, const QString& content);
+    void onPushtokenReceived(const QString& pushtoken);
     void onReceiptReceived(ReceiptNum receipt);
     void onExtMessageReceived(const QString& content);
     void onExtReceiptReceived(uint64_t receiptId);
@@ -51,9 +52,6 @@ private slots:
     void onFriendOnlineOfflineChanged(const ToxPk& friendPk, bool isOnline);
 
 private:
-    // zoff
-    void wakeupMobile(const QString& friendPublicKeyStr);
-    // zoff
     void sendProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete);
     void sendExtendedProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete);
     void sendCoreProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete);

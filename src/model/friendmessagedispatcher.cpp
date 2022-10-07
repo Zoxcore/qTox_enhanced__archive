@@ -22,10 +22,6 @@
 #include "src/model/status.h"
 
 // zoff
-#include <curl/curl.h>
-// zoff
-
-// zoff
 #include <QFile>
 #include <QDir>
 // zoff
@@ -92,6 +88,11 @@ void FriendMessageDispatcher::onMessageReceived(bool isAction, const QString& co
     emit messageReceived(f.getPublicKey(), processor.processIncomingCoreMessage(isAction, content));
 }
 
+void FriendMessageDispatcher::onPushtokenReceived(const QString& pushtoken)
+{
+    emit pushtokenReceived(f.getPublicKey(), pushtoken);
+}
+
 /**
  * @brief Handles received receipt from toxcore
  * @param[in] receipt receipt id
@@ -135,66 +136,11 @@ void FriendMessageDispatcher::clearOutgoingMessages()
     offlineMsgEngine.removeAllMessages();
 }
 
-// zoff
-void FriendMessageDispatcher::wakeupMobile(const QString& friendPublicKeyStr)
-{
-    // qDebug() << "wakeupMobile:check for mobile token for pk:" << friendPublicKeyStr;
-    QString push_filename(QDir::tempPath() + QDir::separator() + "push_" + friendPublicKeyStr);
-
-    QFile file(push_filename);
-    if (file.open(QIODevice::ReadOnly))
-    {
-        qDebug() << "wakeupMobile:GET:push_filename=" << push_filename;
-
-        char data[1003] = {0}; // add a few null bytes at the end, just to be sure
-        file.read(data, 1000);
-        file.close();
-
-        if (data[0] == 'h')
-        {
-            QString url = QString::fromUtf8(data);
-            qDebug() << "wakeupMobile:push_url=" << url;
-
-            curl_global_init(CURL_GLOBAL_ALL);
-            CURL *curl;
-            CURLcode res;
-            curl = curl_easy_init();
-
-            if (curl)
-            {
-                const char *url_c_str = url.toUtf8().constData();
-#if defined(Q_OS_WIN32)
-                curl_easy_setopt(curl, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
-#endif
-                curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "ping=1");
-                curl_easy_setopt(curl, CURLOPT_URL, url_c_str);
-                curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0");
-                res = curl_easy_perform(curl);
-
-                if (res == CURLE_OK)
-                {
-                    qDebug() << "curl:CURLE_OK";
-                }
-                else
-                {
-                    qDebug() << "curl:ERROR:res=" << res;
-                }
-
-                curl_easy_cleanup(curl);
-            }
-            curl_global_cleanup();
-        }
-    }
-}
-// zoff
-
 void FriendMessageDispatcher::sendProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
 {
     if (!Status::isOnline(f.getStatus())) {
         offlineMsgEngine.addUnsentMessage(message, onOfflineMsgComplete);
-        // zoff
-        wakeupMobile(f.getPublicKey().toString());
-        // zoff
+        emit pushtokenPing(f.getPublicKey());
         return;
     }
 

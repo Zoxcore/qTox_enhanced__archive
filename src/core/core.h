@@ -169,6 +169,7 @@ signals:
     void fileAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash, uint64_t filesize);
 
     void friendMessageReceived(uint32_t friendId, const QString& message, bool isAction);
+    void friendPushtokenReceived(uint32_t friendId, const QString& pushtoken);
     void friendAdded(uint32_t friendId, const ToxPk& friendPk);
 
     void friendStatusChanged(uint32_t friendId, Status::Status status);

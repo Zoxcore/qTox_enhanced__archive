@@ -729,6 +729,7 @@ void Widget::onCoreChanged(Core& core_)
     connect(core, &Core::friendStatusMessageChanged, this, &Widget::onFriendStatusMessageChanged);
     connect(core, &Core::friendRequestReceived, this, &Widget::onFriendRequestReceived);
     connect(core, &Core::friendMessageReceived, this, &Widget::onFriendMessageReceived);
+    connect(core, &Core::friendPushtokenReceived, this, &Widget::onFriendPushtokenReceived);
     connect(core, &Core::receiptRecieved, this, &Widget::onReceiptReceived);
     connect(core, &Core::groupInviteReceived, this, &Widget::onGroupInviteReceived);
     connect(core, &Core::groupMessageReceived, this, &Widget::onGroupMessageReceived);
@@ -1423,6 +1424,17 @@ void Widget::onFriendMessageReceived(uint32_t friendnumber, const QString& messa
     }
 
     friendMessageDispatchers[f->getPublicKey()]->onMessageReceived(isAction, message);
+}
+
+void Widget::onFriendPushtokenReceived(uint32_t friendnumber, const QString& pushtoken)
+{
+    const auto& friendId = friendList->id2Key(friendnumber);
+    Friend* f = friendList->findFriend(friendId);
+    if (!f) {
+        return;
+    }
+
+    friendMessageDispatchers[f->getPublicKey()]->onPushtokenReceived(pushtoken);
 }
 
 void Widget::onReceiptReceived(int friendId, ReceiptNum receipt)

@@ -84,6 +84,10 @@ ChatHistory::ChatHistory(Chat& chat_, History* history_, const ICoreIdHandler& c
             &ChatHistory::onMessageComplete);
     connect(&messageDispatcher, &IMessageDispatcher::messageReceived, this,
             &ChatHistory::onMessageReceived);
+    connect(&messageDispatcher, &IMessageDispatcher::pushtokenReceived, this,
+            &ChatHistory::onPushtokenReceived);
+    connect(&messageDispatcher, &IMessageDispatcher::pushtokenPing, this,
+            &ChatHistory::onPushtokenPing);
     connect(&messageDispatcher, &IMessageDispatcher::messageBroken, this,
             &ChatHistory::onMessageBroken);
 
@@ -278,6 +282,16 @@ void ChatHistory::onMessageReceived(const ToxPk& sender, const Message& message)
     }
 
     sessionChatLog.onMessageReceived(sender, message);
+}
+
+void ChatHistory::onPushtokenReceived(const ToxPk& sender, const QString& pushtoken)
+{
+    history->addPushtoken(sender, pushtoken);
+}
+
+void ChatHistory::onPushtokenPing(const ToxPk& sender)
+{
+    history->pushtokenPing(sender);
 }
 
 void ChatHistory::onMessageSent(DispatchedMessageId id, const Message& message)

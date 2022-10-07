@@ -615,42 +615,16 @@ void Core::onLosslessPacket(Tox* tox, uint32_t friendId,
     // qDebug() << "onLosslessPacket:fn=" << friendId << " data:" << (int)data[0] << (int)data[1] << (int)data[2];
     if (data[0] == 181) // HINT: pkt id for CONTROL_PROXY_MESSAGE_TYPE_PUSH_URL_FOR_FRIEND == 181
     {
-        const ToxPk friendPublicKey = core->getFriendPublicKey(friendId);
-        QString push_filename(QDir::tempPath() + QDir::separator() + "push_" + friendPublicKey.toString());
         if (length > 5)
         {
-            QFile file(push_filename);
-            if (file.open(QIODevice::Truncate | QIODevice::WriteOnly))
-            {
-                qDebug() << "onLosslessPacket:ADD:push_filename=" << push_filename;
-                const uint8_t* data_str = data + 1;
-                file.write(reinterpret_cast<const char*>(data_str), (length - 1));
-                file.close();
-
-                QString push_token_utf8 = QString::fromUtf8(reinterpret_cast<const char*>(data_str));
-                db->execNow(
-                           RawDatabase::Query(QStringLiteral("UPDATE authors "
-                                                             "set push_token = ? "
-                                                             "WHERE public_key = ?"),
-                                        {push_token_utf8.toUtf8(), friendPublicKey.getByteArray()})
-                           );
-            }
+            const uint8_t* data_str = data + 1;
+            QString pushtoken = ToxString(data_str, (length - 1)).getQString();
+            emit static_cast<Core*>(core)->friendPushtokenReceived(friendId, pushtoken);
         }
         else
         {
-            if(QFile::exists(push_filename))
-            {
-                qDebug() << "onLosslessPacket:DEL:push_filename=" << push_filename;
-                QFile file(push_filename);
-                file.remove();
-
-                db->execNow(
-                          RawDatabase::Query(QStringLiteral("UPDATE authors "
-                                                            "set push_token = NULL "
-                                                            "WHERE public_key = ?"),
-                                      {friendPublicKey.getByteArray()});
-                           );
-            }
+            qDebug() << "onLosslessPacket:DEL:Pushtoken";
+            emit static_cast<Core*>(core)->friendPushtokenReceived(friendId, " ");
         }
     }
     // zoff

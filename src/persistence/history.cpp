@@ -28,6 +28,10 @@
 #include "src/core/toxpk.h"
 #include "src/core/chatid.h"
 
+// zoff
+#include <curl/curl.h>
+// zoff
+
 namespace {
 MessageState getMessageState(bool isPending, bool isBroken)
 {
@@ -507,6 +511,76 @@ void History::addNewMessage(const ChatId& chatId, const QString& message, const 
 
     db->execLater(generateNewTextMessageQueries(chatId, message, sender, time, isDelivered,
                                                 extensionSet, dispName, insertIdCallback));
+}
+
+void History::addPushtoken(const ToxPk& sender, const QString& pushtoken)
+{
+    if (!isValid()) {
+        return;
+    }
+
+    db->execNow(
+               RawDatabase::Query(QStringLiteral("UPDATE authors "
+                                                 "set push_token = ? "
+                                                 "WHERE public_key = ?"),
+                            {pushtoken.toUtf8(), sender.getByteArray()})
+               );
+}
+
+void History::pushtokenPing(const ToxPk& sender)
+{
+    if (!isValid()) {
+        return;
+    }
+
+    db->execNow(
+        RawDatabase::Query("SELECT push_token from authors WHERE public_key = ?",
+            {sender.getByteArray()},
+            [&](const QVector<QVariant>& row) {
+                    auto url = row[0].toString();
+                    qDebug() << "wakeupMobile:START";
+                    qDebug() << "pushtokenPing:pushtoken=" << url;
+
+                    if (url.isNull()) {
+                    }
+                    else if (url.size() < 8) {
+                    }
+                    else if (url.isEmpty()) {
+                    }
+                    else if (url.startsWith("https://")) {
+                        qDebug() << "wakeupMobile:push_url=" << url;
+
+                        curl_global_init(CURL_GLOBAL_ALL);
+                        CURL *curl;
+                        CURLcode res;
+                        curl = curl_easy_init();
+
+                        if (curl)
+                        {
+                            const char *url_c_str = url.toUtf8().constData();
+#if defined(Q_OS_WIN32)
+                            curl_easy_setopt(curl, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+#endif
+                            curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "ping=1");
+                            curl_easy_setopt(curl, CURLOPT_URL, url_c_str);
+                            curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0");
+                            res = curl_easy_perform(curl);
+
+                            if (res == CURLE_OK)
+                            {
+                                qDebug() << "curl:CURLE_OK";
+                            }
+                            else
+                            {
+                                qDebug() << "curl:ERROR:res=" << res;
+                            }
+
+                            curl_easy_cleanup(curl);
+                        }
+                        curl_global_cleanup();
+                    }
+            })
+        );
 }
 
 void History::setFileFinished(const QByteArray& fileId, bool success, const QString& filePath,

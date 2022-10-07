@@ -184,6 +184,7 @@ public slots:
     void onFriendUsernameChanged(int friendId, const QString& username);
     void onFriendAliasChanged(const ToxPk& friendId, const QString& alias);
     void onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction);
+    void onFriendPushtokenReceived(uint32_t friendnumber, const QString& pushtoken);
     void onReceiptReceived(int friendId, ReceiptNum receipt);
     void onExtendedMessageSupport(uint32_t friendNumber, bool supported);
     void onFriendExtMessageReceived(uint32_t friendNumber, const QString& message);
