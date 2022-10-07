@@ -1,0 +1,19 @@
+name: Build, test, and deploy
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: dummy
+        default: dummy
+jobs:
+  build-appimage:
+    name: Appimage
+    runs-on: nixos/nix
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run build
+        run: pwd;ls -al;nix-build ./buildscripts/nixos_qtox.txt

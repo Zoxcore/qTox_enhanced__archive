@@ -1,0 +1,35 @@
+{ pkgs ? import <nixpkgs> { } }:
+with pkgs;
+let
+  toxext = stdenv.mkDerivation rec {
+    pname = "toxext";
+    version = "0.0.3";
+    src = fetchFromGitHub {
+      owner = pname;
+      repo = pname;
+      rev = "v${version}";
+      hash = "sha256-I0Ay3XNf0sxDoPFBH8dx1ywzj96Vnkqzlu1xXsxmI1M=";
+    };
+    nativeBuildInputs = [ cmake pkg-config ];
+    buildInputs = [ libtoxcore ];
+  };
+
+  toxextMessages = stdenv.mkDerivation rec {
+    pname = "tox_extension_messages";
+    version = "0.0.3";
+    src = fetchFromGitHub {
+      owner = "toxext";
+      repo = pname;
+      rev = "v${version}";
+      hash = "sha256-qtjtEsvNcCArYW/Zyr1c0f4du7r/WJKNR96q7XLxeoA=";
+    };
+    nativeBuildInputs = [ cmake pkg-config ];
+    buildInputs = [ libtoxcore toxext ];
+  };
+
+in pkgs.qtox.overrideAttrs ({ buildInputs, ... }: {
+  version = "push_notification-";
+  src =
+    builtins.fetchGit "https://github.com/Zoxcore/qTox?ref=push_notification";
+  buildInputs = buildInputs ++ [ curl toxext toxextMessages ];
+})
