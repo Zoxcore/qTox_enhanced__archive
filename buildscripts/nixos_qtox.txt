@@ -2,10 +2,9 @@
 with pkgs;
 let
   libtoxcore' = libtoxcore.overrideAttrs ({ ... }: {
-    version = "0.2.18";
     src = fetchurl {
       url =
-        "https://github.com/TokTok/c-toxcore/releases/download/v${version}/c-toxcore-${version}.tar.gz";
+        "https://github.com/TokTok/c-toxcore/releases/download/v0.2.18/c-toxcore-0.2.18.tar.gz";
       sha256 = "sha256-8pQFN5mIY1k+KLxqa19W8JZ19s2KKDJre8MbSDbAiUI=";
     };
   });
