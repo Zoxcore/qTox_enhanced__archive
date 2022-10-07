@@ -1,4 +1,4 @@
-name: Build, test, and deploy
+name: nixos build
 on:
   push:
   pull_request:
