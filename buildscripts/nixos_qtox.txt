@@ -1,6 +1,15 @@
 { pkgs ? import <nixpkgs> { } }:
 with pkgs;
 let
+  libtoxcore' = libtoxcore.overrideAttrs ({ ... }: {
+    version = "0.2.18";
+    src = fetchurl {
+      url =
+        "https://github.com/TokTok/c-toxcore/releases/download/v${version}/c-toxcore-${version}.tar.gz";
+      sha256 = "sha256-8pQFN5mIY1k+KLxqa19W8JZ19s2KKDJre8MbSDbAiUI=";
+    };
+  });
+
   toxext = stdenv.mkDerivation rec {
     pname = "toxext";
     version = "0.0.3";
@@ -31,5 +40,5 @@ in pkgs.qtox.overrideAttrs ({ buildInputs, ... }: {
   version = "push_notification-";
   src =
     builtins.fetchGit "https://github.com/Zoxcore/qTox?ref=push_notification";
-  buildInputs = buildInputs ++ [ curl toxext toxextMessages ];
+  buildInputs = buildInputs ++ [ curl libtoxcore' toxext toxextMessages ];
 })
