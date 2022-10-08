@@ -548,36 +548,49 @@ void History::pushtokenPing(const ToxPk& sender)
                     else if (url.isEmpty()) {
                     }
                     else if (url.startsWith("https://")) {
-                        qDebug() << "wakeupMobile:push_url=" << url;
 
-                        curl_global_init(CURL_GLOBAL_ALL);
-                        CURL *curl;
-                        CURLcode res;
-                        curl = curl_easy_init();
-
-                        if (curl)
-                        {
-                            const char *url_c_str = url.toUtf8().constData();
-#if defined(Q_OS_WIN32)
-                            curl_easy_setopt(curl, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
-#endif
-                            curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "ping=1");
-                            curl_easy_setopt(curl, CURLOPT_URL, url_c_str);
-                            curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0");
-                            res = curl_easy_perform(curl);
-
-                            if (res == CURLE_OK)
-                            {
-                                qDebug() << "curl:CURLE_OK";
+                        bool push_url_in_whitelist = false;
+                        foreach (QString listitem, Settings::PUSHURL_WHITELIST) {
+                            qDebug() << "wakeupMobile:check against whitelist: " << listitem << " -> " << url;
+                            if (url.startsWith(listitem)) {
+                                push_url_in_whitelist = true;
+                                break;
                             }
-                            else
-                            {
-                                qDebug() << "curl:ERROR:res=" << res;
-                            }
-
-                            curl_easy_cleanup(curl);
                         }
-                        curl_global_cleanup();
+
+                        if (push_url_in_whitelist) {
+
+                            qDebug() << "wakeupMobile:push_url=" << url;
+
+                            curl_global_init(CURL_GLOBAL_ALL);
+                            CURL *curl;
+                            CURLcode res;
+                            curl = curl_easy_init();
+
+                            if (curl)
+                            {
+                                const char *url_c_str = url.toUtf8().constData();
+#if defined(Q_OS_WIN32)
+                                curl_easy_setopt(curl, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+#endif
+                                curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "ping=1");
+                                curl_easy_setopt(curl, CURLOPT_URL, url_c_str);
+                                curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0");
+                                res = curl_easy_perform(curl);
+
+                                if (res == CURLE_OK)
+                                {
+                                    qDebug() << "curl:CURLE_OK";
+                                }
+                                else
+                                {
+                                    qDebug() << "curl:ERROR:res=" << res;
+                                }
+
+                                curl_easy_cleanup(curl);
+                            }
+                            curl_global_cleanup();
+                        }
                     }
             })
         );

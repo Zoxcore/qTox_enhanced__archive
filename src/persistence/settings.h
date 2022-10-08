@@ -147,6 +147,8 @@ public:
         Activity,
     };
 
+    static QStringList PUSHURL_WHITELIST;
+
 public:
     explicit Settings(IMessageBoxManager& messageBoxManager);
     ~Settings();

@@ -65,6 +65,11 @@ CompatibleRecursiveMutex Settings::bigLock;
 QThread* Settings::settingsThread{nullptr};
 static constexpr int GLOBAL_SETTINGS_VERSION = 1;
 static constexpr int PERSONAL_SETTINGS_VERSION = 1;
+QStringList Settings::PUSHURL_WHITELIST = QStringList()
+    << "https://tox.zoff.xyz/toxfcm/fcm.php?id="
+    << "https://gotify1.unifiedpush.org/UP?token="
+    << "https://ntfy.sh/";
+
 
 Settings::Settings(IMessageBoxManager& messageBoxManager_)
     : loaded(false)
