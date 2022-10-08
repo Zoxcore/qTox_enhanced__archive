@@ -7,6 +7,8 @@
 ---
 
 <p align="center">
+[![CircleCI](https://circleci.com/gh/Zoxcore/qTox/tree/zoxcore%2Fpush_notification.png?style=badge)](https://circleci.com/gh/Zoxcore/qTox/tree/zoxcore%2Fpush_notification)
+[![Github CI](https://github.com/Zoxcore/qTox/workflows/Build%2C%20test%2C%20and%20deploy/badge.svg)](https://github.com/Zoxcore/qTox/actions?query=workflow%3A%22Build%2C%20test%2C%20and%20deploy%22)
 <a href="https://github.com/qTox/qTox/blob/master/LICENSE">
 <img src="https://img.shields.io/badge/license-GPLv3%2B-blue.svg" alt="GPLv3+" />
 </a>
