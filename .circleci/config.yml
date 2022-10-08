@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - checkout
-      - run: nix-build ./buildscripts/nixos_qtox.txt
+      - run:
+          command: nix-build ./buildscripts/nixos_qtox.txt
+          no_output_timeout: 30m
 
 
