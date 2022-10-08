@@ -11,7 +11,7 @@ cd $_HOME_
 cp -a ../.ci-scripts/build-qtox-linux.sh .
 
 build_for='
-nixos/nix
+nixos
 '
 
 for system_to_build_for in $build_for ; do
@@ -81,6 +81,7 @@ in pkgs.qtox.overrideAttrs ({ buildInputs, ... }: {
 
     echo '#! /bin/bash
 
+set -Eeuo pipefail
 nix-build /script/qtox.txt
 
 tar -czvf /artefacts/qtox_pushnotification_nixos.tar.gz /nix/store/*tox*
@@ -94,7 +95,7 @@ chmod a+rwx /artefacts/*
       -v $_HOME_/"$system_to_build_for"/script:/script \
       -v $_HOME_/"$system_to_build_for"/workspace:/workspace \
       --net=host \
-     "nixos/nix" \
+     "nixos/nix:latest" \
      /bin/sh -c "bash /script/run.sh"
      if [ $? -ne 0 ]; then
         echo "** ERROR **:$system_to_build_for_orig"
