@@ -22,6 +22,7 @@
 
 #include "history.h"
 #include "profile.h"
+#include "src/core/icoresettings.h"
 #include "settings.h"
 #include "db/upgrades/dbupgrader.h"
 #include "db/rawdatabase.h"
@@ -573,6 +574,37 @@ void History::pushtokenPing(const ToxPk& sender)
 #if defined(Q_OS_WIN32)
                                 curl_easy_setopt(curl, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
 #endif
+
+
+                                QString proxy_addr = settings.getProxyAddr();
+                                quint16 proxy_port = settings.getProxyPort();
+                                QNetworkProxy proxy = settings.getProxy();
+                                ICoreSettings::ProxyType proxy_type = settings.getProxyType();
+                                qDebug() << "wakeupMobile:proxy_addr=" << proxy_addr.toUtf8() << " bytes=" << proxy_addr.toUtf8().size();
+                                qDebug() << "wakeupMobile:proxy_port=" << proxy_port;
+                                qDebug() << "wakeupMobile:proxy_type=" << static_cast<int>(proxy_type);
+                                qDebug() << "wakeupMobile:proxy=" << proxy;
+
+                                if (proxy_type != ICoreSettings::ProxyType::ptNone) {
+                                    if (static_cast<uint32_t>(proxy_addr.length()) > 300) {
+                                        qWarning() << "Proxy address" << proxy_addr << "is too long (max. 300 chars)";
+                                    } else if (!proxy_addr.isEmpty() && proxy_port > 0) {
+                                        if (proxy_type == ICoreSettings::ProxyType::ptSOCKS5) {
+                                            curl_easy_setopt(curl, CURLOPT_PROXY, proxy_addr.toUtf8().data());
+                                            curl_easy_setopt(curl, CURLOPT_PROXYPORT, proxy_port);
+                                            curl_easy_setopt(curl, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);
+                                            curl_easy_setopt(curl, CURLOPT_HTTPPROXYTUNNEL, 1);
+                                            qDebug() << "Using CURLPROXY_SOCKS5 proxy" << proxy_addr << ":" << proxy_port;
+                                        } else if (proxy_type == ICoreSettings::ProxyType::ptHTTP) {
+                                            curl_easy_setopt(curl, CURLOPT_PROXY, proxy_addr.toUtf8().data());
+                                            curl_easy_setopt(curl, CURLOPT_PROXYPORT, proxy_port);
+                                            curl_easy_setopt(curl, CURLOPT_PROXYTYPE, CURLPROXY_HTTP);
+                                            curl_easy_setopt(curl, CURLOPT_HTTPPROXYTUNNEL, 1);
+                                            qDebug() << "Using CURLPROXY_HTTP proxy" << proxy_addr << ":" << proxy_port;
+                                        }
+                                    }
+                                }
+
                                 curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "ping=1");
                                 curl_easy_setopt(curl, CURLOPT_URL, url_c_str);
                                 curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0");
