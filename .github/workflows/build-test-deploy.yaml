@@ -11,7 +11,7 @@ jobs:
   update-nightly-tag:
     name: Update nightly release tag
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
     permissions:
         contents: write
     steps:
@@ -273,13 +273,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.AppImage,qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.AppImage.sha256,qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.AppImage.zsync"
       - name: Rename artifact for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         run: |
           cp qTox-*.x86_64.AppImage qTox-nightly.x86_64.AppImage
           cp qTox-*.x86_64.AppImage.zsync qTox-nightly.x86_64.AppImage.zsync
       - name: Upload to nightly release
         uses: ncipollo/release-action@v1
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         with:
           allowUpdates: true
           tag: nightly
@@ -331,13 +331,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak,qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak.sha256"
       - name: Rename artifact for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         run: |
           cp qtox.flatpak qTox-nightly.flatpak
           sha256sum qTox-nightly.flatpak > qTox-nightly.flatpak.sha256
       - name: Upload to nightly release
         uses: ncipollo/release-action@v1
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         with:
           allowUpdates: true
           tag: nightly
@@ -394,12 +394,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "setup-qtox-x86_64-release.exe,setup-qtox-x86_64-release.exe.sha256"
       - name: Rename zip for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         run: |
           cp install-prefix/qtox-x86_64-${{ matrix.build_type }}.zip qtox-nightly-x86_64-${{ matrix.build_type }}.zip
           sha256sum qtox-nightly-x86_64-${{ matrix.build_type }}.zip > qtox-nightly-x86_64-${{ matrix.build_type }}.zip.sha256
       - name: Upload zip to nightly release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
@@ -411,12 +411,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qtox-nightly-x86_64-${{ matrix.build_type }}.zip,qtox-nightly-x86_64-${{ matrix.build_type }}.zip.sha256"
       - name: Rename exe for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build_type == 'release'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification' && matrix.build_type == 'release'
         run: |
           cp package-prefix/setup-qtox.exe qtox-nightly-x86_64-${{ matrix.build_type }}.exe
           sha256sum qtox-nightly-x86_64-${{ matrix.build_type }}.exe > qtox-nightly-x86_64-${{ matrix.build_type }}.exe.sha256
       - name: Upload exe to nightly release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build_type == 'release'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification' && matrix.build_type == 'release'
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
@@ -474,12 +474,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "setup-qtox-i686-release.exe,setup-qtox-i686-release.exe.sha256"
       - name: Rename zip for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         run: |
           cp install-prefix/qtox-i686-${{ matrix.build_type }}.zip qtox-nightly-i686-${{ matrix.build_type }}.zip
           sha256sum qtox-nightly-i686-${{ matrix.build_type }}.zip > qtox-nightly-i686-${{ matrix.build_type }}.zip.sha256
       - name: Upload zip to nightly release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
@@ -491,12 +491,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qtox-nightly-i686-${{ matrix.build_type }}.zip,qtox-nightly-i686-${{ matrix.build_type }}.zip.sha256"
       - name: Rename exe for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build_type == 'release'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification' && matrix.build_type == 'release'
         run: |
           cp package-prefix/setup-qtox.exe qtox-nightly-i686-${{ matrix.build_type }}.exe
           sha256sum qtox-nightly-i686-${{ matrix.build_type }}.exe > qtox-nightly-i686-${{ matrix.build_type }}.exe.sha256
       - name: Upload exe to nightly release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build_type == 'release'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification' && matrix.build_type == 'release'
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
@@ -542,13 +542,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox.dmg,qTox.dmg.sha256"
       - name: Rename artifact for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         run: |
           cp qTox.dmg qTox-nightly.dmg
           sha256sum qTox-nightly.dmg > qTox-nightly.dmg.sha256
       - name: Upload to nightly release
         uses: ncipollo/release-action@v1
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         with:
           allowUpdates: true
           tag: nightly
