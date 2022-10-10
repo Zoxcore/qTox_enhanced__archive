@@ -43,9 +43,6 @@ signals:
     void updateCheckFailed();
     void versionIsUnstable();
 
-private slots:
-    void handleResponse(QNetworkReply* reply);
-
 private:
     QNetworkAccessManager manager;
     QTimer updateTimer;
