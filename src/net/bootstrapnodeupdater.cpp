@@ -240,6 +240,7 @@ QList<DhtServer> BootstrapNodeUpdater::getBootstrapNodes() const
 
 void BootstrapNodeUpdater::requestBootstrapNodes()
 {
+/*
     nam.setProxy(proxy);
     connect(&nam, &QNetworkAccessManager::finished, this, &BootstrapNodeUpdater::onRequestComplete);
 
@@ -247,6 +248,7 @@ void BootstrapNodeUpdater::requestBootstrapNodes()
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
     nam.get(request);
+*/
 }
 
 /**
