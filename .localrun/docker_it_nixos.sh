@@ -41,6 +41,16 @@ let
         "https://github.com/TokTok/c-toxcore/releases/download/v0.2.18/c-toxcore-0.2.18.tar.gz";
       sha256 = "sha256-8pQFN5mIY1k+KLxqa19W8JZ19s2KKDJre8MbSDbAiUI=";
     };
+    patches = [
+      (fetchpatch {
+        url = "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/msgv3_addon.patch";
+        sha256 = "sha256-+K3Bpdnxzf0a35mzOnVJjGi5nutpgi6kHRnmz7AZAC4=";
+      })
+      (fetchpatch {
+        url = "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/tc___capabilites.patch";
+        sha256 = "sha256-fEgSxRFY8MWGq7eq86sCU/WhwFVC+XY+tuc+k9ZeecQ=";
+      })
+    ];
   });
 
   toxext = stdenv.mkDerivation rec {
