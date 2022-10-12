@@ -214,6 +214,16 @@ private:
                                           void* vCore);
     static void onGroupInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
                               const uint8_t* cookie, size_t length, void* vCore);
+    static void onNgcInvite(Tox* tox, uint32_t friendId, const uint8_t* invite_data, size_t length,
+                       const uint8_t *group_name, size_t group_name_length, void* vCore);
+
+    static void onNgcSelfJoin(Tox* tox, uint32_t group_number, void* vCore);
+    static void onNgcPeerJoin(Tox* tox, uint32_t group_number, uint32_t peer_id, void* vCore);
+    static void onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type,
+                             const uint8_t *message, size_t length, uint32_t message_id, void* vCore);
+    static void onNgcGroupPrivateMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type,
+        const uint8_t *message, size_t length, void* vCore);
+
     static void onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Message_Type type,
                                const uint8_t* cMessage, size_t length, void* vCore);
     static void onGroupPeerListChange(Tox* tox, uint32_t groupId, void* core);

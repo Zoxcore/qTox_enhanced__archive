@@ -119,6 +119,11 @@ void Core::registerCallbacks(Tox* tox)
     tox_callback_conference_peer_name(tox, onGroupPeerNameChange);
     tox_callback_conference_title(tox, onGroupTitleChange);
     tox_callback_friend_lossless_packet(tox, onLosslessPacket);
+    tox_callback_group_invite(tox, onNgcInvite);
+    tox_callback_group_self_join(tox, onNgcSelfJoin);
+    tox_callback_group_peer_join(tox, onNgcPeerJoin);
+    tox_callback_group_message(tox, onNgcGroupMessage);
+    tox_callback_group_private_message(tox, onNgcGroupPrivateMessage);
 }
 
 /**
@@ -555,6 +560,63 @@ void Core::onGroupInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
     default:
         qWarning() << "Group invite with unknown type " << type;
     }
+}
+
+void Core::onNgcInvite(Tox* tox, uint32_t friendId, const uint8_t* invite_data, size_t length,
+                       const uint8_t *group_name, size_t group_name_length, void* vCore)
+{
+    std::ignore = group_name;
+    std::ignore = group_name_length;
+    Core* core = static_cast<Core*>(vCore);
+    qDebug() << QString("NGC group invite by %1").arg(friendId);
+
+    Tox_Err_Group_Invite_Accept error;
+    uint32_t groupId = tox_group_invite_accept(tox, friendId, invite_data, length, reinterpret_cast<const uint8_t*>("user"), 4, NULL, 0,  &error);
+    if (groupId == UINT32_MAX) {
+        qDebug() << QString("NGC group invite by %1: FAILED").arg(friendId);
+    } else {
+        qDebug() << QString("NGC group invite by %1: OK").arg(friendId);
+        emit core->saveRequest();
+    }
+}
+
+void Core::onNgcSelfJoin(Tox* tox, uint32_t group_number, void* vCore)
+{
+    std::ignore = tox;
+    Core* core = static_cast<Core*>(vCore);
+    qDebug() << QString("onNgcSelfJoin:gn #%1").arg(group_number);
+    emit core->saveRequest();
+}
+
+void Core::onNgcPeerJoin(Tox* tox, uint32_t group_number, uint32_t peer_id, void* vCore)
+{
+    std::ignore = tox;
+    std::ignore = group_number;
+    Core* core = static_cast<Core*>(vCore);
+    qDebug() << QString("onNgcPeerJoin:peer #%1").arg(peer_id);
+    emit core->saveRequest();
+}
+
+void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type, 
+                             const uint8_t *message, size_t length, uint32_t message_id, void* vCore)
+{
+    std::ignore = tox;
+    std::ignore = vCore;
+    std::ignore = group_number;
+    std::ignore = type;
+    QString msg = ToxString(message, length).getQString();
+    qDebug() << QString("onNgcGroupMessage:peer=") << peer_id << QString(" msg=") << msg << QString(" msgID=") << message_id;
+}
+
+void Core::onNgcGroupPrivateMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type,
+        const uint8_t *message, size_t length, void* vCore)
+{
+    std::ignore = tox;
+    std::ignore = vCore;
+    std::ignore = group_number;
+    std::ignore = type;
+    QString msg = ToxString(message, length).getQString();
+    qDebug() << QString("onNgcGroupPrivateMessage:peer=") << peer_id << QString(" msg=") << msg;
 }
 
 void Core::onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Message_Type type,
