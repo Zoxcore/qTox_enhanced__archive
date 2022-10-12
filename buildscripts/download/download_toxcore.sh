@@ -17,11 +17,24 @@
 
 set -euo pipefail
 
-TOXCORE_VERSION=0.2.18
-TOXCORE_HASH=f2940537998863593e28bc6a6b5f56f09675f6cd8a28326b7bc31b4836c08942
+# use toxcore with NGC commits from TokTok master
+TOXCORE_VERSION="e0b00d3e733148823e4b63d70f464e523ad62bac" # 0.2.18
+TOXCORE_HASH="d33540a5cb03d6a34bf1c9c9121d082348583e802a25f606341d832e22c9b666" # f2940537998863593e28bc6a6b5f56f09675f6cd8a28326b7bc31b4836c08942
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 
+# download_verify_extract_tarball \
+#    https://github.com/TokTok/c-toxcore/releases/download/v$TOXCORE_VERSION/c-toxcore-$TOXCORE_VERSION.tar.gz \
+#    "$TOXCORE_HASH"
+
 download_verify_extract_tarball \
-    https://github.com/TokTok/c-toxcore/releases/download/v$TOXCORE_VERSION/c-toxcore-$TOXCORE_VERSION.tar.gz \
+    https://github.com/TokTok/c-toxcore/archive/"$TOXCORE_VERSION".tar.gz \
     "$TOXCORE_HASH"
+
+rm -Rf third_party/cmp/
+mkdir -p third_party/cmp/
+cd third_party/cmp/
+
+download_verify_extract_tarball \
+    https://github.com/camgunz/cmp/archive/e836703291392aba9db92b46fb47929521fac71f.tar.gz \
+    791ed2eaae05d75a6ef1c3fcad4edd595aba80a0be050067ec147d1cd94ec13a
