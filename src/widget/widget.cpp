@@ -2147,7 +2147,11 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     }
 
     const auto groupName = tr("Groupchat #%1").arg(groupnumber);
-    const bool enabled = core->getGroupAvEnabled(groupnumber);
+    bool enabled = core->getGroupAvEnabled(groupnumber);
+    if (groupnumber >= 1000000000) {
+        enabled = false;
+    }
+
     Group* newgroup =
         groupList->addGroup(*core, groupnumber, groupId, groupName, enabled, core->getUsername(),
             *friendList);

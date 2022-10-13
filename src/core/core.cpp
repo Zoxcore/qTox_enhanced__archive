@@ -577,6 +577,7 @@ void Core::onNgcInvite(Tox* tox, uint32_t friendId, const uint8_t* invite_data, 
     } else {
         qDebug() << QString("NGC group invite by %1: OK").arg(friendId);
         emit core->saveRequest();
+        emit core->groupJoined((1000000000 + groupId), core->getGroupPersistentId(groupId, 1));
     }
 }
 
