@@ -881,18 +881,26 @@ void Core::removeGroup(int groupId)
 {
     QMutexLocker ml{&coreLoopLock};
 
-    Tox_Err_Conference_Delete error;
-    tox_conference_delete(tox.get(), groupId, &error);
-    if (PARSE_ERR(error)) {
-        emit saveRequest();
+    if (groupId >= 1000000000) {
+        Tox_Err_Group_Leave error;
+        tox_group_leave(tox.get(), (groupId - 1000000000), reinterpret_cast<const uint8_t*>("exit"), 4, &error);
+        if (PARSE_ERR(error)) {
+            emit saveRequest();
+        }
+    } else {
+        Tox_Err_Conference_Delete error;
+        tox_conference_delete(tox.get(), groupId, &error);
+        if (PARSE_ERR(error)) {
+            emit saveRequest();
 
-        /*
-         * TODO(sudden6): this is probably not (thread-)safe, but can be ignored for now since
-         * we don't change av at runtime.
-         */
+            /*
+             * TODO(sudden6): this is probably not (thread-)safe, but can be ignored for now since
+             * we don't change av at runtime.
+             */
 
-        if (av) {
-            av->leaveGroupCall(groupId);
+            if (av) {
+                av->leaveGroupCall(groupId);
+            }
         }
     }
 }
