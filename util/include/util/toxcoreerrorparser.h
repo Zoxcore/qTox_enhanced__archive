@@ -63,4 +63,5 @@ namespace ToxcoreErrorParser {
     bool parseErr(Tox_Err_Group_State_Queries error, int line);
     bool parseErr(Tox_Err_Group_Peer_Query error, int line);
     bool parseErr(Tox_Err_Group_Leave error, int line);
+    bool parseErr(Tox_Err_Group_Send_Message error, int line);
 } // namespace ToxcoreErrorParser

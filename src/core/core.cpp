@@ -562,6 +562,20 @@ void Core::onGroupInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
     }
 }
 
+QString Core::GetRandomString(int randomStringLength) const
+{
+   const QString possibleCharacters("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+
+   QString randomString;
+   for(int i=0; i<randomStringLength; ++i)
+   {
+       int index = qrand() % possibleCharacters.length();
+       QChar nextChar = possibleCharacters.at(index);
+       randomString.append(nextChar);
+   }
+   return randomString;
+}
+
 void Core::onNgcInvite(Tox* tox, uint32_t friendId, const uint8_t* invite_data, size_t length,
                        const uint8_t *group_name, size_t group_name_length, void* vCore)
 {
@@ -570,8 +584,20 @@ void Core::onNgcInvite(Tox* tox, uint32_t friendId, const uint8_t* invite_data, 
     Core* core = static_cast<Core*>(vCore);
     qDebug() << QString("NGC group invite by %1").arg(friendId);
 
+    auto rnd_letters = core->GetRandomString(5);
+    auto user_name = QString("user ") + rnd_letters;
+    auto user_name_len = user_name.toUtf8().size();
+    qDebug() << QString("onNgcInvite:my peer name=") << user_name << QString("user_name_len=") << user_name_len;
+
     Tox_Err_Group_Invite_Accept error;
-    uint32_t groupId = tox_group_invite_accept(tox, friendId, invite_data, length, reinterpret_cast<const uint8_t*>("user"), 4, NULL, 0,  &error);
+    uint32_t groupId = tox_group_invite_accept(
+                        tox,
+                        friendId,
+                        invite_data,
+                        length,
+                        reinterpret_cast<const uint8_t*>(user_name.toUtf8().constData()),
+                        user_name_len,
+                        NULL, 0,  &error);
     if (groupId == UINT32_MAX) {
         qDebug() << QString("NGC group invite by %1: FAILED").arg(friendId);
     } else {
@@ -852,20 +878,39 @@ void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Mes
 {
     QMutexLocker ml{&coreLoopLock};
 
-    int size = message.toUtf8().size();
-    auto maxSize = static_cast<int>(getMaxMessageSize());
-    if (size > maxSize) {
-        qCritical() << "Core::sendMessageWithType called with message of size:" << size
-                    << "when max is:" << maxSize << ". Ignoring.";
-        return;
-    }
+    if (groupId >= 1000000000) {
+        int size = message.toUtf8().size();
+        auto maxSize = static_cast<int>(TOX_GROUP_MAX_MESSAGE_LENGTH);
+        if (size > maxSize) {
+            qCritical() << "Core::sendMessageWithType NGC called with message of size:" << size
+                        << "when max is:" << maxSize << ". Ignoring.";
+            return;
+        }
 
-    ToxString cMsg(message);
-    Tox_Err_Conference_Send_Message error;
-    tox_conference_send_message(tox.get(), groupId, type, cMsg.data(), cMsg.size(), &error);
-    if (!PARSE_ERR(error)) {
-        emit groupSentFailed(groupId);
-        return;
+        ToxString cMsg(message);
+        Tox_Err_Group_Send_Message error;
+        uint32_t message_id;
+        tox_group_send_message(tox.get(), (groupId - 1000000000), type, cMsg.data(), cMsg.size(), &message_id, &error);
+        if (!PARSE_ERR(error)) {
+            emit groupSentFailed(groupId);
+            return;
+        }
+    } else {
+        int size = message.toUtf8().size();
+        auto maxSize = static_cast<int>(getMaxMessageSize());
+        if (size > maxSize) {
+            qCritical() << "Core::sendMessageWithType called with message of size:" << size
+                        << "when max is:" << maxSize << ". Ignoring.";
+            return;
+        }
+
+        ToxString cMsg(message);
+        Tox_Err_Conference_Send_Message error;
+        tox_conference_send_message(tox.get(), groupId, type, cMsg.data(), cMsg.size(), &error);
+        if (!PARSE_ERR(error)) {
+            emit groupSentFailed(groupId);
+            return;
+        }
     }
 }
 

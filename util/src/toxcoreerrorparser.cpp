@@ -697,3 +697,41 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Leave error, int line)
     qCritical() << line << "Unknown error code:" << error;
     return false;
 }
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Send_Message error, int line)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_SEND_MESSAGE_OK:
+        return true;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_GROUP_NOT_FOUND:
+        qCritical() << line << ": error.";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_TOO_LONG:
+        qCritical() << line << ": error.";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_EMPTY:
+        qCritical() << line << ": error.";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_BAD_TYPE:
+        qCritical() << line << ": error.";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_PERMISSIONS:
+        qCritical() << line << ": error.";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_FAIL_SEND:
+        qCritical() << line << ": error.";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_DISCONNECTED:
+        qCritical() << line << ": error.";
+        return false;
+    }
+    qCritical() << line << "Unknown error code:" << error;
+    return false;
+}
