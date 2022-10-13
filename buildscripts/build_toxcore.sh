@@ -26,6 +26,8 @@ build_toxcore() {
     echo "Applying tc___capabilites.patch"
     patch -p1 < "${SCRIPT_DIR}/patches/tc___capabilites.patch"
 
+    echo "Applying add_tox_group_get_grouplist_function.patch"
+    patch -p1 < "${SCRIPT_DIR}/patches/add_tox_group_get_grouplist_function.patch"
 
     cmake "-DCMAKE_INSTALL_PREFIX=${DEP_PREFIX}" \
             -DBOOTSTRAP_DAEMON=OFF \

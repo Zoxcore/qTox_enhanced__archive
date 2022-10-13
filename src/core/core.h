@@ -90,7 +90,7 @@ public:
     uint64_t getMaxMessageSize() const;
     QString getPeerName(const ToxPk& id) const;
     QVector<uint32_t> getFriendList() const;
-    GroupId getGroupPersistentId(uint32_t groupNumber) const override;
+    GroupId getGroupPersistentId(uint32_t groupNumber, int is_ngc) const override;
     uint32_t getGroupNumberPeers(int groupId) const override;
     QString getGroupPeerName(int groupId, int peerId) const override;
     ToxPk getGroupPeerPk(int groupId, int peerId) const override;

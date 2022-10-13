@@ -31,6 +31,9 @@ build_toxcore() {
     echo "Applying tc___capabilites.patch"
     patch -p1 < "${SCRIPT_DIR}/patches/tc___capabilites.patch"
 
+    echo "Applying add_tox_group_get_grouplist_function.patch"
+    patch -p1 < "${SCRIPT_DIR}/patches/add_tox_group_get_grouplist_function.patch"
+
     cmake . \
         -DBOOTSTRAP_DAEMON=OFF \
         -DCMAKE_BUILD_TYPE=Release \

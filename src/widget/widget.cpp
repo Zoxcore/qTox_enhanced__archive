@@ -2021,9 +2021,7 @@ void Widget::onGroupMessageReceived(int groupnumber, int peernumber, const QStri
 {
     const GroupId& groupId = groupList->id2Key(groupnumber);
     assert(groupList->findGroup(groupId));
-
     ToxPk author = core->getGroupPeerPk(groupnumber, peernumber);
-
     groupMessageDispatchers[groupId]->onMessageReceived(author, isAction, message);
 }
 

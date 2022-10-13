@@ -38,7 +38,7 @@ public:
     ICoreGroupQuery(ICoreGroupQuery&&) = default;
     ICoreGroupQuery& operator=(ICoreGroupQuery&&) = default;
 
-    virtual GroupId getGroupPersistentId(uint32_t groupNumber) const = 0;
+    virtual GroupId getGroupPersistentId(uint32_t groupNumber, int is_ngc) const = 0;
     virtual uint32_t getGroupNumberPeers(int groupId) const = 0;
     virtual QString getGroupPeerName(int groupId, int peerId) const = 0;
     virtual ToxPk getGroupPeerPk(int groupId, int peerId) const = 0;

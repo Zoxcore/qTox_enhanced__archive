@@ -601,11 +601,11 @@ void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, 
                              const uint8_t *message, size_t length, uint32_t message_id, void* vCore)
 {
     std::ignore = tox;
-    std::ignore = vCore;
-    std::ignore = group_number;
     std::ignore = type;
+    Core* core = static_cast<Core*>(vCore);
     QString msg = ToxString(message, length).getQString();
     qDebug() << QString("onNgcGroupMessage:peer=") << peer_id << QString(" msg=") << msg << QString(" msgID=") << message_id;
+    emit core->groupMessageReceived((1000000000 + group_number), peer_id, msg, false);
 }
 
 void Core::onNgcGroupPrivateMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type,
@@ -1108,37 +1108,63 @@ void Core::loadGroups()
     QMutexLocker ml{&coreLoopLock};
 
     const size_t groupCount = tox_conference_get_chatlist_size(tox.get());
-    if (groupCount == 0) {
-        return;
-    }
+    if (groupCount > 0) {
+        std::vector<uint32_t> groupNumbers(groupCount);
+        tox_conference_get_chatlist(tox.get(), groupNumbers.data());
 
-    std::vector<uint32_t> groupNumbers(groupCount);
-    tox_conference_get_chatlist(tox.get(), groupNumbers.data());
-
-    for (size_t i = 0; i < groupCount; ++i) {
-        Tox_Err_Conference_Title error;
-        QString name;
-        const auto groupNumber = groupNumbers[i];
-        size_t titleSize = tox_conference_get_title_size(tox.get(), groupNumber, &error);
-        const GroupId persistentId = getGroupPersistentId(groupNumber);
-        const QString defaultName = tr("Groupchat %1").arg(persistentId.toString().left(8));
-        if (PARSE_ERR(error) || !titleSize) {
-            std::vector<uint8_t> nameBuf(titleSize);
-            tox_conference_get_title(tox.get(), groupNumber, nameBuf.data(), &error);
-            if (PARSE_ERR(error)) {
-                name = ToxString(nameBuf.data(), titleSize).getQString();
+        for (size_t i = 0; i < groupCount; ++i) {
+            Tox_Err_Conference_Title error;
+            QString name;
+            const auto groupNumber = groupNumbers[i];
+            size_t titleSize = tox_conference_get_title_size(tox.get(), groupNumber, &error);
+            const GroupId persistentId = getGroupPersistentId(groupNumber, 0);
+            const QString defaultName = tr("Groupchat %1").arg(persistentId.toString().left(8));
+            if (PARSE_ERR(error) || !titleSize) {
+                std::vector<uint8_t> nameBuf(titleSize);
+                tox_conference_get_title(tox.get(), groupNumber, nameBuf.data(), &error);
+                if (PARSE_ERR(error)) {
+                    name = ToxString(nameBuf.data(), titleSize).getQString();
+                } else {
+                    name = defaultName;
+                }
             } else {
                 name = defaultName;
             }
-        } else {
-            name = defaultName;
-        }
-        if (getGroupAvEnabled(groupNumber)) {
-            if (toxav_groupchat_enable_av(tox.get(), groupNumber, CoreAV::groupCallCallback, this)) {
-                qCritical() << "Failed to enable audio on loaded group" << groupNumber;
+            if (getGroupAvEnabled(groupNumber)) {
+                if (toxav_groupchat_enable_av(tox.get(), groupNumber, CoreAV::groupCallCallback, this)) {
+                    qCritical() << "Failed to enable audio on loaded group" << groupNumber;
+                }
             }
+            emit emptyGroupCreated(groupNumber, persistentId, name);
         }
-        emit emptyGroupCreated(groupNumber, persistentId, name);
+    }
+
+    const uint32_t ngcCount = tox_group_get_number_groups(tox.get());
+    if (ngcCount > 0) {
+        std::vector<uint32_t> groupNumbers(ngcCount);
+        tox_group_get_grouplist(tox.get(), groupNumbers.data());
+
+        for (size_t i = 0; i < ngcCount; ++i) {
+            Tox_Err_Group_State_Queries error;
+            QString name;
+            const auto groupNumber = groupNumbers[i];
+            size_t titleSize = tox_group_get_name_size(tox.get(), groupNumber, &error);
+            const GroupId persistentId = getGroupPersistentId(groupNumber, 1);
+            const QString defaultName = tr("NGCGroupchat %1").arg(persistentId.toString().left(8));
+            if (PARSE_ERR(error) || !titleSize) {
+                std::vector<uint8_t> nameBuf(titleSize);
+                tox_group_get_name(tox.get(), groupNumber, nameBuf.data(), &error);
+                if (PARSE_ERR(error)) {
+                    name = ToxString(nameBuf.data(), titleSize).getQString();
+                } else {
+                    name = defaultName;
+                }
+            } else {
+                name = defaultName;
+            }
+            // HINT: hack, add 1 billion to groupnumber for NGC groups
+            emit emptyGroupCreated((1000000000 + groupNumber), persistentId, name);
+        }
     }
 }
 
@@ -1166,17 +1192,29 @@ QVector<uint32_t> Core::getFriendList() const
     return friends;
 }
 
-GroupId Core::getGroupPersistentId(uint32_t groupNumber) const
+GroupId Core::getGroupPersistentId(uint32_t groupNumber, int is_ngc) const
 {
     QMutexLocker ml{&coreLoopLock};
 
-    std::vector<uint8_t> idBuff(TOX_CONFERENCE_UID_SIZE);
-    if (tox_conference_get_id(tox.get(), groupNumber,
-                              idBuff.data())) {
-        return GroupId{idBuff.data()};
+    if (is_ngc == 1) {
+        std::vector<uint8_t> idBuff(TOX_GROUP_CHAT_ID_SIZE);
+        Tox_Err_Group_State_Queries error;
+        if (tox_group_get_chat_id(tox.get(), groupNumber,
+                                  idBuff.data(), &error)) {
+            return GroupId{idBuff.data()};
+        } else {
+            qCritical() << "Failed to get conference ID of group" << groupNumber;
+            return {};
+        }
     } else {
-        qCritical() << "Failed to get conference ID of group" << groupNumber;
-        return {};
+        std::vector<uint8_t> idBuff(TOX_CONFERENCE_UID_SIZE);
+        if (tox_conference_get_id(tox.get(), groupNumber,
+                                  idBuff.data())) {
+            return GroupId{idBuff.data()};
+        } else {
+            qCritical() << "Failed to get conference ID of group" << groupNumber;
+            return {};
+        }
     }
 }
 
@@ -1227,10 +1265,20 @@ ToxPk Core::getGroupPeerPk(int groupId, int peerId) const
     QMutexLocker ml{&coreLoopLock};
 
     uint8_t friendPk[TOX_PUBLIC_KEY_SIZE] = {0x00};
-    Tox_Err_Conference_Peer_Query error;
-    tox_conference_peer_get_public_key(tox.get(), groupId, peerId, friendPk, &error);
-    if (!PARSE_ERR(error)) {
-        return ToxPk{};
+
+    if (groupId >= 1000000000) {
+        Tox_Err_Group_Peer_Query error;
+        tox_group_peer_get_public_key(tox.get(), (groupId - 1000000000), peerId, friendPk, &error);
+        if (!PARSE_ERR(error)) {
+            return ToxPk{};
+        }
+
+    } else {
+        Tox_Err_Conference_Peer_Query error;
+        tox_conference_peer_get_public_key(tox.get(), groupId, peerId, friendPk, &error);
+        if (!PARSE_ERR(error)) {
+            return ToxPk{};
+        }
     }
 
     return ToxPk(friendPk);
@@ -1327,7 +1375,7 @@ uint32_t Core::joinGroupchat(const GroupInvite& inviteInfo)
     }
     if (groupNum != std::numeric_limits<uint32_t>::max()) {
         emit saveRequest();
-        emit groupJoined(groupNum, getGroupPersistentId(groupNum));
+        emit groupJoined(groupNum, getGroupPersistentId(groupNum, 0));
     }
     return groupNum;
 }
@@ -1350,7 +1398,7 @@ int Core::createGroup(uint8_t type)
         uint32_t groupId = tox_conference_new(tox.get(), &error);
         if (PARSE_ERR(error)) {
             emit saveRequest();
-            emit emptyGroupCreated(groupId, getGroupPersistentId(groupId));
+            emit emptyGroupCreated(groupId, getGroupPersistentId(groupId, 0));
             return groupId;
         } else {
             return std::numeric_limits<uint32_t>::max();
@@ -1361,7 +1409,7 @@ int Core::createGroup(uint8_t type)
         int groupId = toxav_add_av_groupchat(tox.get(), CoreAV::groupCallCallback, this);
         if (groupId != -1) {
             emit saveRequest();
-            emit emptyGroupCreated(groupId, getGroupPersistentId(groupId));
+            emit emptyGroupCreated(groupId, getGroupPersistentId(groupId, 0));
         } else {
             qCritical() << "Unknown error creating AV groupchat";
         }

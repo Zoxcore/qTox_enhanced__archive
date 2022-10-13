@@ -1,0 +1,89 @@
+diff --git a/toxcore/group_chats.c b/toxcore/group_chats.c
+index 9901b801..7847deb1 100644
+--- a/toxcore/group_chats.c
++++ b/toxcore/group_chats.c
+@@ -8190,6 +8190,32 @@ uint32_t gc_count_groups(const GC_Session *c)
+     return count;
+ }
+ 
++uint32_t copy_grouplist(const GC_Session *c, uint32_t *out_list, uint32_t list_size)
++{
++    if (out_list == nullptr) {
++        return 0;
++    }
++
++    if (c->chats_index == 0) {
++        return 0;
++    }
++
++    uint32_t ret = 0;
++
++    for (uint32_t i = 0; i < c->chats_index; ++i) {
++        if (ret >= list_size) {
++            break;  /* Abandon ship */
++        }
++
++        if (c->chats[i].connection_state != CS_NONE) {
++            out_list[ret] = i;
++            ++ret;
++        }
++    }
++
++    return ret;
++}
++
+ GC_Chat *gc_get_group(const GC_Session *c, int group_number)
+ {
+     if (!group_number_valid(c, group_number)) {
+diff --git a/toxcore/group_chats.h b/toxcore/group_chats.h
+index 89240236..743f921b 100644
+--- a/toxcore/group_chats.h
++++ b/toxcore/group_chats.h
+@@ -708,6 +708,9 @@ bool gc_group_is_valid(const GC_Chat *chat);
+ non_null()
+ uint32_t gc_count_groups(const GC_Session *c);
+ 
++non_null()
++uint32_t copy_grouplist(const GC_Session *c, uint32_t *out_list, uint32_t list_size);
++
+ /** @brief Returns true if peer_number exists */
+ non_null()
+ bool gc_peer_number_is_valid(const GC_Chat *chat, int peer_number);
+diff --git a/toxcore/tox.c b/toxcore/tox.c
+index 852f5600..82a321e5 100644
+--- a/toxcore/tox.c
++++ b/toxcore/tox.c
+@@ -3695,6 +3695,15 @@ uint32_t tox_group_get_number_groups(const Tox *tox)
+     return ret;
+ }
+ 
++void tox_group_get_grouplist(const Tox *tox, uint32_t *grouplist)
++{
++    assert(tox != nullptr);
++    tox_lock(tox);
++    const uint32_t list_size = gc_count_groups(tox->m->group_handler);
++    copy_grouplist(tox->m->group_handler, grouplist, list_size);
++    tox_unlock(tox);
++}
++
+ Tox_Group_Privacy_State tox_group_get_privacy_state(const Tox *tox, uint32_t group_number,
+         Tox_Err_Group_State_Queries *error)
+ {
+diff --git a/toxcore/tox.h b/toxcore/tox.h
+index 125de83b..d603be63 100644
+--- a/toxcore/tox.h
++++ b/toxcore/tox.h
+@@ -4170,6 +4170,13 @@ bool tox_group_get_chat_id(const Tox *tox, uint32_t group_number, uint8_t *chat_
+  */
+ uint32_t tox_group_get_number_groups(const Tox *tox);
+ 
++/**
++ * Return an array of valid groupnumbers
++ *
++ * grouplist array has to be tox_group_get_number_groups() of uint32_t in size.
++ */
++void tox_group_get_grouplist(const Tox *tox, uint32_t *grouplist);
++
+ /**
+  * Return the privacy state of the group designated by the given group number. If group number
+  * is invalid, the return value is unspecified.

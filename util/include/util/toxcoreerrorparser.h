@@ -59,4 +59,7 @@ namespace ToxcoreErrorParser {
     bool parseErr(Toxav_Err_Call_Control error, int line);
     bool parseErr(Toxav_Err_Call error, int line);
     bool parseErr(Tox_Err_Options_New error, int line);
+
+    bool parseErr(Tox_Err_Group_State_Queries error, int line);
+    bool parseErr(Tox_Err_Group_Peer_Query error, int line);
 } // namespace ToxcoreErrorParser

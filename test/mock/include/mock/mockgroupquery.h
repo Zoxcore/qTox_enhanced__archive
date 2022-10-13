@@ -34,9 +34,10 @@ public:
     MockGroupQuery(MockGroupQuery&&) = default;
     MockGroupQuery& operator=(MockGroupQuery&&) = default;
 
-    GroupId getGroupPersistentId(uint32_t groupNumber) const override
+    GroupId getGroupPersistentId(uint32_t groupNumber, int is_ngc) const override
     {
         std::ignore = groupNumber;
+        std::ignore = is_ngc;
         return GroupId(0);
     }
 

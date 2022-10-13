@@ -643,3 +643,35 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Options_New error, int line)
     qCritical() << line << "Unknown Tox_Err_Options_New error code:" << error;
     return false;
 }
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_State_Queries error, int line)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_STATE_QUERIES_OK:
+        return true;
+
+    case TOX_ERR_GROUP_STATE_QUERIES_GROUP_NOT_FOUND:
+        qCritical() << line << ": error.";
+        return false;
+    }
+    qCritical() << line << "Unknown error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Peer_Query error, int line)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_PEER_QUERY_OK:
+        return true;
+
+    case TOX_ERR_GROUP_PEER_QUERY_GROUP_NOT_FOUND:
+        qCritical() << line << ": error.";
+        return false;
+
+    case TOX_ERR_GROUP_PEER_QUERY_PEER_NOT_FOUND:
+        qCritical() << line << ": error.";
+        return false;
+    }
+    qCritical() << line << "Unknown error code:" << error;
+    return false;
+}
