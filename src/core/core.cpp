@@ -1150,7 +1150,7 @@ void Core::loadGroups()
             const auto groupNumber = groupNumbers[i];
             size_t titleSize = tox_group_get_name_size(tox.get(), groupNumber, &error);
             const GroupId persistentId = getGroupPersistentId(groupNumber, 1);
-            const QString defaultName = tr("NGCGroupchat %1").arg(persistentId.toString().left(8));
+            const QString defaultName = persistentId.toString().left(8);
             if (PARSE_ERR(error) || !titleSize) {
                 std::vector<uint8_t> nameBuf(titleSize);
                 tox_group_get_name(tox.get(), groupNumber, nameBuf.data(), &error);
