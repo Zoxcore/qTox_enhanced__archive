@@ -594,6 +594,24 @@ void Core::onNgcPeerJoin(Tox* tox, uint32_t group_number, uint32_t peer_id, void
     std::ignore = tox;
     std::ignore = group_number;
     Core* core = static_cast<Core*>(vCore);
+
+    auto peerPk = core->getGroupPeerPk((1000000000 + group_number), peer_id);
+
+    Tox_Err_Group_Peer_Query error;
+    size_t name_length = tox_group_peer_get_name_size(tox, group_number, peer_id, &error);
+    if ((name_length > 0) && (name_length < 500)) {
+        uint8_t *name = reinterpret_cast<uint8_t*>(calloc(1, name_length + 1));
+        if (name) {
+            bool res = tox_group_peer_get_name(tox, group_number, peer_id, name, &error);
+            if (res) {
+                const auto newName = ToxString(name, name_length).getQString();
+                qDebug() << QString("onNgcPeerJoin:newName #%1").arg(newName);
+                emit core->groupPeerNameChanged((1000000000 + group_number), peerPk, newName);
+            }
+            free(name);
+        }
+    }
+
     qDebug() << QString("onNgcPeerJoin:peer #%1").arg(peer_id);
     emit core->saveRequest();
 }
@@ -605,7 +623,23 @@ void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, 
     std::ignore = type;
     Core* core = static_cast<Core*>(vCore);
     QString msg = ToxString(message, length).getQString();
-    qDebug() << QString("onNgcGroupMessage:peer=") << peer_id << QString(" msg=") << msg << QString(" msgID=") << message_id;
+    qDebug() << QString("onNgcGroupMessage:peer=") << peer_id << QString(" msgID=") << message_id;
+
+    auto peerPk = core->getGroupPeerPk((1000000000 + group_number), peer_id);
+
+    Tox_Err_Group_Peer_Query error;
+    size_t name_length = tox_group_peer_get_name_size(tox, group_number, peer_id, &error);
+    if ((name_length > 0) && (name_length < 500)) {
+        uint8_t *name = reinterpret_cast<uint8_t*>(calloc(1, name_length + 1));
+        if (name) {
+            bool res = tox_group_peer_get_name(tox, group_number, peer_id, name, &error);
+            if (res) {
+                const auto newName = ToxString(name, name_length).getQString();
+                emit core->groupPeerNameChanged((1000000000 + group_number), peerPk, newName);
+            }
+            free(name);
+        }
+    }
     emit core->groupMessageReceived((1000000000 + group_number), peer_id, msg, false);
 }
 
@@ -613,11 +647,11 @@ void Core::onNgcGroupPrivateMessage(Tox* tox, uint32_t group_number, uint32_t pe
         const uint8_t *message, size_t length, void* vCore)
 {
     std::ignore = tox;
-    std::ignore = vCore;
-    std::ignore = group_number;
+    Core* core = static_cast<Core*>(vCore);
     std::ignore = type;
     QString msg = ToxString(message, length).getQString();
-    qDebug() << QString("onNgcGroupPrivateMessage:peer=") << peer_id << QString(" msg=") << msg;
+    qDebug() << QString("onNgcGroupPrivateMessage:peer=") << peer_id;
+    emit core->groupMessageReceived((1000000000 + group_number), peer_id, QString("Private Message:") + msg, false);
 }
 
 void Core::onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Message_Type type,
