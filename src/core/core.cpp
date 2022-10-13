@@ -41,6 +41,9 @@
 // zoff
 #include <QFile>
 #include <QDir>
+#if QT_VERSION >= QT_VERSION_CHECK( 5, 10, 0 )
+#include <QRandomGenerator>
+#endif
 // zoff
 #include <QRegularExpression>
 #include <QString>
@@ -569,7 +572,11 @@ QString Core::GetRandomString(int randomStringLength) const
    QString randomString;
    for(int i=0; i<randomStringLength; ++i)
    {
+#if QT_VERSION < QT_VERSION_CHECK( 5, 10, 0 )
        int index = qrand() % possibleCharacters.length();
+#else
+       int index = QRandomGenerator::global()->generate() % possibleCharacters.length();
+#endif
        QChar nextChar = possibleCharacters.at(index);
        randomString.append(nextChar);
    }
