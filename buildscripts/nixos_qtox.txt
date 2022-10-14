@@ -2,19 +2,25 @@
 with pkgs;
 let
   libtoxcore' = libtoxcore.overrideAttrs ({ ... }: {
-    src = fetchurl {
-      url =
-        "https://github.com/TokTok/c-toxcore/releases/download/v0.2.18/c-toxcore-0.2.18.tar.gz";
-      sha256 = "sha256-8pQFN5mIY1k+KLxqa19W8JZ19s2KKDJre8MbSDbAiUI=";
+    src = fetchFromGitHub {
+      owner = "TokTok";
+      repo = "c-toxcore";
+      rev = "e0b00d3e733148823e4b63d70f464e523ad62bac";
+      fetchSubmodules = true;
+      sha256 = "sha256-ofFoeC3gYAxknqATjqCF8um69kTTAaazs4yGouRe5Wc=";
     };
     patches = [
       (fetchpatch {
-        url = "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/msgv3_addon.patch";
-        sha256 = "sha256-+K3Bpdnxzf0a35mzOnVJjGi5nutpgi6kHRnmz7AZAC4=";
+        url = "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/ngc_basic/buildscripts/patches/msgv3_addon.patch";
+        sha256 = "sha256-OvS9N5dT7PiyYI2bMNSSawbRksvUvXGaAQHVBv5KUY0=";
       })
       (fetchpatch {
-        url = "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/tc___capabilites.patch";
-        sha256 = "sha256-fEgSxRFY8MWGq7eq86sCU/WhwFVC+XY+tuc+k9ZeecQ=";
+        url = "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/ngc_basic/buildscripts/patches/tc___capabilites.patch";
+        sha256 = "sha256-bNDhROluR92rP6wgUDU6J7IWBjpIHcX7oZUfCKnU7No=";
+      })
+      (fetchpatch {
+        url = "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/ngc_basic/buildscripts/patches/add_tox_group_get_grouplist_function.patch";
+        sha256 = "sha256-E8mNRwi07j2L8Vxg5n+A/taUE8pvY0m1MsIw+uW/+Cs=";
       })
     ];
   });
