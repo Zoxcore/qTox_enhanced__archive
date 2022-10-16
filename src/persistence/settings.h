@@ -148,6 +148,7 @@ public:
     };
 
     static QStringList PUSHURL_WHITELIST;
+    static const uint32_t NGC_GROUPNUM_OFFSET = 1000000000;
 
 public:
     explicit Settings(IMessageBoxManager& messageBoxManager);

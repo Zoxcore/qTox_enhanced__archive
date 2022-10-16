@@ -2148,7 +2148,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
 
     const auto groupName = tr("Groupchat #%1").arg(groupnumber);
     bool enabled = core->getGroupAvEnabled(groupnumber);
-    if (groupnumber >= 1000000000) {
+    if (groupnumber >= Settings::NGC_GROUPNUM_OFFSET) {
         enabled = false;
     }
 

@@ -70,7 +70,6 @@ QStringList Settings::PUSHURL_WHITELIST = QStringList()
     << "https://gotify1.unifiedpush.org/UP?token="
     << "https://ntfy.sh/";
 
-
 Settings::Settings(IMessageBoxManager& messageBoxManager_)
     : loaded(false)
     , useCustomDhtList{false}

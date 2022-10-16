@@ -32,6 +32,7 @@
 #include "src/model/status.h"
 #include "src/model/ibootstraplistgenerator.h"
 #include "src/persistence/profile.h"
+#include "src/persistence/settings.h"
 #include "util/strongtype.h"
 #include "util/compatiblerecursivemutex.h"
 #include "util/toxcoreerrorparser.h"
@@ -610,7 +611,7 @@ void Core::onNgcInvite(Tox* tox, uint32_t friendId, const uint8_t* invite_data, 
     } else {
         qDebug() << QString("NGC group invite by %1: OK").arg(friendId);
         emit core->saveRequest();
-        emit core->groupJoined((1000000000 + groupId), core->getGroupPersistentId(groupId, 1));
+        emit core->groupJoined((Settings::NGC_GROUPNUM_OFFSET + groupId), core->getGroupPersistentId(groupId, 1));
     }
 }
 
@@ -628,7 +629,7 @@ void Core::onNgcPeerJoin(Tox* tox, uint32_t group_number, uint32_t peer_id, void
     std::ignore = group_number;
     Core* core = static_cast<Core*>(vCore);
 
-    auto peerPk = core->getGroupPeerPk((1000000000 + group_number), peer_id);
+    auto peerPk = core->getGroupPeerPk((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id);
 
     Tox_Err_Group_Peer_Query error;
     size_t name_length = tox_group_peer_get_name_size(tox, group_number, peer_id, &error);
@@ -639,7 +640,7 @@ void Core::onNgcPeerJoin(Tox* tox, uint32_t group_number, uint32_t peer_id, void
             if (res) {
                 const auto newName = ToxString(name, name_length).getQString();
                 qDebug() << QString("onNgcPeerJoin:newName #%1").arg(newName);
-                emit core->groupPeerNameChanged((1000000000 + group_number), peerPk, newName);
+                emit core->groupPeerNameChanged((Settings::NGC_GROUPNUM_OFFSET + group_number), peerPk, newName);
             }
             free(name);
         }
@@ -658,7 +659,7 @@ void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, 
     QString msg = ToxString(message, length).getQString();
     qDebug() << QString("onNgcGroupMessage:peer=") << peer_id << QString(" msgID=") << message_id;
 
-    auto peerPk = core->getGroupPeerPk((1000000000 + group_number), peer_id);
+    auto peerPk = core->getGroupPeerPk((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id);
 
     Tox_Err_Group_Peer_Query error;
     size_t name_length = tox_group_peer_get_name_size(tox, group_number, peer_id, &error);
@@ -668,12 +669,12 @@ void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, 
             bool res = tox_group_peer_get_name(tox, group_number, peer_id, name, &error);
             if (res) {
                 const auto newName = ToxString(name, name_length).getQString();
-                emit core->groupPeerNameChanged((1000000000 + group_number), peerPk, newName);
+                emit core->groupPeerNameChanged((Settings::NGC_GROUPNUM_OFFSET + group_number), peerPk, newName);
             }
             free(name);
         }
     }
-    emit core->groupMessageReceived((1000000000 + group_number), peer_id, msg, false);
+    emit core->groupMessageReceived((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id, msg, false);
 }
 
 void Core::onNgcGroupPrivateMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type,
@@ -684,7 +685,7 @@ void Core::onNgcGroupPrivateMessage(Tox* tox, uint32_t group_number, uint32_t pe
     std::ignore = type;
     QString msg = ToxString(message, length).getQString();
     qDebug() << QString("onNgcGroupPrivateMessage:peer=") << peer_id;
-    emit core->groupMessageReceived((1000000000 + group_number), peer_id, QString("Private Message:") + msg, false);
+    emit core->groupMessageReceived((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id, QString("Private Message:") + msg, false);
 }
 
 void Core::onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Message_Type type,
@@ -885,7 +886,7 @@ void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Mes
 {
     QMutexLocker ml{&coreLoopLock};
 
-    if (groupId >= 1000000000) {
+    if (groupId >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
         int size = message.toUtf8().size();
         auto maxSize = static_cast<int>(TOX_GROUP_MAX_MESSAGE_LENGTH);
         if (size > maxSize) {
@@ -897,7 +898,7 @@ void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Mes
         ToxString cMsg(message);
         Tox_Err_Group_Send_Message error;
         uint32_t message_id;
-        tox_group_send_message(tox.get(), (groupId - 1000000000), type, cMsg.data(), cMsg.size(), &message_id, &error);
+        tox_group_send_message(tox.get(), (groupId - Settings::NGC_GROUPNUM_OFFSET), type, cMsg.data(), cMsg.size(), &message_id, &error);
         if (!PARSE_ERR(error)) {
             emit groupSentFailed(groupId);
             return;
@@ -967,9 +968,9 @@ void Core::removeGroup(int groupId)
 {
     QMutexLocker ml{&coreLoopLock};
 
-    if (groupId >= 1000000000) {
+    if (groupId >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
         Tox_Err_Group_Leave error;
-        tox_group_leave(tox.get(), (groupId - 1000000000), reinterpret_cast<const uint8_t*>("exit"), 4, &error);
+        tox_group_leave(tox.get(), (groupId - Settings::NGC_GROUPNUM_OFFSET), reinterpret_cast<const uint8_t*>("exit"), 4, &error);
         if (PARSE_ERR(error)) {
             emit saveRequest();
         }
@@ -1257,8 +1258,7 @@ void Core::loadGroups()
             } else {
                 name = defaultName;
             }
-            // HINT: hack, add 1 billion to groupnumber for NGC groups
-            emit emptyGroupCreated((1000000000 + groupNumber), persistentId, name);
+            emit emptyGroupCreated((Settings::NGC_GROUPNUM_OFFSET + groupNumber), persistentId, name);
         }
     }
 }
@@ -1361,9 +1361,9 @@ ToxPk Core::getGroupPeerPk(int groupId, int peerId) const
 
     uint8_t friendPk[TOX_PUBLIC_KEY_SIZE] = {0x00};
 
-    if (groupId >= 1000000000) {
+    if (groupId >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
         Tox_Err_Group_Peer_Query error;
-        tox_group_peer_get_public_key(tox.get(), (groupId - 1000000000), peerId, friendPk, &error);
+        tox_group_peer_get_public_key(tox.get(), (groupId - Settings::NGC_GROUPNUM_OFFSET), peerId, friendPk, &error);
         if (!PARSE_ERR(error)) {
             return ToxPk{};
         }
@@ -1388,34 +1388,41 @@ QStringList Core::getGroupPeerNames(int groupId) const
 
     assert(tox != nullptr);
 
-    uint32_t nPeers = getGroupNumberPeers(groupId);
-    if (nPeers == std::numeric_limits<uint32_t>::max()) {
-        qWarning() << "getGroupPeerNames: Unable to get number of peers";
-        return {};
-    }
-
-    QStringList names;
-    for (int i = 0; i < static_cast<int>(nPeers); ++i) {
-        Tox_Err_Conference_Peer_Query error;
-        size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, i, &error);
-
-        if (!PARSE_ERR(error) || !length) {
-            names.append(QString());
-            continue;
+    if (groupId >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        // TODO: get peerslist for NGC group
+        QStringList names;
+        names.append(QString("self"));
+        return names;
+    } else {
+        uint32_t nPeers = getGroupNumberPeers(groupId);
+        if (nPeers == std::numeric_limits<uint32_t>::max()) {
+            qWarning() << "getGroupPeerNames: Unable to get number of peers";
+            return {};
         }
 
-        std::vector<uint8_t> nameBuf(length);
-        tox_conference_peer_get_name(tox.get(), groupId, i, nameBuf.data(), &error);
-        if (PARSE_ERR(error)) {
-            names.append(ToxString(nameBuf.data(), length).getQString());
-        } else {
-            names.append(QString());
+        QStringList names;
+        for (int i = 0; i < static_cast<int>(nPeers); ++i) {
+            Tox_Err_Conference_Peer_Query error;
+            size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, i, &error);
+
+            if (!PARSE_ERR(error) || !length) {
+                names.append(QString());
+                continue;
+            }
+
+            std::vector<uint8_t> nameBuf(length);
+            tox_conference_peer_get_name(tox.get(), groupId, i, nameBuf.data(), &error);
+            if (PARSE_ERR(error)) {
+                names.append(ToxString(nameBuf.data(), length).getQString());
+            } else {
+                names.append(QString());
+            }
         }
+
+        assert(names.size() == static_cast<int>(nPeers));
+
+        return names;
     }
-
-    assert(names.size() == static_cast<int>(nPeers));
-
-    return names;
 }
 
 /**
