@@ -2,8 +2,8 @@
 
 <img src="https://qtox.github.io/assets/imgs/logo_head.png" alt="qTox" />
 
-<img src="https://i.imgur.com/olb89CN.png" width="300"></a>
-<img src="https://i.imgur.com/tmX8z9s.png" width="300"></a>
+<img src="https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/doc/screen01.png" width="300"></a>
+<img src="https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/doc/screen02.png" width="300"></a>
 
 
 qTox is a chat, voice, video, and file transfer instant messaging client using
@@ -18,7 +18,7 @@ Status
 
 Installation
 =
-<a href="https://github.com/Zoxcore/qTox/releases/tag/nightly"><img src="https://raw.githubusercontent.com/zoff99/java_toxclient_example/master/doc/on_github.png" width="200">
+<a href="https://github.com/Zoxcore/qTox/releases/tag/nightly"><img src="https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/doc/on_github.png" width="200">
 
 
 Features
