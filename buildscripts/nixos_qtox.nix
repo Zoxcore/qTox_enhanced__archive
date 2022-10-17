@@ -18,17 +18,17 @@ let
           patches = [
             (fetchpatch {
               url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/ngc_basic/buildscripts/patches/msgv3_addon.patch";
+                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/msgv3_addon.patch";
               sha256 = "sha256-OvS9N5dT7PiyYI2bMNSSawbRksvUvXGaAQHVBv5KUY0=";
             })
             (fetchpatch {
               url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/ngc_basic/buildscripts/patches/tc___capabilites.patch";
+                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/tc___capabilites.patch";
               sha256 = "sha256-bNDhROluR92rP6wgUDU6J7IWBjpIHcX7oZUfCKnU7No=";
             })
             (fetchpatch {
               url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/ngc_basic/buildscripts/patches/add_tox_group_get_grouplist_function.patch";
+                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/add_tox_group_get_grouplist_function.patch";
               sha256 = "sha256-E8mNRwi07j2L8Vxg5n+A/taUE8pvY0m1MsIw+uW/+Cs=";
             })
           ];
@@ -66,7 +66,6 @@ let
 
       qtox = prev.qtox.overrideAttrs ({ buildInputs, ... }: {
         version = "push_notification-";
-        src = lib.sources.cleanSource ../.;
         # take sources directly from this repo checkout
         buildInputs = buildInputs ++ [ curl libtoxcore toxext toxextMessages ];
       });
