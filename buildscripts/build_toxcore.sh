@@ -29,6 +29,9 @@ build_toxcore() {
     echo "Applying add_tox_group_get_grouplist_function.patch"
     patch -p1 < "${SCRIPT_DIR}/patches/add_tox_group_get_grouplist_function.patch"
 
+    echo "Applying add_tox_group_get_grouppeerlist_functions.patch"
+    patch -p1 < "${SCRIPT_DIR}/patches/add_tox_group_get_grouppeerlist_functions.patch"
+
     cmake "-DCMAKE_INSTALL_PREFIX=${DEP_PREFIX}" \
             -DBOOTSTRAP_DAEMON=OFF \
             -DCMAKE_BUILD_TYPE=Release \
