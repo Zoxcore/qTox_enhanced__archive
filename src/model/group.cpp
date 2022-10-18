@@ -23,6 +23,7 @@
 #include "src/core/groupid.h"
 #include "src/core/toxpk.h"
 #include "src/friendlist.h"
+#include "src/persistence/settings.h"
 
 #include <cassert>
 
@@ -100,32 +101,64 @@ void Group::regeneratePeerList()
     QStringList peers = groupQuery.getGroupPeerNames(toxGroupNum);
     const auto oldPeerNames = peerDisplayNames;
     peerDisplayNames.clear();
-    const int nPeers = peers.size();
-    for (int i = 0; i < nPeers; ++i) {
-        const auto pk = groupQuery.getGroupPeerPk(toxGroupNum, i);
-        if (pk == idHandler.getSelfPublicKey()) {
-            peerDisplayNames[pk] = idHandler.getUsername();
-        } else {
+
+    if (toxGroupNum >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        const int nPeers = peers.size();
+        for (int i = 0; i < nPeers; ++i) {
+            int peerid = peers[i].split(':').at(0).toInt();
+            qDebug() << "regeneratePeerList NGC: i" << i << "peerid" << peerid << "peers[i]" << peers[i];
+            const auto pk = groupQuery.getGroupPeerPk(toxGroupNum, peerid);
             peerDisplayNames[pk] = friendList.decideNickname(pk, peers[i]);
+            qDebug() << "regeneratePeerList NGC: name new" << peerDisplayNames[pk];
         }
-    }
-    for (const auto& pk : oldPeerNames.keys()) {
-        if (!peerDisplayNames.contains(pk)) {
-            emit userLeft(pk, oldPeerNames.value(pk));
+        for (const auto& pk : oldPeerNames.keys()) {
+            if (!peerDisplayNames.contains(pk)) {
+                emit userLeft(pk, oldPeerNames.value(pk));
+            }
         }
-    }
-    for (const auto& pk : peerDisplayNames.keys()) {
-        if (!oldPeerNames.contains(pk)) {
-            emit userJoined(pk, peerDisplayNames.value(pk));
+        for (const auto& pk : peerDisplayNames.keys()) {
+            if (!oldPeerNames.contains(pk)) {
+                emit userJoined(pk, peerDisplayNames.value(pk));
+            }
         }
-    }
-    for (const auto& pk : peerDisplayNames.keys()) {
-        if (oldPeerNames.contains(pk) && oldPeerNames.value(pk) != peerDisplayNames.value(pk)) {
-            emit peerNameChanged(pk, oldPeerNames.value(pk), peerDisplayNames.value(pk));
+        for (const auto& pk : peerDisplayNames.keys()) {
+            if (oldPeerNames.contains(pk) && oldPeerNames.value(pk) != peerDisplayNames.value(pk)) {
+                qDebug() << "regeneratePeerList NGC peerNameChanged: old" << oldPeerNames.value(pk)
+                    << "new" << peerDisplayNames.value(pk) << "pk" << pk.toString();
+                emit peerNameChanged(pk, oldPeerNames.value(pk), peerDisplayNames.value(pk));
+            }
         }
-    }
-    if (oldPeerNames.size() != nPeers) {
-        emit numPeersChanged(nPeers);
+        if (oldPeerNames.size() != nPeers) {
+            emit numPeersChanged(nPeers);
+        }
+    } else {
+        const int nPeers = peers.size();
+        for (int i = 0; i < nPeers; ++i) {
+            const auto pk = groupQuery.getGroupPeerPk(toxGroupNum, i);
+            if (pk == idHandler.getSelfPublicKey()) {
+                peerDisplayNames[pk] = idHandler.getUsername();
+            } else {
+                peerDisplayNames[pk] = friendList.decideNickname(pk, peers[i]);
+            }
+        }
+        for (const auto& pk : oldPeerNames.keys()) {
+            if (!peerDisplayNames.contains(pk)) {
+                emit userLeft(pk, oldPeerNames.value(pk));
+            }
+        }
+        for (const auto& pk : peerDisplayNames.keys()) {
+            if (!oldPeerNames.contains(pk)) {
+                emit userJoined(pk, peerDisplayNames.value(pk));
+            }
+        }
+        for (const auto& pk : peerDisplayNames.keys()) {
+            if (oldPeerNames.contains(pk) && oldPeerNames.value(pk) != peerDisplayNames.value(pk)) {
+                emit peerNameChanged(pk, oldPeerNames.value(pk), peerDisplayNames.value(pk));
+            }
+        }
+        if (oldPeerNames.size() != nPeers) {
+            emit numPeersChanged(nPeers);
+        }
     }
 }
 

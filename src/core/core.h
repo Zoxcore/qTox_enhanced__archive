@@ -219,6 +219,10 @@ private:
                        const uint8_t *group_name, size_t group_name_length, void* vCore);
 
     static void onNgcSelfJoin(Tox* tox, uint32_t group_number, void* vCore);
+    static void onNgcPeerName(Tox *tox, uint32_t group_number, uint32_t peer_id, const uint8_t *name,
+                                    size_t length, void *user_data);
+    static void onNgcPeerExit(Tox *tox, uint32_t group_number, uint32_t peer_id, Tox_Group_Exit_Type exit_type,
+                                    const uint8_t *name, size_t name_length, const uint8_t *part_message, size_t length, void *vCore);
     static void onNgcPeerJoin(Tox* tox, uint32_t group_number, uint32_t peer_id, void* vCore);
     static void onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type,
                              const uint8_t *message, size_t length, uint32_t message_id, void* vCore);
