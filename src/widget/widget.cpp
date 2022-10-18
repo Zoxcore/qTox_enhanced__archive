@@ -2221,6 +2221,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     connect(widget, &GroupWidget::chatroomWidgetClicked, form, &ChatForm::focusInput);
     connect(newgroup, &Group::titleChangedByUser, this, &Widget::titleChangedByUser);
     connect(core, &Core::usernameSet, newgroup, &Group::setSelfName);
+    connect(widget, &GroupWidget::changeOwnNgcName, core, &Core::changeOwnNgcName);
 
     return newgroup;
 }

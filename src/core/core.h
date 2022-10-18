@@ -122,6 +122,7 @@ public slots:
     void requestFriendship(const ToxId& friendId, const QString& message);
     void groupInviteFriend(uint32_t friendId, int groupId);
     int createGroup(uint8_t type = TOX_CONFERENCE_TYPE_AV);
+    void changeOwnNgcName(uint32_t groupnumber, const QString& name);
 
     void removeFriend(uint32_t friendId);
     void removeGroup(int groupId);
@@ -220,7 +221,7 @@ private:
 
     static void onNgcSelfJoin(Tox* tox, uint32_t group_number, void* vCore);
     static void onNgcPeerName(Tox *tox, uint32_t group_number, uint32_t peer_id, const uint8_t *name,
-                                    size_t length, void *user_data);
+                                    size_t length, void *vCore);
     static void onNgcPeerExit(Tox *tox, uint32_t group_number, uint32_t peer_id, Tox_Group_Exit_Type exit_type,
                                     const uint8_t *name, size_t name_length, const uint8_t *part_message, size_t length, void *vCore);
     static void onNgcPeerJoin(Tox* tox, uint32_t group_number, uint32_t peer_id, void* vCore);

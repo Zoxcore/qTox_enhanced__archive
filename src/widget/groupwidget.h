@@ -59,6 +59,7 @@ public:
 signals:
     void groupWidgetClicked(GroupWidget* widget);
     void removeGroup(const GroupId& groupId);
+    void changeOwnNgcName(uint32_t groupnumber, const QString& name);
 
 protected:
     void contextMenuEvent(QContextMenuEvent* event) final;

@@ -39,6 +39,7 @@
 #include "src/widget/style.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
+#include "src/persistence/settings.h"
 #include "tool/croppinglabel.h"
 
 GroupWidget::GroupWidget(std::shared_ptr<GroupChatroom> chatroom_, bool compact_,
@@ -59,7 +60,7 @@ GroupWidget::GroupWidget(std::shared_ptr<GroupChatroom> chatroom_, bool compact_
 
     connect(g, &Group::titleChanged, this, &GroupWidget::updateTitle);
     connect(g, &Group::numPeersChanged, this, &GroupWidget::updateUserCount);
-    connect(nameLabel, &CroppingLabel::editFinished, g, &Group::setName);
+    connect(nameLabel, &CroppingLabel::editFinished, this, &GroupWidget::setName);
     Translator::registerHandler(std::bind(&GroupWidget::retranslateUi, this), this);
 }
 
@@ -71,7 +72,13 @@ GroupWidget::~GroupWidget()
 void GroupWidget::updateTitle(const QString& author, const QString& newName)
 {
     std::ignore = author;
-    nameLabel->setText(newName);
+    Group* g = chatroom->getGroup();
+    uint32_t group_num = g->getId();
+    if (group_num >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        nameLabel->setText(g->getName());
+    } else {
+        nameLabel->setText(newName);
+    }
 }
 
 void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
@@ -96,7 +103,16 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
 
     menu.addSeparator();
 
-    QAction* setTitle = menu.addAction(tr("Set title..."));
+    QAction* setTitle;
+
+    Group* g = chatroom->getGroup();
+    uint32_t group_num = g->getId();
+    if (group_num >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        setTitle = menu.addAction("Change your name in this group");
+    } else {
+        setTitle = menu.addAction(tr("Set title..."));
+    }
+
     QAction* quitGroup = menu.addAction(tr("Quit group", "Menu to quit a groupchat"));
 
     QAction* selectedItem = menu.exec(event->globalPos());
@@ -187,6 +203,12 @@ QString GroupWidget::getStatusString() const
 
 void GroupWidget::editName()
 {
+    const Group* g = getGroup();
+    uint32_t group_num = g->getId();
+    if (group_num >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        nameLabel->setText("new name");
+    }
+
     nameLabel->editBegin();
 }
 
@@ -288,7 +310,12 @@ void GroupWidget::dropEvent(QDropEvent* ev)
 
 void GroupWidget::setName(const QString& name)
 {
-    nameLabel->setText(name);
+    Group* group = getGroup();
+    if (group->getId() >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        qDebug() << "setName" << name << "gid" << group->getId();
+        emit changeOwnNgcName(group->getId(), name);
+    }
+    group->setName(name);
 }
 
 void GroupWidget::retranslateUi()

@@ -55,22 +55,38 @@ Group::Group(int groupId_, const GroupId persistentGroupId, const QString& name,
 
 void Group::setName(const QString& newTitle)
 {
-    const QString shortTitle = newTitle.left(MAX_GROUP_TITLE_LENGTH);
-    if (!shortTitle.isEmpty() && title != shortTitle) {
-        title = shortTitle;
-        emit displayedNameChanged(title);
-        emit titleChangedByUser(title);
-        emit titleChanged(selfName, title);
+    if (toxGroupNum >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        qDebug() << "setName" << newTitle;
+        emit titleChanged("", title);
+    } else
+    {
+        const QString shortTitle = newTitle.left(MAX_GROUP_TITLE_LENGTH);
+        if (!shortTitle.isEmpty() && title != shortTitle) {
+            title = shortTitle;
+            emit displayedNameChanged(title);
+            emit titleChangedByUser(title);
+            emit titleChanged(selfName, title);
+        }
     }
 }
 
 void Group::setTitle(const QString& author, const QString& newTitle)
 {
-    const QString shortTitle = newTitle.left(MAX_GROUP_TITLE_LENGTH);
-    if (!shortTitle.isEmpty() && title != shortTitle) {
-        title = shortTitle;
-        emit displayedNameChanged(title);
-        emit titleChanged(author, title);
+    if (toxGroupNum >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        const QString shortTitle = newTitle.left(MAX_GROUP_TITLE_LENGTH);
+        if (!shortTitle.isEmpty() && title != shortTitle) {
+            title = shortTitle;
+            emit displayedNameChanged(title);
+            emit titleChanged("", title);
+        }
+    } else
+    {
+        const QString shortTitle = newTitle.left(MAX_GROUP_TITLE_LENGTH);
+        if (!shortTitle.isEmpty() && title != shortTitle) {
+            title = shortTitle;
+            emit displayedNameChanged(title);
+            emit titleChanged(author, title);
+        }
     }
 }
 

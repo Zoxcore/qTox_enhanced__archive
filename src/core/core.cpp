@@ -1583,6 +1583,21 @@ void Core::groupInviteFriend(uint32_t friendId, int groupId)
     PARSE_ERR(error);
 }
 
+void Core::changeOwnNgcName(uint32_t groupnumber, const QString& name)
+{
+    qDebug() << "changeOwnNgcName" << name << "gid" << groupnumber;
+    if (groupnumber >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        ToxString cName(name);
+        bool res = tox_group_self_set_name(tox.get(), (groupnumber - Settings::NGC_GROUPNUM_OFFSET), cName.data(), cName.size(), NULL);
+        if (res == false) {
+            qWarning() << "changeOwnNgcName: setting new self name failed";
+        } else {
+            emit groupPeerlistChanged(groupnumber);
+            emit saveRequest();
+        }
+    }
+}
+
 int Core::createGroup(uint8_t type)
 {
     QMutexLocker ml{&coreLoopLock};
