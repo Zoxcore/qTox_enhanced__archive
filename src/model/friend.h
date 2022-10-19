@@ -49,6 +49,8 @@ public:
     bool getEventFlag() const override;
 
     const ToxPk& getPublicKey() const;
+    void setPushToken(const QString& newpushtoken);
+    QString getPushToken() const;
     uint32_t getId() const override;
     const ChatId& getPersistentId() const override;
 
@@ -74,6 +76,7 @@ private:
     QString userName;
     QString userAlias;
     QString statusMessage;
+    QString pushtoken;
     ToxPk friendPk;
     uint32_t friendId;
     bool hasNewEvents;

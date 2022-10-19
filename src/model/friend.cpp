@@ -212,6 +212,16 @@ void Friend::setExtendedMessageSupport(bool supported)
     }
 }
 
+void Friend::setPushToken(const QString& newpushtoken)
+{
+    pushtoken = newpushtoken;
+}
+
+QString Friend::getPushToken() const
+{
+    return pushtoken;
+}
+
 ExtensionSet Friend::getSupportedExtensions() const
 {
     return supportedExtensions;

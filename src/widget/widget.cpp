@@ -1434,6 +1434,7 @@ void Widget::onFriendPushtokenReceived(uint32_t friendnumber, const QString& pus
         return;
     }
 
+    f->setPushToken(pushtoken);
     friendMessageDispatchers[f->getPublicKey()]->onPushtokenReceived(pushtoken);
 }
 
