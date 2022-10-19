@@ -8,8 +8,6 @@ export _HOME_
 echo $_HOME_
 cd $_HOME_
 
-cp -a ../.ci-scripts/build-qtox-linux.sh .
-
 build_for='
 nixos
 '
@@ -50,26 +48,10 @@ let
             sha256 = "sha256-ofFoeC3gYAxknqATjqCF8um69kTTAaazs4yGouRe5Wc=";
           };
           patches = [
-            (fetchpatch {
-              url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/msgv3_addon.patch";
-              sha256 = "sha256-OvS9N5dT7PiyYI2bMNSSawbRksvUvXGaAQHVBv5KUY0=";
-            })
-            (fetchpatch {
-              url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/tc___capabilites.patch";
-              sha256 = "sha256-bNDhROluR92rP6wgUDU6J7IWBjpIHcX7oZUfCKnU7No=";
-            })
-            (fetchpatch {
-              url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/add_tox_group_get_grouplist_function.patch";
-              sha256 = "sha256-E8mNRwi07j2L8Vxg5n+A/taUE8pvY0m1MsIw+uW/+Cs=";
-            })
-            (fetchpatch {
-              url =
-                "https://gist.githubusercontent.com/zoff99/76963a40d286d66bb882e1f2162c6636/raw/e36afb7eda50462f38fc1913c054bb207320c0d9/add_tox_group_get_grouppeerlist_functions.patch";
-              sha256 = "sha256-oGWR5OhIBCfXgkTuXV84VRe4nbGdptH9q7NIEA2tbBY=";
-            })
+                /workspace/build/buildscripts/patches/msgv3_addon.patch
+                /workspace/build/buildscripts/patches/tc___capabilites.patch
+                /workspace/build/buildscripts/patches/add_tox_group_get_grouplist_function.patch
+                /workspace/build/buildscripts/patches/add_tox_group_get_grouppeerlist_functions.patch
           ];
         });
 
