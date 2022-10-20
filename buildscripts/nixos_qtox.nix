@@ -33,7 +33,7 @@ let
             })
             (fetchpatch {
               url =
-                "https://gist.githubusercontent.com/zoff99/76963a40d286d66bb882e1f2162c6636/raw/e36afb7eda50462f38fc1913c054bb207320c0d9/add_tox_group_get_grouppeerlist_functions.patch";
+                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/add_tox_group_get_grouppeerlist_functions.patch";
               sha256 = "sha256-oGWR5OhIBCfXgkTuXV84VRe4nbGdptH9q7NIEA2tbBY=";
             })
           ];
