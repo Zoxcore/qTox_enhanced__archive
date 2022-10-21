@@ -1,7 +1,11 @@
 name: Build, test, and deploy
 on:
   push:
-  pull_request:
+    paths-ignore:
+     - 'README.md'
+   pull_request:
+    paths-ignore:
+     - 'README.md'
   workflow_dispatch:
     inputs:
       version:
