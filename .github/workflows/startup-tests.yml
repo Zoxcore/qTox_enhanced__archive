@@ -1,0 +1,125 @@
+name: Startup Tests
+
+on:
+#  push:
+#    paths-ignore:
+#     - 'README.md'
+  schedule:
+    - cron:  '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: dummy
+        default: dummy
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  macos:
+    runs-on: macos-11
+    steps:
+    - uses: actions/checkout@v2
+    - name: install cliclick
+      run:  brew install cliclick
+
+    - name: install deps
+      run:  brew install wget
+
+    - name: macos-version1
+      run: sw_vers -productVersion
+
+    - name: macos-version2
+      run: system_profiler SPSoftwareDataType
+
+    - name: csrutil-status
+      run: csrutil status || exit 0
+
+    - name: notifications_off_01
+      run: launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist || exit 0
+
+    - name: notifications_off_02
+      run: killall NotificationCenter || exit 0
+
+    - name: startup-app
+      run: |
+           pwd
+           ls -al /Users/runner/
+           _HOME_="/Users/runner/"
+           cliclick -m verbose m:12,34
+           screencapture -T 1 -x -t png /Users/runner/screen01.png &
+           screencapture -T 2 -x -t png /Users/runner/screen02.png &
+           screencapture -T 3 -x -t png /Users/runner/screen03.png &
+           screencapture -T 10 -x -t png /Users/runner/screen04.png &
+           screencapture -T 25 -x -t png /Users/runner/screen05.png &
+           screencapture -T 120 -x -t png /Users/runner/screen06.png &
+           screencapture -T 240 -x -t png /Users/runner/screen07.png &
+           screencapture -T 320 -x -t png /Users/runner/screen08.png &
+           export _HOME_
+           cd "$_HOME_"
+           cd "$_SRC_"
+           mkdir -p /Users/runner/work/
+           cd /Users/runner/work/
+           wget "https://github.com/Zoxcore/qTox/releases/download/nightly/qTox-nightly.dmg" -O qtox.dmg
+           hdiutil info
+           hdiutil attach /Users/runner/work/qtox.dmg
+           hdiutil info
+           cd /Volumes/qTox*
+           pwd
+           ls -al
+           open ./qtox.app
+           sleep 20
+
+    - name: upload-screenshots
+      uses: actions/upload-artifact@v2
+      with:
+        name: macscreen
+        path: |
+          /Users/runner/screen*.png
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: Display the path
+        run: echo %PATH%
+        shell: cmd
+
+      - name: java-version
+        run: set -x ; "$JAVA_HOME_11_X64/bin/java.exe" -version
+        shell: bash
+
+      - name: startup-app
+        run: |
+             curl.exe -L --output qtox.zip --url "https://github.com/Zoxcore/qTox/releases/download/nightly/qtox-nightly-x86_64-Release.zip"
+             dir
+             tar -xf qtox.zip
+             dir
+             echo "XXXXXXXXXX"
+             ping -n 20 127.0.0.1 >NUL
+             dir
+        shell: cmd
+
+      - name: capture-screen
+        shell: pwsh
+        run: |
+          Add-Type -AssemblyName System.Windows.Forms
+          Add-Type -AssemblyName System.Drawing
+          $Screen = [System.Windows.Forms.SystemInformation]::VirtualScreen
+          $Width  = $Screen.Width
+          $Height = $Screen.Height
+          $Left   = $Screen.Left
+          $Top    = $Screen.Top
+          $bitmap  = New-Object System.Drawing.Bitmap $Width, $Height
+          $graphic = [System.Drawing.Graphics]::FromImage($bitmap)
+          $graphic.CopyFromScreen($Left, $Top, 0, 0, $bitmap.Size)
+          $bitmap.Save("D:\a\qTox\qTox\screenshot01.png")
+          Write-Output "Screenshot saved to:"
+          Write-Output D:\a\qTox\qTox\screenshot01.png
+
+      - name: upload-screenshots
+        uses: actions/upload-artifact@v2
+        with:
+          name: winscreen
+          path: |
+            D:\a\qTox\qTox\screenshot01.png
