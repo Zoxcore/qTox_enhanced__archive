@@ -82,57 +82,57 @@ jobs:
   linux-ub18:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
-    - name: os version
-      run:  uname -a
+        - uses: actions/checkout@v2
+        - name: os version
+          run:  uname -a
 
-    - name: install deps
-      run: |
-           sudo apt-get update && sudo apt-get install imagemagick
+        - name: install deps
+          run: |
+               sudo apt-get update && sudo apt-get install imagemagick
 
-    - name: startup-app
-      run: |
-           pwd
-           wget "https://github.com/Zoxcore/qTox/releases/download/nightly/qTox-nightly.x86_64.AppImage" -O qtox.appimage
-           chmod a+rx qtox.appimage
-           ./qtox.appimage &
-           sleep 20
-           import -window root /tmp/screenshot01.png
+        - name: startup-app
+          run: |
+               pwd
+               wget "https://github.com/Zoxcore/qTox/releases/download/nightly/qTox-nightly.x86_64.AppImage" -O qtox.appimage
+               chmod a+rx qtox.appimage
+               ./qtox.appimage &
+               sleep 20
+               import -window root /tmp/screenshot01.png
 
-      - name: upload-screenshots
-        uses: actions/upload-artifact@v2
-        with:
-          name: linux-ub18-screen
-          path: |
-            /tmp/screenshot01.png
+          - name: upload-screenshots
+            uses: actions/upload-artifact@v2
+            with:
+              name: linux-ub18-screen
+              path: |
+                /tmp/screenshot01.png
 
 
   linux-ub22:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v2
-    - name: os version
-      run:  uname -a
+        - uses: actions/checkout@v2
+        - name: os version
+          run:  uname -a
 
-    - name: install deps
-      run: |
-           sudo apt-get update && sudo apt-get install imagemagick
+        - name: install deps
+          run: |
+               sudo apt-get update && sudo apt-get install imagemagick
 
-    - name: startup-app
-      run: |
-           pwd
-           wget "https://github.com/Zoxcore/qTox/releases/download/nightly/qTox-nightly.x86_64.AppImage" -O qtox.appimage
-           chmod a+rx qtox.appimage
-           ./qtox.appimage &
-           sleep 20
-           import -window root /tmp/screenshot01.png
+        - name: startup-app
+          run: |
+               pwd
+               wget "https://github.com/Zoxcore/qTox/releases/download/nightly/qTox-nightly.x86_64.AppImage" -O qtox.appimage
+               chmod a+rx qtox.appimage
+               ./qtox.appimage &
+               sleep 20
+               import -window root /tmp/screenshot01.png
 
-      - name: upload-screenshots
-        uses: actions/upload-artifact@v2
-        with:
-          name: linux-ub22-screen
-          path: |
-            /tmp/screenshot01.png
+          - name: upload-screenshots
+            uses: actions/upload-artifact@v2
+            with:
+              name: linux-ub22-screen
+              path: |
+                /tmp/screenshot01.png
 
 
   windows:
