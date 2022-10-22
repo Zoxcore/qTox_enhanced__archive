@@ -849,13 +849,17 @@ void Core::requestNgc(const QString& ngcId, const QString& message)
 
     QByteArray ngcIdBytes = QByteArray::fromHex(ngcId.toLatin1());
 
-    Tox_Err_Group_Join error;
+    auto rnd_letters = GetRandomString(5);
+    auto user_name = QString("user ") + rnd_letters;
+    auto user_name_len = user_name.toUtf8().size();
+    qDebug() << QString("requestNgc join:my peer name=") << user_name << QString("user_name_len=") << user_name_len;
 
+    Tox_Err_Group_Join error;
     // TODO: add password if needed
     uint32_t groupId = tox_group_join(tox.get(),
         reinterpret_cast<const uint8_t*>(ngcIdBytes.constData()),
-        reinterpret_cast<const uint8_t*>("user"),
-        4,
+        reinterpret_cast<const uint8_t*>(user_name.toUtf8().constData()),
+        user_name_len,
         NULL,
         0,
         &error);
