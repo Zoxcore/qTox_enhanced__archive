@@ -95,6 +95,7 @@ jobs:
              dir
              tar -xf qtox.zip
              dir
+             start qtox.exe -v
              echo "XXXXXXXXXX"
              ping -n 20 127.0.0.1 >NUL
              dir
