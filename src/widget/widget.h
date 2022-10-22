@@ -215,6 +215,7 @@ public slots:
 signals:
     void friendRequestAccepted(const ToxPk& friendPk);
     void friendRequested(const ToxId& friendAddress, const QString& message);
+    void NgcRequested(const QString& ngcID, const QString& message);
     void statusSet(Status::Status status);
     void statusSelected(Status::Status status);
     void usernameChanged(const QString& username);

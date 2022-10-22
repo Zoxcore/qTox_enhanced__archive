@@ -841,6 +841,34 @@ QString Core::getFriendRequestErrorMessage(const ToxId& friendId, const QString&
     return QString{};
 }
 
+void Core::requestNgc(const QString& ngcId, const QString& message)
+{
+    QMutexLocker ml{&coreLoopLock};
+
+    std::ignore = message;
+
+    QByteArray ngcIdBytes = QByteArray::fromHex(ngcId.toLatin1());
+
+    Tox_Err_Group_Join error;
+
+    // TODO: add password if needed
+    uint32_t groupId = tox_group_join(tox.get(),
+        reinterpret_cast<const uint8_t*>(ngcIdBytes.constData()),
+        reinterpret_cast<const uint8_t*>("user"),
+        4,
+        NULL,
+        0,
+        &error);
+
+    if (groupId == UINT32_MAX) {
+        qDebug() << "requestNgc join failed, error: " << error;
+    } else {
+        qDebug() << "requestNgc join OK, group num: " << groupId;
+        emit saveRequest();
+        emit groupJoined((Settings::NGC_GROUPNUM_OFFSET + groupId), getGroupPersistentId(groupId, 1));
+    }
+}
+
 void Core::requestFriendship(const ToxId& friendId, const QString& message)
 {
     QMutexLocker ml{&coreLoopLock};

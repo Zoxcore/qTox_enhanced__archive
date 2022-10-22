@@ -63,6 +63,7 @@ public:
 
 signals:
     void friendRequested(const ToxId& friendAddress, const QString& message);
+    void NgcRequested(const QString& ngcID, const QString& message);
     void friendRequestAccepted(const ToxPk& friendAddress);
     void friendRequestsSeen();
 
@@ -72,6 +73,7 @@ public slots:
 private slots:
     void onSendTriggered();
     void onIdChanged(const QString& id);
+    void onNgcIdChanged(const QString& id);
     void onImportSendClicked();
     void onImportOpenClicked();
     void onFriendRequestAccepted();
@@ -80,6 +82,7 @@ private slots:
 
 private:
     void addFriend(const QString& idText);
+    void addNgcPublicGroup(const QString& idText);
     void retranslateUi();
     void addFriendRequestWidget(const QString& friendAddress_, const QString& message_);
     void removeFriendRequestWidget(QWidget* friendWidget);
@@ -93,6 +96,7 @@ private:
 private:
     QLabel headLabel;
     QLabel toxIdLabel;
+    QLabel ngcIdLabel;
     QLabel messageLabel;
     QLabel importFileLabel;
     QLabel importMessageLabel;
@@ -101,6 +105,7 @@ private:
     QPushButton importFileButton;
     QPushButton importSendButton;
     QLineEdit toxId;
+    QLineEdit ngcId;
     QTextEdit message;
     QTextEdit importMessage;
     QVBoxLayout layout;

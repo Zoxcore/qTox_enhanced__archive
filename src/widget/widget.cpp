@@ -338,6 +338,7 @@ void Widget::init()
     connect(ui->statusLabel, &CroppingLabel::editFinished, this, &Widget::onStatusMessageChanged);
     connect(ui->mainSplitter, &QSplitter::splitterMoved, this, &Widget::onSplitterMoved);
     connect(addFriendForm, &AddFriendForm::friendRequested, this, &Widget::friendRequested);
+    connect(addFriendForm, &AddFriendForm::NgcRequested, this, &Widget::NgcRequested);
     connect(groupInviteForm, &GroupInviteForm::groupCreate, core, &Core::createGroup);
     connect(timer, &QTimer::timeout, this, &Widget::onUserAwayCheck);
     connect(timer, &QTimer::timeout, this, &Widget::onEventIconTick);
@@ -751,6 +752,7 @@ void Widget::onCoreChanged(Core& core_)
 
     connect(this, &Widget::statusSet, core, &Core::setStatus);
     connect(this, &Widget::friendRequested, core, &Core::requestFriendship);
+    connect(this, &Widget::NgcRequested, core, &Core::requestNgc);
     connect(this, &Widget::friendRequestAccepted, core, &Core::acceptFriendRequest);
     connect(this, &Widget::changeGroupTitle, core, &Core::changeGroupTitle);
 

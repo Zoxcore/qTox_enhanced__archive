@@ -54,6 +54,13 @@ namespace
     {
         return ToxId::isToxId(id);
     }
+
+    bool checkIsValidNgcId(const QString& id)
+    {
+        const auto ngc_key_id_length = 64;
+        const QRegularExpression ToxNgcIdRegEx(QString("(^|\\s)[A-Fa-f0-9]{%1}($|\\s)").arg(ngc_key_id_length));
+        return (id.length() == ngc_key_id_length) && id.contains(ToxNgcIdRegEx);
+    }
 }
 
 /**
@@ -76,10 +83,13 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     bold.setBold(true);
     headLabel.setFont(bold);
     toxIdLabel.setTextFormat(Qt::RichText);
+    ngcIdLabel.setTextFormat(Qt::RichText);
 
     main->setLayout(&layout);
     layout.addWidget(&toxIdLabel);
     layout.addWidget(&toxId);
+    layout.addWidget(&ngcIdLabel);
+    layout.addWidget(&ngcId);
     layout.addWidget(&messageLabel);
     layout.addWidget(&message);
     layout.addWidget(&sendButton);
@@ -109,6 +119,7 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
 
     connect(&toxId, &QLineEdit::returnPressed, this, &AddFriendForm::onSendTriggered);
     connect(&toxId, &QLineEdit::textChanged, this, &AddFriendForm::onIdChanged);
+    connect(&ngcId, &QLineEdit::textChanged, this, &AddFriendForm::onNgcIdChanged);
     connect(tabWidget, &QTabWidget::currentChanged, this, &AddFriendForm::onCurrentChanged);
     connect(&sendButton, &QPushButton::clicked, this, &AddFriendForm::onSendTriggered);
     connect(&importSendButton, &QPushButton::clicked, this, &AddFriendForm::onImportSendClicked);
@@ -119,6 +130,8 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     toxIdLabel.setAccessibleDescription(
         tr("Tox ID, 76 hexadecimal characters"));
     toxId.setAccessibleDescription(tr("Type in Tox ID of your friend"));
+    ngcIdLabel.setAccessibleDescription("NGC Public Group ID, 64 hexadecimal characters");
+    ngcId.setAccessibleDescription("Type in the NGC Public Group ID");
     messageLabel.setAccessibleDescription(tr("Friend request message"));
     message.setAccessibleDescription(tr(
         "Type message to send with the friend request or leave empty to send a default message"));
@@ -222,12 +235,30 @@ void AddFriendForm::addFriend(const QString& idText)
     }
 }
 
+void AddFriendForm::addNgcPublicGroup(const QString& idText)
+{
+    if (!checkIsValidNgcId(idText)) {
+        messageBoxManager.showWarning("NGC ID invalid",
+                         "Couldn't join NGC Public Group, or NGC ID error");
+        return;
+    }
+
+    emit NgcRequested(idText, "__");
+}
+
 void AddFriendForm::onSendTriggered()
 {
-    const QString id = getToxId(toxId.text());
-    addFriend(id);
+    const QString friendId = getToxId(toxId.text());
+    const QString NgcId = ngcId.text();
+
+    if (!friendId.isEmpty() && checkIsValidId(friendId)) {
+        addFriend(friendId);
+    } else {
+        addNgcPublicGroup(NgcId);
+    }
 
     toxId.clear();
+    ngcId.clear();
     message.clear();
 }
 
@@ -301,6 +332,23 @@ void AddFriendForm::onIdChanged(const QString& id)
     toxId.setToolTip(isValidOrEmpty ? QStringLiteral("") : tr("Invalid Tox ID format"));
 
     sendButton.setEnabled(isValidId);
+}
+
+void AddFriendForm::onNgcIdChanged(const QString& id)
+{
+    const bool isValidNgcId = checkIsValidNgcId(id);
+    const bool NgcIsValidOrEmpty = id.isEmpty() || isValidNgcId;
+
+    const QString ngcIdText("NGC Public Group ID");
+    const QString ngcIdComment("64 hexadecimal characters");
+
+    const QString ngclabelText =
+        isValidNgcId ? QStringLiteral("%1 (%2)") : QStringLiteral("%1 <font color='red'>(%2)</font>");
+    ngcIdLabel.setText(ngclabelText.arg(ngcIdText, ngcIdComment));
+    ngcId.setStyleSheet(NgcIsValidOrEmpty ? QStringLiteral("")
+                                  : style.getStylesheet("addFriendForm/toxId.css", settings));
+
+    sendButton.setEnabled(isValidNgcId);
 }
 
 void AddFriendForm::setIdFromClipboard()
@@ -381,6 +429,7 @@ void AddFriendForm::retranslateUi()
             : tr("Ready to import %n contact(s), click send to confirm", "", contactsToImport.size()));
 
     onIdChanged(toxId.text());
+    onNgcIdChanged(ngcId.text());
 
     tabWidget->setTabText(AddFriend, tr("Add a friend"));
     tabWidget->setTabText(ImportContacts, tr("Import contacts"));

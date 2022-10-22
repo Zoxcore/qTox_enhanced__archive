@@ -120,6 +120,7 @@ public slots:
 
     void acceptFriendRequest(const ToxPk& friendPk);
     void requestFriendship(const ToxId& friendId, const QString& message);
+    void requestNgc(const QString& ngcId, const QString& message);
     void groupInviteFriend(uint32_t friendId, int groupId);
     int createGroup(uint8_t type = TOX_CONFERENCE_TYPE_AV);
     void changeOwnNgcName(uint32_t groupnumber, const QString& name);
