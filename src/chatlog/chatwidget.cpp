@@ -1135,7 +1135,7 @@ void ChatWidget::renderMessages(ChatLogIdx begin, ChatLogIdx end)
         bool prevIdxRendered = i != begin || chatLineStorage->contains(i - 1);
 
         auto chatMessage = alreadyRendered ? (*chatLineStorage)[i] : ChatLine::Ptr();
-        renderItem(chatLog.at(i), needsToHideName(i, prevIdxRendered), colorizeNames, chatMessage);
+        renderItem(chatLog.at(i), needsToHideName(i, prevIdxRendered), true, chatMessage);
 
         if (!alreadyRendered) {
             linesToRender.insert({i, chatMessage});
