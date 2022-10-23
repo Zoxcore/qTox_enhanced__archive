@@ -25,18 +25,6 @@ build_toxcore() {
 
     "${SCRIPT_DIR}/download/download_toxcore.sh"
 
-    echo "Applying msgv3_addon.patch"
-    patch -p1 < "${SCRIPT_DIR}/patches/msgv3_addon.patch"
-
-    echo "Applying tc___capabilites.patch"
-    patch -p1 < "${SCRIPT_DIR}/patches/tc___capabilites.patch"
-
-    echo "Applying add_tox_group_get_grouplist_function.patch"
-    patch -p1 < "${SCRIPT_DIR}/patches/add_tox_group_get_grouplist_function.patch"
-
-    echo "Applying add_tox_group_get_grouppeerlist_functions.patch"
-    patch -p1 < "${SCRIPT_DIR}/patches/add_tox_group_get_grouppeerlist_functions.patch"
-
     cmake . \
         -DBOOTSTRAP_DAEMON=OFF \
         -DCMAKE_BUILD_TYPE=Release \
