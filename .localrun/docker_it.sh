@@ -11,7 +11,7 @@ cd $_HOME_
 
 if [ "$1""x" == "buildx" ]; then
     cp -a ../buildscripts .
-    docker build -f Dockerfile -t qtox_push_001 .
+    docker build -f Dockerfile -t qtox_push_002 .
     exit 0
 fi
 
@@ -60,7 +60,7 @@ chmod a+rwx /artefacts/*
       -v $_HOME_/"$system_to_build_for"/script:/script \
       -v $_HOME_/"$system_to_build_for"/workspace:/workspace \
       --net=host \
-     "qtox_push_001" \
+     "qtox_push_002" \
      /bin/sh -c "apk add bash >/dev/null 2>/dev/null; /bin/bash /script/run.sh"
      if [ $? -ne 0 ]; then
         echo "** ERROR **:$system_to_build_for_orig"
