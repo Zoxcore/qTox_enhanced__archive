@@ -61,7 +61,7 @@ jobs:
            cd "$_SRC_"
            mkdir -p /Users/runner/work/
            cd /Users/runner/work/
-           wget "https://github.com/Zoxcore/qTox/releases/download/nightly/qTox-nightly.dmg" -O qtox.dmg
+           wget "https://github.com/Zoxcore/qTox_enhanced/releases/download/nightly/qTox-nightly.dmg" -O qtox.dmg
            hdiutil info
            hdiutil attach /Users/runner/work/qtox.dmg
            hdiutil info
@@ -95,7 +95,7 @@ jobs:
           with:
             run: |
                pwd
-               wget "https://github.com/Zoxcore/qTox/releases/download/nightly/qTox-nightly.x86_64.AppImage" -O qtox.appimage
+               wget "https://github.com/Zoxcore/qTox_enhanced/releases/download/nightly/qTox-nightly.x86_64.AppImage" -O qtox.appimage
                chmod a+rx qtox.appimage
                ./qtox.appimage &
                sleep 20
@@ -122,7 +122,7 @@ jobs:
 
       - name: startup-app
         run: |
-             curl.exe -L --output qtox.zip --url "https://github.com/Zoxcore/qTox/releases/download/nightly/qtox-nightly-x86_64-Release.zip"
+             curl.exe -L --output qtox.zip --url "https://github.com/Zoxcore/qTox_enhanced/releases/download/nightly/qtox-nightly-x86_64-Release.zip"
              dir
              tar -xf qtox.zip
              dir
