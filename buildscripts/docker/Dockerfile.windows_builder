@@ -75,6 +75,14 @@ RUN mkdir -p /src/curl && \
   /build/build_libcurl_windows.sh --arch ${SCRIPT_ARCH} && \
   rm -fr /src/curl
 
+COPY download/download_libx264.sh /build/download/download_libx264.sh
+COPY build_libx264_windows.sh /build/build_libx264_windows.sh
+
+RUN mkdir -p /src/libx264 && \
+  cd /src/libx264 && \
+  /build/build_libx264_windows.sh --arch ${SCRIPT_ARCH} && \
+  rm -fr /src/libx264
+
 COPY download/download_qt.sh /build/download/download_qt.sh
 COPY build_qt_windows.sh /build/build_qt_windows.sh
 
