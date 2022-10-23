@@ -1610,9 +1610,22 @@ void Core::groupInviteFriend(uint32_t friendId, int groupId)
 {
     QMutexLocker ml{&coreLoopLock};
 
-    Tox_Err_Conference_Invite error;
-    tox_conference_invite(tox.get(), friendId, groupId, &error);
-    PARSE_ERR(error);
+    if (groupId >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
+        Tox_Err_Group_Invite_Friend error;
+        bool result = tox_group_invite_friend(tox.get(),
+            (groupId - Settings::NGC_GROUPNUM_OFFSET),
+            friendId, &error);
+        if (result) {
+            qDebug() << "groupInviteFriend: inviting to NGC group OK, groupnum" << groupId << "error:" << error;
+        } else {
+            qWarning() << "groupInviteFriend: inviting to NGC group failed, groupnum" << groupId;
+        }
+    } else {
+        Tox_Err_Conference_Invite error;
+        tox_conference_invite(tox.get(), friendId, groupId, &error);
+        qDebug() << "groupInviteFriend: inviting to group ... , groupnum" << groupId << "error:" << error;
+        PARSE_ERR(error);
+    }
 }
 
 void Core::changeOwnNgcName(uint32_t groupnumber, const QString& name)
