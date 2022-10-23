@@ -51,7 +51,7 @@ ChatMessage::ChatMessage(DocumentCache& documentCache_, Settings& settings_,
 
 ChatMessage::~ChatMessage() = default;
 
-ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QString& rawMessage,
+ChatMessage::Ptr ChatMessage::createChatMessage(const QString& pubkey, const QString& sender, const QString& rawMessage,
                                                 MessageType type, bool isMe, MessageState state,
                                                 const QDateTime& date, DocumentCache& documentCache,
                                                 SmileyPack& smileyPack, Settings& settings,
@@ -101,7 +101,12 @@ ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QSt
 
     QColor color = style.getColor(Style::ColorPalette::MainText);
     if (colorizeName) {
-        QByteArray hash = QCryptographicHash::hash((sender.toUtf8()), QCryptographicHash::Sha256);
+        QByteArray hash;
+        if (pubkey.isEmpty()) {
+            hash = QCryptographicHash::hash((sender.toUtf8()), QCryptographicHash::Sha256);
+        } else {
+            hash = QByteArray::fromHex(pubkey.toLatin1());
+        }
         auto lightness = color.lightnessF();
         // Adapt as good as possible to Light/Dark themes
         lightness = lightness*0.5 + 0.3;

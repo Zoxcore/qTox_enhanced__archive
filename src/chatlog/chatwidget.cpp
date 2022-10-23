@@ -70,7 +70,7 @@ ChatMessage::Ptr createDateMessage(QDateTime timestamp, DocumentCache& documentC
         documentCache, settings, style);
 }
 
-ChatMessage::Ptr createMessage(const QString& displayName, bool isSelf, bool colorizeNames,
+ChatMessage::Ptr createMessage(const QString& pubkey, const QString& displayName, bool isSelf, bool colorizeNames,
                                const ChatLogMessage& chatLogMessage, DocumentCache& documentCache,
                                SmileyPack& smileyPack, Settings& settings, Style& style)
 {
@@ -88,12 +88,12 @@ ChatMessage::Ptr createMessage(const QString& displayName, bool isSelf, bool col
     }
 
     const auto timestamp = chatLogMessage.message.timestamp;
-    return ChatMessage::createChatMessage(displayName, chatLogMessage.message.content,messageType,
+    return ChatMessage::createChatMessage(pubkey, displayName, chatLogMessage.message.content,messageType,
                                           isSelf, chatLogMessage.state, timestamp, documentCache,
                                           smileyPack, settings, style, colorizeNames);
 }
 
-void renderMessageRaw(const QString& displayName, bool isSelf, bool colorizeNames,
+void renderMessageRaw(const QString& pubkey, const QString& displayName, bool isSelf, bool colorizeNames,
                    const ChatLogMessage& chatLogMessage, ChatLine::Ptr& chatLine,
                    DocumentCache& documentCache, SmileyPack& smileyPack,
                    Settings& settings, Style& style)
@@ -112,7 +112,7 @@ void renderMessageRaw(const QString& displayName, bool isSelf, bool colorizeName
             chatMessage->markAsBroken();
         }
     } else {
-        chatLine = createMessage(displayName, isSelf, colorizeNames, chatLogMessage,
+        chatLine = createMessage(pubkey, displayName, isSelf, colorizeNames, chatLogMessage,
             documentCache, smileyPack, settings, style);
     }
 }
@@ -1425,7 +1425,7 @@ void ChatWidget::renderItem(const ChatLogItem& item, bool hideName, bool coloriz
     case ChatLogItem::ContentType::message: {
         const auto& chatLogMessage = item.getContentAsMessage();
 
-        renderMessageRaw(item.getDisplayName(), isSelf, colorizeNames_, chatLogMessage,
+        renderMessageRaw(sender.toString(), item.getDisplayName(), isSelf, colorizeNames_, chatLogMessage,
             chatMessage, documentCache, smileyPack, settings, style);
 
         break;

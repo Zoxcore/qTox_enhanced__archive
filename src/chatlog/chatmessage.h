@@ -57,7 +57,7 @@ public:
     ChatMessage(const ChatMessage&) = default;
     ChatMessage(ChatMessage&&) = default;
 
-    static ChatMessage::Ptr createChatMessage(const QString& sender, const QString& rawMessage,
+    static ChatMessage::Ptr createChatMessage(const QString& pubkey, const QString& sender, const QString& rawMessage,
                                               MessageType type, bool isMe, MessageState state,
                                               const QDateTime& date, DocumentCache& documentCache,
                                               SmileyPack& smileyPack, Settings& settings, Style& style, bool colorizeName = false);
