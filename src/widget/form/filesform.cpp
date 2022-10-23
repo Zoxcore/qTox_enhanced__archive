@@ -110,13 +110,14 @@ namespace {
     bool shouldProcessFileKind(uint8_t inKind)
     {
         auto kind = static_cast<TOX_FILE_KIND>(inKind);
-
         switch (kind)
         {
             case TOX_FILE_KIND_DATA: return true;
             // Avatar sharing should be seamless, the user does not need to see
             // these in their file transfer list.
             case TOX_FILE_KIND_AVATAR: return false;
+            default:
+                break;
         }
 
         qWarning("Unexpected file kind %d", kind);
