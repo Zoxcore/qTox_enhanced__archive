@@ -12,3 +12,4 @@ jobs:
           fetch-depth: 0 # so that we can see the full commit range
       - name: Run
         run: ./.ci-scripts/verify-commit-format.sh
+
