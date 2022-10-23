@@ -2,6 +2,7 @@
 ## v1.17.6 (2022-03-06)
 
 
+
 #### Bug Fixes
 
 * **Windows:**  Correct Program Files directory for 32-bit Windows ([47406e74](https://github.com/qTox/qTox/commit/47406e742297b167a0a6c606ddd9a20823959a06))
