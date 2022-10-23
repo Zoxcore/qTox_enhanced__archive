@@ -202,7 +202,7 @@ void CoreAV::process()
  */
 bool CoreAV::isCallStarted(const Friend* f) const
 {
-    QReadLocker locker{&callsLock};
+    // QReadLocker locker{&callsLock};
     return f && (calls.find(f->getId()) != calls.end());
 }
 
@@ -257,7 +257,7 @@ bool CoreAV::isCallVideoEnabled(const Friend* f) const
 bool CoreAV::answerCall(uint32_t friendNum, bool video)
 {
     QWriteLocker locker{&callsLock};
-    QMutexLocker coreLocker{&coreLock};
+    //**// QMutexLocker coreLocker{&coreLock};
 
     qDebug() << QString("Answering call %1").arg(friendNum);
     auto it = calls.find(friendNum);
@@ -282,7 +282,7 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
 bool CoreAV::startCall(uint32_t friendNum, bool video)
 {
     QWriteLocker locker{&callsLock};
-    QMutexLocker coreLocker{&coreLock};
+    //**// QMutexLocker coreLocker{&coreLock};
 
     qDebug() << QString("Starting call with %1").arg(friendNum);
     auto it = calls.find(friendNum);
@@ -313,7 +313,7 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
 bool CoreAV::cancelCall(uint32_t friendNum)
 {
     QWriteLocker locker{&callsLock};
-    QMutexLocker coreLocker{&coreLock};
+    //**// QMutexLocker coreLocker{&coreLock};
 
     qDebug() << QString("Cancelling call with %1").arg(friendNum);
     Toxav_Err_Call_Control err;
@@ -406,7 +406,7 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
 
     if (call.getNullVideoBitrate()) {
         qDebug() << "Restarting video stream to friend" << callId;
-        QMutexLocker coreLocker{&coreLock};
+        //**// QMutexLocker coreLocker{&coreLock};
         Toxav_Err_Bit_Rate_Set err;
         toxav_video_set_bit_rate(toxav.get(), callId, VIDEO_DEFAULT_BITRATE, &err);
         if (!PARSE_ERR(err)) {
@@ -872,7 +872,7 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
     CoreAV* self = static_cast<CoreAV*>(vSelf);
     // This callback should come from the CoreAV thread
     assert(QThread::currentThread() == self->coreavThread.get());
-    QReadLocker locker{&self->callsLock};
+    // QReadLocker locker{&self->callsLock};
 
     auto it = self->calls.find(friendNum);
     if (it == self->calls.end()) {
@@ -896,7 +896,7 @@ void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, ui
     auto self = static_cast<CoreAV*>(vSelf);
     // This callback should come from the CoreAV thread
     assert(QThread::currentThread() == self->coreavThread.get());
-    QReadLocker locker{&self->callsLock};
+    // QReadLocker locker{&self->callsLock};
 
     auto it = self->calls.find(friendNum);
     if (it == self->calls.end()) {
