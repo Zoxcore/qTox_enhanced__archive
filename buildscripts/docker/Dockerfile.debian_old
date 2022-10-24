@@ -131,6 +131,8 @@ RUN apt-get update && \
         libiec61883-dev \
         libchromaprint-dev \
         librsvg2-dev \
+        libebur128-dev \
+        liblzma-dev \
         libgme-dev \
         && \
     apt-get clean && \
