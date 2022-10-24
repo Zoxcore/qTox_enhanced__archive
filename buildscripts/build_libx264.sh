@@ -9,7 +9,7 @@ readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
 source "${SCRIPT_DIR}/build_utils.sh"
 
-parse_arch --dep "libx264" --supported "win32 win64 macos" "$@"
+parse_arch --dep "libx264" --supported "macos" "$@"
 
 "${SCRIPT_DIR}/download/download_libx264.sh"
 
