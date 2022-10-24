@@ -39,6 +39,7 @@ install_deps \
     build_vpx.sh \
     build_opus.sh \
     build_ffmpeg.sh \
-    build_libx264.sh \
     build_toxcore.sh \
     build_sqlcipher.sh \
+
+#    build_libx264.sh \
