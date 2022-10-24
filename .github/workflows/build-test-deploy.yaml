@@ -22,15 +22,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Move nightly tag to head for nightly release
         run: git tag -f nightly && git push origin nightly -f
-  build-flatpak-docker:
-    name: Build flatpak docker
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-docker-image
-        name: "Build docker image"
-        with:
-         docker_image_name: flatpak
   build-ubuntu-lts-docker:
     name: Build ubuntu LTS docker image
     runs-on: ubuntu-latest
@@ -58,33 +49,6 @@ jobs:
         name: "Build docker image"
         with:
           docker_image_name: debian_old
-  build-almalinux-docker:
-    name: Build almalinux docker image
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-docker-image
-        name: "Build docker image"
-        with:
-          docker_image_name: almalinux
-  build-fedora-docker:
-    name: Build fedora docker image
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-docker-image
-        name: "Build docker image"
-        with:
-          docker_image_name: fedora
-  build-opensuse-docker:
-    name: Build opensuse docker image
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-docker-image
-        name: "Build docker image"
-        with:
-          docker_image_name: opensuse
   build-windows-docker:
     name: Build windows docker image
     runs-on: ubuntu-latest
@@ -103,70 +67,6 @@ jobs:
         name: "Build docker image"
         with:
           docker_image_name: windows_builder.i686
-  build-almalinux:
-    name: Almalinux
-    runs-on: ubuntu-latest
-    needs: build-almalinux-docker
-    strategy:
-      matrix:
-        features: [full, minimal]
-        build_type: [Debug, Release]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: almalinux
-      - name: Run build
-        run: docker-compose run --rm almalinux ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
-  build-fedora:
-    name: Fedora with ASAN
-    runs-on: ubuntu-latest
-    needs: build-fedora-docker
-    strategy:
-      matrix:
-        features: [full, minimal]
-        build_type: [Debug, Release]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: fedora
-      - name: Run build
-        run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --sanitize
-  clang-tidy:
-    name: Clang-Tidy
-    runs-on: ubuntu-latest
-    needs: build-fedora-docker
-    strategy:
-      matrix:
-        features: [full, minimal]
-        build_type: [Debug, Release]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: fedora
-      - name: Run build
-        run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --tidy
-  build-opensuse:
-    name: Opensuse
-    runs-on: ubuntu-latest
-    needs: build-opensuse-docker
-    strategy:
-      matrix:
-        features: [full, minimal]
-        build_type: [Debug, Release]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: opensuse
-      - name: Run build
-        run: docker-compose run --rm opensuse ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
   build-debian:
     name: Debian
     runs-on: ubuntu-latest
@@ -293,60 +193,6 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly.x86_64.AppImage,qTox-nightly.x86_64.AppImage.zsync"
-  build-flatpak:
-    if: ${{ false }}  # disable for now
-    name: Flatpak
-    runs-on: ubuntu-latest
-    needs: [build-flatpak-docker, update-nightly-tag]
-    permissions:
-        contents: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: flatpak
-      - name: Run build
-        run: docker-compose run --rm flatpak ./flatpak/build.sh
-      - name: Upload flatpak
-        uses: actions/upload-artifact@v2
-        with:
-          name: qTox-${{ github.sha }}.x86_64.flatpak
-          path: qtox.flatpak
-      - name: Get tag name for flatpak release file name
-        if: contains(github.ref, 'refs/tags/v')
-        id: get_version
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
-      - name: Rename flatpak for release upload
-        if: contains(github.ref, 'refs/tags/v')
-        run: |
-          cp qtox.flatpak qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak
-          sha256sum qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak > qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak.sha256
-      - name: Upload to versioned release
-        if: contains(github.ref, 'refs/tags/v')
-        uses: ncipollo/release-action@v1
-        with:
-          allowUpdates: true
-          draft: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak,qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak.sha256"
-      - name: Rename artifact for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
-        run: |
-          cp qtox.flatpak qTox-nightly.flatpak
-          sha256sum qTox-nightly.flatpak > qTox-nightly.flatpak.sha256
-      - name: Upload to nightly release
-        uses: ncipollo/release-action@v1
-        if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
-        with:
-          allowUpdates: true
-          tag: nightly
-          omitBodyDuringUpdate: true
-          omitNameDuringUpdate: true
-          prerelease: true
-          replacesArtifacts: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qTox-nightly.flatpak,qTox-nightly.flatpak.sha256"
   build-windows:
     name: Windows
     runs-on: ubuntu-latest
@@ -558,14 +404,3 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly.dmg,qTox-nightly.dmg.sha256"
-  build-osx-users:
-    name: macOS user
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Homebrew
-        run: brew update && brew upgrade && brew bundle --file ./osx/Brewfile
-      - name: Install toxcore and toxext
-        run: buildscripts/build_toxcore_linux.sh
-      - name: Build qTox
-        run: ./.ci-scripts/build-qtox-macos.sh user
