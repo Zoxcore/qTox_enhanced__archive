@@ -89,7 +89,6 @@ RUN apt-get update && \
         libbs2b-dev \
         libbluray-dev \
         libass-dev \
-        libcrystalhd-dev \
         libvdpau-dev \
         libva-dev \
         libva-x11-2 \
