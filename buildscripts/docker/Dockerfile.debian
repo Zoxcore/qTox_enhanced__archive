@@ -130,6 +130,14 @@ RUN apt-get update && \
         libchromaprint-dev \
         librsvg2-dev \
         libgme-dev \
+        lzma-dev \
+        libdav1d-dev \
+        libaom-dev \
+        libcodec2-dev \
+        libmfx-dev \
+        libdrm-dev \
+        libopencl-clang-dev \
+        liblzma-dev \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
