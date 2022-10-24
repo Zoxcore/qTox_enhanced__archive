@@ -76,6 +76,66 @@ COPY download/download_toxext.sh /build/download/download_toxext.sh
 COPY download/download_toxext_messages.sh /build/download/download_toxext_messages.sh
 COPY build_toxcore_linux.sh /build/build_toxcore_linux.sh
 COPY patches/*.patch /build/patches/
+
+RUN apt-get update && \
+        apt-get -y --force-yes install \
+        libx264-dev \
+        libbz2-dev \
+        libxv-dev \
+        libsdl2-dev \
+        libzmq5-dev \
+        libwebp-dev \
+        libssh-dev \
+        libpulse-dev \
+        libopenmpt-dev \
+        libbs2b-dev \
+        libbluray-dev \
+        libass-dev \
+        libcrystalhd-dev \
+        libvdpau-dev \
+        libva-dev \
+        libva-x11-1 \
+        libva-drm1 \
+        libcdio-cdda-dev \
+        libcdio-dev \
+        libcdio-paranoia-dev \
+        libsndio-dev \
+        libjack-dev \
+        libasound-dev \
+        libxml2-dev \
+        libzvbi-dev \
+        libxvidcore-dev \
+        libx265-dev \
+        libwebpmux2 \
+        libwavpack-dev \
+        libvorbisenc2 \
+        libvorbis-dev \
+        libtwolame-dev \
+        libtheora-dev \
+        libspeex-dev \
+        libsoxr-dev \
+        libsnappy-dev \
+        libshine-dev \
+        librubberband-dev \
+        libopenjp2-7-dev \
+        libopencv-core-dev \
+        libopencv-imgproc-dev \
+        libmp3lame-dev \
+        libgsm1-dev \
+        libgpgme-dev \
+        flite-dev \
+        libdc1394-22-dev \
+        libcaca-dev \
+        libraw1394-dev \
+        libavc1394-dev \
+        libiec61883-dev \
+        libchromaprint-dev \
+        librsvg2-dev \
+        libgme-dev \
+        && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN mkdir -p /src/tox && \
     cd /src/tox && \
     /build/build_toxcore_linux.sh && \
