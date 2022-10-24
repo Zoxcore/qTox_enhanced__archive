@@ -64,7 +64,7 @@ COPY build_toxcore_linux.sh /build/build_toxcore_linux.sh
 COPY patches/*.patch /build/patches/
 
 RUN zypper addrepo https://download.opensuse.org/repositories/home:Maliku/15.4/home:Maliku.repo
-RUN zypper --gpg-auto-import-keys refresh
+RUN zypper --gpg-auto-import-keys refresh || echo "no error"
 
 RUN zypper install -y \
     libx264-devel
