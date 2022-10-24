@@ -133,6 +133,7 @@ RUN apt-get update && \
         librsvg2-dev \
         libebur128-dev \
         liblzma-dev \
+        ocl-icd-opencl-dev \
         libgme-dev \
         && \
     apt-get clean && \
