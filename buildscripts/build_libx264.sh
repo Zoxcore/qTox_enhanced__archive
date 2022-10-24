@@ -21,6 +21,7 @@ CFLAGS="-O2 -g0 ${CROSS_CFLAG}" \
                             --enable-static \
                             --disable-avs \
                             --disable-cli \
+                            --disable-asm \
                             --enable-pic
 
 make -j "${MAKE_JOBS}"

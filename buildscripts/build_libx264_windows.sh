@@ -24,6 +24,7 @@ CPPFLAGS="-I${DEP_PREFIX}/include" \
     --enable-static \
     --disable-avs \
     --disable-cli \
+    --disable-asm \
     --enable-pic
 
 make -j "${MAKE_JOBS}"
