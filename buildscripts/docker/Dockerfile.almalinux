@@ -43,6 +43,7 @@ RUN dnf --nodocs -y install dnf-plugins-core && \
 		libsodium-devel \
 		libasan \
 		patch \
+		x264-devel \
 		ffmpeg-devel \
 		libexif-devel \
 		qrencode-devel \

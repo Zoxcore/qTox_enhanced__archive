@@ -44,6 +44,7 @@ RUN dnf --nodocs -y install dnf-plugins-core && \
         openldap-devel \
         libsodium-devel \
         libasan \
+        x264-devel \
         ffmpeg-devel \
         libexif-devel \
         qrencode-devel \
