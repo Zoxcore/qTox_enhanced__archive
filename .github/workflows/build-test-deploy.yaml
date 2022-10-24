@@ -355,7 +355,7 @@ jobs:
           artifacts: "qtox-nightly-i686-${{ matrix.build_type }}.exe,qtox-nightly-i686-${{ matrix.build_type }}.exe.sha256"
   build-osx-distributable:
     name: macOS distributable
-    runs-on: macos-latest
+    runs-on: macos-11
     needs: update-nightly-tag
     if: |
       always() &&
