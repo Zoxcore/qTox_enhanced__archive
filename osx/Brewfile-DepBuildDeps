@@ -7,6 +7,7 @@ brew "libtool"
 brew "cmake"
 brew "pkgconfig"
 brew "check"
+brew "nasm"
 brew "yasm"
 
 brew "qt@5" # Qt sets a low compatibility version by default: https://doc.qt.io/qt-5/macos.html#target-platforms

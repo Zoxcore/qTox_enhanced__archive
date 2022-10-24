@@ -24,6 +24,9 @@ ARG WINEARCH
 ENV WINEARCH=${WINEARCH}
 ARG SCRIPT_ARCH=${WINEARCH}
 
+# export ARCH=x86_64   i686
+# export WINEARCH=win64   win32
+
 RUN dpkg --add-architecture i386 && \
     apt-get update && apt-get install -y --no-install-recommends \
                    autoconf \
@@ -59,6 +62,15 @@ RUN update-alternatives --set ${ARCH}-w64-mingw32-gcc /usr/bin/${ARCH}-w64-mingw
 
 COPY download/common.sh /build/download/common.sh
 COPY build_utils.sh /build/build_utils.sh
+
+COPY download/download_libx264.sh /build/download/download_libx264.sh
+COPY build_libx264_windows.sh /build/build_libx264_windows.sh
+
+RUN mkdir -p /src/libx264 && \
+  cd /src/libx264 && \
+  /build/build_libx264_windows.sh --arch ${SCRIPT_ARCH} && \
+  rm -fr /src/libx264
+
 COPY download/download_openssl.sh /build/download/download_openssl.sh
 COPY build_openssl.sh /build/build_openssl.sh
 
@@ -74,14 +86,6 @@ RUN mkdir -p /src/curl && \
   cd /src/curl && \
   /build/build_libcurl_windows.sh --arch ${SCRIPT_ARCH} && \
   rm -fr /src/curl
-
-COPY download/download_libx264.sh /build/download/download_libx264.sh
-COPY build_libx264_windows.sh /build/build_libx264_windows.sh
-
-RUN mkdir -p /src/libx264 && \
-  cd /src/libx264 && \
-  /build/build_libx264_windows.sh --arch ${SCRIPT_ARCH} && \
-  rm -fr /src/libx264
 
 COPY download/download_qt.sh /build/download/download_qt.sh
 COPY build_qt_windows.sh /build/build_qt_windows.sh
