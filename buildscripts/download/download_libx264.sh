@@ -17,12 +17,10 @@
 
 set -euo pipefail
 
-source "$(dirname "$(realpath "$0")")/common.sh"
-
-git clone https://code.videolan.org/videolan/x264.git
 _X264_VERSION_="1771b556ee45207f8711744ccbd5d42a3949b14c"
 LIBX264_HASH="745a2a355a4a7ecd389ec438735e2c5b5d1e4b3277352761a1c0d4f5ae4f8cd9"
-cd x264/
+
+source "$(dirname "$(realpath "$0")")/common.sh"
 
 download_verify_extract_tarball \
     "https://code.videolan.org/videolan/x264/-/archive/${_X264_VERSION_}/x264-${_X264_VERSION_}.tar.gz" \
