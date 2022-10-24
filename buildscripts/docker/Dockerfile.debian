@@ -137,6 +137,7 @@ RUN apt-get update && \
         libmfx-dev \
         libdrm-dev \
         libopencl-clang-dev \
+        ocl-icd-opencl-dev \
         liblzma-dev \
         && \
     apt-get clean && \
