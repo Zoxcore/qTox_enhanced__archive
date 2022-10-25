@@ -63,6 +63,14 @@ RUN update-alternatives --set ${ARCH}-w64-mingw32-gcc /usr/bin/${ARCH}-w64-mingw
 COPY download/common.sh /build/download/common.sh
 COPY build_utils.sh /build/build_utils.sh
 
+COPY download/download_nasm.sh /build/download/download_nasm.sh
+COPY build_nasm.sh /build/build_nasm.sh
+
+RUN mkdir -p /src/nasm && \
+  cd /src/nasm && \
+  /build/build_nasm.sh --arch ${SCRIPT_ARCH} && \
+  rm -fr /src/nasm
+
 COPY download/download_libx264.sh /build/download/download_libx264.sh
 COPY build_libx264_windows.sh /build/build_libx264_windows.sh
 

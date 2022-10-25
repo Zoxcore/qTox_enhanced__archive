@@ -16,6 +16,7 @@ if [ "$1""x" == "buildx" ]; then
     exit 0
 fi
 
+build_for="windows"
 
 for system_to_build_for in $build_for ; do
 
@@ -36,6 +37,9 @@ for system_to_build_for in $build_for ; do
 
     echo '#! /bin/bash
 
+/workspace/build/windows/cross-compile/build.sh --arch x86_64 --build-type Release --run-tests --src-dir /workspace/build
+
+cp -av /qtox/install-prefix/qtox-x86_64-Release.zip /artefacts/qtox-nightly-x86_64-Release.zip
 
 chmod a+rwx /artefacts/*
 

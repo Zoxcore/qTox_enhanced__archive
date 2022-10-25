@@ -11,31 +11,13 @@ let
           src = fetchFromGitHub {
             owner = "TokTok";
             repo = "c-toxcore";
-            rev = "e0b00d3e733148823e4b63d70f464e523ad62bac";
+            rev = "1df4a851510d4878e299378d33e5dab3ac8c42bf";
             fetchSubmodules = true;
-            sha256 = "sha256-ofFoeC3gYAxknqATjqCF8um69kTTAaazs4yGouRe5Wc=";
+            sha256 = "sha256-NxPAArdmXPUkwzYGH7bEFlii2du7PXECuak2/Al8yMU=";
           };
-          patches = [
-            (fetchpatch {
-              url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/msgv3_addon.patch";
-              sha256 = "sha256-OvS9N5dT7PiyYI2bMNSSawbRksvUvXGaAQHVBv5KUY0=";
-            })
-            (fetchpatch {
-              url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/tc___capabilites.patch";
-              sha256 = "sha256-bNDhROluR92rP6wgUDU6J7IWBjpIHcX7oZUfCKnU7No=";
-            })
-            (fetchpatch {
-              url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/add_tox_group_get_grouplist_function.patch";
-              sha256 = "sha256-E8mNRwi07j2L8Vxg5n+A/taUE8pvY0m1MsIw+uW/+Cs=";
-            })
-            (fetchpatch {
-              url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox/zoxcore/push_notification/buildscripts/patches/add_tox_group_get_grouppeerlist_functions.patch";
-              sha256 = "sha256-oGWR5OhIBCfXgkTuXV84VRe4nbGdptH9q7NIEA2tbBY=";
-            })
+          buildInputs = [
+            libsodium msgpack ncurses libconfig
+            libopus libvpx x264 ffmpeg
           ];
         });
 

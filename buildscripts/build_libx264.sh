@@ -23,7 +23,5 @@ CFLAGS="-O2 -g0 ${CROSS_CFLAG}" \
                             --disable-cli \
                             --enable-pic
 
-#                            --disable-asm \
-
 make -j "${MAKE_JOBS}"
 make install

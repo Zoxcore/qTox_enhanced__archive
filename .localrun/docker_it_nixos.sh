@@ -33,7 +33,6 @@ echo '
 let
   overlay = final: prev:
     # a fixed point overay for overriding a package set
-
     with final; {
       # use the final result of the overlay for scope
 
@@ -41,17 +40,15 @@ let
         # build a custom libtoxcore
         prev.libtoxcore.overrideAttrs ({ ... }: {
           src = fetchFromGitHub {
-            owner = "TokTok";
+            owner = "zoff99";
             repo = "c-toxcore";
-            rev = "e0b00d3e733148823e4b63d70f464e523ad62bac";
+            rev = "1df4a851510d4878e299378d33e5dab3ac8c42bf";
             fetchSubmodules = true;
-            sha256 = "sha256-ofFoeC3gYAxknqATjqCF8um69kTTAaazs4yGouRe5Wc=";
+            sha256 = "sha256-NxPAArdmXPUkwzYGH7bEFlii2du7PXECuak2/Al8yMU=";
           };
-          patches = [
-                /workspace/build/buildscripts/patches/msgv3_addon.patch
-                /workspace/build/buildscripts/patches/tc___capabilites.patch
-                /workspace/build/buildscripts/patches/add_tox_group_get_grouplist_function.patch
-                /workspace/build/buildscripts/patches/add_tox_group_get_grouppeerlist_functions.patch
+          buildInputs = [
+            libsodium msgpack ncurses libconfig
+            libopus libvpx x264 ffmpeg
           ];
         });
 

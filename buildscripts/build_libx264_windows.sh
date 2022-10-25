@@ -25,7 +25,6 @@ CROSS="$ARCH-w64-mingw32-" ./configure --host="$ARCH-w64-mingw32" \
                                          --enable-static \
                                          --disable-avs \
                                          --disable-cli \
-                                         --disable-asm \
                                          --enable-pic
 export CC=""
 export WINDRES=""
