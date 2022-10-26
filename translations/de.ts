@@ -131,6 +131,14 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <source>Use slider to set the activation volume for your input device.</source>
         <translation>Verwenden Sie den Schieberegler, um die Aktivierungslautstärke für Ihr Eingabegerät einzustellen.</translation>
     </message>
+    <message>
+        <source>Screen Capture FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change framerate and video bitrate for screen capture.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>

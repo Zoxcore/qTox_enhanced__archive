@@ -131,6 +131,14 @@ il che può portare a problemi con le videochiamate.</translation>
         <source>Use slider to set the activation volume for your input device.</source>
         <translation>Usa il cursore per impostare il volume di attivazione del tuo dispositivo di input.</translation>
     </message>
+    <message>
+        <source>Screen Capture FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change framerate and video bitrate for screen capture.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>

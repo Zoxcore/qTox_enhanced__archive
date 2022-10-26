@@ -132,6 +132,14 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <source>Use slider to set the activation volume for your input device.</source>
         <translation>Giriş aygıtınız için etkinleştirme ses düzeyini ayarlamak için kaydırıcıyı kullanın.</translation>
     </message>
+    <message>
+        <source>Screen Capture FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change framerate and video bitrate for screen capture.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>

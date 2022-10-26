@@ -131,6 +131,14 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <source>Use slider to set the activation volume for your input device.</source>
         <translation>Pomocou posuvníka nastavte hlasitosť aktivácie pre vstupné zariadenie.</translation>
     </message>
+    <message>
+        <source>Screen Capture FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change framerate and video bitrate for screen capture.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>

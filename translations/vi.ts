@@ -131,6 +131,14 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <source>Use slider to set the activation volume for your input device.</source>
         <translation>Sử dụng thanh trượt để đặt ngưỡng kích hoạt âm lượng cho thiết bị đầu vào của bạn.</translation>
     </message>
+    <message>
+        <source>Screen Capture FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change framerate and video bitrate for screen capture.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>

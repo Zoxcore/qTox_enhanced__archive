@@ -126,6 +126,14 @@ which may lead to problems with video calls.</source>
         <source>Use slider to set the activation volume for your input device.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Screen Capture FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change framerate and video bitrate for screen capture.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>

@@ -131,6 +131,14 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <source>Use slider to set the activation volume for your input device.</source>
         <translation>Utilisez le curseur pour définir le volume d&apos;activation de votre dispositif d&apos;entrée.</translation>
     </message>
+    <message>
+        <source>Screen Capture FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change framerate and video bitrate for screen capture.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>

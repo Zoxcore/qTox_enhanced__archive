@@ -131,6 +131,14 @@ co może powodować problemy z rozmowami wideo.</translation>
         <source>Use slider to set the activation volume for your input device.</source>
         <translation>Ustaw próg aktywacji twojego mikrofonu za pomocą suwaka.</translation>
     </message>
+    <message>
+        <source>Screen Capture FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change framerate and video bitrate for screen capture.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>
