@@ -597,7 +597,6 @@ void Core::onNgcInvite(Tox* tox, uint32_t friendId, const uint8_t* invite_data, 
     auto rnd_letters = core->GetRandomString(5);
     auto user_name = QString("user ") + rnd_letters;
     auto user_name_len = user_name.toUtf8().size();
-    qDebug() << QString("onNgcInvite:my peer name=") << user_name << QString("user_name_len=") << user_name_len;
 
     Tox_Err_Group_Invite_Accept error;
     uint32_t groupId = tox_group_invite_accept(
@@ -667,8 +666,6 @@ void Core::onNgcPeerJoin(Tox* tox, uint32_t group_number, uint32_t peer_id, void
             bool res = tox_group_peer_get_name(tox, group_number, peer_id, name, &error);
             if (res) {
                 const auto newName = ToxString(name, name_length).getQString();
-                qDebug() << QString("onNgcPeerJoin:newName #%1").arg(newName);
-                // emit core->groupPeerNameChanged((Settings::NGC_GROUPNUM_OFFSET + group_number), peerPk, newName);
                 emit core->groupPeerlistChanged(Settings::NGC_GROUPNUM_OFFSET + group_number);
             }
             free(name);
@@ -686,25 +683,8 @@ void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, 
     std::ignore = type;
     Core* core = static_cast<Core*>(vCore);
     QString msg = ToxString(message, length).getQString();
-    qDebug() << QString("onNgcGroupMessage:peer=") << peer_id << QString(" msgID=") << message_id;
 
     auto peerPk = core->getGroupPeerPk((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id);
-
-/*
-    Tox_Err_Group_Peer_Query error;
-    size_t name_length = tox_group_peer_get_name_size(tox, group_number, peer_id, &error);
-    if ((name_length > 0) && (name_length < 500)) {
-        uint8_t *name = reinterpret_cast<uint8_t*>(calloc(1, name_length + 1));
-        if (name) {
-            bool res = tox_group_peer_get_name(tox, group_number, peer_id, name, &error);
-            if (res) {
-                const auto newName = ToxString(name, name_length).getQString();
-                emit core->groupPeerNameChanged((Settings::NGC_GROUPNUM_OFFSET + group_number), peerPk, newName);
-            }
-            free(name);
-        }
-    }
-*/
     emit core->groupMessageReceived((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id, msg, false);
 }
 
@@ -1410,15 +1390,12 @@ uint32_t Core::getGroupNumberPeers(int groupId) const
 {
     QMutexLocker ml{&coreLoopLock};
 
-    qDebug() << "getGroupNumberPeers of group" << groupId;
-
     if (groupId >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
         Tox_Err_Group_Peer_Query error;
         uint32_t count = tox_group_peer_count(tox.get(), (groupId - Settings::NGC_GROUPNUM_OFFSET), &error);
         if (!PARSE_ERR(error)) {
             return std::numeric_limits<uint32_t>::max();
         }
-        qDebug() << "getGroupNumberPeers:count" << count;
 
         return count;
     } else {
@@ -1517,7 +1494,6 @@ QStringList Core::getGroupPeerNames(int groupId) const
 
         QStringList names;
         for (int i = 0; i < static_cast<int>(nPeers); ++i) {
-            qDebug() << "getGroupPeerNames NGC: i" << i << " peer" << *(peerlist + i);
             size_t length = tox_group_peer_get_name_size(tox.get(), (groupId - Settings::NGC_GROUPNUM_OFFSET), *(peerlist + i), &error);
 
             if (!PARSE_ERR(error) || !length) {

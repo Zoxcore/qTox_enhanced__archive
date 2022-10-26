@@ -122,10 +122,8 @@ void Group::regeneratePeerList()
         const int nPeers = peers.size();
         for (int i = 0; i < nPeers; ++i) {
             int peerid = peers[i].split(':').at(0).toInt();
-            qDebug() << "regeneratePeerList NGC: i" << i << "peerid" << peerid << "peers[i]" << peers[i];
             const auto pk = groupQuery.getGroupPeerPk(toxGroupNum, peerid);
             peerDisplayNames[pk] = friendList.decideNickname(pk, peers[i]);
-            qDebug() << "regeneratePeerList NGC: name new" << peerDisplayNames[pk];
         }
         for (const auto& pk : oldPeerNames.keys()) {
             if (!peerDisplayNames.contains(pk)) {
@@ -139,8 +137,6 @@ void Group::regeneratePeerList()
         }
         for (const auto& pk : peerDisplayNames.keys()) {
             if (oldPeerNames.contains(pk) && oldPeerNames.value(pk) != peerDisplayNames.value(pk)) {
-                qDebug() << "regeneratePeerList NGC peerNameChanged: old" << oldPeerNames.value(pk)
-                    << "new" << peerDisplayNames.value(pk) << "pk" << pk.toString();
                 emit peerNameChanged(pk, oldPeerNames.value(pk), peerDisplayNames.value(pk));
             }
         }
