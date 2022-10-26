@@ -37,8 +37,8 @@
 #include "src/persistence/smileypack.h"
 #include "src/persistence/history.h"
 
-#define NAME_COL_WIDTH 90.0
-#define TIME_COL_WIDTH 90.0
+#define NAME_COL_WIDTH 125.0
+#define TIME_COL_WIDTH 100.0
 
 
 ChatMessage::ChatMessage(DocumentCache& documentCache_, Settings& settings_,
