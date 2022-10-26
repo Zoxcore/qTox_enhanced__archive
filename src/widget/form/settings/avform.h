@@ -60,6 +60,7 @@ private:
     void fillCameraModesComboBox();
     void fillScreenModesComboBox();
     void fillAudioQualityComboBox();
+    void fillScreenFpsComboBox();
     int searchPreferredIndex();
 
     void createVideoSurface();
@@ -80,6 +81,7 @@ private slots:
     // camera
     void on_videoDevCombobox_currentIndexChanged(int index);
     void on_videoModescomboBox_currentIndexChanged(int index);
+    void on_screenFpsComboBox_currentIndexChanged(int index);
 
     void rescanDevices();
     void setVolume(qreal value);

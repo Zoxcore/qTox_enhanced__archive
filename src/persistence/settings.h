@@ -132,6 +132,7 @@ class Settings : public QObject,
     Q_PROPERTY(QRect screenRegion READ getScreenRegion WRITE setScreenRegion NOTIFY screenRegionChanged FINAL)
     Q_PROPERTY(bool screenGrabbed READ getScreenGrabbed WRITE setScreenGrabbed NOTIFY screenGrabbedChanged FINAL)
     Q_PROPERTY(float camVideoFPS READ getCamVideoFPS WRITE setCamVideoFPS NOTIFY camVideoFPSChanged FINAL)
+    Q_PROPERTY(int screenVideoFPS READ getScreenVideoFPS WRITE setScreenVideoFPS NOTIFY screenVideoFPSChanged FINAL)
 
 public:
     enum class StyleType
@@ -403,11 +404,15 @@ public:
     float getCamVideoFPS() const override;
     void setCamVideoFPS(float newValue) override;
 
+    int getScreenVideoFPS() const override;
+    void setScreenVideoFPS(int newValue) override;
+
     SIGNAL_IMPL(Settings, videoDevChanged, const QString& device)
     SIGNAL_IMPL(Settings, screenRegionChanged, const QRect& region)
     SIGNAL_IMPL(Settings, screenGrabbedChanged, bool enabled)
     SIGNAL_IMPL(Settings, camVideoResChanged, const QRect& region)
     SIGNAL_IMPL(Settings, camVideoFPSChanged, unsigned short fps)
+    SIGNAL_IMPL(Settings, screenVideoFPSChanged, int fps)
 
     bool isAnimationEnabled() const;
     void setAnimationEnabled(bool newValue);
@@ -684,6 +689,7 @@ private:
     QRect screenRegion;
     bool screenGrabbed;
     float camVideoFPS;
+    int screenVideoFPS;
 
     struct friendProp
     {

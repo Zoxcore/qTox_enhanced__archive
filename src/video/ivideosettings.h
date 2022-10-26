@@ -48,9 +48,13 @@ public:
     virtual float getCamVideoFPS() const = 0;
     virtual void setCamVideoFPS(float newValue) = 0;
 
+    virtual int getScreenVideoFPS() const = 0;
+    virtual void setScreenVideoFPS(int newValue) = 0;
+
     DECLARE_SIGNAL(videoDevChanged, const QString& device);
     DECLARE_SIGNAL(screenRegionChanged, const QRect& region);
     DECLARE_SIGNAL(screenGrabbedChanged, bool enabled);
     DECLARE_SIGNAL(camVideoResChanged, const QRect& region);
     DECLARE_SIGNAL(camVideoFPSChanged, unsigned short fps);
+    DECLARE_SIGNAL(screenVideoFPSChanged, int fps);
 };

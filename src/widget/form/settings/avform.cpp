@@ -99,6 +99,7 @@ AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
     volumeDisplay->setMaximum(totalSliderSteps);
 
     fillAudioQualityComboBox();
+    fillScreenFpsComboBox();
 
     eventsInit();
 
@@ -383,6 +384,21 @@ void AVForm::fillAudioQualityComboBox()
     audioQualityComboBox->blockSignals(previouslyBlocked);
 }
 
+void AVForm::fillScreenFpsComboBox()
+{
+    const bool previouslyBlocked = screenFpsComboBox->blockSignals(true);
+    screenFpsComboBox->clear();
+
+    screenFpsComboBox->addItem("5 FPS / dynamic vbitrate", 5);
+    screenFpsComboBox->addItem("30 FPS / 10000 kbit/s vbitrate", 30);
+
+    const int currentFps = videoSettings->getScreenVideoFPS();
+    const int index = screenFpsComboBox->findData(currentFps);
+
+    screenFpsComboBox->setCurrentIndex(index);
+    screenFpsComboBox->blockSignals(previouslyBlocked);
+}
+
 void AVForm::updateVideoModes(int curIndex)
 {
     if (curIndex < 0 || curIndex >= videoDeviceList.size()) {
@@ -465,6 +481,12 @@ void AVForm::on_audioQualityComboBox_currentIndexChanged(int index)
 {
     std::ignore = index;
     audioSettings->setAudioBitrate(audioQualityComboBox->currentData().toInt());
+}
+
+void AVForm::on_screenFpsComboBox_currentIndexChanged(int index)
+{
+    std::ignore = index;
+    videoSettings->setScreenVideoFPS(screenFpsComboBox->currentData().toInt());
 }
 
 void AVForm::getVideoDevices()

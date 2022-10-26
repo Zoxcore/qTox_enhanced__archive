@@ -129,7 +129,8 @@ private:
     static void videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, uint16_t h,
                                    const uint8_t* y, const uint8_t* u, const uint8_t* v,
                                    int32_t ystride, int32_t ustride, int32_t vstride, void* self);
-
+    static void videoCommCallback(ToxAV *av, uint32_t friend_number, TOXAV_CALL_COMM_INFO comm_value,
+                                int64_t comm_number, void *vSelf);
 private:
     static constexpr uint32_t VIDEO_DEFAULT_BITRATE = 8000;
 

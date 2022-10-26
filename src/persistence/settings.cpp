@@ -266,6 +266,7 @@ void Settings::loadGlobal()
         screenRegion = s.value("screenRegion", QRect()).toRect();
         screenGrabbed = s.value("screenGrabbed", false).toBool();
         camVideoFPS = static_cast<quint16>(s.value("camVideoFPS", 0).toUInt());
+        screenVideoFPS = s.value("screenVideoFPS", 5).toInt();
     }
     s.endGroup();
 
@@ -737,6 +738,7 @@ void Settings::saveGlobal()
         s.setValue("videoDev", videoDev);
         s.setValue("camVideoRes", camVideoRes);
         s.setValue("camVideoFPS", camVideoFPS);
+        s.setValue("screenVideoFPS", screenVideoFPS);
         s.setValue("screenRegion", screenRegion);
         s.setValue("screenGrabbed", screenGrabbed);
     }
@@ -1886,6 +1888,19 @@ void Settings::setCamVideoFPS(float newValue)
 {
     if (setVal(camVideoFPS, newValue)) {
         emit camVideoFPSChanged(newValue);
+    }
+}
+
+int Settings::getScreenVideoFPS() const
+{
+    QMutexLocker locker{&bigLock};
+    return screenVideoFPS;
+}
+
+void Settings::setScreenVideoFPS(int newValue)
+{
+    if (setVal(screenVideoFPS, newValue)) {
+        emit screenVideoFPSChanged(newValue);
     }
 }
 

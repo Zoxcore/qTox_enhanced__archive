@@ -61,6 +61,9 @@ public:
     virtual bool getEnableTestSound() const = 0;
     virtual void setEnableTestSound(bool newValue) = 0;
 
+    virtual int getScreenVideoFPS() const = 0;
+    virtual void setScreenVideoFPS(int newValue) = 0;
+
     DECLARE_SIGNAL(inDevChanged, const QString& device);
     DECLARE_SIGNAL(audioInDevEnabledChanged, bool enabled);
 
@@ -72,4 +75,6 @@ public:
     DECLARE_SIGNAL(outVolumeChanged, int volume);
     DECLARE_SIGNAL(audioBitrateChanged, int bitrate);
     DECLARE_SIGNAL(enableTestSoundChanged, bool newValue);
+
+    DECLARE_SIGNAL(screenVideoFPSChanged, int fps);
 };

@@ -109,6 +109,7 @@ void CoreAV::connectCallbacks()
     toxav_callback_video_bit_rate(toxav.get(), CoreAV::videoBitrateCallback, this);
     toxav_callback_audio_receive_frame(toxav.get(), CoreAV::audioFrameCallback, this);
     toxav_callback_video_receive_frame(toxav.get(), CoreAV::videoFrameCallback, this);
+    toxav_callback_call_comm(toxav.get(), CoreAV::videoCommCallback, this);
 }
 
 /**
@@ -269,9 +270,12 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
                      videoBitrate, &err)) {
         it->second->setActive(true);
 
-        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
-        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8000, NULL);
-        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 7999, NULL);
+        if (audioSettings.getScreenVideoFPS() == 30) {
+            qDebug() << "answerCall:setting HQ bitrate: 10000";
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
+        }
 
         return true;
     } else {
@@ -313,9 +317,12 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
     assert(call != nullptr);
     calls.emplace(friendNum, std::move(call));
 
-    toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
-    toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8000, NULL);
-    toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 7999, NULL);
+    if (audioSettings.getScreenVideoFPS() == 30) {
+        qDebug() << "startCall:setting HQ bitrate: 10000";
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
+    }
 
     return true;
 }
@@ -425,11 +432,13 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
         call.setNullVideoBitrate(false);
     }
 
-    toxav_option_set(toxav.get(), callId, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
-    toxav_option_set(toxav.get(), callId, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8000, NULL);
-    toxav_option_set(toxav.get(), callId, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 7999, NULL);
-
-    ToxYUVFrame frame = vframe->toToxYUVFrame();
+    QRect vsize = vframe->getSourceDimensions();
+    QSize new_size = QSize(vsize.width(), vsize.height());
+    // 3840x2160 -> 4K resolution
+    if ((vsize.width() > 1920) && (vsize.height() > 1080)) {
+        new_size = QSize(1920, 1080);
+    }
+    ToxYUVFrame frame = vframe->toToxYUVFrame(new_size);
 
     if (!frame) {
         return;
@@ -933,4 +942,20 @@ void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, ui
     frame.stride[2] = vstride;
 
     videoSource->pushFrame(&frame);
+}
+
+void CoreAV::videoCommCallback(ToxAV* toxAV, uint32_t friend_number, TOXAV_CALL_COMM_INFO comm_value,
+                                int64_t comm_number, void *vSelf)
+{
+    auto self = static_cast<CoreAV*>(vSelf);
+    qDebug() << "videoCommCallback:num:" << comm_value;
+
+    if (comm_value == TOXAV_CALL_COMM_ENCODER_CURRENT_BITRATE) {
+        qDebug() << "videoCommCallback:current video encoder bitrate:" << comm_number;
+        if (self->audioSettings.getScreenVideoFPS() == 30) {
+            qDebug() << "videoCommCallback:setting HQ bitrate: 10000";
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
+        }
+    }
 }
