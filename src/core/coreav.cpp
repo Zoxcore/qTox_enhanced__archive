@@ -268,6 +268,11 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
     if (toxav_answer(toxav.get(), friendNum, audioSettings.getAudioBitrate(),
                      videoBitrate, &err)) {
         it->second->setActive(true);
+
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8000, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 7999, NULL);
+
         return true;
     } else {
         qWarning() << "Failed to answer call with error" << err;
@@ -307,6 +312,11 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
     call->moveToThread(thread());
     assert(call != nullptr);
     calls.emplace(friendNum, std::move(call));
+
+    toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+    toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8000, NULL);
+    toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 7999, NULL);
+
     return true;
 }
 
@@ -414,6 +424,10 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
         }
         call.setNullVideoBitrate(false);
     }
+
+    toxav_option_set(toxav.get(), callId, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+    toxav_option_set(toxav.get(), callId, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8000, NULL);
+    toxav_option_set(toxav.get(), callId, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 7999, NULL);
 
     ToxYUVFrame frame = vframe->toToxYUVFrame();
 

@@ -131,7 +131,7 @@ private:
                                    int32_t ystride, int32_t ustride, int32_t vstride, void* self);
 
 private:
-    static constexpr uint32_t VIDEO_DEFAULT_BITRATE = 2500;
+    static constexpr uint32_t VIDEO_DEFAULT_BITRATE = 8000;
 
 private:
     // atomic because potentially accessed by different threads
