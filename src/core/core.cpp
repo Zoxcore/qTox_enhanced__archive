@@ -681,6 +681,7 @@ void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, 
 {
     std::ignore = tox;
     std::ignore = type;
+    std::ignore = message_id;
     Core* core = static_cast<Core*>(vCore);
     QString msg = ToxString(message, length).getQString();
 
