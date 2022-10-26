@@ -82,7 +82,7 @@ FriendWidget::FriendWidget(std::shared_ptr<FriendChatroom> chatroom_, bool compa
 
     if (frnd->getStatus() == Status::Status::Offline)
     {
-        if (!frnd->getPushToken().isEmpty())
+        if ((!frnd->getPushToken().isEmpty()) && (frnd->getPushToken().length() > 5))
         {
             // friend has push url
             qDebug() << "updateStatusLight:pushtoken=" << frnd->getPushToken();
@@ -344,7 +344,7 @@ void FriendWidget::updateStatusLight()
 
     if (frnd->getStatus() == Status::Status::Offline)
     {
-        if (!frnd->getPushToken().isEmpty())
+        if ((!frnd->getPushToken().isEmpty()) && (frnd->getPushToken().length() > 5))
         {
             // friend has push url
             qDebug() << "updateStatusLight:UPDATE:pushtoken=" << frnd->getPushToken();

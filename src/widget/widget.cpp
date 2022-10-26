@@ -726,6 +726,7 @@ void Widget::onCoreChanged(Core& core_)
     connect(core, &Core::friendAdded, this, &Widget::addFriend);
     connect(core, &Core::failedToAddFriend, this, &Widget::addFriendFailed);
     connect(core, &Core::friendUsernameChanged, this, &Widget::onFriendUsernameChanged);
+    connect(core, &Core::friendLoaded, this, &Widget::onFriendLoaded);
     connect(core, &Core::friendStatusChanged, this, &Widget::onCoreFriendStatusChanged);
     connect(core, &Core::friendStatusMessageChanged, this, &Widget::onFriendStatusMessageChanged);
     connect(core, &Core::friendRequestReceived, this, &Widget::onFriendRequestReceived);
@@ -1330,6 +1331,19 @@ void Widget::onFriendDisplayedNameChanged(const QString& displayed)
     }
 
     chatListWidget->itemsChanged();
+}
+
+void Widget::onFriendLoaded(int friendId)
+{
+    const auto& friendPk = friendList->id2Key(friendId);
+    Friend* f = friendList->findFriend(friendPk);
+    if (!f) {
+        return;
+    }
+
+    auto history = profile.getHistory();
+    auto pushtoken = history->getPushtoken(friendPk);
+    f->setPushToken(pushtoken);
 }
 
 void Widget::onFriendUsernameChanged(int friendId, const QString& username)

@@ -177,6 +177,7 @@ signals:
     void friendStatusChanged(uint32_t friendId, Status::Status status);
     void friendStatusMessageChanged(uint32_t friendId, const QString& message);
     void friendUsernameChanged(uint32_t friendId, const QString& username);
+    void friendLoaded(uint32_t friendId);
     void friendTypingChanged(uint32_t friendId, bool isTyping);
 
     void friendRemoved(uint32_t friendId);

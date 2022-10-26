@@ -528,6 +528,25 @@ void History::addPushtoken(const ToxPk& sender, const QString& pushtoken)
                );
 }
 
+QString History::getPushtoken(const ToxPk& friendPk)
+{
+    if (!isValid()) {
+        return "_";
+    }
+
+    QString pushtoken = QString("_");
+    db->execNow(
+        RawDatabase::Query("SELECT push_token from authors WHERE public_key = ?",
+            {friendPk.getByteArray()},
+            [&](const QVector<QVariant>& row) {
+                    pushtoken = row[0].toString();
+                    qDebug() << "getPushtoken:" << pushtoken;
+            })
+    );
+
+    return pushtoken;
+}
+
 void History::pushtokenPing(const ToxPk& sender)
 {
     if (!isValid()) {

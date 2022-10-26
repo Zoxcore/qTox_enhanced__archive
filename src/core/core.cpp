@@ -1259,6 +1259,32 @@ void Core::loadFriends()
             emit friendStatusMessageChanged(ids[i], friendStatusMessage);
         }
         checkLastOnline(ids[i]);
+
+        // HINT: load pushtoken for friend from db, and put it in the Friend object
+        emit friendLoaded(ids[i]);
+        // HINT: update connection status so that the icon get drawn again, and takes pushtoken into account
+        Tox_Err_Friend_Query error2;
+        Tox_Connection connection_status = tox_friend_get_connection_status(tox.get(), ids[i], &error2);
+        Status::Status friendStatus = Status::Status::Offline;
+        switch (connection_status)
+        {
+            case TOX_CONNECTION_NONE:
+                friendStatus = Status::Status::Offline;
+                break;
+            case TOX_CONNECTION_TCP:
+                friendStatus = Status::Status::Online;
+                break;
+            case TOX_CONNECTION_UDP:
+                friendStatus = Status::Status::Online;
+                break;
+            default:
+                friendStatus = Status::Status::Offline;
+                break;
+        }
+        // HINT: yes 3 times. we need to force a status change so the UI will update
+        emit friendStatusChanged(ids[i], Status::Status::Online);
+        emit friendStatusChanged(ids[i], Status::Status::Offline);
+        emit friendStatusChanged(ids[i], friendStatus);
     }
 }
 

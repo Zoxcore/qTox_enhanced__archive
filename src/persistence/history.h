@@ -226,6 +226,7 @@ public:
                        QString dispName, const std::function<void(RowId)>& insertIdCallback = {});
 
     void addPushtoken(const ToxPk& sender, const QString& pushtoken);
+    QString getPushtoken(const ToxPk& friendPk);
     void pushtokenPing(const ToxPk& sender);
 
     void addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,
