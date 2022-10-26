@@ -244,6 +244,7 @@ void BootstrapNodeUpdater::requestBootstrapNodes()
     connect(&nam, &QNetworkAccessManager::finished, this, &BootstrapNodeUpdater::onRequestComplete);
 
     QNetworkRequest request{NodeListAddress};
+    qWarning() << "requestBootstrapNodes:**update bootstrapnodes from internet**";
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
     nam.get(request);
@@ -273,6 +274,7 @@ void BootstrapNodeUpdater::onRequestComplete(QNetworkReply* reply)
         return;
     }
 
+    qWarning() << "requestBootstrapNodes:onRequestComplete:**update bootstrapnodes from internet**";
     QList<DhtServer> result = jsonToNodeList(jsonDocument);
 
     emit availableBootstrapNodes(result);
