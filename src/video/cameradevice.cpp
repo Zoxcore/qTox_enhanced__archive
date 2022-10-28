@@ -148,10 +148,11 @@ out:
  * If the mode does not exist, a new device can't be opened.
  *
  * @param devName Device name to open.
+ * @param settings Settings object
  * @param mode Mode of device to open.
  * @return CameraDevice if the device could be opened, nullptr otherwise.
  */
-CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
+CameraDevice* CameraDevice::open(QString devName, Settings& settings, VideoMode mode)
 {
     if (!getDefaultInputFormat())
         return nullptr;
@@ -161,9 +162,16 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         return nullptr;
     }
 
-    float FPS = 30;
+    float FPS = settings.getScreenVideoFPS();
+    qDebug() << "getScreenVideoFPS:" << FPS;
+    if (FPS < 5) {
+        FPS = 5;
+        qDebug() << "FPS:a:" << FPS;
+    }
+
     if (mode.FPS > 0.0f) {
         FPS = mode.FPS;
+        qDebug() << "FPS:b:" << FPS;
     } else {
         qWarning() << "VideoMode could be invalid!";
     }

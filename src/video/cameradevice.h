@@ -36,7 +36,7 @@ class Settings;
 class CameraDevice
 {
 public:
-    static CameraDevice* open(QString devName, VideoMode mode = VideoMode());
+    static CameraDevice* open(QString devName, Settings& settings, VideoMode mode = VideoMode());
     void open();
     bool close();
 
