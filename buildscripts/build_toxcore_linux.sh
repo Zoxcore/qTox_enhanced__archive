@@ -26,6 +26,8 @@ build_toxcore() {
     "${SCRIPT_DIR}/download/download_toxcore.sh"
 
     cmake . \
+        -DCMAKE_C_FLAGS="-fstack-protector-all --param=ssp-buffer-size=1" \
+        -DCMAKE_CXX_FLAGS="-fstack-protector-all --param=ssp-buffer-size=1" \
         -DBOOTSTRAP_DAEMON=OFF \
         -DCMAKE_BUILD_TYPE=Release \
         .
