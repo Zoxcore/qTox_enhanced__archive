@@ -11,9 +11,9 @@ let
           src = fetchFromGitHub {
             owner = "TokTok";
             repo = "c-toxcore";
-            rev = "1df4a851510d4878e299378d33e5dab3ac8c42bf";
+            rev = "ae217ac8bfc5cc68bdce001f0d9dcad69c4d02c3";
             fetchSubmodules = true;
-            sha256 = "sha256-NxPAArdmXPUkwzYGH7bEFlii2du7PXECuak2/Al8yMU=";
+            sha256 = "sha256-g3qTp0ZBGnk1+qY1h4xOOO71GID4lkZgRPwYJ45g3pM=";
           };
           buildInputs = [
             libsodium msgpack ncurses libconfig
