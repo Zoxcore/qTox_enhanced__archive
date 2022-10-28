@@ -372,6 +372,8 @@ void AVForm::fillAudioQualityComboBox()
 {
     const bool previouslyBlocked = audioQualityComboBox->blockSignals(true);
 
+    audioQualityComboBox->addItem("HD (200 kbps)", 200);
+    audioQualityComboBox->addItem("HD (128 kbps)", 128);
     audioQualityComboBox->addItem(tr("High (64 kbps)"), 64);
     audioQualityComboBox->addItem(tr("Medium (32 kbps)"), 32);
     audioQualityComboBox->addItem(tr("Low (16 kbps)"), 16);
