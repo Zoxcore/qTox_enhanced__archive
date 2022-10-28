@@ -275,6 +275,16 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
             toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
             toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
             toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
+        } else if (audioSettings.getScreenVideoFPS() == 25) {
+            qDebug() << "answerCall:setting HQ bitrate: 10000";
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
+        } else if (audioSettings.getScreenVideoFPS() == 20) {
+            qDebug() << "answerCall:setting HQ bitrate: 8000";
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8100, NULL);
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 8000, NULL);
         }
 
         return true;
@@ -322,6 +332,16 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
         toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
         toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
         toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
+    } else if (audioSettings.getScreenVideoFPS() == 25) {
+        qDebug() << "startCall:setting HQ bitrate: 10000";
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
+    } else if (audioSettings.getScreenVideoFPS() == 20) {
+        qDebug() << "startCall:setting HQ bitrate: 8000";
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8100, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 8000, NULL);
     }
 
     return true;
@@ -952,10 +972,22 @@ void CoreAV::videoCommCallback(ToxAV* toxAV, uint32_t friend_number, TOXAV_CALL_
 
     if (comm_value == TOXAV_CALL_COMM_ENCODER_CURRENT_BITRATE) {
         qDebug() << "videoCommCallback:current video encoder bitrate:" << comm_number;
+
         if (self->audioSettings.getScreenVideoFPS() == 30) {
             qDebug() << "videoCommCallback:setting HQ bitrate: 10000";
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
+        } else if (self->audioSettings.getScreenVideoFPS() == 25) {
+            qDebug() << "videoCommCallback:setting HQ bitrate: 10000";
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
+        } else if (self->audioSettings.getScreenVideoFPS() == 20) {
+            qDebug() << "videoCommCallback:setting HQ bitrate: 8000";
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8100, NULL);
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 8000, NULL);
         }
     }
 }
