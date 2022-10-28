@@ -435,7 +435,7 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
     QRect vsize = vframe->getSourceDimensions();
     QSize new_size = QSize(vsize.width(), vsize.height());
     // 3840x2160 -> 4K resolution
-    if ((vsize.width() > 1920) && (vsize.height() > 1080)) {
+    if ((vsize.width() > 1920) || (vsize.height() > 1080)) {
         new_size = QSize(1920, 1080);
     }
     ToxYUVFrame frame = vframe->toToxYUVFrame(new_size);
