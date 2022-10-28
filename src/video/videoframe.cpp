@@ -592,6 +592,9 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
 
     // Bilinear is better for shrinking, bicubic better for upscaling
     int resizeAlgo = sourceDimensions.width() > dimensions.width() ? SWS_BILINEAR : SWS_BICUBIC;
+    if (sourceDimensions.width() > 1920) {
+        resizeAlgo = SWS_BICUBIC;
+    }
 
     SwsContext* swsCtx =
         sws_getContext(sourceDimensions.width(), sourceDimensions.height(),
