@@ -24,8 +24,11 @@ jobs:
     - name: install cliclick
       run:  brew install cliclick
 
-    - name: install deps
+    - name: install wget
       run:  brew install wget
+
+    - name: install sendkeys
+      run:  brew install socsieng/tap/sendkeys
 
     - name: macos-version1
       run: sw_vers -productVersion
@@ -69,7 +72,11 @@ jobs:
            pwd
            ls -al
            open ./qtox.app
-           sleep 20
+           sleep 3
+           sendkeys -a "qTox" -c "user<c:enter>"
+           sleep 1
+           sendkeys -a "qTox" -c "<c:tab><c:tab><c:tab>360497DA684BCE2A500C1AF9B3A5CE949BBB9F6FB1F91589806FB04CA039E313<c:enter><c:tab:shift><c:enter>"
+           sleep 60
 
     - name: upload-screenshots
       uses: actions/upload-artifact@v2
