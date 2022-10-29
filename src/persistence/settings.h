@@ -66,6 +66,7 @@ class Settings : public QObject,
     // general
     Q_PROPERTY(bool compactLayout READ getCompactLayout WRITE setCompactLayout NOTIFY compactLayoutChanged FINAL)
     Q_PROPERTY(bool autorun READ getAutorun WRITE setAutorun NOTIFY autorunChanged FINAL)
+    Q_PROPERTY(bool usePushNotification READ getUsePushNotification WRITE setUsePushNotification NOTIFY usePushNotificationChanged FINAL)
 
     // GUI
     Q_PROPERTY(bool separateWindow READ getSeparateWindow WRITE setSeparateWindow NOTIFY
@@ -204,6 +205,7 @@ signals:
     void globalAutoAcceptDirChanged(const QString& path);
     void autoAcceptMaxSizeChanged(size_t size);
     void checkUpdatesChanged(bool enabled);
+    void usePushNotificationChanged(bool enabled);
     void widgetDataChanged(const QString& key);
 
     // GUI
@@ -320,6 +322,9 @@ public:
 
     bool getCheckUpdates() const;
     void setCheckUpdates(bool newValue);
+
+    bool getUsePushNotification() const;
+    void setUsePushNotification(bool newValue);
 
     bool getNotify() const override;
     void setNotify(bool newValue) override;
@@ -612,6 +617,7 @@ private:
     bool lightTrayIcon;
     bool useEmoticons;
     bool checkUpdates;
+    bool usePushNotification;
     bool notify;
     bool desktopNotify;
     bool showWindow;

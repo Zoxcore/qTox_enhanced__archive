@@ -140,6 +140,7 @@ GeneralForm::GeneralForm(SettingsWidget* myParent, Settings& settings_, Style& s
     bodyUI->cbAutorun->setChecked(settings.getAutorun());
 
     bodyUI->cbSpellChecking->setChecked(settings.getSpellCheckingEnabled());
+    bodyUI->cbUsePushNotification->setChecked(settings.getUsePushNotification());
     bodyUI->lightTrayIcon->setChecked(settings.getLightTrayIcon());
     bool showSystemTray = settings.getShowSystemTray();
 
@@ -190,6 +191,12 @@ void GeneralForm::on_cbAutorun_stateChanged()
 void GeneralForm::on_cbSpellChecking_stateChanged()
 {
     settings.setSpellCheckingEnabled(bodyUI->cbSpellChecking->isChecked());
+}
+
+void GeneralForm::on_cbUsePushNotification_stateChanged()
+{
+    qWarning() << "on_cbUsePushNotification_stateChanged";
+    settings.setUsePushNotification(bodyUI->cbUsePushNotification->isChecked());
 }
 
 void GeneralForm::on_showSystemTray_stateChanged()

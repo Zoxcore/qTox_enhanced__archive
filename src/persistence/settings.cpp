@@ -153,6 +153,7 @@ void Settings::loadGlobal()
         }
         autoAwayTime = s.value("autoAwayTime", 10).toInt();
         checkUpdates = s.value("checkUpdates", true).toBool();
+        usePushNotification = s.value("usePushNotification", true).toBool();
         // note: notifySound and busySound UI elements are now under UI settings
         // page, but kept under General in settings file to be backwards compatible
         notifySound = s.value("notifySound", true).toBool();
@@ -644,6 +645,7 @@ void Settings::saveGlobal()
         s.setValue("currentProfile", currentProfile);
         s.setValue("autoAwayTime", autoAwayTime);
         s.setValue("checkUpdates", checkUpdates);
+        s.setValue("usePushNotification", usePushNotification);
         s.setValue("notifySound", notifySound);
         s.setValue("notifyHide", notifyHide);
         s.setValue("busySound", busySound);
@@ -1589,6 +1591,19 @@ void Settings::setCheckUpdates(bool newValue)
 {
     if (setVal(checkUpdates, newValue)) {
         emit checkUpdatesChanged(newValue);
+    }
+}
+
+bool Settings::getUsePushNotification() const
+{
+    QMutexLocker locker{&bigLock};
+    return usePushNotification;
+}
+
+void Settings::setUsePushNotification(bool newValue)
+{
+    if (setVal(usePushNotification, newValue)) {
+        emit usePushNotificationChanged(newValue);
     }
 }
 
