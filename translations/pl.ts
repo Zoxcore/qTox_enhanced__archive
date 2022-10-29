@@ -1226,6 +1226,24 @@ zamiast zostać całkowicie zamknięty.</translation>
         <source>Add a chat message when a user joins or leaves a group</source>
         <translation>Dodaj wiadomość na czacie, gdy użytkownik dołącza do grupy lub ją opuszcza</translation>
     </message>
+    <message>
+        <source>Push Notifications help mobile users of Tox (with TRIfA and Antidote) to save battery and network bandwidth.
+this feature will contact an out of band HTTPS webserver with the Push Token for your friend, no other information ist sent!
+but this will reveal your IP address to the webserver and also the time you pinged your friend.
+you can prevent your IP from being sent by using a proxy server (like Tor).
+If you disable this setting, mobile users may receive your messages much later than you send them.
+the only allowed Push Servers are (no other servers will ever be contacted):
+
+  &quot;https://tox.zoff.xyz/toxfcm/&quot;
+  &quot;https://gotify1.unifiedpush.org/&quot;
+  &quot;https://ntfy.sh/&quot;
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enable Push Notification</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
