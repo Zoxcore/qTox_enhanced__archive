@@ -3,9 +3,11 @@ on:
   push:
     paths-ignore:
      - 'README.md'
+     - '.github/workflows/startup-tests.yml'
   pull_request:
     paths-ignore:
      - 'README.md'
+     - '.github/workflows/startup-tests.yml'
   workflow_dispatch:
     inputs:
       version:
