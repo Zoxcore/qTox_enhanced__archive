@@ -18,12 +18,15 @@
 set -euo pipefail
 
 QT_MAJOR=5
-QT_MINOR=12
-QT_PATCH=12
-QT_HASH=1979a3233f689cb8b3e2783917f8f98f6a2e1821a70815fb737f020cd4b6ab06
+QT_MINOR=15
+QT_PATCH=7
+QT_HASH=8a71986676a3f37a198a9113acedbfd5bc5606a459b6b85816d951458adbe9a0
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 
+#    https://download.qt.io/archive/qt/${QT_MAJOR}.${QT_MINOR}/${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}/single/qt-everywhere-opensource-src-${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}.tar.xz \
+#    https://download.qt.io/archive/qt/${QT_MAJOR}.${QT_MINOR}/${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}/single/qt-everywhere-src-${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}.tar.xz \
+
 download_verify_extract_tarball \
-    https://download.qt.io/archive/qt/${QT_MAJOR}.${QT_MINOR}/${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}/single/qt-everywhere-src-${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}.tar.xz \
+    https://download.qt.io/archive/qt/${QT_MAJOR}.${QT_MINOR}/${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}/single/qt-everywhere-opensource-src-${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}.tar.xz \
     "${QT_HASH}"
