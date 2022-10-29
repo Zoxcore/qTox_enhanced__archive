@@ -967,24 +967,19 @@ void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, ui
 void CoreAV::videoCommCallback(ToxAV* toxAV, uint32_t friend_number, TOXAV_CALL_COMM_INFO comm_value,
                                 int64_t comm_number, void *vSelf)
 {
+    std::ignore = comm_number;
     auto self = static_cast<CoreAV*>(vSelf);
-    qDebug() << "videoCommCallback:num:" << comm_value;
 
     if (comm_value == TOXAV_CALL_COMM_ENCODER_CURRENT_BITRATE) {
-        qDebug() << "videoCommCallback:current video encoder bitrate:" << comm_number;
-
         if (self->audioSettings.getScreenVideoFPS() == 30) {
-            qDebug() << "videoCommCallback:setting HQ bitrate: 10000";
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
         } else if (self->audioSettings.getScreenVideoFPS() == 25) {
-            qDebug() << "videoCommCallback:setting HQ bitrate: 10000";
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
         } else if (self->audioSettings.getScreenVideoFPS() == 20) {
-            qDebug() << "videoCommCallback:setting HQ bitrate: 8000";
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8100, NULL);
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 8000, NULL);
