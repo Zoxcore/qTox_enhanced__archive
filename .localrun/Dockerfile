@@ -91,6 +91,14 @@ RUN mkdir -p /src/aitool && \
     /build/build_aitool_linux.sh && \
     rm -fr /src/aitool
 
+COPY ./buildscripts/download/download_qt.sh /build/download/download_qt.sh
+COPY ./buildscripts/build_qt_linux.sh /build/build_qt_linux.sh
+
+#RUN mkdir -p /src/qt && \
+#  cd /src/qt && \
+#  /build/build_qt_linux.sh && \
+#  rm -fr /src/qt
+
 COPY ./buildscripts/download/download_toxcore.sh /build/download/download_toxcore.sh
 COPY ./buildscripts/download/download_toxext.sh /build/download/download_toxext.sh
 COPY ./buildscripts/download/download_toxext_messages.sh /build/download/download_toxext_messages.sh
