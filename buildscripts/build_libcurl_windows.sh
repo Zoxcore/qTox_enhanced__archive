@@ -21,6 +21,22 @@ CPPFLAGS="-I${DEP_PREFIX}/include" \
     "${HOST_OPTION}" \
     "--prefix=${DEP_PREFIX}" \
     "--with-openssl=${DEP_PREFIX}" \
+    --disable-ftp \
+    --disable-file \
+    --disable-ldap \
+    --disable-ldaps \
+    --disable-rtsp \
+    --disable-telnet \
+    --disable-tftp \
+    --disable-pop3 \
+    --disable-imap \
+    --disable-smb \
+    --disable-smtp \
+    --disable-gopher \
+    --disable-mqtt \
+    --disable-manual \
+    --disable-websockets \
+    --with-ca-fallback \
     --enable-static \
     --disable-shared
 

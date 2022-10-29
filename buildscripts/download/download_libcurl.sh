@@ -18,11 +18,11 @@
 set -euo pipefail
 
 LIBCURL_VERSION="7.80.0"
-LIBCURL_HASH="dab997c9b08cb4a636a03f2f7f985eaba33279c1c52692430018fae4a4878dc7"
-LIBCURL_FILENAME="curl-7.80.0.tar.gz"
+LIBCURL_HASH="3dfdd39ba95e18847965cd3051ea6d22586609d9011d91df7bc5521288987a82"
+LIBCURL_FILENAME="curl-7.86.0.tar.gz"
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 
 download_verify_extract_tarball \
-    "https://github.com/curl/curl/releases/download/curl-7_80_0/curl-7.80.0.tar.gz" \
+    "https://github.com/curl/curl/releases/download/curl-7_86_0/curl-7.86.0.tar.gz" \
     ${LIBCURL_HASH}
