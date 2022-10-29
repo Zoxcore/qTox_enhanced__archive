@@ -18,6 +18,10 @@
 */
 
 #include <QDebug>
+#include <QNetworkAccessManager>
+#include <QUrlQuery>
+#include <QNetworkProxy>
+#include <QNetworkReply>
 #include <cassert>
 
 #include "history.h"
@@ -531,7 +535,7 @@ void History::addPushtoken(const ToxPk& sender, const QString& pushtoken)
 QString History::getPushtoken(const ToxPk& friendPk)
 {
     if (!isValid()) {
-        return "_";
+        return QString("_");
     }
 
     QString pushtoken = QString("_");
@@ -558,14 +562,19 @@ void History::pushtokenPing(const ToxPk& sender)
             {sender.getByteArray()},
             [&](const QVector<QVariant>& row) {
                     auto url = row[0].toString();
+
                     qDebug() << "wakeupMobile:START";
                     qDebug() << "pushtokenPing:pushtoken=" << url;
+                    qDebug() << "pushtokenPing:pushtoken(as hex bytes)=" << url.toLatin1().toHex();
 
                     if (url.isNull()) {
+                        qDebug() << "pushtokenPing:url.isNull()";
                     }
                     else if (url.size() < 8) {
+                        qDebug() << "pushtokenPing:url.size() < 8";
                     }
                     else if (url.isEmpty()) {
+                        qDebug() << "pushtokenPing:url.isEmpty()";
                     }
                     else if (url.startsWith("https://")) {
 
@@ -581,19 +590,57 @@ void History::pushtokenPing(const ToxPk& sender)
                         if (push_url_in_whitelist) {
 
                             qDebug() << "wakeupMobile:push_url=" << url;
+#if 1
+                            qDebug() << "wakeupMobile:network method:QNetworkAccessManager";
 
+                            QString proxy_addr = settings.getProxyAddr();
+                            quint16 proxy_port = settings.getProxyPort();
+                            QNetworkProxy proxy = settings.getProxy();
+                            ICoreSettings::ProxyType proxy_type = settings.getProxyType();
+                            qDebug() << "wakeupMobile:proxy_addr=" << proxy_addr.toUtf8() << " bytes=" << proxy_addr.toUtf8().size();
+                            qDebug() << "wakeupMobile:proxy_port=" << proxy_port;
+                            qDebug() << "wakeupMobile:proxy_type=" << static_cast<int>(proxy_type);
+                            qDebug() << "wakeupMobile:proxy=" << proxy;
+
+                            QNetworkAccessManager *nam = new QNetworkAccessManager(QThread::currentThread());
+                            nam->setProxy(proxy);
+
+                            QUrlQuery paramsQuery;
+                            paramsQuery.addQueryItem("ping", "1");
+
+                            QUrl resource(url);
+
+                            QNetworkRequest request(resource);
+                            request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+                            request.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0");
+
+                            connect(nam, &QNetworkAccessManager::finished,[=](QNetworkReply* reply){
+                                if (reply->error() == QNetworkReply::NoError) {
+                                    qDebug() << "pushPingFinished:OK";
+                                } else {
+                                    qDebug() << "pushPingFinished:error:" << reply->errorString();
+                                }
+                            });
+
+                            qDebug() << "wakeupMobile:calling url ...";
+                            nam->post(request, paramsQuery.query(QUrl::FullyEncoded).toUtf8());
+#else
+
+                            qDebug() << "wakeupMobile:network method:CURL";
                             curl_global_init(CURL_GLOBAL_ALL);
                             CURL *curl;
                             CURLcode res;
                             curl = curl_easy_init();
 
+                            // HINT: show verbose curl output
+                            curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+
                             if (curl)
                             {
-                                const char *url_c_str = url.toUtf8().constData();
+                                const char *url_c_str = url.toLatin1().constData();
 #if defined(Q_OS_WIN32)
                                 curl_easy_setopt(curl, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
 #endif
-
 
                                 QString proxy_addr = settings.getProxyAddr();
                                 quint16 proxy_port = settings.getProxyPort();
@@ -641,7 +688,12 @@ void History::pushtokenPing(const ToxPk& sender)
                                 curl_easy_cleanup(curl);
                             }
                             curl_global_cleanup();
+#endif
+                        } else {
+                            qDebug() << "wakeupMobile:check against whitelist:URL not in whitelist -> " << url;
                         }
+                    } else {
+                        qDebug() << "pushtokenPing:some other problem";
                     }
             })
         );
