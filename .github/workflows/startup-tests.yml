@@ -71,6 +71,7 @@ jobs:
            cd /Volumes/qTox*
            pwd
            ls -al
+           echo '360497DA684BCE2A500C1AF9B3A5CE949BBB9F6FB1F91589806FB04CA039E313' | pbcopy
            open ./qtox.app
            sleep 3
            sendkeys -a "qTox" -c "user<c:enter>"
@@ -96,6 +97,18 @@ jobs:
           run: |
                sudo apt-get update
                sudo apt-get install imagemagick
+               sudo apt-get install xdotool xclip
+
+        - name: create runscript
+          run: |
+               printf '#!/bin/bash\n/home/runner/work/qTox_enhanced/qTox_enhanced/squashfs-root/local/bin/qtox &\n' > /tmp/a.sh
+               printf 'sleep 3\n' >> /tmp/a.sh
+               printf 'xdotool key u s e r l Return\n' >> /tmp/a.sh
+               printf 'sleep 60\n' >> /tmp/a.sh
+               printf 'import -window root /tmp/screenshot-linux.png\n' >> /tmp/a.sh
+               cat /tmp/a.sh
+               chmod a+rx /tmp/a.sh
+               echo '360497DA684BCE2A500C1AF9B3A5CE949BBB9F6FB1F91589806FB04CA039E313'|xclip -selection c
 
         - name: startup-app
           uses: GabrielBB/xvfb-action@v1
@@ -138,6 +151,20 @@ jobs:
              ping -n 20 127.0.0.1 >NUL
              dir
         shell: cmd
+
+      - name: startup-app
+        shell: pwsh
+        run: |
+          [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+          Start-Sleep -Seconds 30
+          Set-Clipboard -Value "360497DA684BCE2A500C1AF9B3A5CE949BBB9F6FB1F91589806FB04CA039E313"
+          Start-Process -FilePath "D:\a\qTox_enhanced\qTox_enhanced\qtox.exe" -WorkingDirectory "D:\a\qTox_enhanced\qTox_enhanced" -windowstyle Maximized
+          Start-Sleep -Seconds 20
+          [System.Windows.Forms.SendKeys]::SendWait("userw")
+          [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+          Start-Sleep -Seconds 8
+          [System.Windows.Forms.SendKeys]::SendWait("^{u}")
+          Start-Sleep -Seconds 60
 
       - name: capture-screen
         shell: pwsh
