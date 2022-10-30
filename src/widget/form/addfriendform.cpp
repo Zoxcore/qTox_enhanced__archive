@@ -34,6 +34,7 @@
 #include <QMessageBox>
 #include <QRegularExpression>
 #include <QScrollArea>
+#include <QShortcut>
 #include <QSignalMapper>
 #include <QTabWidget>
 #include <QWindow>
@@ -122,6 +123,8 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     connect(&ngcId, &QLineEdit::textChanged, this, &AddFriendForm::onNgcIdChanged);
     connect(tabWidget, &QTabWidget::currentChanged, this, &AddFriendForm::onCurrentChanged);
     connect(&sendButton, &QPushButton::clicked, this, &AddFriendForm::onSendTriggered);
+    auto* const addShortcut = new QShortcut(Qt::CTRL + Qt::Key_U, main);
+    connect(addShortcut, &QShortcut::activated, this, &AddFriendForm::onSendTriggered);
     connect(&importSendButton, &QPushButton::clicked, this, &AddFriendForm::onImportSendClicked);
     connect(&importFileButton, &QPushButton::clicked, this, &AddFriendForm::onImportOpenClicked);
     connect(&core, &Core::usernameSet, this, &AddFriendForm::onUsernameSet);
@@ -355,10 +358,17 @@ void AddFriendForm::setIdFromClipboard()
 {
     const QClipboard* clipboard = QApplication::clipboard();
     const QString trimmedId = clipboard->text().trimmed();
-    const QString strippedId = getToxId(trimmedId);
-    const bool isSelf = ToxId::isToxId(strippedId) && ToxId(strippedId) != ownId;
-    if (!strippedId.isEmpty() && ToxId::isToxId(strippedId) && isSelf) {
-        toxId.setText(trimmedId);
+
+    if (checkIsValidNgcId(trimmedId)) {
+        qDebug() << QString("setIdFromClipboard:NGC Public Group ID set from Clipboard");
+        ngcId.setText(trimmedId);
+    } else {
+        const QString strippedId = getToxId(trimmedId);
+        const bool isSelf = ToxId::isToxId(strippedId) && ToxId(strippedId) != ownId;
+        if (!strippedId.isEmpty() && ToxId::isToxId(strippedId) && isSelf) {
+            qDebug() << QString("setIdFromClipboard:ToxID set from Clipboard");
+            toxId.setText(trimmedId);
+        }
     }
 }
 
