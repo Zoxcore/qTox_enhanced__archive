@@ -88,7 +88,7 @@ jobs:
            sleep 5
            osascript -e 'tell application "qTox" to activate'
            sleep 1
-           sendkeys -a "qTox" -c "<c:u:ctrl>"
+           sendkeys -a "qTox" -c "<c:u:command>"
            sleep 60
            sleep 60
            pwd
