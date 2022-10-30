@@ -2760,12 +2760,18 @@ void Widget::retranslateUi()
 
 void Widget::focusChatInput()
 {
+    qDebug() << QString("Widget::focusChatInput()");
     if (activeChatroomWidget) {
         if (const Friend* f = activeChatroomWidget->getFriend()) {
             chatForms[f->getPublicKey()]->focusInput();
         } else if (Group* g = activeChatroomWidget->getGroup()) {
             groupChatForms[g->getPersistentId()]->focusInput();
         }
+    }
+
+    if (addFriendForm->isShown()) {
+        qDebug() << QString("Widget::addFriendForm->showFocusAgain()");
+        addFriendForm->showFocusAgain();
     }
 }
 

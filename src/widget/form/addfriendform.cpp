@@ -96,6 +96,8 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     layout.addWidget(&sendButton);
     tabWidget->addTab(main, QString());
 
+    sendButton.setEnabled(true);
+
     importContacts = new QWidget(tabWidget);
     importContacts->setLayout(&importContactsLayout);
     importFileLine.addWidget(&importFileLabel);
@@ -123,8 +125,10 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     connect(&ngcId, &QLineEdit::textChanged, this, &AddFriendForm::onNgcIdChanged);
     connect(tabWidget, &QTabWidget::currentChanged, this, &AddFriendForm::onCurrentChanged);
     connect(&sendButton, &QPushButton::clicked, this, &AddFriendForm::onSendTriggered);
-    auto* const addShortcut = new QShortcut(Qt::CTRL + Qt::Key_U, main);
-    connect(addShortcut, &QShortcut::activated, this, &AddFriendForm::onSendTriggered);
+
+    auto* const addShortcut2 = new QShortcut(Qt::CTRL + Qt::Key_U, main);
+    connect(addShortcut2, &QShortcut::activated, this, &AddFriendForm::onSendTriggered);
+
     connect(&importSendButton, &QPushButton::clicked, this, &AddFriendForm::onImportSendClicked);
     connect(&importFileButton, &QPushButton::clicked, this, &AddFriendForm::onImportOpenClicked);
     connect(&core, &Core::usernameSet, this, &AddFriendForm::onUsernameSet);
@@ -175,11 +179,19 @@ void AddFriendForm::show(ContentLayout* contentLayout)
     head->show();
     setIdFromClipboard();
     toxId.setFocus();
+    qDebug() << QString("AddFriendForm:toxId.setFocus()");
 
     // Fix #3421
     // Needed to update tab after opening window
     const int index = tabWidget->currentIndex();
     onCurrentChanged(index);
+}
+
+void AddFriendForm::showFocusAgain()
+{
+    if (isShown()) {
+        message.setFocus();
+    }
 }
 
 QString AddFriendForm::getMessage() const
@@ -251,6 +263,7 @@ void AddFriendForm::addNgcPublicGroup(const QString& idText)
 
 void AddFriendForm::onSendTriggered()
 {
+    qDebug() << QString("AddFriendForm::onSendTriggered()");
     const QString friendId = getToxId(toxId.text());
     const QString NgcId = ngcId.text();
 
@@ -334,7 +347,7 @@ void AddFriendForm::onIdChanged(const QString& id)
                                   : style.getStylesheet("addFriendForm/toxId.css", settings));
     toxId.setToolTip(isValidOrEmpty ? QStringLiteral("") : tr("Invalid Tox ID format"));
 
-    sendButton.setEnabled(isValidId);
+    sendButton.setEnabled(true);
 }
 
 void AddFriendForm::onNgcIdChanged(const QString& id)
@@ -351,7 +364,7 @@ void AddFriendForm::onNgcIdChanged(const QString& id)
     ngcId.setStyleSheet(NgcIsValidOrEmpty ? QStringLiteral("")
                                   : style.getStylesheet("addFriendForm/toxId.css", settings));
 
-    sendButton.setEnabled(isValidNgcId);
+    sendButton.setEnabled(true);
 }
 
 void AddFriendForm::setIdFromClipboard()

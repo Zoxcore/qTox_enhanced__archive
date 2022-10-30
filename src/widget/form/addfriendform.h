@@ -69,9 +69,10 @@ signals:
 
 public slots:
     void onUsernameSet(const QString& userName);
+    void onSendTriggered();
+    void showFocusAgain();
 
 private slots:
-    void onSendTriggered();
     void onIdChanged(const QString& id);
     void onNgcIdChanged(const QString& id);
     void onImportSendClicked();
