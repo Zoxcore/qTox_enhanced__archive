@@ -109,7 +109,12 @@ jobs:
       - name: Install deps
         run: sudo apt-get update && sudo apt-get install qttools5-dev
       - name: Test for modified translatable strings
-        run: ./tools/update-translation-files.sh ALL && git diff --exit-code
+        run: ./tools/update-translation-files.sh ALL && git diff > apply_translations.patch
+      - name: Upload apply_translations.patch
+        uses: actions/upload-artifact@v2
+        with:
+          name: apply_translations.patch
+          path: apply_translations.patch
   build-ubuntu:
     name: Ubuntu LTS
     runs-on: ubuntu-latest
