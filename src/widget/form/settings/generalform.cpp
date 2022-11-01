@@ -108,9 +108,7 @@ GeneralForm::GeneralForm(SettingsWidget* myParent, Settings& settings_, Style& s
     // block all child signals during initialization
     const RecursiveSignalBlocker signalBlocker(this);
 
-#ifndef UPDATE_CHECK_ENABLED
     bodyUI->checkUpdates->setVisible(false);
-#endif
 
 #ifndef SPELL_CHECKING
     bodyUI->cbSpellChecking->setVisible(false);

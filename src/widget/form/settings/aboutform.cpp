@@ -63,13 +63,8 @@ AboutForm::AboutForm(UpdateCheck* updateCheck_, Style& style_)
 {
     bodyUI->setupUi(this);
 
-#if !UPDATE_CHECK_ENABLED
     bodyUI->updateStack->setVisible(false);
-#endif
     bodyUI->unstableVersion->setVisible(false);
-#if UPDATE_CHECK_ENABLED
-    connect(updateCheck_, &UpdateCheck::versionIsUnstable, this, &AboutForm::onUnstableVersion);
-#endif
 
     // block all child signals during initialization
     const RecursiveSignalBlocker signalBlocker(this);
@@ -100,17 +95,7 @@ void AboutForm::replaceVersions()
 
     bodyUI->youAreUsing->setText(tr("You are using qTox version %1.").arg(QString(GIT_DESCRIBE)));
 
-#if UPDATE_CHECK_ENABLED
-    if (updateCheck != nullptr) {
-        connect(updateCheck, &UpdateCheck::updateAvailable, this, &AboutForm::onUpdateAvailable);
-        connect(updateCheck, &UpdateCheck::upToDate, this, &AboutForm::onUpToDate);
-        connect(updateCheck, &UpdateCheck::updateCheckFailed, this, &AboutForm::onUpdateCheckFailed);
-    } else {
-        qWarning() << "AboutForm passed null UpdateCheck!";
-    }
-#else
     qDebug() << "AboutForm not showing updates, qTox built without UPDATE_CHECK";
-#endif
 
     QString commitLink = "https://github.com/qTox/qTox/commit/" + QString(GIT_VERSION);
     bodyUI->gitVersion->setText(
