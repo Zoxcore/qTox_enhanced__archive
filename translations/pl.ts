@@ -105,7 +105,7 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation>Jakość nadawanego audio. Ustaw niższą wartość&#xa0;jeśli twoje połączenie z internetem nie jest wystarczająco dobre lub jeśli chcesz ograniczyć transmisję danych.</translation>
+        <translation>Jakość nadawanego audio. Ustaw niższą wartość jeśli twoje połączenie z internetem nie jest wystarczająco dobre lub jeśli chcesz ograniczyć transmisję danych.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -137,6 +137,30 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>Change framerate and video bitrate for screen capture.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD (200 kbps)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD (128 kbps)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> 5 FPS / dynamic vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>30 FPS / 10000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>25 FPS / 10000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>20 FPS /  8000 kbit/s vbitrate</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -469,6 +493,22 @@ co może powodować problemy z rozmowami wideo.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 znaków szesnastkowych</translation>
+    </message>
+    <message>
+        <source>NGC Public Group ID, 64 hexadecimal characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type in the NGC Public Group ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NGC ID invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t join NGC Public Group, or NGC ID error</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1391,6 +1431,10 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     <message>
         <source>Online</source>
         <translation>Online</translation>
+    </message>
+    <message>
+        <source>Change your name in this group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

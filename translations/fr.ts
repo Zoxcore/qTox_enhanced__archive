@@ -139,6 +139,30 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <source>Change framerate and video bitrate for screen capture.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>HD (200 kbps)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD (128 kbps)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> 5 FPS / dynamic vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>30 FPS / 10000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>25 FPS / 10000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>20 FPS /  8000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>
@@ -273,7 +297,7 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
-        <translation>Êtes-vous sûr(e) de supprimer l&apos;historique des conversations avec %1&#xa0;?</translation>
+        <translation>Êtes-vous sûr(e) de supprimer l&apos;historique des conversations avec %1 ?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -465,6 +489,22 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 caractères hexadécimaux</translation>
     </message>
+    <message>
+        <source>NGC Public Group ID, 64 hexadecimal characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type in the NGC Public Group ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NGC ID invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t join NGC Public Group, or NGC ID error</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AdvancedForm</name>
@@ -490,7 +530,7 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     </message>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
-        <translation>Attention : tous les paramètres vont être réinitialisés ! Êtes-vous sûr(e)&#xa0;?</translation>
+        <translation>Attention : tous les paramètres vont être réinitialisés ! Êtes-vous sûr(e) ?</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -813,7 +853,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation>/me souhaiterait vous ajouter à sa liste de contacts, « %1&#xa0;»</translation>
+        <translation>/me souhaiterait vous ajouter à sa liste de contacts, « %1 »</translation>
     </message>
     <message>
         <source>Groupchat %1</source>
@@ -856,7 +896,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
     <message>
         <source>Multipart Messages: </source>
-        <translation>Messages en plusieurs parties&#x202f;: </translation>
+        <translation>Messages en plusieurs parties : </translation>
     </message>
 </context>
 <context>
@@ -1007,7 +1047,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation>Retirer du cercle «&#xa0;%1&#xa0;»</translation>
+        <translation>Retirer du cercle « %1 »</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1065,7 +1105,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation>Déplacer vers le cercle «&#xa0;%1&#xa0;»</translation>
+        <translation>Déplacer vers le cercle « %1 »</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1155,7 +1195,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
     <message>
         <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation>Votre statut sera modifié en «&#xa0;Absent(e)&#xa0;» après la période d&apos;inactivité que vous avez définie.</translation>
+        <translation>Votre statut sera modifié en « Absent(e) » après la période d&apos;inactivité que vous avez définie.</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -1183,7 +1223,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
-        <translation>Taille maximale du fichier pour autoaccepter (0 pour désactiver)&#x202f;:</translation>
+        <translation>Taille maximale du fichier pour autoaccepter (0 pour désactiver) :</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1373,6 +1413,10 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     <message>
         <source>Online</source>
         <translation>Connecté(e)</translation>
+    </message>
+    <message>
+        <source>Change your name in this group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1797,7 +1841,7 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation>Vous avez demandé à qTox d&apos;ouvrir un fichier exécutable. Les fichiers exécutables peuvent potentiellement endommager votre ordinateur. Êtes-vous sûr(e) de vouloir ouvrir ce fichier&#xa0;?</translation>
+        <translation>Vous avez demandé à qTox d&apos;ouvrir un fichier exécutable. Les fichiers exécutables peuvent potentiellement endommager votre ordinateur. Êtes-vous sûr(e) de vouloir ouvrir ce fichier ?</translation>
     </message>
 </context>
 <context>
@@ -1935,7 +1979,7 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
-        <translation>Êtes-vous sûr(e) de vouloir supprimer définitivement l&apos;intégralité de l&apos;historique de discussions&#xa0;?</translation>
+        <translation>Êtes-vous sûr(e) de vouloir supprimer définitivement l&apos;intégralité de l&apos;historique de discussions ?</translation>
     </message>
 </context>
 <context>
@@ -2046,11 +2090,11 @@ Veuillez utiliser une autre image.</translation>
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation>Renommer «&#xa0;%1&#xa0;»</translation>
+        <translation>Renommer « %1 »</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
-        <translation>Impossible de renommer le profil en «&#xa0;%1&#xa0;»</translation>
+        <translation>Impossible de renommer le profil en « %1 »</translation>
     </message>
     <message>
         <source>Location not writable</source>
@@ -2060,7 +2104,7 @@ Veuillez utiliser une autre image.</translation>
     <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
-        <translation>Êtes-vous sûr(e) de vouloir supprimer ce profil&#xa0;?</translation>
+        <translation>Êtes-vous sûr(e) de vouloir supprimer ce profil ?</translation>
     </message>
     <message>
         <source>Save</source>
@@ -2121,7 +2165,7 @@ Veuillez utiliser une autre image.</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation>Un profil nommé «&#xa0;%1&#xa0;» existe déjà.</translation>
+        <translation>Un profil nommé « %1 » existe déjà.</translation>
     </message>
     <message>
         <source>Empty name</source>
@@ -2230,7 +2274,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation>Attention&#x202f;: vous avez choisi un fichier de sauvegarde non-Tox&#x202f;; ignoré.</translation>
+        <translation>Attention : vous avez choisi un fichier de sauvegarde non-Tox ; ignoré.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2240,7 +2284,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     <message>
         <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
         <comment>import confirm text</comment>
-        <translation>Un profil nommé « %1 » existe déjà. Voulez-vous le supprimer&#xa0;?</translation>
+        <translation>Un profil nommé « %1 » existe déjà. Voulez-vous le supprimer ?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2415,7 +2459,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation>Impossible d&apos;envoyer le fichier «&#xa0;%1&#xa0;»</translation>
+        <translation>Impossible d&apos;envoyer le fichier « %1 »</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>

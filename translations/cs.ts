@@ -139,6 +139,30 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <source>Change framerate and video bitrate for screen capture.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>HD (200 kbps)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD (128 kbps)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> 5 FPS / dynamic vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>30 FPS / 10000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>25 FPS / 10000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>20 FPS /  8000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutForm</name>
@@ -465,6 +489,22 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 hexadecimálních znaků</translation>
+    </message>
+    <message>
+        <source>NGC Public Group ID, 64 hexadecimal characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type in the NGC Public Group ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NGC ID invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t join NGC Public Group, or NGC ID error</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1376,6 +1416,10 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     <message>
         <source>Online</source>
         <translation>Online</translation>
+    </message>
+    <message>
+        <source>Change your name in this group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
