@@ -137,8 +137,8 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     toxIdLabel.setAccessibleDescription(
         tr("Tox ID, 76 hexadecimal characters"));
     toxId.setAccessibleDescription(tr("Type in Tox ID of your friend"));
-    ngcIdLabel.setAccessibleDescription("NGC Public Group ID, 64 hexadecimal characters");
-    ngcId.setAccessibleDescription("Type in the NGC Public Group ID");
+    ngcIdLabel.setAccessibleDescription(tr("NGC Public Group ID, 64 hexadecimal characters"));
+    ngcId.setAccessibleDescription(tr("Type in the NGC Public Group ID"));
     messageLabel.setAccessibleDescription(tr("Friend request message"));
     message.setAccessibleDescription(tr(
         "Type message to send with the friend request or leave empty to send a default message"));
@@ -253,8 +253,8 @@ void AddFriendForm::addFriend(const QString& idText)
 void AddFriendForm::addNgcPublicGroup(const QString& idText)
 {
     if (!checkIsValidNgcId(idText)) {
-        messageBoxManager.showWarning("NGC ID invalid",
-                         "Couldn't join NGC Public Group, or NGC ID error");
+        messageBoxManager.showWarning(tr("NGC ID invalid"),
+                         tr("Couldn't join NGC Public Group, or NGC ID error"));
         return;
     }
 

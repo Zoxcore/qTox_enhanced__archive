@@ -676,7 +676,7 @@ void Core::onNgcPeerJoin(Tox* tox, uint32_t group_number, uint32_t peer_id, void
     emit core->saveRequest();
 }
 
-void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type, 
+void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type,
                              const uint8_t *message, size_t length, uint32_t message_id, void* vCore)
 {
     std::ignore = tox;

@@ -108,7 +108,7 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
     Group* g = chatroom->getGroup();
     uint32_t group_num = g->getId();
     if (group_num >= static_cast<int>(Settings::NGC_GROUPNUM_OFFSET)) {
-        setTitle = menu.addAction("Change your name in this group");
+        setTitle = menu.addAction(tr("Change your name in this group"));
     } else {
         setTitle = menu.addAction(tr("Set title..."));
     }

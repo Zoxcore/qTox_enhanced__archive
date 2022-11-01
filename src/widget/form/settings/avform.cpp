@@ -372,8 +372,8 @@ void AVForm::fillAudioQualityComboBox()
 {
     const bool previouslyBlocked = audioQualityComboBox->blockSignals(true);
 
-    audioQualityComboBox->addItem("HD (200 kbps)", 200);
-    audioQualityComboBox->addItem("HD (128 kbps)", 128);
+    audioQualityComboBox->addItem(tr("HD (200 kbps)"), 200);
+    audioQualityComboBox->addItem(tr("HD (128 kbps)"), 128);
     audioQualityComboBox->addItem(tr("High (64 kbps)"), 64);
     audioQualityComboBox->addItem(tr("Medium (32 kbps)"), 32);
     audioQualityComboBox->addItem(tr("Low (16 kbps)"), 16);
@@ -391,10 +391,10 @@ void AVForm::fillScreenFpsComboBox()
     const bool previouslyBlocked = screenFpsComboBox->blockSignals(true);
     screenFpsComboBox->clear();
 
-    screenFpsComboBox->addItem(" 5 FPS / dynamic vbitrate", 5);
-    screenFpsComboBox->addItem("30 FPS / 10000 kbit/s vbitrate", 30);
-    screenFpsComboBox->addItem("25 FPS / 10000 kbit/s vbitrate", 25);
-    screenFpsComboBox->addItem("20 FPS /  8000 kbit/s vbitrate", 20);
+    screenFpsComboBox->addItem(tr(" 5 FPS / dynamic vbitrate"), 5);
+    screenFpsComboBox->addItem(tr("30 FPS / 10000 kbit/s vbitrate"), 30);
+    screenFpsComboBox->addItem(tr("25 FPS / 10000 kbit/s vbitrate"), 25);
+    screenFpsComboBox->addItem(tr("20 FPS /  8000 kbit/s vbitrate"), 20);
 
     const int currentFps = videoSettings->getScreenVideoFPS();
     const int index = screenFpsComboBox->findData(currentFps);
