@@ -105,7 +105,7 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation>Jakość nadawanego audio. Ustaw niższą wartość jeśli twoje połączenie z internetem nie jest wystarczająco dobre lub jeśli chcesz ograniczyć transmisję danych.</translation>
+        <translation>Jakość nadawanego audio. Ustaw niższą wartość&#xa0;jeśli twoje połączenie z internetem nie jest wystarczająco dobre lub jeśli chcesz ograniczyć transmisję danych.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
