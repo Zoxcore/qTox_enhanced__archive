@@ -12,8 +12,6 @@ source "${SCRIPT_DIR}/build_utils.sh"
 
 parse_arch --dep "qt" --supported "win32 win64" "$@"
 
-"${SCRIPT_DIR}/download/download_qt.sh"
-
 OPENSSL_LIBS=$(pkg-config --libs openssl)
 export OPENSSL_LIBS
 

@@ -96,6 +96,12 @@ RUN mkdir -p /src/curl && \
   rm -fr /src/curl
 
 COPY download/download_qt.sh /build/download/download_qt.sh
+COPY build_qt_windows_download_only.sh /build/build_qt_windows_download_only.sh
+
+RUN mkdir -p /src/qt && \
+  cd /src/qt && \
+  /build/build_qt_windows_download_only.sh --arch ${SCRIPT_ARCH}
+
 COPY build_qt_windows.sh /build/build_qt_windows.sh
 
 RUN mkdir -p /src/qt && \
