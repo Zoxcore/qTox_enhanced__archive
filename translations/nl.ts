@@ -204,17 +204,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">bugtracker</translation>
+        <translation>bugtracker</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Nuttige probleemmeldingen schrijven</translation>
+        <translation>Nuttige probleemmeldingen schrijven</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">bijdragers</translation>
+        <translation>bijdragers</translation>
     </message>
 </context>
 <context>
@@ -353,7 +353,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
-        <translation type="unfinished">deze qTox versie is actueel ✓</translation>
+        <translation>deze qTox versie is actueel ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
@@ -678,7 +678,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -812,19 +812,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">wachtend</translation>
+        <translation>wachtend</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 is aan het typen</translation>
+        <translation>%1 is aan het typen</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiëren</translation>
+        <translation>Kopiëren</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Alles selecteren</translation>
+        <translation>Alles selecteren</translation>
     </message>
 </context>
 <context>
@@ -857,22 +857,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Ongeldige Tox-ID</translation>
+        <translation>Ongeldige Tox-ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Je vriendschapsverzoek moet een bericht bevatten</translation>
+        <translation>Je vriendschapsverzoek moet een bericht bevatten</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Je bericht is te lang!</translation>
+        <translation>Je bericht is te lang!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Vriend is al toegevoegd</translation>
+        <translation>Vriend is al toegevoegd</translation>
     </message>
 </context>
 <context>
@@ -1105,7 +1105,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">Vriend verwijderen</translation>
+        <translation>Vriend verwijderen</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1827,43 +1827,43 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Uitvoerbaar bestand</translation>
+        <translation>Uitvoerbaar bestand</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Je hebt qTox gevraagd een uitvoerbaar bestand te openen. Uitvoerbare bestanden kunnen schade toebrengen aan je computer. Weet je zeker dat je dit bestand wilt openen?</translation>
+        <translation>Je hebt qTox gevraagd een uitvoerbaar bestand te openen. Uitvoerbare bestanden kunnen schade toebrengen aan je computer. Weet je zeker dat je dit bestand wilt openen?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox-video</translation>
+        <translation>Tox-video</translation>
     </message>
     <message>
         <source>Full Screen</source>
-        <translation type="unfinished">Volledig scherm</translation>
+        <translation>Volledig scherm</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation type="unfinished">Videovoorbeeld wisselen</translation>
+        <translation>Videovoorbeeld wisselen</translation>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation type="unfinished">Audio dempen</translation>
+        <translation>Audio dempen</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Microfoon dempen</translation>
+        <translation>Microfoon dempen</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Videogesprek beëindigen</translation>
+        <translation>Videogesprek beëindigen</translation>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation type="unfinished">Volledig scherm afsluiten</translation>
+        <translation>Volledig scherm afsluiten</translation>
     </message>
     <message>
         <source>Hide messages</source>
@@ -1919,15 +1919,15 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Nieuw bericht</translation>
+        <translation>Nieuw bericht</translation>
     </message>
     <message>
         <source>New group message</source>
-        <translation type="unfinished">Nieuw groepsbericht</translation>
+        <translation>Nieuw groepsbericht</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation type="unfinished">Inkomende bestandsoverdracht</translation>
+        <translation>Inkomende bestandsoverdracht</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
@@ -1936,7 +1936,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Group invite received</source>
-        <translation type="unfinished">Groepsuitnodiging ontvangen</translation>
+        <translation>Groepsuitnodiging ontvangen</translation>
     </message>
     <message>
         <source>%1 invites you to join a group.</source>
@@ -1944,7 +1944,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation type="unfinished">Vriendschapsverzoek ontvangen</translation>
+        <translation>Vriendschapsverzoek ontvangen</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
@@ -2227,7 +2227,7 @@ Gebruik een andere afbeelding.</translation>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">Wachtwoord verwijderen</translation>
+        <translation>Wachtwoord verwijderen</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2447,52 +2447,52 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Kon bestand ‘%1’ niet verzenden</translation>
+        <translation>Kon bestand ‘%1’ niet verzenden</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 neemt nu deel aan de groep</translation>
+        <translation>%1 neemt nu deel aan de groep</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 heeft de groep verlaten</translation>
+        <translation>%1 heeft de groep verlaten</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 staat nu bekend als %2</translation>
+        <translation>%1 staat nu bekend als %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 heeft de titel gewijzigd naar %2</translation>
+        <translation>%1 heeft de titel gewijzigd naar %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Gewist</translation>
+        <translation>Gewist</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Gesprek met %1 is onverwacht beëindigd. %2</translation>
+        <translation>Gesprek met %1 is onverwacht beëindigd. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Gesprek met %1 beëindigd. %2</translation>
+        <translation>Gesprek met %1 beëindigd. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 is nu %2</translation>
+        <translation>%1 is nu %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">%1 bellen</translation>
+        <translation>%1 bellen</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 belt</translation>
+        <translation>%1 belt</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Bericht kon niet verstuurd worden</translation>
+        <translation>Bericht kon niet verstuurd worden</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2516,7 +2516,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Gepauzeerd</translation>
+        <translation>Gepauzeerd</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2544,7 +2544,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2571,23 +2571,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Vriend verwijderen</translation>
+        <translation>Vriend verwijderen</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Indien ingesteld alle gespreksgeschiedenis met de vriend verwijderen</translation>
+        <translation>Indien ingesteld alle gespreksgeschiedenis met de vriend verwijderen</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Gespreksgeschiedenis ook verwijderen</translation>
+        <translation>Gespreksgeschiedenis ook verwijderen</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Weet je zeker dat je %1 uit je contactenlijst wil verwijderen?</translation>
+        <translation>Weet je zeker dat je %1 uit je contactenlijst wil verwijderen?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
@@ -2677,7 +2677,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Selecteer een datum</translation>
+        <translation>Selecteer een datum</translation>
     </message>
 </context>
 <context>
@@ -3107,7 +3107,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">Afsluiten</translation>
+        <translation>Afsluiten</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3119,7 +3119,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">Uitloggen</translation>
+        <translation>Uitloggen</translation>
     </message>
     <message>
         <source>Add contact...</source>

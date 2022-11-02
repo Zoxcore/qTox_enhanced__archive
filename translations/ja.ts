@@ -204,17 +204,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">バグトラッカー</translation>
+        <translation>バグトラッカー</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">分かりやすいバグ報告の書き方</translation>
+        <translation>分かりやすいバグ報告の書き方</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">貢献者</translation>
+        <translation>貢献者</translation>
     </message>
 </context>
 <context>
@@ -677,7 +677,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -811,19 +811,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">保留中</translation>
+        <translation>保留中</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 が入力しています</translation>
+        <translation>%1 が入力しています</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">コピー</translation>
+        <translation>コピー</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">すべて選択</translation>
+        <translation>すべて選択</translation>
     </message>
 </context>
 <context>
@@ -847,7 +847,7 @@ so you can save the file on Windows.</source>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation type="unfinished">/me 友達にならないか、&quot;%1&quot;</translation>
+        <translation>/me 友達にならないか、&quot;%1&quot;</translation>
     </message>
     <message>
         <source>Groupchat %1</source>
@@ -856,22 +856,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">無効な Tox ID</translation>
+        <translation>無効な Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">リクエストにメッセージを書く必要があります</translation>
+        <translation>リクエストにメッセージを書く必要があります</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">メッセージが長すぎます！</translation>
+        <translation>メッセージが長すぎます！</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">友達はすでに追加されています</translation>
+        <translation>友達はすでに追加されています</translation>
     </message>
 </context>
 <context>
@@ -1104,7 +1104,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">友達を削除</translation>
+        <translation>友達を削除</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1311,11 +1311,11 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">チャット履歴を読み込む…</translation>
+        <translation>チャット履歴を読み込む…</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation type="unfinished">ファイルにエクスポート</translation>
+        <translation>ファイルにエクスポート</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
@@ -1823,19 +1823,19 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">実行可能なファイル</translation>
+        <translation>実行可能なファイル</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">qTox で実行可能なファイルを開こうとしています。実行可能なファイルはお使いのコンピューターに危害を加える可能性があります。このファイルを開いてもよろしいですか？</translation>
+        <translation>qTox で実行可能なファイルを開こうとしています。実行可能なファイルはお使いのコンピューターに危害を加える可能性があります。このファイルを開いてもよろしいですか？</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox ビデオ</translation>
+        <translation>Tox ビデオ</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1851,11 +1851,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">マイクをミュート</translation>
+        <translation>マイクをミュート</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">ビデオ通話を終了</translation>
+        <translation>ビデオ通話を終了</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -1914,7 +1914,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">新しいメッセージ</translation>
+        <translation>新しいメッセージ</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2222,7 +2222,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">パスワードを削除</translation>
+        <translation>パスワードを削除</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2398,22 +2398,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">オンライン</translation>
+        <translation>オンライン</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">退席中</translation>
+        <translation>退席中</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">多忙</translation>
+        <translation>多忙</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">オフライン</translation>
+        <translation>オフライン</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2442,7 +2442,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">ファイル &quot;%1&quot; の送信に失敗しました</translation>
+        <translation>ファイル &quot;%1&quot; の送信に失敗しました</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
@@ -2458,36 +2458,36 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 さんがタイトルを %2 に設定しました</translation>
+        <translation>%1 さんがタイトルを %2 に設定しました</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">消去済み</translation>
+        <translation>消去済み</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">%1 との通話は予期せず終了しました。%2</translation>
+        <translation>%1 との通話は予期せず終了しました。%2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">%1 との通話が終了しました。%2</translation>
+        <translation>%1 との通話が終了しました。%2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 は現在 %2 です</translation>
+        <translation>%1 は現在 %2 です</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">%1 を呼び出しています</translation>
+        <translation>%1 を呼び出しています</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 呼び出し中</translation>
+        <translation>%1 呼び出し中</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">メッセージの送信に失敗</translation>
+        <translation>メッセージの送信に失敗</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2511,7 +2511,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">一時停止</translation>
+        <translation>一時停止</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2539,7 +2539,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">ステータス</translation>
+        <translation>ステータス</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2566,23 +2566,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">友達を削除</translation>
+        <translation>友達を削除</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">設定した場合、友達とのチャット履歴をすべて削除します</translation>
+        <translation>設定した場合、友達とのチャット履歴をすべて削除します</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">チャット履歴も消去</translation>
+        <translation>チャット履歴も消去</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">%1 を連絡先リストから削除してもよろしいですか?</translation>
+        <translation>%1 を連絡先リストから削除してもよろしいですか?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">削除</translation>
+        <translation>削除</translation>
     </message>
 </context>
 <context>
@@ -3100,7 +3100,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">終了</translation>
+        <translation>終了</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3112,7 +3112,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">ログアウト</translation>
+        <translation>ログアウト</translation>
     </message>
     <message>
         <source>Add contact...</source>

@@ -172,7 +172,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation type="unfinished">你正在使用 qTox 的 %1 版本。</translation>
+        <translation>你正在使用 qTox 的 %1 版本。</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
@@ -204,7 +204,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">Bug 追蹤器</translation>
+        <translation>Bug 追蹤器</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
@@ -214,30 +214,30 @@ which may lead to problems with video calls.</source>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">參與者</translation>
+        <translation>參與者</translation>
     </message>
 </context>
 <context>
     <name>AboutFriendForm</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">對話方塊</translation>
+        <translation>對話方塊</translation>
     </message>
     <message>
         <source>username</source>
-        <translation type="unfinished">使用者名稱</translation>
+        <translation>使用者名稱</translation>
     </message>
     <message>
         <source>status message</source>
-        <translation type="unfinished">狀態訊息</translation>
+        <translation>狀態訊息</translation>
     </message>
     <message>
         <source>Used aliases:</source>
-        <translation type="unfinished">使用的別名：</translation>
+        <translation>使用的別名：</translation>
     </message>
     <message>
         <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">別名歷史</translation>
+        <translation>別名歷史</translation>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>
@@ -245,19 +245,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">預設檔案儲存目錄：</translation>
+        <translation>預設檔案儲存目錄：</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">手動</translation>
+        <translation>手動</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished">音訊</translation>
+        <translation>音訊</translation>
     </message>
     <message>
         <source>Audio + Video</source>
-        <translation type="unfinished">音訊與視訊</translation>
+        <translation>音訊與視訊</translation>
     </message>
     <message>
         <source>Automatically accept group chat invitations from this contact if set.</source>
@@ -269,7 +269,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished">附註</translation>
+        <translation>附註</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
@@ -277,7 +277,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>History removed</source>
-        <translation type="unfinished">已移除歷史記錄</translation>
+        <translation>已移除歷史記錄</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -435,12 +435,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation type="unfinished">Tox ID</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
         <extracomment>The message you send in friend requests</extracomment>
-        <translation type="unfinished">訊息</translation>
+        <translation>訊息</translation>
     </message>
     <message>
         <source>Open</source>
@@ -677,7 +677,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">錯誤</translation>
+        <translation>錯誤</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -742,7 +742,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation type="unfinished">開始音訊通話</translation>
+        <translation>開始音訊通話</translation>
     </message>
     <message>
         <source>End audio call</source>
@@ -762,11 +762,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">開始視訊通話</translation>
+        <translation>開始視訊通話</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">結束視訊通話</translation>
+        <translation>結束視訊通話</translation>
     </message>
     <message>
         <source>Cancel video call</source>
@@ -820,7 +820,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">複製</translation>
+        <translation>複製</translation>
     </message>
     <message>
         <source>Select all</source>
@@ -857,7 +857,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">無效的 Tox ID</translation>
+        <translation>無效的 Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
@@ -1006,11 +1006,11 @@ so you can save the file on Windows.</source>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
-        <translation type="unfinished">今日</translation>
+        <translation>今日</translation>
     </message>
     <message>
         <source>Yesterday</source>
-        <translation type="unfinished">昨日</translation>
+        <translation>昨日</translation>
     </message>
     <message>
         <source>Last 7 days</source>
@@ -1081,7 +1081,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">選擇自動接受目錄</translation>
+        <translation>選擇自動接受目錄</translation>
     </message>
     <message>
         <source>New message</source>
@@ -1131,7 +1131,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">選擇自動接受目錄</translation>
+        <translation>選擇自動接受目錄</translation>
     </message>
 </context>
 <context>
@@ -1212,7 +1212,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">預設檔案儲存目錄：</translation>
+        <translation>預設檔案儲存目錄：</translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -1351,7 +1351,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     <name>GroupInviteForm</name>
     <message>
         <source>Groups</source>
-        <translation type="unfinished">群組</translation>
+        <translation>群組</translation>
     </message>
     <message>
         <source>Create new group</source>
@@ -1359,7 +1359,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Group invites</source>
-        <translation type="unfinished">群組邀請</translation>
+        <translation>群組邀請</translation>
     </message>
 </context>
 <context>
@@ -1409,7 +1409,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">線上</translation>
+        <translation>線上</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -1424,7 +1424,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Tox ID</source>
-        <translation type="unfinished">Tox ID</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
@@ -1558,7 +1558,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>My profile</source>
-        <translation type="unfinished">個人檔案</translation>
+        <translation>個人檔案</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
@@ -1724,11 +1724,11 @@ Please make sure to enter the same password twice.</source>
     <name>MainWindow</name>
     <message>
         <source>Your name</source>
-        <translation type="unfinished">你的名字</translation>
+        <translation>你的名字</translation>
     </message>
     <message>
         <source>Your status</source>
-        <translation type="unfinished">你的狀態</translation>
+        <translation>你的狀態</translation>
     </message>
     <message>
         <source>...</source>
@@ -1773,7 +1773,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">狀態</translation>
+        <translation>狀態</translation>
     </message>
     <message>
         <source>Set availability status</source>
@@ -1817,7 +1817,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">設定</translation>
+        <translation>設定</translation>
     </message>
     <message>
         <source>Open Settings</source>
@@ -1829,7 +1829,7 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">可執行檔</translation>
+        <translation>可執行檔</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
@@ -1841,7 +1841,7 @@ Please make sure to enter the same password twice.</source>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox 視訊</translation>
+        <translation>Tox 視訊</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1861,7 +1861,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">結束視訊通話</translation>
+        <translation>結束視訊通話</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -1920,7 +1920,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">新訊息</translation>
+        <translation>新訊息</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2086,7 +2086,7 @@ Please use another image.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">位置不可寫入</translation>
+        <translation>位置不可寫入</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
@@ -2299,11 +2299,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
     <message>
         <source>LTR</source>
@@ -2315,7 +2315,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished">無法新增朋友</translation>
+        <translation>無法新增朋友</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
@@ -2361,7 +2361,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>None</source>
         <comment>No camera device set</comment>
-        <translation type="unfinished">無</translation>
+        <translation>無</translation>
     </message>
     <message>
         <source>Desktop</source>
@@ -2370,7 +2370,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">錯誤</translation>
+        <translation>錯誤</translation>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
@@ -2463,7 +2463,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">已清除</translation>
+        <translation>已清除</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
@@ -2488,7 +2488,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">訊息傳送失敗</translation>
+        <translation>訊息傳送失敗</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2512,7 +2512,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">已暫停</translation>
+        <translation>已暫停</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2540,7 +2540,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">狀態</translation>
+        <translation>狀態</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2583,7 +2583,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">移除</translation>
+        <translation>移除</translation>
     </message>
 </context>
 <context>
@@ -2629,7 +2629,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchSettingsForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">表單</translation>
+        <translation>表單</translation>
     </message>
     <message>
         <source>Start search:</source>
@@ -2743,7 +2743,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add a friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">新增朋友</translation>
+        <translation>新增朋友</translation>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
@@ -2772,7 +2772,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>UserInterfaceForm</name>
     <message>
         <source>None</source>
-        <translation type="unfinished">無</translation>
+        <translation>無</translation>
     </message>
     <message>
         <source>User Interface</source>
@@ -2823,7 +2823,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">新訊息</translation>
+        <translation>新訊息</translation>
     </message>
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
@@ -2958,7 +2958,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
-        <translation type="unfinished">線上</translation>
+        <translation>線上</translation>
     </message>
     <message>
         <source>Away</source>
@@ -3102,7 +3102,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">結束</translation>
+        <translation>結束</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3114,7 +3114,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">登出</translation>
+        <translation>登出</translation>
     </message>
     <message>
         <source>Add contact...</source>

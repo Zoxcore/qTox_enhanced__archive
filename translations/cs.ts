@@ -683,7 +683,7 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -818,19 +818,19 @@ takže můžete soubor uložit i v systému Windows.</translation>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">probíhá</translation>
+        <translation>probíhá</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 píše</translation>
+        <translation>%1 píše</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopírovat</translation>
+        <translation>Kopírovat</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Vybrat vše</translation>
+        <translation>Vybrat vše</translation>
     </message>
 </context>
 <context>
@@ -1839,12 +1839,12 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Spustitelný soubor</translation>
+        <translation>Spustitelný soubor</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Požadujete aby qTox spustil soubor Spustitelné soubory mohou být rizikem pro váš počítač. Jste si jistý, že chcete tento soubor spustit?</translation>
+        <translation>Požadujete aby qTox spustil soubor Spustitelné soubory mohou být rizikem pro váš počítač. Jste si jistý, že chcete tento soubor spustit?</translation>
     </message>
 </context>
 <context>
@@ -2463,52 +2463,52 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Nepodařilo se poslat soubor &quot;%1&quot;</translation>
+        <translation>Nepodařilo se poslat soubor &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 se připojil ke skupině</translation>
+        <translation>%1 se připojil ke skupině</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 opustil skupinu</translation>
+        <translation>%1 opustil skupinu</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1je nyní známý jako %2</translation>
+        <translation>%1je nyní známý jako %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 nastavil název konverzace na %2</translation>
+        <translation>%1 nastavil název konverzace na %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Vyčištěno</translation>
+        <translation>Vyčištěno</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Hovor s %1 byl neočekávaně ukončen. %2</translation>
+        <translation>Hovor s %1 byl neočekávaně ukončen. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Hovor s %1 skončil. %2</translation>
+        <translation>Hovor s %1 skončil. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 je nově %2</translation>
+        <translation>%1 je nově %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Volání %1</translation>
+        <translation>Volání %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 volá</translation>
+        <translation>%1 volá</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Nepodařilo se odeslat zprávu</translation>
+        <translation>Nepodařilo se odeslat zprávu</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2532,11 +2532,11 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Pozastaveno</translation>
+        <translation>Pozastaveno</translation>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished">Pozastaveno vzdáleně</translation>
+        <translation>Pozastaveno vzdáleně</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2587,23 +2587,23 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Odebrat kontakt</translation>
+        <translation>Odebrat kontakt</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Odstranit celou historii chatu u vybraného kontaktu</translation>
+        <translation>Odstranit celou historii chatu u vybraného kontaktu</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Také odstranit historii chatu</translation>
+        <translation>Také odstranit historii chatu</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Opravdu chcete odebrat %1 ze seznamu kontaktů?</translation>
+        <translation>Opravdu chcete odebrat %1 ze seznamu kontaktů?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Odstranit</translation>
+        <translation>Odstranit</translation>
     </message>
 </context>
 <context>
@@ -2693,7 +2693,7 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Vyberte datum</translation>
+        <translation>Vyberte datum</translation>
     </message>
 </context>
 <context>

@@ -208,17 +208,17 @@ kas var radīt video zvanu problēmas.</translation>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">kļūdu sekotājs</translation>
+        <translation>kļūdu sekotājs</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Rakstīt lietderīgu kļūdu ziņojumu</translation>
+        <translation>Rakstīt lietderīgu kļūdu ziņojumu</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">izstrādātāji</translation>
+        <translation>izstrādātāji</translation>
     </message>
 </context>
 <context>
@@ -636,7 +636,7 @@ kas var radīt video zvanu problēmas.</translation>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation type="unfinished">Atspējot šo ļaus savionot Tox ar Tor. Tā var noslogot Tox tīklu, tad atspējojiet ja nepieciešams.</translation>
+        <translation>Atspējot šo ļaus savionot Tox ar Tor. Tā var noslogot Tox tīklu, tad atspējojiet ja nepieciešams.</translation>
     </message>
 </context>
 <context>
@@ -683,7 +683,7 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kļūda</translation>
+        <translation>Kļūda</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -819,19 +819,19 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">gaida</translation>
+        <translation>gaida</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 raksta</translation>
+        <translation>%1 raksta</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopēt</translation>
+        <translation>Kopēt</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Izvēlēties visu</translation>
+        <translation>Izvēlēties visu</translation>
     </message>
 </context>
 <context>
@@ -864,22 +864,22 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Nederīgs Tox ID</translation>
+        <translation>Nederīgs Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Jums ir jāsagatavo ziņojums ar pieprasījuma tekstu</translation>
+        <translation>Jums ir jāsagatavo ziņojums ar pieprasījuma tekstu</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Jūsu ziņojums ir pārāk liels!</translation>
+        <translation>Jūsu ziņojums ir pārāk liels!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Draugs ir jau pievienots</translation>
+        <translation>Draugs ir jau pievienots</translation>
     </message>
 </context>
 <context>
@@ -1857,31 +1857,31 @@ Please make sure to enter the same password twice.</source>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox video konference</translation>
+        <translation>Tox video konference</translation>
     </message>
     <message>
         <source>Full Screen</source>
-        <translation type="unfinished">Pilnekrāna režīms</translation>
+        <translation>Pilnekrāna režīms</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation type="unfinished">Pārslēgt video priekšskatījumu</translation>
+        <translation>Pārslēgt video priekšskatījumu</translation>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation type="unfinished">Izslēgt skaņu</translation>
+        <translation>Izslēgt skaņu</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Izslēgt mikrofonu</translation>
+        <translation>Izslēgt mikrofonu</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Beigt videozvanu</translation>
+        <translation>Beigt videozvanu</translation>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation type="unfinished">Iziet no pilnekrāna režīma</translation>
+        <translation>Iziet no pilnekrāna režīma</translation>
     </message>
     <message>
         <source>Hide messages</source>
@@ -1938,7 +1938,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Jauna ziņa</translation>
+        <translation>Jauna ziņa</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2246,7 +2246,7 @@ Lūdzu, izvēlieties citu attēlu.</translation>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">Dzēst paroli</translation>
+        <translation>Dzēst paroli</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2422,7 +2422,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">tiešsaistē</translation>
+        <translation>tiešsaistē</translation>
     </message>
     <message>
         <source>away</source>
@@ -2432,7 +2432,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">aizņemts</translation>
+        <translation>aizņemts</translation>
     </message>
     <message>
         <source>offline</source>
@@ -2442,7 +2442,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
-        <translation type="unfinished">bloķēts</translation>
+        <translation>bloķēts</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -2466,48 +2466,48 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Neizdevās nosūtīt failu &apos;&apos;%1&apos;&apos;</translation>
+        <translation>Neizdevās nosūtīt failu &apos;&apos;%1&apos;&apos;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 pievienojās grupai</translation>
+        <translation>%1 pievienojās grupai</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 pameta grupu</translation>
+        <translation>%1 pameta grupu</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 tagad ir zināms kā %2]</translation>
+        <translation>%1 tagad ir zināms kā %2]</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 mainīja nosaukumu uz %2</translation>
+        <translation>%1 mainīja nosaukumu uz %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Notīrīts</translation>
+        <translation>Notīrīts</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Saruna ar %1 negaidīti beidzās. %2</translation>
+        <translation>Saruna ar %1 negaidīti beidzās. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Saruna ar %1 beidzās. %2</translation>
+        <translation>Saruna ar %1 beidzās. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 tagad ir %2</translation>
+        <translation>%1 tagad ir %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Zvans %1</translation>
+        <translation>Zvans %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">Ienākošais zvans no %1</translation>
+        <translation>Ienākošais zvans no %1</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2535,7 +2535,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Apturēts</translation>
+        <translation>Apturēts</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2563,7 +2563,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Statuss</translation>
+        <translation>Statuss</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2590,23 +2590,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Noņemt draugu</translation>
+        <translation>Noņemt draugu</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Dzēš visu tērzēšanas vēsturi ar draugu, ja tiek iestatīts</translation>
+        <translation>Dzēš visu tērzēšanas vēsturi ar draugu, ja tiek iestatīts</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Arī noņemt tērzēšanas vēsturi</translation>
+        <translation>Arī noņemt tērzēšanas vēsturi</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Vai Jūs tiešām vēlaties dzēst %1 no kontaktpersonu saraksta?</translation>
+        <translation>Vai Jūs tiešām vēlaties dzēst %1 no kontaktpersonu saraksta?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Dzēst</translation>
+        <translation>Dzēst</translation>
     </message>
 </context>
 <context>
@@ -2696,7 +2696,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Izvēlieties datumu</translation>
+        <translation>Izvēlieties datumu</translation>
     </message>
 </context>
 <context>
@@ -2981,17 +2981,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
-        <translation type="unfinished">Tiešsaistē</translation>
+        <translation>Tiešsaistē</translation>
     </message>
     <message>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
-        <translation type="unfinished">Nav šeit</translation>
+        <translation>Nav šeit</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
-        <translation type="unfinished">Aizņemts</translation>
+        <translation>Aizņemts</translation>
     </message>
     <message>
         <source>File</source>
@@ -3004,7 +3004,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation type="unfinished">Iziet</translation>
+        <translation>Iziet</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3016,11 +3016,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Statuss</translation>
+        <translation>Statuss</translation>
     </message>
     <message>
         <source>Your name</source>
-        <translation type="unfinished">Jūsu vārds</translation>
+        <translation>Jūsu vārds</translation>
     </message>
     <message>
         <source>Create new group...</source>
@@ -3044,12 +3044,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">Tiešsaistē</translation>
+        <translation>Tiešsaistē</translation>
     </message>
     <message>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">Bezsaistē</translation>
+        <translation>Bezsaistē</translation>
     </message>
     <message>
         <source>Friends</source>
@@ -3057,7 +3057,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Groups</source>
-        <translation type="unfinished">Grupas</translation>
+        <translation>Grupas</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3080,7 +3080,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Group invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Grupas uzaicinājums</translation>
+        <translation>Grupas uzaicinājums</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3090,7 +3090,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Settings</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Iestatījumi</translation>
+        <translation>Iestatījumi</translation>
     </message>
     <message>
         <source>My profile</source>
@@ -3141,7 +3141,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">Iziet</translation>
+        <translation>Iziet</translation>
     </message>
     <message>
         <source>Add contact...</source>

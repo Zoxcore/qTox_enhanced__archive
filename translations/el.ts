@@ -204,17 +204,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">ανιχνευτής - σφαλμάτων</translation>
+        <translation>ανιχνευτής - σφαλμάτων</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Σύνταξη Χρήσιμης Αναφοράς Σφαλμάτων</translation>
+        <translation>Σύνταξη Χρήσιμης Αναφοράς Σφαλμάτων</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">συντελεστές</translation>
+        <translation>συντελεστές</translation>
     </message>
 </context>
 <context>
@@ -289,7 +289,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">Επιβεβαίωση</translation>
+        <translation>Επιβεβαίωση</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
@@ -678,7 +678,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Σφάλμα</translation>
+        <translation>Σφάλμα</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -812,19 +812,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">σε εκκρεμότητα</translation>
+        <translation>σε εκκρεμότητα</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">Ο/η %1 πληκτρολογεί</translation>
+        <translation>Ο/η %1 πληκτρολογεί</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Αντιγραφή</translation>
+        <translation>Αντιγραφή</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Επιλογή όλων</translation>
+        <translation>Επιλογή όλων</translation>
     </message>
 </context>
 <context>
@@ -857,22 +857,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Μη έγκυρη Tox ταυτότητα (ID)</translation>
+        <translation>Μη έγκυρη Tox ταυτότητα (ID)</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Χρειάζεται να γράψετε ένα μήνυμα με το αίτημα σας</translation>
+        <translation>Χρειάζεται να γράψετε ένα μήνυμα με το αίτημα σας</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Το μήνυμα σας είναι πολύ μεγάλο!</translation>
+        <translation>Το μήνυμα σας είναι πολύ μεγάλο!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Ο/η φίλος/η έχει ήδη προστεθεί</translation>
+        <translation>Ο/η φίλος/η έχει ήδη προστεθεί</translation>
     </message>
 </context>
 <context>
@@ -1105,7 +1105,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">Κατάργηση φίλου</translation>
+        <translation>Κατάργηση φίλου</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1300,7 +1300,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">Επιβεβαίωση</translation>
+        <translation>Επιβεβαίωση</translation>
     </message>
     <message>
         <source>Search in text</source>
@@ -1312,11 +1312,11 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">Φόρτωση ιστορικού συνομιλίας...</translation>
+        <translation>Φόρτωση ιστορικού συνομιλίας...</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation type="unfinished">Εξαγωγή σε αρχείο</translation>
+        <translation>Εξαγωγή σε αρχείο</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
@@ -1405,7 +1405,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">Συνδεδεμένος/η</translation>
+        <translation>Συνδεδεμένος/η</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -1827,19 +1827,19 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Εκτελέσιμο αρχείο</translation>
+        <translation>Εκτελέσιμο αρχείο</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Έχετε ζητήσει απ&apos; το qTox να ανοίξει ένα εκτελέσιμο αρχείο. Τα εκτελέσιμα αρχεία μπορούν ενδεχομένως να βλάψουν τον υπολογιστή σας. Είστε βέβαιοι ότι θέλετε να ανοίξετε αυτό το αρχείο;</translation>
+        <translation>Έχετε ζητήσει απ&apos; το qTox να ανοίξει ένα εκτελέσιμο αρχείο. Τα εκτελέσιμα αρχεία μπορούν ενδεχομένως να βλάψουν τον υπολογιστή σας. Είστε βέβαιοι ότι θέλετε να ανοίξετε αυτό το αρχείο;</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox βίντεο</translation>
+        <translation>Tox βίντεο</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1855,11 +1855,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Απενεργοποίηση (σίγαση) μικροφώνου</translation>
+        <translation>Απενεργοποίηση (σίγαση) μικροφώνου</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Τερματισμός βιντεοκλήσης</translation>
+        <translation>Τερματισμός βιντεοκλήσης</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -1919,7 +1919,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Νέο μήνυμα</translation>
+        <translation>Νέο μήνυμα</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2039,7 +2039,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished">Παρουσία στο qTox</translation>
+        <translation>Παρουσία στο qTox</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
@@ -2192,7 +2192,7 @@ Please use another image.</source>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished">Εικόνες (%1)</translation>
+        <translation>Εικόνες (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
@@ -2227,7 +2227,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">Αφαίρεση του κωδικού πρόσβασης</translation>
+        <translation>Αφαίρεση του κωδικού πρόσβασης</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2403,22 +2403,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">Συνδεδεμένος/η</translation>
+        <translation>Συνδεδεμένος/η</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">απών</translation>
+        <translation>απών</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">Απασχολημένος/η</translation>
+        <translation>Απασχολημένος/η</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">εκτός σύνδεσης</translation>
+        <translation>εκτός σύνδεσης</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2447,7 +2447,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Αποτυχία αποστολής αρχείου &quot;%1&quot;</translation>
+        <translation>Αποτυχία αποστολής αρχείου &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
@@ -2463,36 +2463,36 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">Ο/η %1 όρισε το θέμα σε %2</translation>
+        <translation>Ο/η %1 όρισε το θέμα σε %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Εκκαθαρίστηκε</translation>
+        <translation>Εκκαθαρίστηκε</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Η κλήση προς %1 τερματίσθηκε απροσδόκητα. %2</translation>
+        <translation>Η κλήση προς %1 τερματίσθηκε απροσδόκητα. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Η κλήση με τον/ην %1 τερματίστηκε. %2</translation>
+        <translation>Η κλήση με τον/ην %1 τερματίστηκε. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">Ο/η %1 είναι τώρα %2</translation>
+        <translation>Ο/η %1 είναι τώρα %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Κλήση %1</translation>
+        <translation>Κλήση %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">Κλήση από τον/ην %1</translation>
+        <translation>Κλήση από τον/ην %1</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Αποτυχία αποστολής μηνύματος</translation>
+        <translation>Αποτυχία αποστολής μηνύματος</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2516,7 +2516,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Σε παύση</translation>
+        <translation>Σε παύση</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2544,7 +2544,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Κατάσταση</translation>
+        <translation>Κατάσταση</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2571,23 +2571,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Κατάργηση φίλου</translation>
+        <translation>Κατάργηση φίλου</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Κατάργηση όλου του ιστορικού συνομιλίας με το φίλο, εάν είναι ορισμένο</translation>
+        <translation>Κατάργηση όλου του ιστορικού συνομιλίας με το φίλο, εάν είναι ορισμένο</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Επίσης να καταργηθεί το ιστορικό συνομιλιών</translation>
+        <translation>Επίσης να καταργηθεί το ιστορικό συνομιλιών</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Είστε βέβαιοι ότι θέλετε να καταργήσετε τον/ην %1 από τη λίστα επαφών σας;</translation>
+        <translation>Είστε βέβαιοι ότι θέλετε να καταργήσετε τον/ην %1 από τη λίστα επαφών σας;</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Αφαίρεση</translation>
+        <translation>Αφαίρεση</translation>
     </message>
 </context>
 <context>
@@ -2633,7 +2633,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchSettingsForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Φόρμα</translation>
+        <translation>Φόρμα</translation>
     </message>
     <message>
         <source>Start search:</source>
@@ -2918,11 +2918,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished">Αναπαραγωγή ήχου</translation>
+        <translation>Αναπαραγωγή ήχου</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished">Αναπαραγωγή ήχου ενόσω Απασχολημένος</translation>
+        <translation>Αναπαραγωγή ήχου ενόσω Απασχολημένος</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3107,7 +3107,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">Έξοδος</translation>
+        <translation>Έξοδος</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3119,7 +3119,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">Αποσύνδεση</translation>
+        <translation>Αποσύνδεση</translation>
     </message>
     <message>
         <source>Add contact...</source>

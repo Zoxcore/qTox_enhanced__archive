@@ -682,7 +682,7 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Virhe</translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -817,19 +817,19 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">vireillä oleva</translation>
+        <translation>vireillä oleva</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 kirjoittaa</translation>
+        <translation>%1 kirjoittaa</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopioi</translation>
+        <translation>Kopioi</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Valitse kaikki</translation>
+        <translation>Valitse kaikki</translation>
     </message>
 </context>
 <context>
@@ -1836,12 +1836,12 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Suoritettava tiedosto</translation>
+        <translation>Suoritettava tiedosto</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Olet pyytänyt qToxia avaamaan tiedoston. Tämän tyyppiset tiedostot voivat mahdollisesti vahingoittaa konettasi. Oletko varma, että haluat avata tämän tiedoston?</translation>
+        <translation>Olet pyytänyt qToxia avaamaan tiedoston. Tämän tyyppiset tiedostot voivat mahdollisesti vahingoittaa konettasi. Oletko varma, että haluat avata tämän tiedoston?</translation>
     </message>
 </context>
 <context>
@@ -2459,52 +2459,52 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Tiedoston &quot;%1&quot; lähettäminen epäonnistui</translation>
+        <translation>Tiedoston &quot;%1&quot; lähettäminen epäonnistui</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 liittyi ryhmään</translation>
+        <translation>%1 liittyi ryhmään</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 erosi ryhmästä</translation>
+        <translation>%1 erosi ryhmästä</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 on nykyisin nimellä %2</translation>
+        <translation>%1 on nykyisin nimellä %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 on asettanut otsikoksi %2</translation>
+        <translation>%1 on asettanut otsikoksi %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Tyhjennetty</translation>
+        <translation>Tyhjennetty</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Puhelu %1:n kanssa päättyi yllättäen. %2</translation>
+        <translation>Puhelu %1:n kanssa päättyi yllättäen. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Puhelu %1:n kanssa päättyi. %2</translation>
+        <translation>Puhelu %1:n kanssa päättyi. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 on nyt %2</translation>
+        <translation>%1 on nyt %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Soitetaan %1:lle</translation>
+        <translation>Soitetaan %1:lle</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 soittaa</translation>
+        <translation>%1 soittaa</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Viestin lähetys epäonnistui</translation>
+        <translation>Viestin lähetys epäonnistui</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2528,11 +2528,11 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Keskeytetty</translation>
+        <translation>Keskeytetty</translation>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished">Pysäytetty etäältä</translation>
+        <translation>Pysäytetty etäältä</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2556,7 +2556,7 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Tila</translation>
+        <translation>Tila</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2583,23 +2583,23 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Poista kontakti</translation>
+        <translation>Poista kontakti</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Poistaa kaiken chat-historian kontaktilta jos valittu</translation>
+        <translation>Poistaa kaiken chat-historian kontaktilta jos valittu</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Poista myös keskusteluhistoria</translation>
+        <translation>Poista myös keskusteluhistoria</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Oletko varma, että haluat poistaa kontaktin %1 kontaktilistastasi?</translation>
+        <translation>Oletko varma, että haluat poistaa kontaktin %1 kontaktilistastasi?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Poista</translation>
+        <translation>Poista</translation>
     </message>
 </context>
 <context>
@@ -2689,7 +2689,7 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Valitse päivämäärä</translation>
+        <translation>Valitse päivämäärä</translation>
     </message>
 </context>
 <context>

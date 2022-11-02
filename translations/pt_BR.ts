@@ -682,7 +682,7 @@ o que pode levar a problemas com as videochamadas.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>

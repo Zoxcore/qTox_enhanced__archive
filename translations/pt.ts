@@ -682,7 +682,7 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -1836,12 +1836,12 @@ Certifique-se de introduziu a mesma palavra-passe duas vezes.</translation>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Ficheiro executável</translation>
+        <translation>Ficheiro executável</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Pediu ao qTox para abrir um ficheiro executável. Os executáveis podem potencialmente danificar o seu computador. Tem a certeza que quer abrir este ficheiro?</translation>
+        <translation>Pediu ao qTox para abrir um ficheiro executável. Os executáveis podem potencialmente danificar o seu computador. Tem a certeza que quer abrir este ficheiro?</translation>
     </message>
 </context>
 <context>
@@ -2459,52 +2459,52 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Falha ao enviar o ficheiro &quot;%1&quot;</translation>
+        <translation>Falha ao enviar o ficheiro &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 juntou-se ao grupo</translation>
+        <translation>%1 juntou-se ao grupo</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 saiu do grupo</translation>
+        <translation>%1 saiu do grupo</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 é conhecido agora como %2</translation>
+        <translation>%1 é conhecido agora como %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 definiu o título como %2</translation>
+        <translation>%1 definiu o título como %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Removidas</translation>
+        <translation>Removidas</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">A chamada com %1 terminou inesperadamente. %2</translation>
+        <translation>A chamada com %1 terminou inesperadamente. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Chamada para %1 terminada. %2</translation>
+        <translation>Chamada para %1 terminada. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 agora é %2</translation>
+        <translation>%1 agora é %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">A chamar %1</translation>
+        <translation>A chamar %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 a chamar</translation>
+        <translation>%1 a chamar</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">O envio da mensagem falhou</translation>
+        <translation>O envio da mensagem falhou</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2528,11 +2528,11 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Pausado</translation>
+        <translation>Pausado</translation>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished">Pausa no remoto</translation>
+        <translation>Pausa no remoto</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2556,7 +2556,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Estado</translation>
+        <translation>Estado</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2583,23 +2583,23 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Remover contacto</translation>
+        <translation>Remover contacto</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Se definido, remove todo o histórico de conversas com o contacto</translation>
+        <translation>Se definido, remove todo o histórico de conversas com o contacto</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Remover também o histórico de conversas</translation>
+        <translation>Remover também o histórico de conversas</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Tem a certeza que quer remover %1 da sua lista de contactos?</translation>
+        <translation>Tem a certeza que quer remover %1 da sua lista de contactos?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Remover</translation>
+        <translation>Remover</translation>
     </message>
 </context>
 <context>
@@ -2689,7 +2689,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Selecione uma data</translation>
+        <translation>Selecione uma data</translation>
     </message>
 </context>
 <context>

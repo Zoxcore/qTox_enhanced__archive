@@ -204,60 +204,60 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">rat-tracker</translation>
+        <translation>rat-tracker</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">How Ta Get Yer Complainin&apos; Heard</translation>
+        <translation>How Ta Get Yer Complainin&apos; Heard</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">privateers an&apos; deck-hands</translation>
+        <translation>privateers an&apos; deck-hands</translation>
     </message>
 </context>
 <context>
     <name>AboutFriendForm</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>username</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>status message</source>
-        <translation type="unfinished">Status report</translation>
+        <translation>Status report</translation>
     </message>
     <message>
         <source>Used aliases:</source>
-        <translation type="unfinished">Past aliases:</translation>
+        <translation>Past aliases:</translation>
     </message>
     <message>
         <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">RECORD O&apos; ALIASES</translation>
+        <translation>RECORD O&apos; ALIASES</translation>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation type="unfinished">Welcome all parcels</translation>
+        <translation>Welcome all parcels</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">Default chest fer storin&apos; parcels:</translation>
+        <translation>Default chest fer storin&apos; parcels:</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">By hand</translation>
+        <translation>By hand</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished">Just voices</translation>
+        <translation>Just voices</translation>
     </message>
     <message>
         <source>Audio + Video</source>
-        <translation type="unfinished">Voices and faces</translation>
+        <translation>Voices and faces</translation>
     </message>
     <message>
         <source>Automatically accept group chat invitations from this contact if set.</source>
@@ -265,19 +265,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation type="unfinished">Burn letters (what&apos;s fed to fire remains in ash)</translation>
+        <translation>Burn letters (what&apos;s fed to fire remains in ash)</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished">Extra Notin&apos;</translation>
+        <translation>Extra Notin&apos;</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
-        <translation type="unfinished">Page fer scrawlin&apos; notes about the matey</translation>
+        <translation>Page fer scrawlin&apos; notes about the matey</translation>
     </message>
     <message>
         <source>History removed</source>
-        <translation type="unfinished">All messages burnt</translation>
+        <translation>All messages burnt</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -409,7 +409,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation type="unfinished">Don&apos;t gab at yerself, lad, &apos;s unsightly</translation>
+        <translation>Don&apos;t gab at yerself, lad, &apos;s unsightly</translation>
     </message>
     <message>
         <source>Open contact list</source>
@@ -435,12 +435,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation type="unfinished">Tox ID</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
         <extracomment>The message you send in friend requests</extracomment>
-        <translation type="unfinished">State yer business</translation>
+        <translation>State yer business</translation>
     </message>
     <message>
         <source>Open</source>
@@ -454,7 +454,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished">Ahoy from %1, matey! Go on account wit me?</translation>
+        <translation>Ahoy from %1, matey! Go on account wit me?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -738,19 +738,19 @@ so you can save the file on Windows.</source>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation type="unfinished">Can&apos;t begin talkin&apos;</translation>
+        <translation>Can&apos;t begin talkin&apos;</translation>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation type="unfinished">Voice-scry yer hearty</translation>
+        <translation>Voice-scry yer hearty</translation>
     </message>
     <message>
         <source>End audio call</source>
-        <translation type="unfinished">Cease voice-scryin&apos;</translation>
+        <translation>Cease voice-scryin&apos;</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished">Belay that</translation>
+        <translation>Belay that</translation>
     </message>
     <message>
         <source>Accept audio call</source>
@@ -758,19 +758,19 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation type="unfinished">Can&apos;t begin talkin&apos; n&apos; face showin&apos;</translation>
+        <translation>Can&apos;t begin talkin&apos; n&apos; face showin&apos;</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">Face-scry yer hearty</translation>
+        <translation>Face-scry yer hearty</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Cease face-scryin&apos;</translation>
+        <translation>Cease face-scryin&apos;</translation>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">Belay that</translation>
+        <translation>Belay that</translation>
     </message>
     <message>
         <source>Accept video call</source>
@@ -794,11 +794,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Unmute microphone</source>
-        <translation type="unfinished">Speak yer mind</translation>
+        <translation>Speak yer mind</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Shut yer gab</translation>
+        <translation>Shut yer gab</translation>
     </message>
 </context>
 <context>
@@ -812,19 +812,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">workin&apos; on it</translation>
+        <translation>workin&apos; on it</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 be scrawlin&apos;</translation>
+        <translation>%1 be scrawlin&apos;</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Yank</translation>
+        <translation>Yank</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Grab it all</translation>
+        <translation>Grab it all</translation>
     </message>
 </context>
 <context>
@@ -862,17 +862,17 @@ so you can save the file on Windows.</source>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Ya need ta pen a note accompanyin&apos; yer request</translation>
+        <translation>Ya need ta pen a note accompanyin&apos; yer request</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Yer message is too long!</translation>
+        <translation>Yer message is too long!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Yer already hearties</translation>
+        <translation>Yer already hearties</translation>
     </message>
 </context>
 <context>
@@ -1006,19 +1006,19 @@ so you can save the file on Windows.</source>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
-        <translation type="unfinished">This Day</translation>
+        <translation>This Day</translation>
     </message>
     <message>
         <source>Yesterday</source>
-        <translation type="unfinished">Last Morn</translation>
+        <translation>Last Morn</translation>
     </message>
     <message>
         <source>Last 7 days</source>
-        <translation type="unfinished">Th&apos; last week</translation>
+        <translation>Th&apos; last week</translation>
     </message>
     <message>
         <source>This month</source>
-        <translation type="unfinished">This moon</translation>
+        <translation>This moon</translation>
     </message>
     <message>
         <source>Never</source>
@@ -1111,7 +1111,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">Cut ties with matey</translation>
+        <translation>Cut ties with matey</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1212,7 +1212,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">Default chest fer storin&apos; parcels:</translation>
+        <translation>Default chest fer storin&apos; parcels:</translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -1318,7 +1318,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">View old messages...</translation>
+        <translation>View old messages...</translation>
     </message>
     <message>
         <source>Export to file</source>
@@ -1385,11 +1385,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished">Open chat in new port</translation>
+        <translation>Open chat in new port</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished">Remove chat from this port</translation>
+        <translation>Remove chat from this port</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1409,7 +1409,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">Aboard</translation>
+        <translation>Aboard</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -1424,7 +1424,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Tox ID</source>
-        <translation type="unfinished">Tox ID</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
@@ -1857,11 +1857,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Shut yer gab</translation>
+        <translation>Shut yer gab</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Cease face-scryin&apos;</translation>
+        <translation>Cease face-scryin&apos;</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -1920,7 +1920,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">New writin&apos;</translation>
+        <translation>New writin&apos;</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2036,7 +2036,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished">Toxin&apos; aboard qTox</translation>
+        <translation>Toxin&apos; aboard qTox</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
@@ -2086,7 +2086,7 @@ Please use another image.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">Yaain&apos;t got permission ta store there</translation>
+        <translation>Yaain&apos;t got permission ta store there</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
@@ -2299,11 +2299,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished">Proceed</translation>
+        <translation>Proceed</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished">Abstain</translation>
+        <translation>Abstain</translation>
     </message>
     <message>
         <source>LTR</source>
@@ -2315,12 +2315,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished">Failed ta add th&apos; hearty</translation>
+        <translation>Failed ta add th&apos; hearty</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation type="unfinished">Don&apos;t gab at yerself, lad, &apos;s unsightly</translation>
+        <translation>Don&apos;t gab at yerself, lad, &apos;s unsightly</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
@@ -2356,7 +2356,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation type="unfinished">Ahoy from %1, matey! Go on account wit me?</translation>
+        <translation>Ahoy from %1, matey! Go on account wit me?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2399,22 +2399,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">come aboard</translation>
+        <translation>come aboard</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">gone wanderin&apos;</translation>
+        <translation>gone wanderin&apos;</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">become occupied</translation>
+        <translation>become occupied</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">gone landlubbin&apos;</translation>
+        <translation>gone landlubbin&apos;</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2443,7 +2443,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Failed to deliver parcel &quot;%1&quot;</translation>
+        <translation>Failed to deliver parcel &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
@@ -2471,20 +2471,20 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Scryin&apos; wit&apos; %1 &apos;sover. %2</translation>
+        <translation>Scryin&apos; wit&apos; %1 &apos;sover. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 has %2</translation>
+        <translation>%1 has %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Scryin&apos; %1</translation>
+        <translation>Scryin&apos; %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">Ahoy! %1 wants to scry</translation>
+        <translation>Ahoy! %1 wants to scry</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2528,7 +2528,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Awaitin&apos; yer word</translation>
+        <translation>Awaitin&apos; yer word</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2567,7 +2567,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Cut ties with matey</translation>
+        <translation>Cut ties with matey</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
@@ -2743,7 +2743,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add a friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">Join up with a mate</translation>
+        <translation>Join up with a mate</translation>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
@@ -2751,11 +2751,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>User ID:</source>
-        <translation type="unfinished">Yar&apos; own ID:</translation>
+        <translation>Yar&apos; own ID:</translation>
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation type="unfinished">They hail with:</translation>
+        <translation>They hail with:</translation>
     </message>
     <message>
         <source>Send</source>
@@ -2958,17 +2958,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
-        <translation type="unfinished">Aboard</translation>
+        <translation>Aboard</translation>
     </message>
     <message>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
-        <translation type="unfinished">Wanderin&apos;</translation>
+        <translation>Wanderin&apos;</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
-        <translation type="unfinished">Occupied</translation>
+        <translation>Occupied</translation>
     </message>
     <message>
         <source>File</source>
@@ -3021,12 +3021,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">Aboard</translation>
+        <translation>Aboard</translation>
     </message>
     <message>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">Landlubbin&apos;</translation>
+        <translation>Landlubbin&apos;</translation>
     </message>
     <message>
         <source>Friends</source>

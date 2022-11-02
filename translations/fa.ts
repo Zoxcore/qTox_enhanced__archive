@@ -204,17 +204,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">باگ-تراکر</translation>
+        <translation>باگ-تراکر</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">نوشتن گزارش خطای کاربردی</translation>
+        <translation>نوشتن گزارش خطای کاربردی</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">مشارکت کنندگان</translation>
+        <translation>مشارکت کنندگان</translation>
     </message>
 </context>
 <context>
@@ -677,7 +677,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">خطا</translation>
+        <translation>خطا</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -812,19 +812,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">در صف انتظار</translation>
+        <translation>در صف انتظار</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 در حال نوشتن است</translation>
+        <translation>%1 در حال نوشتن است</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">کپی</translation>
+        <translation>کپی</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">همه را انتخاب کن</translation>
+        <translation>همه را انتخاب کن</translation>
     </message>
 </context>
 <context>
@@ -857,22 +857,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">شناسه Tox نامعتبر است</translation>
+        <translation>شناسه Tox نامعتبر است</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">باید ضمن درخواست خود یک پیام نیز ارسال نمایید</translation>
+        <translation>باید ضمن درخواست خود یک پیام نیز ارسال نمایید</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">پیام شما خیلی طولانی است!</translation>
+        <translation>پیام شما خیلی طولانی است!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">این دوست از قبل وجود دارد</translation>
+        <translation>این دوست از قبل وجود دارد</translation>
     </message>
 </context>
 <context>
@@ -1111,7 +1111,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">حذف دوست</translation>
+        <translation>حذف دوست</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1832,43 +1832,43 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">فایل اجرایی</translation>
+        <translation>فایل اجرایی</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">شما از qTox خواسته اید که یک فایل اجرایی را باز کند. فایل های اجرایی میتوانند به شکل بالقوه صدمه جدی به سیستم شما بزنند. آیا اطمینان دارید که میخواهید این فایل را اجرا کنید؟</translation>
+        <translation>شما از qTox خواسته اید که یک فایل اجرایی را باز کند. فایل های اجرایی میتوانند به شکل بالقوه صدمه جدی به سیستم شما بزنند. آیا اطمینان دارید که میخواهید این فایل را اجرا کنید؟</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">ویدئو Tox</translation>
+        <translation>ویدئو Tox</translation>
     </message>
     <message>
         <source>Full Screen</source>
-        <translation type="unfinished">تمام‌صفحه</translation>
+        <translation>تمام‌صفحه</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation type="unfinished">تغییر وضعیت پیش‌نمایش ویدیو</translation>
+        <translation>تغییر وضعیت پیش‌نمایش ویدیو</translation>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation type="unfinished">صدا را قطع کن</translation>
+        <translation>صدا را قطع کن</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">میکروفن را خاموش کن</translation>
+        <translation>میکروفن را خاموش کن</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">پایان تماس تصویری</translation>
+        <translation>پایان تماس تصویری</translation>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation type="unfinished">خروج از حالت تمام‌صفحه</translation>
+        <translation>خروج از حالت تمام‌صفحه</translation>
     </message>
     <message>
         <source>Hide messages</source>
@@ -1923,15 +1923,15 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">پیام جدید</translation>
+        <translation>پیام جدید</translation>
     </message>
     <message>
         <source>New group message</source>
-        <translation type="unfinished">پیام گروهی جدید</translation>
+        <translation>پیام گروهی جدید</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation type="unfinished">انتقال فایل ورودی</translation>
+        <translation>انتقال فایل ورودی</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
@@ -1940,7 +1940,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Group invite received</source>
-        <translation type="unfinished">دعوت به گروه دریافت شد</translation>
+        <translation>دعوت به گروه دریافت شد</translation>
     </message>
     <message>
         <source>%1 invites you to join a group.</source>
@@ -1948,7 +1948,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation type="unfinished">درخواست دوستی دریافت شد</translation>
+        <translation>درخواست دوستی دریافت شد</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
@@ -2231,7 +2231,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">حذف رمز</translation>
+        <translation>حذف رمز</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2451,52 +2451,52 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">ارسال فایل «%1» موفق نبود</translation>
+        <translation>ارسال فایل «%1» موفق نبود</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 به گروه پیوست</translation>
+        <translation>%1 به گروه پیوست</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 گروه را ترک کرد</translation>
+        <translation>%1 گروه را ترک کرد</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 اکنون با عنوان %2 شناخته می‌شود</translation>
+        <translation>%1 اکنون با عنوان %2 شناخته می‌شود</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 عنوان را به %2 تغییر داد</translation>
+        <translation>%1 عنوان را به %2 تغییر داد</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">پاک شد</translation>
+        <translation>پاک شد</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">تماس با %1 ناگهانی و غیر منتظره تموم شد. %2</translation>
+        <translation>تماس با %1 ناگهانی و غیر منتظره تموم شد. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">پایان تماس با %1. %2</translation>
+        <translation>پایان تماس با %1. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 الان %2</translation>
+        <translation>%1 الان %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">درحال تماس گرفتن با %1</translation>
+        <translation>درحال تماس گرفتن با %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 در حال تماس</translation>
+        <translation>%1 در حال تماس</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">ارسال پیام موفق نبود</translation>
+        <translation>ارسال پیام موفق نبود</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2520,7 +2520,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">در انتظار</translation>
+        <translation>در انتظار</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2548,7 +2548,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">وضعیت</translation>
+        <translation>وضعیت</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2575,23 +2575,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">حذف دوست</translation>
+        <translation>حذف دوست</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">در صورت وجود تمام سابقه گفت‌و‌گو با دوست را حذف کن</translation>
+        <translation>در صورت وجود تمام سابقه گفت‌و‌گو با دوست را حذف کن</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">همچنین سابقه گفت‌و‌گو را حذف کن</translation>
+        <translation>همچنین سابقه گفت‌و‌گو را حذف کن</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">آیا برای حذف %1 از لیست مخاطبین خود اطمینان دارید؟</translation>
+        <translation>آیا برای حذف %1 از لیست مخاطبین خود اطمینان دارید؟</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
 </context>
 <context>
@@ -2681,7 +2681,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">تاریخی را انتخاب کنید</translation>
+        <translation>تاریخی را انتخاب کنید</translation>
     </message>
 </context>
 <context>
@@ -3110,7 +3110,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">خروج از برنامه qTox</translation>
+        <translation>خروج از برنامه qTox</translation>
     </message>
     <message>
         <source>Change status</source>

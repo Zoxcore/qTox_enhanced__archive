@@ -683,7 +683,7 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>

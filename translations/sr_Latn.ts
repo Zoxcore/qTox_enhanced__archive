@@ -204,17 +204,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">bubolovcu</translation>
+        <translation>bubolovcu</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">„Pisanje korisnih prijava grešaka“</translation>
+        <translation>„Pisanje korisnih prijava grešaka“</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">doprinosioca</translation>
+        <translation>doprinosioca</translation>
     </message>
 </context>
 <context>
@@ -289,7 +289,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">Potvrda</translation>
+        <translation>Potvrda</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
@@ -679,7 +679,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Greška</translation>
+        <translation>Greška</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -740,11 +740,11 @@ so you can save the file on Windows.</source>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation type="unfinished">Ne mogu da započnem audio poziv</translation>
+        <translation>Ne mogu da započnem audio poziv</translation>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation type="unfinished">Započni audio poziv</translation>
+        <translation>Započni audio poziv</translation>
     </message>
     <message>
         <source>End audio call</source>
@@ -752,19 +752,19 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished">Otkaži audio poziv</translation>
+        <translation>Otkaži audio poziv</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished">Prihvati audio poziv</translation>
+        <translation>Prihvati audio poziv</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation type="unfinished">Ne mogu da započnem vido poziv</translation>
+        <translation>Ne mogu da započnem vido poziv</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">Započni video poziv</translation>
+        <translation>Započni video poziv</translation>
     </message>
     <message>
         <source>End video call</source>
@@ -772,15 +772,15 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">Ozkaži video poziv</translation>
+        <translation>Ozkaži video poziv</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished">Prihvati video poziv</translation>
+        <translation>Prihvati video poziv</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
-        <translation type="unfinished">Zvuk se može isključiti samo tokom poziva</translation>
+        <translation>Zvuk se može isključiti samo tokom poziva</translation>
     </message>
     <message>
         <source>Unmute call</source>
@@ -788,11 +788,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Mute call</source>
-        <translation type="unfinished">Utišaj poziv</translation>
+        <translation>Utišaj poziv</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
-        <translation type="unfinished">Mikrofon se može utišati samo tokom poziva</translation>
+        <translation>Mikrofon se može utišati samo tokom poziva</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
@@ -800,7 +800,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Utišaj mikrofon</translation>
+        <translation>Utišaj mikrofon</translation>
     </message>
 </context>
 <context>
@@ -814,19 +814,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">na čekanju</translation>
+        <translation>na čekanju</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 kuca</translation>
+        <translation>%1 kuca</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Umoži</translation>
+        <translation>Umoži</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Izaberi sve</translation>
+        <translation>Izaberi sve</translation>
     </message>
 </context>
 <context>
@@ -859,22 +859,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Neispravan Tox ID</translation>
+        <translation>Neispravan Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Morate napisati poruku uz vaš zahtev za prijateljstvo</translation>
+        <translation>Morate napisati poruku uz vaš zahtev za prijateljstvo</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Vaša poruka je predugačka!</translation>
+        <translation>Vaša poruka je predugačka!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Prijatelj je već dodat</translation>
+        <translation>Prijatelj je već dodat</translation>
     </message>
 </context>
 <context>
@@ -1114,7 +1114,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">Ukloni prijatelja</translation>
+        <translation>Ukloni prijatelja</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1309,7 +1309,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">Potvrda</translation>
+        <translation>Potvrda</translation>
     </message>
     <message>
         <source>Search in text</source>
@@ -1321,11 +1321,11 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">Učitaj istorijat ćaskanja...</translation>
+        <translation>Učitaj istorijat ćaskanja...</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation type="unfinished">Izvezi u fajl</translation>
+        <translation>Izvezi u fajl</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
@@ -1416,7 +1416,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">Na vezi</translation>
+        <translation>Na vezi</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -1839,19 +1839,19 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Izvršni fajl</translation>
+        <translation>Izvršni fajl</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Tražili ste qTox-u da otvori izvršni fajl. Izvršni fajlovi mogu potencijalno naneti štetu vašem računaru. Da li ste sigurni da želite da otvorite ovaj fajl?</translation>
+        <translation>Tražili ste qTox-u da otvori izvršni fajl. Izvršni fajlovi mogu potencijalno naneti štetu vašem računaru. Da li ste sigurni da želite da otvorite ovaj fajl?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Toks video</translation>
+        <translation>Toks video</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1867,7 +1867,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Utišaj mikrofon</translation>
+        <translation>Utišaj mikrofon</translation>
     </message>
     <message>
         <source>End video call</source>
@@ -1932,7 +1932,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Nova poruka</translation>
+        <translation>Nova poruka</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2052,7 +2052,7 @@ Promene u formatu snimanja su moguće, što može dovesti do gubitka podataka.</
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished">Tox-uje putem qTox-a</translation>
+        <translation>Tox-uje putem qTox-a</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
@@ -2205,7 +2205,7 @@ Molimo koristite drugu.</translation>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished">Slike (%1)</translation>
+        <translation>Slike (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
@@ -2240,7 +2240,7 @@ Molimo koristite drugu.</translation>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">Ukloni lozinku</translation>
+        <translation>Ukloni lozinku</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2416,22 +2416,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">na vezi</translation>
+        <translation>na vezi</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">odsutan</translation>
+        <translation>odsutan</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">zazuzet</translation>
+        <translation>zazuzet</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">van veze</translation>
+        <translation>van veze</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2460,7 +2460,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Neuspelo slanje fajla „%1“</translation>
+        <translation>Neuspelo slanje fajla „%1“</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
@@ -2476,36 +2476,36 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 postavi naslov na %2</translation>
+        <translation>%1 postavi naslov na %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Očišćeno</translation>
+        <translation>Očišćeno</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Zvanje %1  neočekivano završi. %2</translation>
+        <translation>Zvanje %1  neočekivano završi. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Zvanje %1 završi. %2</translation>
+        <translation>Zvanje %1 završi. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 je sad %2</translation>
+        <translation>%1 je sad %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Pozivam %1</translation>
+        <translation>Pozivam %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 zove</translation>
+        <translation>%1 zove</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Neuspelo slanje poruke</translation>
+        <translation>Neuspelo slanje poruke</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2529,7 +2529,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Pauziran</translation>
+        <translation>Pauziran</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2584,23 +2584,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Ukloni prijatelja</translation>
+        <translation>Ukloni prijatelja</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Ako je zadato, uklanja ceo istorijat ćaskanja zajedno sa prijateljem</translation>
+        <translation>Ako je zadato, uklanja ceo istorijat ćaskanja zajedno sa prijateljem</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Takođe ukloni istorijat ćaskanja</translation>
+        <translation>Takođe ukloni istorijat ćaskanja</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Sigurno želite a uklonite „%1“ iz spiska kontakata?</translation>
+        <translation>Sigurno želite a uklonite „%1“ iz spiska kontakata?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Ukloni</translation>
+        <translation>Ukloni</translation>
     </message>
 </context>
 <context>
@@ -2646,7 +2646,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchSettingsForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Obrazac</translation>
+        <translation>Obrazac</translation>
     </message>
     <message>
         <source>Start search:</source>
@@ -2931,11 +2931,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished">Pusti zvuk</translation>
+        <translation>Pusti zvuk</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished">Pusti zvuk tokom zuzeća</translation>
+        <translation>Pusti zvuk tokom zuzeća</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3123,7 +3123,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">Napusti</translation>
+        <translation>Napusti</translation>
     </message>
     <message>
         <source>Change status</source>

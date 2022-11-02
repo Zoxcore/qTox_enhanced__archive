@@ -171,7 +171,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation type="unfinished">Du bruger qTox version %1.</translation>
+        <translation>Du bruger qTox version %1.</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
@@ -208,7 +208,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Skriv Brugbare Fejlrapporter</translation>
+        <translation>Skriv Brugbare Fejlrapporter</translation>
     </message>
     <message>
         <source>contributors</source>
@@ -224,15 +224,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>username</source>
-        <translation type="unfinished">brugernavn</translation>
+        <translation>brugernavn</translation>
     </message>
     <message>
         <source>status message</source>
-        <translation type="unfinished">statusmeddelelse</translation>
+        <translation>statusmeddelelse</translation>
     </message>
     <message>
         <source>Used aliases:</source>
-        <translation type="unfinished">Brugte aliaser:</translation>
+        <translation>Brugte aliaser:</translation>
     </message>
     <message>
         <source>HISTORY OF ALIASES</source>
@@ -244,7 +244,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">Standardmappen til at gemme filer:</translation>
+        <translation>Standardmappen til at gemme filer:</translation>
     </message>
     <message>
         <source>Manual</source>
@@ -264,11 +264,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation type="unfinished">Fjern historik (kan ikke fortrydes!)</translation>
+        <translation>Fjern historik (kan ikke fortrydes!)</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished">Noter</translation>
+        <translation>Noter</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
@@ -276,7 +276,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>History removed</source>
-        <translation type="unfinished">Historik fjernet</translation>
+        <translation>Historik fjernet</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -408,7 +408,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation type="unfinished">Du kan ikke tilføje dig selv som en ven!</translation>
+        <translation>Du kan ikke tilføje dig selv som en ven!</translation>
     </message>
     <message>
         <source>Open contact list</source>
@@ -434,12 +434,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation type="unfinished">Tox ID</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
         <extracomment>The message you send in friend requests</extracomment>
-        <translation type="unfinished">Besked</translation>
+        <translation>Besked</translation>
     </message>
     <message>
         <source>Open</source>
@@ -597,7 +597,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <source>SOCKS5</source>
@@ -677,7 +677,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fejl</translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -742,7 +742,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation type="unfinished">Start lydopkald</translation>
+        <translation>Start lydopkald</translation>
     </message>
     <message>
         <source>End audio call</source>
@@ -750,11 +750,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished">Annuller lydopkald</translation>
+        <translation>Annuller lydopkald</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished">Accepter lydopkald</translation>
+        <translation>Accepter lydopkald</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
@@ -762,7 +762,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">Start video opkald</translation>
+        <translation>Start video opkald</translation>
     </message>
     <message>
         <source>End video call</source>
@@ -770,11 +770,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">Annuller videoopkald</translation>
+        <translation>Annuller videoopkald</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished">Accepter videoopkald</translation>
+        <translation>Accepter videoopkald</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
@@ -805,14 +805,14 @@ so you can save the file on Windows.</source>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
-        <translation type="unfinished">Skriv din besked her...</translation>
+        <translation>Skriv din besked her...</translation>
     </message>
 </context>
 <context>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">ventende</translation>
+        <translation>ventende</translation>
     </message>
     <message>
         <source>%1 is typing</source>
@@ -820,11 +820,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopier</translation>
+        <translation>Kopier</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Vælg alle</translation>
+        <translation>Vælg alle</translation>
     </message>
 </context>
 <context>
@@ -841,7 +841,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation type="unfinished">Åben alt i nyt vindue</translation>
+        <translation>Åben alt i nyt vindue</translation>
     </message>
 </context>
 <context>
@@ -857,7 +857,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Ugyldigt Tox ID</translation>
+        <translation>Ugyldigt Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
@@ -867,12 +867,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Din besked er for lang!</translation>
+        <translation>Din besked er for lang!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Ven er allerede tilføjet</translation>
+        <translation>Ven er allerede tilføjet</translation>
     </message>
 </context>
 <context>
@@ -899,7 +899,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Form</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>10Mb</source>
@@ -1081,7 +1081,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">Online</translation>
+        <translation>Online</translation>
     </message>
     <message>
         <source>Away</source>
@@ -1094,7 +1094,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">Offline</translation>
+        <translation>Offline</translation>
     </message>
     <message>
         <source>To new group</source>
@@ -1212,7 +1212,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">Standardmappen til at gemme filer:</translation>
+        <translation>Standardmappen til at gemme filer:</translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -1352,7 +1352,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     <name>GroupInviteForm</name>
     <message>
         <source>Groups</source>
-        <translation type="unfinished">Grupper</translation>
+        <translation>Grupper</translation>
     </message>
     <message>
         <source>Create new group</source>
@@ -1386,11 +1386,11 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished">Åben chat i nyt vindue</translation>
+        <translation>Åben chat i nyt vindue</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished">Fjern chat fra dette vindue</translation>
+        <translation>Fjern chat fra dette vindue</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1411,7 +1411,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">Online</translation>
+        <translation>Online</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -1426,7 +1426,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Tox ID</source>
-        <translation type="unfinished">Tox ID</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
@@ -1457,7 +1457,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Change password</source>
-        <translation type="unfinished">Ændre dit kodeord</translation>
+        <translation>Ændre dit kodeord</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
@@ -1536,7 +1536,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation type="unfinished">Slet profil.</translation>
+        <translation>Slet profil.</translation>
     </message>
     <message>
         <source>Export profile</source>
@@ -1588,7 +1588,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Kodeord:</translation>
+        <translation>Kodeord:</translation>
     </message>
     <message>
         <source>Confirm:</source>
@@ -1726,11 +1726,11 @@ Please make sure to enter the same password twice.</source>
     <name>MainWindow</name>
     <message>
         <source>Your name</source>
-        <translation type="unfinished">Dit navn</translation>
+        <translation>Dit navn</translation>
     </message>
     <message>
         <source>Your status</source>
-        <translation type="unfinished">Din status</translation>
+        <translation>Din status</translation>
     </message>
     <message>
         <source>...</source>
@@ -1775,7 +1775,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Set availability status</source>
@@ -1819,7 +1819,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Indstillinger</translation>
+        <translation>Indstillinger</translation>
     </message>
     <message>
         <source>Open Settings</source>
@@ -1831,12 +1831,12 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Udførbar fil</translation>
+        <translation>Udførbar fil</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Du har bedt qTox at åbne en udførbar fil. Udførbare filer kan potentielt skade din computer. Er du sikker på, st du ønsker at udføre denne fil?</translation>
+        <translation>Du har bedt qTox at åbne en udførbar fil. Udførbare filer kan potentielt skade din computer. Er du sikker på, st du ønsker at udføre denne fil?</translation>
     </message>
 </context>
 <context>
@@ -1863,7 +1863,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Alfsut videoopkald</translation>
+        <translation>Alfsut videoopkald</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -1923,7 +1923,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Ny besked</translation>
+        <translation>Ny besked</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2071,7 +2071,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Fjern</translation>
+        <translation>Fjern</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
@@ -2151,7 +2151,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation type="unfinished">Profilen eksisterer allerede</translation>
+        <translation>Profilen eksisterer allerede</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
@@ -2171,7 +2171,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Export profile</source>
-        <translation type="unfinished">Eksporter profil</translation>
+        <translation>Eksporter profil</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
@@ -2191,7 +2191,7 @@ Please use another image.</source>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished">Billeder (%1)</translation>
+        <translation>Billeder (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
@@ -2318,12 +2318,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished">Kunne ikke tilføje ven</translation>
+        <translation>Kunne ikke tilføje ven</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation type="unfinished">Du kan ikke tilføje dig selv som en ven!</translation>
+        <translation>Du kan ikke tilføje dig selv som en ven!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
@@ -2364,7 +2364,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>None</source>
         <comment>No camera device set</comment>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <source>Desktop</source>
@@ -2373,7 +2373,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fejl</translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
@@ -2462,7 +2462,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 har sat titlen til %2</translation>
+        <translation>%1 har sat titlen til %2</translation>
     </message>
     <message>
         <source>Cleared</source>
@@ -2479,7 +2479,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 er nu %2</translation>
+        <translation>%1 er nu %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
@@ -2491,7 +2491,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Meddelelse kunne ikke afsendes</translation>
+        <translation>Meddelelse kunne ikke afsendes</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2543,7 +2543,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2586,7 +2586,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Fjern</translation>
+        <translation>Fjern</translation>
     </message>
 </context>
 <context>
@@ -2632,7 +2632,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchSettingsForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Start search:</source>
@@ -2746,7 +2746,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add a friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">Tilføj en ven</translation>
+        <translation>Tilføj en ven</translation>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
@@ -2768,14 +2768,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
-        <translation type="unfinished">Annullér</translation>
+        <translation>Annullér</translation>
     </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
     <message>
         <source>None</source>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <source>User Interface</source>
@@ -2826,7 +2826,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Ny besked</translation>
+        <translation>Ny besked</translation>
     </message>
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
@@ -2917,7 +2917,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished">Afspil lyd</translation>
+        <translation>Afspil lyd</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
@@ -2961,7 +2961,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
-        <translation type="unfinished">Online</translation>
+        <translation>Online</translation>
     </message>
     <message>
         <source>Away</source>
@@ -2984,11 +2984,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation type="unfinished">Log ud</translation>
+        <translation>Log ud</translation>
     </message>
     <message>
         <source>Filter...</source>
-        <translation type="unfinished">Filtrer</translation>
+        <translation>Filtrer</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -3008,11 +3008,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>By Name</source>
-        <translation type="unfinished">Efter Navn</translation>
+        <translation>Efter Navn</translation>
     </message>
     <message>
         <source>By Activity</source>
-        <translation type="unfinished">Efter Aktivitet</translation>
+        <translation>Efter Aktivitet</translation>
     </message>
     <message>
         <source>All</source>
@@ -3060,17 +3060,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Group invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Gruppeinvitationer</translation>
+        <translation>Gruppeinvitationer</translation>
     </message>
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Filoverførsler</translation>
+        <translation>Filoverførsler</translation>
     </message>
     <message>
         <source>Settings</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Indstillinger</translation>
+        <translation>Indstillinger</translation>
     </message>
     <message>
         <source>My profile</source>
@@ -3119,7 +3119,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">Log ud</translation>
+        <translation>Log ud</translation>
     </message>
     <message>
         <source>Add contact...</source>

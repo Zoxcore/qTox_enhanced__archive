@@ -204,17 +204,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">xestor de problemas</translation>
+        <translation>xestor de problemas</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Escribindo informes de error útiles</translation>
+        <translation>Escribindo informes de error útiles</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">autores</translation>
+        <translation>autores</translation>
     </message>
 </context>
 <context>
@@ -678,7 +678,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -813,19 +813,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">pendente</translation>
+        <translation>pendente</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 está a escribir</translation>
+        <translation>%1 está a escribir</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Copiar</translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Seleccionar todo</translation>
+        <translation>Seleccionar todo</translation>
     </message>
 </context>
 <context>
@@ -858,22 +858,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Tox ID non válida</translation>
+        <translation>Tox ID non válida</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Ten que escribir unha mensaxe coa súa solicitude</translation>
+        <translation>Ten que escribir unha mensaxe coa súa solicitude</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">As súa mensaxe é longa de máis!</translation>
+        <translation>As súa mensaxe é longa de máis!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">O contacto xa está engadido</translation>
+        <translation>O contacto xa está engadido</translation>
     </message>
 </context>
 <context>
@@ -1112,7 +1112,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">Eliminar contacto</translation>
+        <translation>Eliminar contacto</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1835,43 +1835,43 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Arquivo executable</translation>
+        <translation>Arquivo executable</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Pediu a qTox que abra un ficheiro executable. Os ficheiros executables poden danar o ordenador. Ten a certeza de querer abrir este ficheiro?</translation>
+        <translation>Pediu a qTox que abra un ficheiro executable. Os ficheiros executables poden danar o ordenador. Ten a certeza de querer abrir este ficheiro?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Vídeo de Tox</translation>
+        <translation>Vídeo de Tox</translation>
     </message>
     <message>
         <source>Full Screen</source>
-        <translation type="unfinished">Pantalla Completa</translation>
+        <translation>Pantalla Completa</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation type="unfinished">Activar/desactivar previsualización de vídeo</translation>
+        <translation>Activar/desactivar previsualización de vídeo</translation>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation type="unfinished">Silenciar audio</translation>
+        <translation>Silenciar audio</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Silenciar micrófono</translation>
+        <translation>Silenciar micrófono</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Rematar a chamada de vídeo</translation>
+        <translation>Rematar a chamada de vídeo</translation>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation type="unfinished">Saír de pantalla completa</translation>
+        <translation>Saír de pantalla completa</translation>
     </message>
     <message>
         <source>Hide messages</source>
@@ -1927,15 +1927,15 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Nova mensaxe</translation>
+        <translation>Nova mensaxe</translation>
     </message>
     <message>
         <source>New group message</source>
-        <translation type="unfinished">Novo grupo de mensaxes</translation>
+        <translation>Novo grupo de mensaxes</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation type="unfinished">Transferencia de ficheiro entrante</translation>
+        <translation>Transferencia de ficheiro entrante</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
@@ -1944,7 +1944,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Group invite received</source>
-        <translation type="unfinished">Recibida invitación de grupo</translation>
+        <translation>Recibida invitación de grupo</translation>
     </message>
     <message>
         <source>%1 invites you to join a group.</source>
@@ -1952,7 +1952,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation type="unfinished">Recibiuse unha solicitude de contacto</translation>
+        <translation>Recibiuse unha solicitude de contacto</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
@@ -2017,7 +2017,7 @@ Se está a recibir spam por solicitudes de amizade, cambie o NoSpam.</translatio
     </message>
     <message>
         <source>Generate random NoSpam</source>
-        <translation type="unfinished">Xera NoSpam aleatorio</translation>
+        <translation>Xera NoSpam aleatorio</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
@@ -2028,7 +2028,7 @@ O formato do ficheiro de gardado podería cambiar, o que pode causar a perda de 
     </message>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished">Privacidade</translation>
+        <translation>Privacidade</translation>
     </message>
     <message>
         <source>BlackList</source>
@@ -2235,7 +2235,7 @@ Utilice outra imaxe.</translation>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">Eliminar contrasinal</translation>
+        <translation>Eliminar contrasinal</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2455,52 +2455,52 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Fallou o envío do ficheiro &quot;%1&quot;</translation>
+        <translation>Fallou o envío do ficheiro &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 entrou no grupo</translation>
+        <translation>%1 entrou no grupo</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 saíu do grupo</translation>
+        <translation>%1 saíu do grupo</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 agora se coñece como %2</translation>
+        <translation>%1 agora se coñece como %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 axustou o título a %2</translation>
+        <translation>%1 axustou o título a %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Borrado</translation>
+        <translation>Borrado</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">A chamada con %1 rematou inesperadamente. %2</translation>
+        <translation>A chamada con %1 rematou inesperadamente. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">A chamada con %1 rematou. %2</translation>
+        <translation>A chamada con %1 rematou. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 agora é %2</translation>
+        <translation>%1 agora é %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Chamando a %1</translation>
+        <translation>Chamando a %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 está a chamar</translation>
+        <translation>%1 está a chamar</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Non se puido enviar a mensaxe</translation>
+        <translation>Non se puido enviar a mensaxe</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2524,7 +2524,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Pausado</translation>
+        <translation>Pausado</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2552,7 +2552,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Estado</translation>
+        <translation>Estado</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2579,23 +2579,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Eliminar contacto</translation>
+        <translation>Eliminar contacto</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Se está definido, elimina todo o historial de charla co contacto</translation>
+        <translation>Se está definido, elimina todo o historial de charla co contacto</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Elimina tamén o historial de charla</translation>
+        <translation>Elimina tamén o historial de charla</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Ten a certeza de que quere eliminar %1 da súa lista de contactos?</translation>
+        <translation>Ten a certeza de que quere eliminar %1 da súa lista de contactos?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
 </context>
 <context>
@@ -2685,7 +2685,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Seleccione unha data</translation>
+        <translation>Seleccione unha data</translation>
     </message>
 </context>
 <context>
@@ -3116,7 +3116,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">Saír</translation>
+        <translation>Saír</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3128,7 +3128,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">Pechar sesión</translation>
+        <translation>Pechar sesión</translation>
     </message>
     <message>
         <source>Add contact...</source>

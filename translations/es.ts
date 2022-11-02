@@ -683,7 +683,7 @@ lo que puede provocar problemas en las videollamadas.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>

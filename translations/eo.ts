@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>Audio Settings</source>
-        <translation type="unfinished">Agordoj de sono</translation>
+        <translation>Agordoj de sono</translation>
     </message>
     <message>
         <source>Gain</source>
@@ -45,7 +45,7 @@
     </message>
     <message>
         <source>Video Settings</source>
-        <translation type="unfinished">Agordoj de video</translation>
+        <translation>Agordoj de video</translation>
     </message>
     <message>
         <source>Video device</source>
@@ -210,30 +210,30 @@ which may lead to problems with video calls.</source>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">kontribuintoj</translation>
+        <translation>kontribuintoj</translation>
     </message>
 </context>
 <context>
     <name>AboutFriendForm</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialogo</translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <source>username</source>
-        <translation type="unfinished">uzantnomo</translation>
+        <translation>uzantnomo</translation>
     </message>
     <message>
         <source>status message</source>
-        <translation type="unfinished">statmesaĝo</translation>
+        <translation>statmesaĝo</translation>
     </message>
     <message>
         <source>Used aliases:</source>
-        <translation type="unfinished">Kromnomoj uzataj:</translation>
+        <translation>Kromnomoj uzataj:</translation>
     </message>
     <message>
         <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">HISTORIO DE KROMNOMOJ</translation>
+        <translation>HISTORIO DE KROMNOMOJ</translation>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>
@@ -245,7 +245,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">Manlibro</translation>
+        <translation>Manlibro</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -285,7 +285,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">Konfirmo</translation>
+        <translation>Konfirmo</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
@@ -450,7 +450,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished">Jen %1! Toksu min, eble?</translation>
+        <translation>Jen %1! Toksu min, eble?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -674,7 +674,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Eraro</translation>
+        <translation>Eraro</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -790,11 +790,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Unmute microphone</source>
-        <translation type="unfinished">Malsilentigi mikrofonon</translation>
+        <translation>Malsilentigi mikrofonon</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Silentigi mikrofonon</translation>
+        <translation>Silentigi mikrofonon</translation>
     </message>
 </context>
 <context>
@@ -808,19 +808,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">pritraktota</translation>
+        <translation>pritraktota</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 tajpas</translation>
+        <translation>%1 tajpas</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopii</translation>
+        <translation>Kopii</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Selekti ĉion</translation>
+        <translation>Selekti ĉion</translation>
     </message>
 </context>
 <context>
@@ -858,17 +858,17 @@ so you can save the file on Windows.</source>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Vi bezonas skribi mesaĝon en via peto</translation>
+        <translation>Vi bezonas skribi mesaĝon en via peto</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Via mesaĝo tro longas!</translation>
+        <translation>Via mesaĝo tro longas!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Tiu amiko jam estis aldonita</translation>
+        <translation>Tiu amiko jam estis aldonita</translation>
     </message>
 </context>
 <context>
@@ -1009,7 +1009,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>This month</source>
-        <translation type="unfinished">Ĉi-monate</translation>
+        <translation>Ĉi-monate</translation>
     </message>
     <message>
         <source>Never</source>
@@ -1296,7 +1296,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">Konfirmo</translation>
+        <translation>Konfirmo</translation>
     </message>
     <message>
         <source>Search in text</source>
@@ -1832,7 +1832,7 @@ Please make sure to enter the same password twice.</source>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox-video</translation>
+        <translation>Tox-video</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1848,7 +1848,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Silentigi mikrofonon</translation>
+        <translation>Silentigi mikrofonon</translation>
     </message>
     <message>
         <source>End video call</source>
@@ -1912,7 +1912,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Nova mesaĝo</translation>
+        <translation>Nova mesaĝo</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2028,7 +2028,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished">Toksante ĉe qTox</translation>
+        <translation>Toksante ĉe qTox</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
@@ -2140,7 +2140,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation type="unfinished">La profilo jam ekzistas</translation>
+        <translation>La profilo jam ekzistas</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
@@ -2180,7 +2180,7 @@ Please use another image.</source>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished">Bildoj (%1)</translation>
+        <translation>Bildoj (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
@@ -2391,22 +2391,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">enrete</translation>
+        <translation>enrete</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">fore</translation>
+        <translation>fore</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">okupite</translation>
+        <translation>okupite</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">elrete</translation>
+        <translation>elrete</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2435,7 +2435,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Malsukcesis sendi dosieron &quot;%1&quot;</translation>
+        <translation>Malsukcesis sendi dosieron &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
@@ -2451,7 +2451,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 titolis ĝin %2</translation>
+        <translation>%1 titolis ĝin %2</translation>
     </message>
     <message>
         <source>Cleared</source>
@@ -2468,7 +2468,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 nun estas %2</translation>
+        <translation>%1 nun estas %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
@@ -2480,7 +2480,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Mesaĝo fiaskis dum sendado</translation>
+        <translation>Mesaĝo fiaskis dum sendado</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2743,7 +2743,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>User ID:</source>
-        <translation type="unfinished">Uzanta identigilo:</translation>
+        <translation>Uzanta identigilo:</translation>
     </message>
     <message>
         <source>Friend request message:</source>
@@ -3048,7 +3048,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Group invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Grupo-invitoj</translation>
+        <translation>Grupo-invitoj</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3095,7 +3095,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">Eliri</translation>
+        <translation>Eliri</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3107,7 +3107,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">Elsaluti</translation>
+        <translation>Elsaluti</translation>
     </message>
     <message>
         <source>Add contact...</source>

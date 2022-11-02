@@ -683,7 +683,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Klaida</translation>
+        <translation>Klaida</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -818,19 +818,19 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">dar neišsiųsta</translation>
+        <translation>dar neišsiųsta</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 rašo</translation>
+        <translation>%1 rašo</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopijuoti</translation>
+        <translation>Kopijuoti</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Pažymėti viską</translation>
+        <translation>Pažymėti viską</translation>
     </message>
 </context>
 <context>
@@ -1839,12 +1839,12 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Vykdomasis failas</translation>
+        <translation>Vykdomasis failas</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Nurodėte qTox atidaryti vykdomąjį failą (programą). Vykdomieji failai gali pakenkti Jūsų kompiuteriui. Ar norite tęsti?</translation>
+        <translation>Nurodėte qTox atidaryti vykdomąjį failą (programą). Vykdomieji failai gali pakenkti Jūsų kompiuteriui. Ar norite tęsti?</translation>
     </message>
 </context>
 <context>
@@ -2465,52 +2465,52 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Nepavyko išsiųsti failo „%1“</translation>
+        <translation>Nepavyko išsiųsti failo „%1“</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 prisijungė prie grupės</translation>
+        <translation>%1 prisijungė prie grupės</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 išėjo iš grupės</translation>
+        <translation>%1 išėjo iš grupės</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 dabar yra žinoma(-s) kaip %2</translation>
+        <translation>%1 dabar yra žinoma(-s) kaip %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 nustatė pavadinimą „%2“</translation>
+        <translation>%1 nustatė pavadinimą „%2“</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Išvalyta</translation>
+        <translation>Išvalyta</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Skambutis su %1 netikėtai pasibaigė. %2</translation>
+        <translation>Skambutis su %1 netikėtai pasibaigė. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Pokalbis su %1 baigėsi. %2</translation>
+        <translation>Pokalbis su %1 baigėsi. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 dabar %2</translation>
+        <translation>%1 dabar %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Skambiname %1</translation>
+        <translation>Skambiname %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">Skambina %1</translation>
+        <translation>Skambina %1</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Nepavyko nusiųsti žinutės</translation>
+        <translation>Nepavyko nusiųsti žinutės</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2534,11 +2534,11 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Pristabdyta</translation>
+        <translation>Pristabdyta</translation>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished">Kita šalis pristabdė</translation>
+        <translation>Kita šalis pristabdė</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2562,7 +2562,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Būsena</translation>
+        <translation>Būsena</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2589,23 +2589,23 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Šalinti kontaktą</translation>
+        <translation>Šalinti kontaktą</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Jei nustatyta, šalinti visą pokalbių su kontaktu istoriją</translation>
+        <translation>Jei nustatyta, šalinti visą pokalbių su kontaktu istoriją</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Išvalyti pokalbių žurnalą</translation>
+        <translation>Išvalyti pokalbių žurnalą</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Ar tikrai norite pašalinti %1 iš savo kontaktų sąrašo?</translation>
+        <translation>Ar tikrai norite pašalinti %1 iš savo kontaktų sąrašo?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Pašalinti</translation>
+        <translation>Pašalinti</translation>
     </message>
 </context>
 <context>
@@ -2695,7 +2695,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Pasirinkti datą</translation>
+        <translation>Pasirinkti datą</translation>
     </message>
 </context>
 <context>

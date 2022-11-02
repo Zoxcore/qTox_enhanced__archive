@@ -682,7 +682,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fehler</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>

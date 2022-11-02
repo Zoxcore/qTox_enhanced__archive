@@ -204,17 +204,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">متتبع الأخطاء</translation>
+        <translation>متتبع الأخطاء</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">كتابة تقارير مفيدة بالأخطاء</translation>
+        <translation>كتابة تقارير مفيدة بالأخطاء</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">المساهمين</translation>
+        <translation>المساهمين</translation>
     </message>
 </context>
 <context>
@@ -225,15 +225,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>username</source>
-        <translation type="unfinished">اسم المستخدم</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>status message</source>
-        <translation type="unfinished">الحالة</translation>
+        <translation>الحالة</translation>
     </message>
     <message>
         <source>Used aliases:</source>
-        <translation type="unfinished">الاسم:</translation>
+        <translation>الاسم:</translation>
     </message>
     <message>
         <source>HISTORY OF ALIASES</source>
@@ -241,23 +241,23 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation type="unfinished">قبول الملفات تلقائيا من جهة الاتصال المسجلة</translation>
+        <translation>قبول الملفات تلقائيا من جهة الاتصال المسجلة</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">مسار حفظ الملفات:</translation>
+        <translation>مسار حفظ الملفات:</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">يدوي</translation>
+        <translation>يدوي</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished">الصوت</translation>
+        <translation>الصوت</translation>
     </message>
     <message>
         <source>Audio + Video</source>
-        <translation type="unfinished">الصوت + التسجيل المرئي</translation>
+        <translation>الصوت + التسجيل المرئي</translation>
     </message>
     <message>
         <source>Automatically accept group chat invitations from this contact if set.</source>
@@ -265,19 +265,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation type="unfinished">حذف السجل (العملية لا يمكن التراجع عنها)</translation>
+        <translation>حذف السجل (العملية لا يمكن التراجع عنها)</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished">ملاحظات</translation>
+        <translation>ملاحظات</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
-        <translation type="unfinished">حقل لادخال للملاحظات عن جهة الاتصار</translation>
+        <translation>حقل لادخال للملاحظات عن جهة الاتصار</translation>
     </message>
     <message>
         <source>History removed</source>
-        <translation type="unfinished">تم مسح السجل</translation>
+        <translation>تم مسح السجل</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -289,7 +289,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">تأكيد</translation>
+        <translation>تأكيد</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
@@ -409,7 +409,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation type="unfinished">لا تستطيع اضافة نفسك كصديق!</translation>
+        <translation>لا تستطيع اضافة نفسك كصديق!</translation>
     </message>
     <message>
         <source>Open contact list</source>
@@ -435,12 +435,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation type="unfinished">حساب التوكس &quot;Tox ID&quot;</translation>
+        <translation>حساب التوكس &quot;Tox ID&quot;</translation>
     </message>
     <message>
         <source>Message</source>
         <extracomment>The message you send in friend requests</extracomment>
-        <translation type="unfinished">رسالة طلب الاضافة</translation>
+        <translation>رسالة طلب الاضافة</translation>
     </message>
     <message>
         <source>Open</source>
@@ -454,7 +454,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished">%1 هنا! هل تود التواصل بالتوكس معي؟</translation>
+        <translation>%1 هنا! هل تود التواصل بالتوكس معي؟</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -682,7 +682,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">خطأ</translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -742,7 +742,7 @@ so you can save the file on Windows.</source>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation type="unfinished">لا يمكن بدء المكالمة الصوتية</translation>
+        <translation>لا يمكن بدء المكالمة الصوتية</translation>
     </message>
     <message>
         <source>Start audio call</source>
@@ -754,19 +754,19 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished">الغاء المكالمة الصوتية</translation>
+        <translation>الغاء المكالمة الصوتية</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished">قبول مكالمة صوتية</translation>
+        <translation>قبول مكالمة صوتية</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation type="unfinished">لا يمكن بدء مكالمة فيديو</translation>
+        <translation>لا يمكن بدء مكالمة فيديو</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">بدء مكالمة فيديو</translation>
+        <translation>بدء مكالمة فيديو</translation>
     </message>
     <message>
         <source>End video call</source>
@@ -774,15 +774,15 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">الغاء المكالمة المرئية</translation>
+        <translation>الغاء المكالمة المرئية</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished">قبول مكالمة فيديو</translation>
+        <translation>قبول مكالمة فيديو</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
-        <translation type="unfinished">يمكن تعطيل الصوت فقط أثناء المكالمة</translation>
+        <translation>يمكن تعطيل الصوت فقط أثناء المكالمة</translation>
     </message>
     <message>
         <source>Unmute call</source>
@@ -790,11 +790,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Mute call</source>
-        <translation type="unfinished">كتم المكالمة</translation>
+        <translation>كتم المكالمة</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
-        <translation type="unfinished">يمكن كتم صوت الميكروفون فقط أثناء المكالمة</translation>
+        <translation>يمكن كتم صوت الميكروفون فقط أثناء المكالمة</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
@@ -802,7 +802,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">كتم المايكروفون</translation>
+        <translation>كتم المايكروفون</translation>
     </message>
 </context>
 <context>
@@ -816,19 +816,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">قيد الانتظار</translation>
+        <translation>قيد الانتظار</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 يجري الكتابة</translation>
+        <translation>%1 يجري الكتابة</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">نسخ</translation>
+        <translation>نسخ</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">تحديد الكل</translation>
+        <translation>تحديد الكل</translation>
     </message>
 </context>
 <context>
@@ -861,22 +861,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">معرف Tox غير صالح</translation>
+        <translation>معرف Tox غير صالح</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">تحتاج كتابة رسالة مع الطلب</translation>
+        <translation>تحتاج كتابة رسالة مع الطلب</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">رسالتك طويلة جدا!</translation>
+        <translation>رسالتك طويلة جدا!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">تمت الاضافة فعلاً</translation>
+        <translation>تمت الاضافة فعلاً</translation>
     </message>
 </context>
 <context>
@@ -1005,19 +1005,19 @@ so you can save the file on Windows.</source>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
-        <translation type="unfinished">اليوم</translation>
+        <translation>اليوم</translation>
     </message>
     <message>
         <source>Yesterday</source>
-        <translation type="unfinished">امس</translation>
+        <translation>امس</translation>
     </message>
     <message>
         <source>Last 7 days</source>
-        <translation type="unfinished">اخر سبع أيام</translation>
+        <translation>اخر سبع أيام</translation>
     </message>
     <message>
         <source>This month</source>
-        <translation type="unfinished">هذا الشهر</translation>
+        <translation>هذا الشهر</translation>
     </message>
     <message>
         <source>Never</source>
@@ -1109,7 +1109,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">ازالة صديق</translation>
+        <translation>ازالة صديق</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1304,7 +1304,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">تأكيد</translation>
+        <translation>تأكيد</translation>
     </message>
     <message>
         <source>Search in text</source>
@@ -1316,7 +1316,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">تحميل سجل الرسائل...</translation>
+        <translation>تحميل سجل الرسائل...</translation>
     </message>
     <message>
         <source>Export to file</source>
@@ -1417,7 +1417,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">متصل</translation>
+        <translation>متصل</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -1839,19 +1839,19 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">ملف تنفيدي</translation>
+        <translation>ملف تنفيدي</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">هل انت متأكد من فتح الملف ؟</translation>
+        <translation>هل انت متأكد من فتح الملف ؟</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">فيديو التوكس &quot;Tox&quot;</translation>
+        <translation>فيديو التوكس &quot;Tox&quot;</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1867,7 +1867,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">كتم المايكروفون</translation>
+        <translation>كتم المايكروفون</translation>
     </message>
     <message>
         <source>End video call</source>
@@ -1935,7 +1935,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">رسالة جديدة</translation>
+        <translation>رسالة جديدة</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2055,7 +2055,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished">استخدم التوكس على كيوتوكس</translation>
+        <translation>استخدم التوكس على كيوتوكس</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
@@ -2164,15 +2164,15 @@ Please use another image.</source>
     </message>
     <message>
         <source>Failed to rename</source>
-        <translation type="unfinished">فشلة اعادة التسمية</translation>
+        <translation>فشلة اعادة التسمية</translation>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation type="unfinished">الملف الشخصي موجود مسبقاً</translation>
+        <translation>الملف الشخصي موجود مسبقاً</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation type="unfinished">الملف الشخصي باسم &quot;%1&quot; موجود فعلا.</translation>
+        <translation>الملف الشخصي باسم &quot;%1&quot; موجود فعلا.</translation>
     </message>
     <message>
         <source>Empty name</source>
@@ -2188,27 +2188,27 @@ Please use another image.</source>
     </message>
     <message>
         <source>Export profile</source>
-        <translation type="unfinished">تصدير الملف الشخصي</translation>
+        <translation>تصدير الملف الشخصي</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation type="unfinished">(*.tox) حفظ ملف الحساب الشخصي للتوكس</translation>
+        <translation>(*.tox) حفظ ملف الحساب الشخصي للتوكس</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation type="unfinished">لا يمكن حذف الملفات التالية:</translation>
+        <translation>لا يمكن حذف الملفات التالية:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
         <extracomment>deletion failed text part 2</extracomment>
-        <translation type="unfinished">الرجاء إزالتها يدويا.</translation>
+        <translation>الرجاء إزالتها يدويا.</translation>
     </message>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished">صور (%1)</translation>
+        <translation>صور (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
@@ -2243,7 +2243,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">ازالة كلمة المرور</translation>
+        <translation>ازالة كلمة المرور</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2419,22 +2419,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">متصل</translation>
+        <translation>متصل</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">في الخارج</translation>
+        <translation>في الخارج</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">مشغول</translation>
+        <translation>مشغول</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">غير متصل</translation>
+        <translation>غير متصل</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2463,7 +2463,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">فشل ارسال الملف &quot;%1&quot;</translation>
+        <translation>فشل ارسال الملف &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
@@ -2479,11 +2479,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 قد وضع عنوان على %2</translation>
+        <translation>%1 قد وضع عنوان على %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">تم التنظيف</translation>
+        <translation>تم التنظيف</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
@@ -2491,24 +2491,24 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">المكالمة مع %1 انتهت. %2</translation>
+        <translation>المكالمة مع %1 انتهت. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 الأن %2</translation>
+        <translation>%1 الأن %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">يتصل %1</translation>
+        <translation>يتصل %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 يتصل</translation>
+        <translation>%1 يتصل</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">فشل ارسال الرسالة</translation>
+        <translation>فشل ارسال الرسالة</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2532,7 +2532,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">موقَف</translation>
+        <translation>موقَف</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2560,7 +2560,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">الحالة</translation>
+        <translation>الحالة</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2587,23 +2587,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">ازالة صديق</translation>
+        <translation>ازالة صديق</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">ازالة تاريخ جمبيع المحادثات مع الصديق اذا وجد</translation>
+        <translation>ازالة تاريخ جمبيع المحادثات مع الصديق اذا وجد</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">ايضا حذف سجل المحادثة</translation>
+        <translation>ايضا حذف سجل المحادثة</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">هل انت متأكد من ازالة %1 من جهات الاتصال ؟</translation>
+        <translation>هل انت متأكد من ازالة %1 من جهات الاتصال ؟</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">ازالة</translation>
+        <translation>ازالة</translation>
     </message>
 </context>
 <context>
@@ -2649,7 +2649,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchSettingsForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">النوع</translation>
+        <translation>النوع</translation>
     </message>
     <message>
         <source>Start search:</source>
@@ -2934,11 +2934,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished">تشغيل صوت</translation>
+        <translation>تشغيل صوت</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished">تشغيل الصوت في حين الحالة مشغول</translation>
+        <translation>تشغيل الصوت في حين الحالة مشغول</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3131,7 +3131,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">خروج</translation>
+        <translation>خروج</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3143,7 +3143,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">تسجيل خروج</translation>
+        <translation>تسجيل خروج</translation>
     </message>
     <message>
         <source>Add contact...</source>

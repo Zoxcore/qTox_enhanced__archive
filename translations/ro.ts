@@ -683,7 +683,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Eroare</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -819,19 +819,19 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">în așteptare</translation>
+        <translation>în așteptare</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 scrie</translation>
+        <translation>%1 scrie</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Copiere</translation>
+        <translation>Copiere</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Selectează tot</translation>
+        <translation>Selectează tot</translation>
     </message>
 </context>
 <context>
@@ -1847,12 +1847,12 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Fișier executabil</translation>
+        <translation>Fișier executabil</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Sunteți întrebat de qTox pentru deschiderea unui fișier executabil. Fișierele executabile pot deteriora computerul. Sigur doriți să deschideți acest fișier?</translation>
+        <translation>Sunteți întrebat de qTox pentru deschiderea unui fișier executabil. Fișierele executabile pot deteriora computerul. Sigur doriți să deschideți acest fișier?</translation>
     </message>
 </context>
 <context>
@@ -2471,52 +2471,52 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Eșec la trimiterea fișierului &quot;%1&quot;</translation>
+        <translation>Eșec la trimiterea fișierului &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 sa alăturat grupului</translation>
+        <translation>%1 sa alăturat grupului</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 a părăsit grupul</translation>
+        <translation>%1 a părăsit grupul</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 este acum cunoscut ca %2</translation>
+        <translation>%1 este acum cunoscut ca %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 a fost setat titlul la %2</translation>
+        <translation>%1 a fost setat titlul la %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Curățat</translation>
+        <translation>Curățat</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Apelarea cu %1 sa încheiat neașteptat. %2</translation>
+        <translation>Apelarea cu %1 sa încheiat neașteptat. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Apelați cu %1 încheiat. %2</translation>
+        <translation>Apelați cu %1 încheiat. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 este acum %2</translation>
+        <translation>%1 este acum %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Apelare %1</translation>
+        <translation>Apelare %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 apelează</translation>
+        <translation>%1 apelează</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Mesajul nu a putut fi trimis</translation>
+        <translation>Mesajul nu a putut fi trimis</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2540,11 +2540,11 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">În pauză</translation>
+        <translation>În pauză</translation>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished">Telecomandă întreruptă</translation>
+        <translation>Telecomandă întreruptă</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2568,7 +2568,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Stare</translation>
+        <translation>Stare</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2595,23 +2595,23 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Ștergeți prieten</translation>
+        <translation>Ștergeți prieten</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Eliminați tot istoricul discuțiilor cu prietenul dacă este setat</translation>
+        <translation>Eliminați tot istoricul discuțiilor cu prietenul dacă este setat</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">De asemenea, eliminați istoricul discuțiilor</translation>
+        <translation>De asemenea, eliminați istoricul discuțiilor</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Sunteți sigur că vreți să eliminați %1 Din lista persoanelor de contact?</translation>
+        <translation>Sunteți sigur că vreți să eliminați %1 Din lista persoanelor de contact?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Eliminați</translation>
+        <translation>Eliminați</translation>
     </message>
 </context>
 <context>
@@ -2701,7 +2701,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Selectați o dată</translation>
+        <translation>Selectați o dată</translation>
     </message>
 </context>
 <context>

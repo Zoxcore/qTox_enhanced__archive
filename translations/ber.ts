@@ -200,7 +200,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">ⴰⵏⴹⴼⴰⵕ ⵏ ⵓⵔⵎⵉⴷⵉ</translation>
+        <translation>ⴰⵏⴹⴼⴰⵕ ⵏ ⵓⵔⵎⵉⴷⵉ</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
@@ -2739,7 +2739,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add a friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">ⵔⵏⵓ ⵢⴰⵏ ⵓⵎⴷⴷⴰⴽⴽⵯⵍ</translation>
+        <translation>ⵔⵏⵓ ⵢⴰⵏ ⵓⵎⴷⴷⴰⴽⴽⵯⵍ</translation>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>

@@ -61,7 +61,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Resolution</source>
-        <translation type="unfinished">ರೆಸಲ್ಯೂಷನ್</translation>
+        <translation>ರೆಸಲ್ಯೂಷನ್</translation>
     </message>
     <message>
         <source>Rescan devices</source>
@@ -1082,7 +1082,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">ಹೊಸ ಸಂದೇಶ</translation>
+        <translation>ಹೊಸ ಸಂದೇಶ</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1920,7 +1920,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">ಹೊಸ ಸಂದೇಶ</translation>
+        <translation>ಹೊಸ ಸಂದೇಶ</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2743,7 +2743,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add a friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">ನಿನ್ನ ಗೆಳೆಯನನ್ನು ಸೇರಿಸು</translation>
+        <translation>ನಿನ್ನ ಗೆಳೆಯನನ್ನು ಸೇರಿಸು</translation>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
@@ -2823,7 +2823,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">ಹೊಸ ಸಂದೇಶ</translation>
+        <translation>ಹೊಸ ಸಂದೇಶ</translation>
     </message>
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
@@ -2963,12 +2963,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
-        <translation type="unfinished">ದೂರವಿರುವೆ</translation>
+        <translation>ದೂರವಿರುವೆ</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
-        <translation type="unfinished">ನಿರತನಾಗಿರುವೆ</translation>
+        <translation>ನಿರತನಾಗಿರುವೆ</translation>
     </message>
     <message>
         <source>File</source>
@@ -2981,7 +2981,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation type="unfinished">ಲಾಗ್ ಔಟ್</translation>
+        <translation>ಲಾಗ್ ಔಟ್</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3116,7 +3116,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">ಲಾಗ್ ಔಟ್</translation>
+        <translation>ಲಾಗ್ ಔಟ್</translation>
     </message>
     <message>
         <source>Add contact...</source>

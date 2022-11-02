@@ -684,7 +684,7 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Hata</translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>

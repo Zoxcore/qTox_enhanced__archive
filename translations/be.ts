@@ -204,17 +204,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">трэкер хібаў</translation>
+        <translation>трэкер хібаў</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Напісанне карысных справаздач аб хібах</translation>
+        <translation>Напісанне карысных справаздач аб хібах</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">удзельнікаў</translation>
+        <translation>удзельнікаў</translation>
     </message>
 </context>
 <context>
@@ -679,7 +679,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Памылка</translation>
+        <translation>Памылка</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -814,19 +814,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">чаканне</translation>
+        <translation>чаканне</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 друкуе</translation>
+        <translation>%1 друкуе</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Капіяваць</translation>
+        <translation>Капіяваць</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Абраць усё</translation>
+        <translation>Абраць усё</translation>
     </message>
 </context>
 <context>
@@ -859,22 +859,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Некарэктны Tox ID</translation>
+        <translation>Некарэктны Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Вам трэба напісаць паведамленне да вашага запыта</translation>
+        <translation>Вам трэба напісаць паведамленне да вашага запыта</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Ваша паведамленне занадта вялікае!</translation>
+        <translation>Ваша паведамленне занадта вялікае!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Сябра ўжо даданы</translation>
+        <translation>Сябра ўжо даданы</translation>
     </message>
 </context>
 <context>
@@ -1113,7 +1113,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">Выдаліць сябра</translation>
+        <translation>Выдаліць сябра</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1320,11 +1320,11 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">Загрузіць гісторыю чату…</translation>
+        <translation>Загрузіць гісторыю чату…</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation type="unfinished">Экпартаваць у файл</translation>
+        <translation>Экпартаваць у файл</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
@@ -1838,43 +1838,43 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Выканальны файл</translation>
+        <translation>Выканальны файл</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Вы просіце, каб qTox адкрыў выканальны файл. Выканальныя файлы патэнцыйна могуць нанесці шкоду вашаму камп’ютару. Вы сапраўды хочаце адкрыць гэты файл?</translation>
+        <translation>Вы просіце, каб qTox адкрыў выканальны файл. Выканальныя файлы патэнцыйна могуць нанесці шкоду вашаму камп’ютару. Вы сапраўды хочаце адкрыць гэты файл?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox-відэа</translation>
+        <translation>Tox-відэа</translation>
     </message>
     <message>
         <source>Full Screen</source>
-        <translation type="unfinished">На ўвесь экран</translation>
+        <translation>На ўвесь экран</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation type="unfinished">Пераключыць папярэдні прагляд відэа</translation>
+        <translation>Пераключыць папярэдні прагляд відэа</translation>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation type="unfinished">Адключыць аўдыё</translation>
+        <translation>Адключыць аўдыё</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Адключыць мікрафон</translation>
+        <translation>Адключыць мікрафон</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Скончыць відэавыклік</translation>
+        <translation>Скончыць відэавыклік</translation>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation type="unfinished">Выхад з паўнаэкраннага рэжыму</translation>
+        <translation>Выхад з паўнаэкраннага рэжыму</translation>
     </message>
     <message>
         <source>Hide messages</source>
@@ -1931,7 +1931,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Новае паведамленне</translation>
+        <translation>Новае паведамленне</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2239,7 +2239,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">Выдаліць пароль</translation>
+        <translation>Выдаліць пароль</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2415,27 +2415,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">у сеціве</translation>
+        <translation>у сеціве</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">адышоў</translation>
+        <translation>адышоў</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">заняты</translation>
+        <translation>заняты</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">па-за сеткай</translation>
+        <translation>па-за сеткай</translation>
     </message>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
-        <translation type="unfinished">блакаваны</translation>
+        <translation>блакаваны</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -2459,52 +2459,52 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Не атрымалася адправіць файл «%1»</translation>
+        <translation>Не атрымалася адправіць файл «%1»</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 далучыўся да групы</translation>
+        <translation>%1 далучыўся да групы</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 пакінуў групу</translation>
+        <translation>%1 пакінуў групу</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 цяпер вядомы як %2</translation>
+        <translation>%1 цяпер вядомы як %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 змяніў загаловак на «%2»</translation>
+        <translation>%1 змяніў загаловак на «%2»</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Ачышчаны</translation>
+        <translation>Ачышчаны</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Выклік з %1 нечакана завяршыўся. %2</translation>
+        <translation>Выклік з %1 нечакана завяршыўся. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Выклік з %1 скончаны. %2</translation>
+        <translation>Выклік з %1 скончаны. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 цяпер %2</translation>
+        <translation>%1 цяпер %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Выклікаем %1</translation>
+        <translation>Выклікаем %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 выклікае</translation>
+        <translation>%1 выклікае</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Не атрымалася адправіць паведамленне</translation>
+        <translation>Не атрымалася адправіць паведамленне</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2528,7 +2528,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Прыпынена</translation>
+        <translation>Прыпынена</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2556,7 +2556,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Стан</translation>
+        <translation>Стан</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2583,23 +2583,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Выдаліць сябра</translation>
+        <translation>Выдаліць сябра</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Выдаліць усю гісторыю чату з сябрам, калі зададзена</translation>
+        <translation>Выдаліць усю гісторыю чату з сябрам, калі зададзена</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Таксама выдаліць гісторыю чату</translation>
+        <translation>Таксама выдаліць гісторыю чату</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Вы сапраўды хочаце выдаліць %1 з вашага спісу кантактаў?</translation>
+        <translation>Вы сапраўды хочаце выдаліць %1 з вашага спісу кантактаў?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Выдаліць</translation>
+        <translation>Выдаліць</translation>
     </message>
 </context>
 <context>
@@ -2689,7 +2689,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Выбраць дату</translation>
+        <translation>Выбраць дату</translation>
     </message>
 </context>
 <context>
@@ -3122,7 +3122,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">Выхад</translation>
+        <translation>Выхад</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3134,7 +3134,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">Выйсці</translation>
+        <translation>Выйсці</translation>
     </message>
     <message>
         <source>Add contact...</source>

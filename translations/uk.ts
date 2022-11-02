@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>Capture device</source>
-        <translation type="unfinished">Пристрій захоплення</translation>
+        <translation>Пристрій захоплення</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -176,7 +176,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation type="unfinished">Хеш коміту: %1</translation>
+        <translation>Хеш коміту: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -209,27 +209,27 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Writing Useful Bug Reports</translation>
+        <translation>Writing Useful Bug Reports</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">Співавтори</translation>
+        <translation>Співавтори</translation>
     </message>
 </context>
 <context>
     <name>AboutFriendForm</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Діалог</translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>username</source>
-        <translation type="unfinished">Ім&apos;я користувача</translation>
+        <translation>Ім&apos;я користувача</translation>
     </message>
     <message>
         <source>status message</source>
-        <translation type="unfinished">Статус</translation>
+        <translation>Статус</translation>
     </message>
     <message>
         <source>Used aliases:</source>
@@ -237,15 +237,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">ІСТОРІЯ ПСЕВДОНІМІВ</translation>
+        <translation>ІСТОРІЯ ПСЕВДОНІМІВ</translation>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation type="unfinished">Автоматично приймати файли від контакту, якщо вибрано</translation>
+        <translation>Автоматично приймати файли від контакту, якщо вибрано</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">Каталог для зберігання файлів за замовчуванням:</translation>
+        <translation>Каталог для зберігання файлів за замовчуванням:</translation>
     </message>
     <message>
         <source>Manual</source>
@@ -253,11 +253,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished">Аудіо</translation>
+        <translation>Аудіо</translation>
     </message>
     <message>
         <source>Audio + Video</source>
-        <translation type="unfinished">Аудіо + Відео</translation>
+        <translation>Аудіо + Відео</translation>
     </message>
     <message>
         <source>Automatically accept group chat invitations from this contact if set.</source>
@@ -265,19 +265,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation type="unfinished">Видалити історію (операцію скасувати неможливо!)</translation>
+        <translation>Видалити історію (операцію скасувати неможливо!)</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished">Нотатки</translation>
+        <translation>Нотатки</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
-        <translation type="unfinished">Поле для приміток про контакт</translation>
+        <translation>Поле для приміток про контакт</translation>
     </message>
     <message>
         <source>History removed</source>
-        <translation type="unfinished">Історію видалено</translation>
+        <translation>Історію видалено</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -289,7 +289,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">Підтвердження</translation>
+        <translation>Підтвердження</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
@@ -400,16 +400,16 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation type="unfinished">Повідомлення у запрошенні на дружбу</translation>
+        <translation>Повідомлення у запрошенні на дружбу</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
-        <translation type="unfinished">Впишіть повідомлення у запрошення на дружбу, або залишіть його порожнім, щоб надіслати стандартне повідомлення</translation>
+        <translation>Впишіть повідомлення у запрошення на дружбу, або залишіть його порожнім, щоб надіслати стандартне повідомлення</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation type="unfinished">Ви не можете додати самого себе до друзів!</translation>
+        <translation>Ви не можете додати самого себе до друзів!</translation>
     </message>
     <message>
         <source>Open contact list</source>
@@ -454,7 +454,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished">Привіт, я %1! Додай мене в свій список контактів, будь ласка.</translation>
+        <translation>Привіт, я %1! Додай мене в свій список контактів, будь ласка.</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -599,7 +599,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished">Відсутній</translation>
+        <translation>Відсутній</translation>
     </message>
     <message>
         <source>SOCKS5</source>
@@ -679,7 +679,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Помилка</translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -739,67 +739,67 @@ so you can save the file on Windows.</source>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation type="unfinished">Не можу розпочати аудіодзвінок</translation>
+        <translation>Не можу розпочати аудіодзвінок</translation>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation type="unfinished">Почати аудіодзвінок</translation>
+        <translation>Почати аудіодзвінок</translation>
     </message>
     <message>
         <source>End audio call</source>
-        <translation type="unfinished">Завершити аудіодзвінок</translation>
+        <translation>Завершити аудіодзвінок</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished">Скинути аудіодзвінок</translation>
+        <translation>Скинути аудіодзвінок</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished">Прийняти аудіо дзвінок</translation>
+        <translation>Прийняти аудіо дзвінок</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation type="unfinished">Не можу розпочати відеодзвінок</translation>
+        <translation>Не можу розпочати відеодзвінок</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">Почати відеодзвінок</translation>
+        <translation>Почати відеодзвінок</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Завершити відеодзвінок</translation>
+        <translation>Завершити відеодзвінок</translation>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">Скинути відеодзвінок</translation>
+        <translation>Скинути відеодзвінок</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished">Прийняти відеодзвінок</translation>
+        <translation>Прийняти відеодзвінок</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
-        <translation type="unfinished">Звук можливо вимкнути лише під час дзвінка</translation>
+        <translation>Звук можливо вимкнути лише під час дзвінка</translation>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation type="unfinished">Відновити дзвінок</translation>
+        <translation>Відновити дзвінок</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation type="unfinished">Призупинити дзвінок</translation>
+        <translation>Призупинити дзвінок</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
-        <translation type="unfinished">Вимкнути мікрофон можна лише під час дзвінка</translation>
+        <translation>Вимкнути мікрофон можна лише під час дзвінка</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
-        <translation type="unfinished">Увімкнути мікрофон</translation>
+        <translation>Увімкнути мікрофон</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Вимкнути мікрофон</translation>
+        <translation>Вимкнути мікрофон</translation>
     </message>
 </context>
 <context>
@@ -813,19 +813,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">очікування</translation>
+        <translation>очікування</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 набирає повідомлення</translation>
+        <translation>%1 набирає повідомлення</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Копіювати</translation>
+        <translation>Копіювати</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Виділити всі</translation>
+        <translation>Виділити всі</translation>
     </message>
 </context>
 <context>
@@ -858,22 +858,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Невірний Tox ID</translation>
+        <translation>Невірний Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Напишіть повідомлення з вашим запитом</translation>
+        <translation>Напишіть повідомлення з вашим запитом</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Ваше повідомлення завелике!</translation>
+        <translation>Ваше повідомлення завелике!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Друга вже додано</translation>
+        <translation>Друга вже додано</translation>
     </message>
 </context>
 <context>
@@ -1002,19 +1002,19 @@ so you can save the file on Windows.</source>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
-        <translation type="unfinished">Сьогодні</translation>
+        <translation>Сьогодні</translation>
     </message>
     <message>
         <source>Yesterday</source>
-        <translation type="unfinished">Вчора</translation>
+        <translation>Вчора</translation>
     </message>
     <message>
         <source>Last 7 days</source>
-        <translation type="unfinished">Останні 7 днів</translation>
+        <translation>Останні 7 днів</translation>
     </message>
     <message>
         <source>This month</source>
-        <translation type="unfinished">Цього місяця</translation>
+        <translation>Цього місяця</translation>
     </message>
     <message>
         <source>Never</source>
@@ -1106,7 +1106,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">Вилучити з друзів</translation>
+        <translation>Вилучити з друзів</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1301,7 +1301,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">Підтвердження</translation>
+        <translation>Підтвердження</translation>
     </message>
     <message>
         <source>Search in text</source>
@@ -1313,7 +1313,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">Завантажити історію чату...</translation>
+        <translation>Завантажити історію чату...</translation>
     </message>
     <message>
         <source>Export to file</source>
@@ -1408,7 +1408,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">В мережі</translation>
+        <translation>В мережі</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -1529,15 +1529,15 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Rename profile.</source>
-        <translation type="unfinished">Перейменувати профіль.</translation>
+        <translation>Перейменувати профіль.</translation>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation type="unfinished">Видалити профіль.</translation>
+        <translation>Видалити профіль.</translation>
     </message>
     <message>
         <source>Export profile</source>
-        <translation type="unfinished">Експорт профілю</translation>
+        <translation>Експорт профілю</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
@@ -1707,7 +1707,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Import profile</source>
-        <translation type="unfinished">Імпортувати профіль</translation>
+        <translation>Імпортувати профіль</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
@@ -1767,7 +1767,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open profile page when clicked</source>
-        <translation type="unfinished">По кліку відкрити сторінку профілю</translation>
+        <translation>По кліку відкрити сторінку профілю</translation>
     </message>
     <message>
         <source>Status message input</source>
@@ -1779,11 +1779,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Статус</translation>
+        <translation>Статус</translation>
     </message>
     <message>
         <source>Set availability status</source>
-        <translation type="unfinished">Встановити доступність</translation>
+        <translation>Встановити доступність</translation>
     </message>
     <message>
         <source>Contact search</source>
@@ -1823,7 +1823,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Параметри</translation>
+        <translation>Параметри</translation>
     </message>
     <message>
         <source>Open Settings</source>
@@ -1835,19 +1835,19 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Виконуваний файл</translation>
+        <translation>Виконуваний файл</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Ви намагаєтеся відкрити виконуваний файл. Виконувані файли можуть нанести шкоди вашому комп’ютеру. Ви все ще хочете відкрити цей файл?</translation>
+        <translation>Ви намагаєтеся відкрити виконуваний файл. Виконувані файли можуть нанести шкоди вашому комп’ютеру. Ви все ще хочете відкрити цей файл?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox відео</translation>
+        <translation>Tox відео</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1863,11 +1863,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">Вимкнути мікрофон</translation>
+        <translation>Вимкнути мікрофон</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Завершити відеодзвінок</translation>
+        <translation>Завершити відеодзвінок</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -1902,7 +1902,7 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Bring All to Front</source>
         <comment>OS X Menu bar</comment>
-        <translation type="unfinished">На передній план</translation>
+        <translation>На передній план</translation>
     </message>
     <message>
         <source>Exit Fullscreen</source>
@@ -1928,7 +1928,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Нове повідомлення</translation>
+        <translation>Нове повідомлення</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2029,7 +2029,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished">Приватність</translation>
+        <translation>Приватність</translation>
     </message>
     <message>
         <source>BlackList</source>
@@ -2048,7 +2048,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished">Вітання з qTox</translation>
+        <translation>Вітання з qTox</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
@@ -2145,7 +2145,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Current profile location: %1</source>
-        <translation type="unfinished">Поточне місцезнаходження файлів профілю: %1</translation>
+        <translation>Поточне місцезнаходження файлів профілю: %1</translation>
     </message>
     <message>
         <source>Couldn&apos;t change password</source>
@@ -2157,15 +2157,15 @@ Please use another image.</source>
     </message>
     <message>
         <source>Failed to rename</source>
-        <translation type="unfinished">Помилка перейменування</translation>
+        <translation>Помилка перейменування</translation>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation type="unfinished">Профіль вже існує</translation>
+        <translation>Профіль вже існує</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation type="unfinished">Профіль з іменем користувача &quot;%1&quot; вже існує.</translation>
+        <translation>Профіль з іменем користувача &quot;%1&quot; вже існує.</translation>
     </message>
     <message>
         <source>Empty name</source>
@@ -2181,27 +2181,27 @@ Please use another image.</source>
     </message>
     <message>
         <source>Export profile</source>
-        <translation type="unfinished">Експорт профілю</translation>
+        <translation>Експорт профілю</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation type="unfinished">Файл Tox (*.tox)</translation>
+        <translation>Файл Tox (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation type="unfinished">Не вдалось видалити наступні файли:</translation>
+        <translation>Не вдалось видалити наступні файли:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
         <extracomment>deletion failed text part 2</extracomment>
-        <translation type="unfinished">Будь ласка, видаліть їх самостійно.</translation>
+        <translation>Будь ласка, видаліть їх самостійно.</translation>
     </message>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished">Зображення (%1)</translation>
+        <translation>Зображення (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
@@ -2236,7 +2236,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">Видалити пароль</translation>
+        <translation>Видалити пароль</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2266,12 +2266,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Ігнорування не Tox файлу</translation>
+        <translation>Ігнорування не Tox файлу</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Увага: обраний Вами файл не являється файлом Tox; ігнорування.</translation>
+        <translation>Увага: обраний Вами файл не являється файлом Tox; ігнорування.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2328,12 +2328,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished">Не можемо додати друга</translation>
+        <translation>Не можемо додати друга</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation type="unfinished">Ви не можете додати самого себе до друзів!</translation>
+        <translation>Ви не можете додати самого себе до друзів!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
@@ -2415,22 +2415,22 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">В мережі</translation>
+        <translation>В мережі</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">Відійшов</translation>
+        <translation>Відійшов</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">Зайнятий</translation>
+        <translation>Зайнятий</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">Поза мережею</translation>
+        <translation>Поза мережею</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2459,7 +2459,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Не вдалось відправити файл &quot;%1&quot;</translation>
+        <translation>Не вдалось відправити файл &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
@@ -2475,11 +2475,11 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 встановив тему %2</translation>
+        <translation>%1 встановив тему %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Очищено</translation>
+        <translation>Очищено</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
@@ -2487,24 +2487,24 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Дзвінок з %1 завершено. %2</translation>
+        <translation>Дзвінок з %1 завершено. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 тепер вже відомий як %2</translation>
+        <translation>%1 тепер вже відомий як %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Дзінок до %1</translation>
+        <translation>Дзінок до %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">Дзвінок від %1</translation>
+        <translation>Дзвінок від %1</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Не вдалось відправити повідомлення</translation>
+        <translation>Не вдалось відправити повідомлення</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2528,7 +2528,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Призупинено</translation>
+        <translation>Призупинено</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2556,7 +2556,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Статус</translation>
+        <translation>Статус</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2583,23 +2583,23 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Вилучити з друзів</translation>
+        <translation>Вилучити з друзів</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Коли встановлено, видаляти усю історію спілкування з другом</translation>
+        <translation>Коли встановлено, видаляти усю історію спілкування з другом</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Також видалити історію переписки</translation>
+        <translation>Також видалити історію переписки</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Ви дійсно хочете видалити %1 з вашого списку контактів?</translation>
+        <translation>Ви дійсно хочете видалити %1 з вашого списку контактів?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Видалити</translation>
+        <translation>Видалити</translation>
     </message>
 </context>
 <context>
@@ -2607,27 +2607,27 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation type="unfinished">Клікніть та перетягніть вказівник миші, щоб обрати область. Натисніть %1 щоб відобразити/приховати вікно qTox, або %2 для скасування.</translation>
+        <translation>Клікніть та перетягніть вказівник миші, щоб обрати область. Натисніть %1 щоб відобразити/приховати вікно qTox, або %2 для скасування.</translation>
     </message>
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
-        <translation type="unfinished">Space</translation>
+        <translation>Space</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation type="unfinished">Escape</translation>
+        <translation>Escape</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
-        <translation type="unfinished">Натисніть %1 щоб надіслати знімок вибраної області, %2 щоб відобразити/приховати вікно qTox, або %3 для скасування.</translation>
+        <translation>Натисніть %1 щоб надіслати знімок вибраної області, %2 щоб відобразити/приховати вікно qTox, або %3 для скасування.</translation>
     </message>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
-        <translation type="unfinished">Enter</translation>
+        <translation>Enter</translation>
     </message>
 </context>
 <context>
@@ -2788,7 +2788,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <name>UserInterfaceForm</name>
     <message>
         <source>None</source>
-        <translation type="unfinished">Відсутній</translation>
+        <translation>Відсутній</translation>
     </message>
     <message>
         <source>User Interface</source>
@@ -2799,56 +2799,56 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <name>UserInterfaceSettings</name>
     <message>
         <source>Chat</source>
-        <translation type="unfinished">Чат</translation>
+        <translation>Чат</translation>
     </message>
     <message>
         <source>Base font:</source>
-        <translation type="unfinished">Базовий шрифт:</translation>
+        <translation>Базовий шрифт:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished">пікс</translation>
+        <translation>пікс</translation>
     </message>
     <message>
         <source>Size: </source>
-        <translation type="unfinished">Розмір: </translation>
+        <translation>Розмір: </translation>
     </message>
     <message>
         <source>New text styling preference may not load until qTox restarts.</source>
-        <translation type="unfinished">Нові налаштування стилю тексту можуть не застосуватись до перезавантаження qTox.</translation>
+        <translation>Нові налаштування стилю тексту можуть не застосуватись до перезавантаження qTox.</translation>
     </message>
     <message>
         <source>Text Style format:</source>
-        <translation type="unfinished">Формат стилю тексту:</translation>
+        <translation>Формат стилю тексту:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
-        <translation type="unfinished">Оберіть налаштування стилю тексту.</translation>
+        <translation>Оберіть налаштування стилю тексту.</translation>
     </message>
     <message>
         <source>Plaintext</source>
-        <translation type="unfinished">Звичайний текст</translation>
+        <translation>Звичайний текст</translation>
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation type="unfinished">Відображати символи форматування</translation>
+        <translation>Відображати символи форматування</translation>
     </message>
     <message>
         <source>Don&apos;t show formatting characters</source>
-        <translation type="unfinished">Не відображати символи форматування</translation>
+        <translation>Не відображати символи форматування</translation>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Нове повідомлення</translation>
+        <translation>Нове повідомлення</translation>
     </message>
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
-        <translation type="unfinished">Відкривати вікно qTox при отриманні нового повідомлення, якщо вікно qTox ще не відкрите.</translation>
+        <translation>Відкривати вікно qTox при отриманні нового повідомлення, якщо вікно qTox ще не відкрите.</translation>
     </message>
     <message>
         <source>Open window</source>
-        <translation type="unfinished">Відкрити вікно</translation>
+        <translation>Відкрити вікно</translation>
     </message>
     <message>
         <source>Contact list</source>
@@ -2856,24 +2856,24 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Place groupchats at top of friend list</source>
-        <translation type="unfinished">Групові чати на початку</translation>
+        <translation>Групові чати на початку</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">Ваш перелік контактів відображатиметься в компактному режимі.</translation>
+        <translation>Ваш перелік контактів відображатиметься в компактному режимі.</translation>
     </message>
     <message>
         <source>Compact contact list</source>
-        <translation type="unfinished">Компактний список контактів</translation>
+        <translation>Компактний список контактів</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
-        <translation type="unfinished">Багатовіконний режим</translation>
+        <translation>Багатовіконний режим</translation>
     </message>
     <message>
         <source>Open each chat in an individual window</source>
-        <translation type="unfinished">Відкривати кожен чат в окремому вікні</translation>
+        <translation>Відкривати кожен чат в окремому вікні</translation>
     </message>
     <message>
         <source>Emoticons</source>
@@ -2881,35 +2881,35 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Use emoticons</source>
-        <translation type="unfinished">Використовувати смайлики</translation>
+        <translation>Використовувати смайлики</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
-        <translation type="unfinished">Розмір смайлів:</translation>
+        <translation>Розмір смайлів:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="unfinished">Графічна тема</translation>
+        <translation>Графічна тема</translation>
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished">Стиль:</translation>
+        <translation>Стиль:</translation>
     </message>
     <message>
         <source>Theme color:</source>
-        <translation type="unfinished">Графічна тема:</translation>
+        <translation>Графічна тема:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
-        <translation type="unfinished">Формат часу:</translation>
+        <translation>Формат часу:</translation>
     </message>
     <message>
         <source>Date format:</source>
-        <translation type="unfinished">Формат дати:</translation>
+        <translation>Формат дати:</translation>
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
@@ -2930,11 +2930,11 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished">Відтворювати звук</translation>
+        <translation>Відтворювати звук</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished">Відтворювати звук якщо Зайнятий</translation>
+        <translation>Відтворювати звук якщо Зайнятий</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3062,12 +3062,12 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>Show</source>
         <comment>Tray action menu to show qTox window</comment>
-        <translation type="unfinished">Відкрити</translation>
+        <translation>Відкрити</translation>
     </message>
     <message>
         <source>Add friend</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Додати друга</translation>
+        <translation>Додати друга</translation>
     </message>
     <message>
         <source>Group invites</source>
@@ -3077,12 +3077,12 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Передачі файлів</translation>
+        <translation>Передачі файлів</translation>
     </message>
     <message>
         <source>Settings</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Параметри</translation>
+        <translation>Параметри</translation>
     </message>
     <message>
         <source>My profile</source>
@@ -3121,7 +3121,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">Вихід</translation>
+        <translation>Вихід</translation>
     </message>
     <message>
         <source>Change status</source>

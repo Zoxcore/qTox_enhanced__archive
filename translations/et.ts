@@ -682,7 +682,7 @@ mis võib põhjustada probleeme videokõnedega.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Viga</translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -817,19 +817,19 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">ootel</translation>
+        <translation>ootel</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 kirjutab</translation>
+        <translation>%1 kirjutab</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopeeri</translation>
+        <translation>Kopeeri</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Vali kõik</translation>
+        <translation>Vali kõik</translation>
     </message>
 </context>
 <context>
@@ -1837,12 +1837,12 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Käivitatav fail</translation>
+        <translation>Käivitatav fail</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Oled palunud qToxil avada käivitatava faili. Sellised failid võivad teoreetiliselt sinu arvutit kahjustada. Kas oled kindel, et soovid faili avada?</translation>
+        <translation>Oled palunud qToxil avada käivitatava faili. Sellised failid võivad teoreetiliselt sinu arvutit kahjustada. Kas oled kindel, et soovid faili avada?</translation>
     </message>
 </context>
 <context>
@@ -2461,52 +2461,52 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Faili &quot;%1&quot; saatmine nurjus</translation>
+        <translation>Faili &quot;%1&quot; saatmine nurjus</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 liitus grupiga</translation>
+        <translation>%1 liitus grupiga</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 lahkus grupist</translation>
+        <translation>%1 lahkus grupist</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 on nüüdsest tuntud kui %2</translation>
+        <translation>%1 on nüüdsest tuntud kui %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 seadis pealkirjaks %2</translation>
+        <translation>%1 seadis pealkirjaks %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Eemaldatud</translation>
+        <translation>Eemaldatud</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Kõne %1-ga lõppes ootamatult. %2</translation>
+        <translation>Kõne %1-ga lõppes ootamatult. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Kõne kasutajaga %1 lõppes. %2</translation>
+        <translation>Kõne kasutajaga %1 lõppes. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 on nüüd %2</translation>
+        <translation>%1 on nüüd %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Helistan kasutajale %1</translation>
+        <translation>Helistan kasutajale %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 helistab</translation>
+        <translation>%1 helistab</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Sõnumi saatmine luhtus</translation>
+        <translation>Sõnumi saatmine luhtus</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2530,11 +2530,11 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Pausil</translation>
+        <translation>Pausil</translation>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished">Eemalt peatatud</translation>
+        <translation>Eemalt peatatud</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2558,7 +2558,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Olek</translation>
+        <translation>Olek</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2585,23 +2585,23 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Eemalda sõber</translation>
+        <translation>Eemalda sõber</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Kui määratud, siis eemalda sõbraga seotud vestluste ajalugu</translation>
+        <translation>Kui määratud, siis eemalda sõbraga seotud vestluste ajalugu</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Kustuta ka vestluste ajalugu</translation>
+        <translation>Kustuta ka vestluste ajalugu</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Oled kindel, et soovid %1 oma kontaktide nimekirjast eemaldada?</translation>
+        <translation>Oled kindel, et soovid %1 oma kontaktide nimekirjast eemaldada?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Eemalda</translation>
+        <translation>Eemalda</translation>
     </message>
 </context>
 <context>
@@ -2691,7 +2691,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Vali kuupäev</translation>
+        <translation>Vali kuupäev</translation>
     </message>
 </context>
 <context>

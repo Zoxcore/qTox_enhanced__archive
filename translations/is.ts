@@ -2123,7 +2123,7 @@ Please use another image.</source>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation type="unfinished">Breyta aðgangsorði</translation>
+        <translation>Breyta aðgangsorði</translation>
     </message>
     <message>
         <source>Set profile password</source>
@@ -2223,7 +2223,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">Fjarlægja aðgangsorð</translation>
+        <translation>Fjarlægja aðgangsorð</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2688,11 +2688,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Aðgangsorð:</translation>
+        <translation>Aðgangsorð:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished">Styrkur aðgangsorðs: %p%</translation>
+        <translation>Styrkur aðgangsorðs: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>

@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>Audio Settings</source>
-        <translation type="unfinished">הגדרות שמע</translation>
+        <translation>הגדרות שמע</translation>
     </message>
     <message>
         <source>Gain</source>
@@ -594,7 +594,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished">ללא</translation>
+        <translation>ללא</translation>
     </message>
     <message>
         <source>SOCKS5</source>
@@ -2361,7 +2361,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>None</source>
         <comment>No camera device set</comment>
-        <translation type="unfinished">ללא</translation>
+        <translation>ללא</translation>
     </message>
     <message>
         <source>Desktop</source>
@@ -2772,7 +2772,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>UserInterfaceForm</name>
     <message>
         <source>None</source>
-        <translation type="unfinished">ללא</translation>
+        <translation>ללא</translation>
     </message>
     <message>
         <source>User Interface</source>

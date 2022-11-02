@@ -199,22 +199,22 @@ which may lead to problems with video calls.</source>
     <message>
         <source>See a full list of %1 at Github</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation type="unfinished">%1의 전체 리스트 보기</translation>
+        <translation>%1의 전체 리스트 보기</translation>
     </message>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">버그추적</translation>
+        <translation>버그추적</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">버그 리포트 작성</translation>
+        <translation>버그 리포트 작성</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">contributors</translation>
+        <translation>contributors</translation>
     </message>
 </context>
 <context>
@@ -225,19 +225,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>username</source>
-        <translation type="unfinished">사용자이름</translation>
+        <translation>사용자이름</translation>
     </message>
     <message>
         <source>status message</source>
-        <translation type="unfinished">상태 메시지</translation>
+        <translation>상태 메시지</translation>
     </message>
     <message>
         <source>Used aliases:</source>
-        <translation type="unfinished">사용한 닉네임:</translation>
+        <translation>사용한 닉네임:</translation>
     </message>
     <message>
         <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">닉네임 기록</translation>
+        <translation>닉네임 기록</translation>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>
@@ -245,11 +245,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">파일 저장 폴더:</translation>
+        <translation>파일 저장 폴더:</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">설명서</translation>
+        <translation>설명서</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -265,11 +265,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation type="unfinished">기록 삭제하기 (삭제된 기록은 복구할 수 없습니다!)</translation>
+        <translation>기록 삭제하기 (삭제된 기록은 복구할 수 없습니다!)</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished">메모</translation>
+        <translation>메모</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
@@ -435,7 +435,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation type="unfinished">Tox ID</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -677,7 +677,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">오류</translation>
+        <translation>오류</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -746,15 +746,15 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>End audio call</source>
-        <translation type="unfinished">음성 통화 종료</translation>
+        <translation>음성 통화 종료</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished">음성 통화 취소</translation>
+        <translation>음성 통화 취소</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished">음성 통화 수락</translation>
+        <translation>음성 통화 수락</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
@@ -766,15 +766,15 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">비디오 통화 종료</translation>
+        <translation>비디오 통화 종료</translation>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">비디오 통화 취소</translation>
+        <translation>비디오 통화 취소</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished">비디오 통화 수락</translation>
+        <translation>비디오 통화 수락</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
@@ -820,11 +820,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">복사</translation>
+        <translation>복사</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">전체 선택</translation>
+        <translation>전체 선택</translation>
     </message>
 </context>
 <context>
@@ -867,12 +867,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">제한된 메시지 길이를 초과했습니다!</translation>
+        <translation>제한된 메시지 길이를 초과했습니다!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">이미 추가된 친구입니다</translation>
+        <translation>이미 추가된 친구입니다</translation>
     </message>
 </context>
 <context>
@@ -1081,7 +1081,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">자동받기 폴더 선택</translation>
+        <translation>자동받기 폴더 선택</translation>
     </message>
     <message>
         <source>New message</source>
@@ -1089,7 +1089,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">온라인</translation>
+        <translation>온라인</translation>
     </message>
     <message>
         <source>Away</source>
@@ -1102,7 +1102,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">오프라인</translation>
+        <translation>오프라인</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1131,7 +1131,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">자동받기 폴더 선택</translation>
+        <translation>자동받기 폴더 선택</translation>
     </message>
 </context>
 <context>
@@ -1212,7 +1212,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">파일 저장 폴더:</translation>
+        <translation>파일 저장 폴더:</translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -1290,7 +1290,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Save chat log</source>
-        <translation type="unfinished">채팅 기록을 저장</translation>
+        <translation>채팅 기록을 저장</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
@@ -1318,7 +1318,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">채팅 기록을 불러오는중...</translation>
+        <translation>채팅 기록을 불러오는중...</translation>
     </message>
     <message>
         <source>Export to file</source>
@@ -1351,7 +1351,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     <name>GroupInviteForm</name>
     <message>
         <source>Groups</source>
-        <translation type="unfinished">그룹</translation>
+        <translation>그룹</translation>
     </message>
     <message>
         <source>Create new group</source>
@@ -1359,7 +1359,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Group invites</source>
-        <translation type="unfinished">그룹 초대</translation>
+        <translation>그룹 초대</translation>
     </message>
 </context>
 <context>
@@ -1409,7 +1409,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">온라인</translation>
+        <translation>온라인</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -1530,11 +1530,11 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Rename profile.</source>
-        <translation type="unfinished">프로필 이름 변경.</translation>
+        <translation>프로필 이름 변경.</translation>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation type="unfinished">프로필 삭제.</translation>
+        <translation>프로필 삭제.</translation>
     </message>
     <message>
         <source>Export profile</source>
@@ -1558,7 +1558,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>My profile</source>
-        <translation type="unfinished">내 프로필</translation>
+        <translation>내 프로필</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
@@ -1724,11 +1724,11 @@ Please make sure to enter the same password twice.</source>
     <name>MainWindow</name>
     <message>
         <source>Your name</source>
-        <translation type="unfinished">이름</translation>
+        <translation>이름</translation>
     </message>
     <message>
         <source>Your status</source>
-        <translation type="unfinished">상태</translation>
+        <translation>상태</translation>
     </message>
     <message>
         <source>...</source>
@@ -1773,7 +1773,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">상태</translation>
+        <translation>상태</translation>
     </message>
     <message>
         <source>Set availability status</source>
@@ -1817,7 +1817,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">설정</translation>
+        <translation>설정</translation>
     </message>
     <message>
         <source>Open Settings</source>
@@ -1829,12 +1829,12 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">실행파일</translation>
+        <translation>실행파일</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">실행파일을 열기하는것은 위험할 수 있습니다. 파일을 열기하시겠습니까?</translation>
+        <translation>실행파일을 열기하는것은 위험할 수 있습니다. 파일을 열기하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -1861,7 +1861,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">비디오 통화 종료</translation>
+        <translation>비디오 통화 종료</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -2051,7 +2051,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">오류</translation>
+        <translation>오류</translation>
     </message>
     <message>
         <source>Rename &quot;%1&quot;</source>
@@ -2123,7 +2123,7 @@ Please use another image.</source>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation type="unfinished">계정 비밀번호 변경</translation>
+        <translation>계정 비밀번호 변경</translation>
     </message>
     <message>
         <source>Set profile password</source>
@@ -2223,7 +2223,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">계정 비밀번호 삭제</translation>
+        <translation>계정 비밀번호 삭제</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2299,11 +2299,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished">예</translation>
+        <translation>예</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished">아니오</translation>
+        <translation>아니오</translation>
     </message>
     <message>
         <source>LTR</source>
@@ -2315,12 +2315,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished">친구를 추가할 수 없습니다</translation>
+        <translation>친구를 추가할 수 없습니다</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation type="unfinished">자기 자신을 친구로 추가할 수 없습니다!</translation>
+        <translation>자기 자신을 친구로 추가할 수 없습니다!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
@@ -2399,12 +2399,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">온라인</translation>
+        <translation>온라인</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">자리 비움</translation>
+        <translation>자리 비움</translation>
     </message>
     <message>
         <source>busy</source>
@@ -2414,7 +2414,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">오프라인</translation>
+        <translation>오프라인</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2443,7 +2443,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">&quot;%1&quot; 파일을 전송하는데 실패하였습니다</translation>
+        <translation>&quot;%1&quot; 파일을 전송하는데 실패하였습니다</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
@@ -2476,7 +2476,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1님은 현재 %2</translation>
+        <translation>%1님은 현재 %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
@@ -2488,7 +2488,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">메시지 전송에 실패하였습니다</translation>
+        <translation>메시지 전송에 실패하였습니다</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2540,7 +2540,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">상태</translation>
+        <translation>상태</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2629,7 +2629,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchSettingsForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">폼</translation>
+        <translation>폼</translation>
     </message>
     <message>
         <source>Start search:</source>
@@ -2743,7 +2743,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add a friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">친구 추가</translation>
+        <translation>친구 추가</translation>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
@@ -2751,11 +2751,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>User ID:</source>
-        <translation type="unfinished">사용자 아이디:</translation>
+        <translation>사용자 아이디:</translation>
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation type="unfinished">친구 요청 메시지:</translation>
+        <translation>친구 요청 메시지:</translation>
     </message>
     <message>
         <source>Send</source>
@@ -2772,7 +2772,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>UserInterfaceForm</name>
     <message>
         <source>None</source>
-        <translation type="unfinished">없음</translation>
+        <translation>없음</translation>
     </message>
     <message>
         <source>User Interface</source>
@@ -2914,7 +2914,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished">소리재생</translation>
+        <translation>소리재생</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
@@ -2958,7 +2958,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
-        <translation type="unfinished">온라인</translation>
+        <translation>온라인</translation>
     </message>
     <message>
         <source>Away</source>
@@ -2981,7 +2981,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation type="unfinished">로그아웃</translation>
+        <translation>로그아웃</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3067,7 +3067,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Settings</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">설정</translation>
+        <translation>설정</translation>
     </message>
     <message>
         <source>My profile</source>
@@ -3114,7 +3114,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">로그아웃</translation>
+        <translation>로그아웃</translation>
     </message>
     <message>
         <source>Add contact...</source>

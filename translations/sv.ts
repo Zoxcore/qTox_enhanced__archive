@@ -682,7 +682,7 @@ vilket kan leda till problem med videosamtal.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fel</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -817,19 +817,19 @@ så att du kan spara filen i Windows.</translation>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">avvaktar</translation>
+        <translation>avvaktar</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 skriver</translation>
+        <translation>%1 skriver</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Kopiera</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Markera alla</translation>
+        <translation>Markera alla</translation>
     </message>
 </context>
 <context>
@@ -1836,12 +1836,12 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Körbar fil</translation>
+        <translation>Körbar fil</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Du har bett qTox att öppna en körbar fil. Körbara filer kan potentiellt skada din dator. Är du säker vill öppna den här filen?</translation>
+        <translation>Du har bett qTox att öppna en körbar fil. Körbara filer kan potentiellt skada din dator. Är du säker vill öppna den här filen?</translation>
     </message>
 </context>
 <context>
@@ -2459,52 +2459,52 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Det gick inte att skicka filen &quot;%1&quot;</translation>
+        <translation>Det gick inte att skicka filen &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished">%1 har anslutit till gruppen</translation>
+        <translation>%1 har anslutit till gruppen</translation>
     </message>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished">%1 har lämnat gruppen</translation>
+        <translation>%1 har lämnat gruppen</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 är nu känd som %2</translation>
+        <translation>%1 är nu känd som %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 har angett titeln som %2</translation>
+        <translation>%1 har angett titeln som %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Borttaget</translation>
+        <translation>Borttaget</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Samtalet med %1 avbröts av okänd anledning. %2</translation>
+        <translation>Samtalet med %1 avbröts av okänd anledning. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Samtal med %1 avslutades. %2</translation>
+        <translation>Samtal med %1 avslutades. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 är nu %2</translation>
+        <translation>%1 är nu %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Ringer %1</translation>
+        <translation>Ringer %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 ringer</translation>
+        <translation>%1 ringer</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Misslyckades att skicka meddelande</translation>
+        <translation>Misslyckades att skicka meddelande</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2528,11 +2528,11 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Pausad</translation>
+        <translation>Pausad</translation>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished">Fjärrpausad</translation>
+        <translation>Fjärrpausad</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2556,7 +2556,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Control</source>
@@ -2583,23 +2583,23 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Ta bort vän</translation>
+        <translation>Ta bort vän</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Ta bort all chatthistorik med vännen om den är inställd</translation>
+        <translation>Ta bort all chatthistorik med vännen om den är inställd</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Ta också bort chatthistorik</translation>
+        <translation>Ta också bort chatthistorik</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Är du säker du vill ta bort %1 från kontaktlistan?</translation>
+        <translation>Är du säker du vill ta bort %1 från kontaktlistan?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Ta bort</translation>
+        <translation>Ta bort</translation>
     </message>
 </context>
 <context>
@@ -2689,7 +2689,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Välj ett datum</translation>
+        <translation>Välj ett datum</translation>
     </message>
 </context>
 <context>
@@ -3119,7 +3119,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">Avsluta</translation>
+        <translation>Avsluta</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3131,7 +3131,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">Logga ut</translation>
+        <translation>Logga ut</translation>
     </message>
     <message>
         <source>Add contact...</source>

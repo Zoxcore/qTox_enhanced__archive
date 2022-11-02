@@ -1085,7 +1085,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">.tox. pilno ca</translation>
+        <translation>.tox. pilno ca</translation>
     </message>
     <message>
         <source>Away</source>
@@ -1098,7 +1098,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">.tox. pilno na ca</translation>
+        <translation>.tox. pilno na ca</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1347,7 +1347,7 @@ instead of closing entirely.</source>
     <name>GroupInviteForm</name>
     <message>
         <source>Groups</source>
-        <translation type="unfinished">girzu</translation>
+        <translation>girzu</translation>
     </message>
     <message>
         <source>Create new group</source>
@@ -1405,7 +1405,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">.tox. pilno ca</translation>
+        <translation>.tox. pilno ca</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -2954,7 +2954,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
-        <translation type="unfinished">.tox. pilno ca</translation>
+        <translation>.tox. pilno ca</translation>
     </message>
     <message>
         <source>Away</source>

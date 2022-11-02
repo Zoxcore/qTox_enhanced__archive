@@ -9,47 +9,47 @@
     </message>
     <message>
         <source>Default resolution</source>
-        <translation type="unfinished">இயல்புநிலை தெளிவுத்திறன்</translation>
+        <translation>இயல்புநிலை தெளிவுத்திறன்</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished">முடக்கப்பட்டது</translation>
+        <translation>முடக்கப்பட்டது</translation>
     </message>
     <message>
         <source>Select region</source>
-        <translation type="unfinished">பகுதியை தேர்வு செய்க</translation>
+        <translation>பகுதியை தேர்வு செய்க</translation>
     </message>
     <message>
         <source>Screen %1</source>
-        <translation type="unfinished">திரை %1</translation>
+        <translation>திரை %1</translation>
     </message>
     <message>
         <source>Audio Settings</source>
-        <translation type="unfinished">ஒலி பயன்பாட்டமைப்பு</translation>
+        <translation>ஒலி பயன்பாட்டமைப்பு</translation>
     </message>
     <message>
         <source>Gain</source>
-        <translation type="unfinished">பெருக்கம்</translation>
+        <translation>பெருக்கம்</translation>
     </message>
     <message>
         <source>Playback device</source>
-        <translation type="unfinished">மறுஇயக்க சாதனம்</translation>
+        <translation>மறுஇயக்க சாதனம்</translation>
     </message>
     <message>
         <source>Capture device</source>
-        <translation type="unfinished">பிடிப்புச் சாதனம்</translation>
+        <translation>பிடிப்புச் சாதனம்</translation>
     </message>
     <message>
         <source>Volume</source>
-        <translation type="unfinished">ஒலியளவு</translation>
+        <translation>ஒலியளவு</translation>
     </message>
     <message>
         <source>Video Settings</source>
-        <translation type="unfinished">காணொளி பயன்பாட்டமைப்பு</translation>
+        <translation>காணொளி பயன்பாட்டமைப்பு</translation>
     </message>
     <message>
         <source>Video device</source>
-        <translation type="unfinished">காணொளிச் சாதனம்</translation>
+        <translation>காணொளிச் சாதனம்</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -57,7 +57,7 @@ The higher values, the better video quality your friends may get.
 Note though that with better video quality there is needed better internet connection.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation type="unfinished">கேமராவி்ன் தெளிவுத்திறனை அமைக்கவும்.
+        <translation>கேமராவி்ன் தெளிவுத்திறனை அமைக்கவும்.
 மதிப்பின் உயர்வுக்கேற்ப உங்கள் நண்பர்களின் காணொளித் தரம் அமையும்.
 ஆனால் உயரிய காணொளித் தரத்திற்கேற்ப உயரிய இணையத் திறனும் தேவை.
 சில நேரங்களில் உங்கள் இணைய இணைப்பு அதிக காணொளித் தரத்தைக் கையாளப் போதாது இருக்கலாம்
@@ -65,15 +65,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Resolution</source>
-        <translation type="unfinished">தெளிவுத்திறன்</translation>
+        <translation>தெளிவுத்திறன்</translation>
     </message>
     <message>
         <source>Rescan devices</source>
-        <translation type="unfinished">சாதனங்களை மறுமுறை துருவுக</translation>
+        <translation>சாதனங்களை மறுமுறை துருவுக</translation>
     </message>
     <message>
         <source>Test Sound</source>
-        <translation type="unfinished">ஒலியை சோதனை செய்</translation>
+        <translation>ஒலியை சோதனை செய்</translation>
     </message>
     <message>
         <source>Audio quality</source>
@@ -164,19 +164,19 @@ which may lead to problems with video calls.</source>
     <name>AboutForm</name>
     <message>
         <source>About</source>
-        <translation type="unfinished">குறிப்பு</translation>
+        <translation>குறிப்பு</translation>
     </message>
     <message>
         <source>Original author: %1</source>
-        <translation type="unfinished">மூல படைப்பாளர்: %1</translation>
+        <translation>மூல படைப்பாளர்: %1</translation>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation type="unfinished">நீங்கள் பயன்படுத்துவது qTox பதிப்பு %1</translation>
+        <translation>நீங்கள் பயன்படுத்துவது qTox பதிப்பு %1</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation type="unfinished">கொள்கல மாற்ற தற்சார்பு முகவரி: %1</translation>
+        <translation>கொள்கல மாற்ற தற்சார்பு முகவரி: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -190,7 +190,7 @@ which may lead to problems with video calls.</source>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation type="unfinished">முன்னறிந்த சிக்கல்களின் பட்டியலை Github இல் எங்கள் %1 கொண்டு அறியலாம். 
+        <translation>முன்னறிந்த சிக்கல்களின் பட்டியலை Github இல் எங்கள் %1 கொண்டு அறியலாம். 
 qTox இல் தாங்கள் சிக்கலோ பாதுகாப்புத் தளர்வோ கண்டறிந்தால் அதைத் தயவுசெய்து எங்கள் %2 பயனரியக்குவலைதள கட்டுரையின் வழிகாட்டுதல்களின்படி பதிவு செய்யவும்.</translation>
     </message>
     <message>
@@ -205,80 +205,80 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">நிரற்பிழை கண்காணி</translation>
+        <translation>நிரற்பிழை கண்காணி</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">பயனுள்ள நிரற்பிழை பதிவுகளை எழுதுதல்</translation>
+        <translation>பயனுள்ள நிரற்பிழை பதிவுகளை எழுதுதல்</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">பங்களிப்பாளர்கள்</translation>
+        <translation>பங்களிப்பாளர்கள்</translation>
     </message>
 </context>
 <context>
     <name>AboutFriendForm</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">உரையாடல்</translation>
+        <translation>உரையாடல்</translation>
     </message>
     <message>
         <source>username</source>
-        <translation type="unfinished">பயனர்பெயர்</translation>
+        <translation>பயனர்பெயர்</translation>
     </message>
     <message>
         <source>status message</source>
-        <translation type="unfinished">நிலைச்செய்தி</translation>
+        <translation>நிலைச்செய்தி</translation>
     </message>
     <message>
         <source>Used aliases:</source>
-        <translation type="unfinished">பயன்பாட்டலுள்ள மாற்றுப்பெயர்கள்:</translation>
+        <translation>பயன்பாட்டலுள்ள மாற்றுப்பெயர்கள்:</translation>
     </message>
     <message>
         <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">இதுவரை பயன்படுத்தப்பட்ட மாற்றுப்பெயர்கள்</translation>
+        <translation>இதுவரை பயன்படுத்தப்பட்ட மாற்றுப்பெயர்கள்</translation>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation type="unfinished">அவ்வாறு அமைக்கப்பட்டிருந்தால் தொடர்பிடமிருந்து கோப்புகளைத் தன்னிச்சையாக ஏற்க</translation>
+        <translation>அவ்வாறு அமைக்கப்பட்டிருந்தால் தொடர்பிடமிருந்து கோப்புகளைத் தன்னிச்சையாக ஏற்க</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">கோப்புகளை சேமிக்க பொது கோப்பகம்:</translation>
+        <translation>கோப்புகளை சேமிக்க பொது கோப்பகம்:</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">கைமுறைத் தேர்வு</translation>
+        <translation>கைமுறைத் தேர்வு</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished">ஒலி</translation>
+        <translation>ஒலி</translation>
     </message>
     <message>
         <source>Audio + Video</source>
-        <translation type="unfinished">ஒலி + காணொளி</translation>
+        <translation>ஒலி + காணொளி</translation>
     </message>
     <message>
         <source>Automatically accept group chat invitations from this contact if set.</source>
-        <translation type="unfinished">அவ்வாறு அமைக்கப்பட்டிருந்தால் தொடர்பிடமிருந்து தோழர்க்குழு அரட்டை அழைப்புகளைத் தன்னிச்சையாக ஏற்க.</translation>
+        <translation>அவ்வாறு அமைக்கப்பட்டிருந்தால் தொடர்பிடமிருந்து தோழர்க்குழு அரட்டை அழைப்புகளைத் தன்னிச்சையாக ஏற்க.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation type="unfinished">வரலாற்றை அகற்று (செயல்பாடு செயல்மீள இயலாது!)</translation>
+        <translation>வரலாற்றை அகற்று (செயல்பாடு செயல்மீள இயலாது!)</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished">குறிப்புகள்</translation>
+        <translation>குறிப்புகள்</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
-        <translation type="unfinished">தொடர்பு பற்றிய குறிப்புகளுக்கான உள்ளீட்டுப் பகுதி</translation>
+        <translation>தொடர்பு பற்றிய குறிப்புகளுக்கான உள்ளீட்டுப் பகுதி</translation>
     </message>
     <message>
         <source>History removed</source>
-        <translation type="unfinished">வரலாறு அகற்றப்பட்டது</translation>
+        <translation>வரலாறு அகற்றப்பட்டது</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -365,11 +365,11 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <name>AddFriendForm</name>
     <message>
         <source>Add Friends</source>
-        <translation type="unfinished">தோழர் சேர்க்கை</translation>
+        <translation>தோழர் சேர்க்கை</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
-        <translation type="unfinished">தவறான Tox அடையாளச்சர வடிவமைப்பு</translation>
+        <translation>தவறான Tox அடையாளச்சர வடிவமைப்பு</translation>
     </message>
     <message>
         <source>Send friend request</source>
@@ -377,7 +377,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Add a friend</source>
-        <translation type="unfinished">தோழரைச் சேர்க</translation>
+        <translation>தோழரைச் சேர்க</translation>
     </message>
     <message>
         <source>Friend requests</source>
@@ -410,7 +410,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation type="unfinished">தங்களையே தமக்குத் தோழராக்க இயலாது!</translation>
+        <translation>தங்களையே தமக்குத் தோழராக்க இயலாது!</translation>
     </message>
     <message>
         <source>Open contact list</source>
@@ -436,12 +436,12 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation type="unfinished">Tox அடையாளச்சரம்</translation>
+        <translation>Tox அடையாளச்சரம்</translation>
     </message>
     <message>
         <source>Message</source>
         <extracomment>The message you send in friend requests</extracomment>
-        <translation type="unfinished">செய்தி</translation>
+        <translation>செய்தி</translation>
     </message>
     <message>
         <source>Open</source>
@@ -455,7 +455,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished">இது %1! Tox செய்வோமா?</translation>
+        <translation>இது %1! Tox செய்வோமா?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -559,7 +559,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>Save settings to the working directory instead of the usual conf dir</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation type="unfinished">வழக்கமான கட்டமைப்பு அடைவிற்கு பதிலாக நடப்பு அடைவில் அமைப்புத்தகவல்களைச் சேமி</translation>
+        <translation>வழக்கமான கட்டமைப்பு அடைவிற்கு பதிலாக நடப்பு அடைவில் அமைப்புத்தகவல்களைச் சேமி</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
@@ -599,7 +599,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished">ஏதிலை</translation>
+        <translation>ஏதிலை</translation>
     </message>
     <message>
         <source>SOCKS5</source>
@@ -694,7 +694,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
-        <translation type="unfinished">qTox %1 ஐ திறக்க இயலவில்லை</translation>
+        <translation>qTox %1 ஐ திறக்க இயலவில்லை</translation>
     </message>
     <message>
         <source>Unable to open</source>
@@ -702,7 +702,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Bad idea</source>
-        <translation type="unfinished">இது சரியற்ற செயல்முனைப்பு</translation>
+        <translation>இது சரியற்ற செயல்முனைப்பு</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
@@ -716,7 +716,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Call duration: </source>
-        <translation type="unfinished">அழைப்பு நிகழ்ந்த காலம் </translation>
+        <translation>அழைப்பு நிகழ்ந்த காலம் </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -740,31 +740,31 @@ so you can save the file on Windows.</source>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation type="unfinished">ஒலி அழைப்பைத் தொடங்க இயலாது</translation>
+        <translation>ஒலி அழைப்பைத் தொடங்க இயலாது</translation>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation type="unfinished">ஒலி அழைப்பைத் தொடங்கு</translation>
+        <translation>ஒலி அழைப்பைத் தொடங்கு</translation>
     </message>
     <message>
         <source>End audio call</source>
-        <translation type="unfinished">ஒலி அழைப்பை முடி</translation>
+        <translation>ஒலி அழைப்பை முடி</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished">ஒலி அழைப்பை ரத்துசெய்</translation>
+        <translation>ஒலி அழைப்பை ரத்துசெய்</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished">ஒலி அழைப்பை ஏற்க</translation>
+        <translation>ஒலி அழைப்பை ஏற்க</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation type="unfinished">காணொளி அழைப்பைத் தொடங்க இயலாது</translation>
+        <translation>காணொளி அழைப்பைத் தொடங்க இயலாது</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">காணொளி அழைப்பைத் தொடங்கு</translation>
+        <translation>காணொளி அழைப்பைத் தொடங்கு</translation>
     </message>
     <message>
         <source>End video call</source>
@@ -772,35 +772,35 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">காணொளி அழைப்பை ரத்துசெய்</translation>
+        <translation>காணொளி அழைப்பை ரத்துசெய்</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished">காணொளி அழைப்பை ஏற்க</translation>
+        <translation>காணொளி அழைப்பை ஏற்க</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
-        <translation type="unfinished">ஒலியை அழைப்பின்போது மட்டுமே வினைமுடக்க இயலும்</translation>
+        <translation>ஒலியை அழைப்பின்போது மட்டுமே வினைமுடக்க இயலும்</translation>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation type="unfinished">அழைப்பை ஒலியியக்கு</translation>
+        <translation>அழைப்பை ஒலியியக்கு</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation type="unfinished">அழைப்பை ஒலியணை</translation>
+        <translation>அழைப்பை ஒலியணை</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
-        <translation type="unfinished">ஒலிவாங்கியை அழைப்பின்போது மட்டுமே ஒலியணைக்க இயலும்</translation>
+        <translation>ஒலிவாங்கியை அழைப்பின்போது மட்டுமே ஒலியணைக்க இயலும்</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
-        <translation type="unfinished">ஒலிவாங்கியை ஒலியியக்கு</translation>
+        <translation>ஒலிவாங்கியை ஒலியியக்கு</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">ஒலிவாங்கியை ஒலியணை</translation>
+        <translation>ஒலிவாங்கியை ஒலியணை</translation>
     </message>
 </context>
 <context>
@@ -814,19 +814,19 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">நிலுவையிலுள்ளது</translation>
+        <translation>நிலுவையிலுள்ளது</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 தட்டச்சு செய்கிறார்</translation>
+        <translation>%1 தட்டச்சு செய்கிறார்</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">இடைநிலைப் பிரதியெடு</translation>
+        <translation>இடைநிலைப் பிரதியெடு</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">அனைத்தையும் தேர்வுசெய்</translation>
+        <translation>அனைத்தையும் தேர்வுசெய்</translation>
     </message>
 </context>
 <context>
@@ -843,7 +843,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation type="unfinished">அனைத்தையும் புதிய சாளரத்தில் திற</translation>
+        <translation>அனைத்தையும் புதிய சாளரத்தில் திற</translation>
     </message>
 </context>
 <context>
@@ -859,22 +859,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">தவறான Tox அடையாளச்சரம்</translation>
+        <translation>தவறான Tox அடையாளச்சரம்</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">உங்கள் தோழராக்க கோரிக்கையுடன் ஒரு செய்தியை அனுப்ப வேண்டும்</translation>
+        <translation>உங்கள் தோழராக்க கோரிக்கையுடன் ஒரு செய்தியை அனுப்ப வேண்டும்</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">உங்கள் செய்தி மிக நீண்டுள்ளது!</translation>
+        <translation>உங்கள் செய்தி மிக நீண்டுள்ளது!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">முன்னரே தோழராக்கப்பட்டார்</translation>
+        <translation>முன்னரே தோழராக்கப்பட்டார்</translation>
     </message>
 </context>
 <context>
@@ -975,7 +975,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Accept transfer</source>
-        <translation type="unfinished">கோப்பிடமாற்றத்திற்கு அனுமதியளி</translation>
+        <translation>கோப்பிடமாற்றத்திற்கு அனுமதியளி</translation>
     </message>
     <message>
         <source>Save a file</source>
@@ -1045,7 +1045,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new circle</source>
-        <translation type="unfinished">புதிய வட்டத்திற்கு</translation>
+        <translation>புதிய வட்டத்திற்கு</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
@@ -1083,7 +1083,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">தன்னிச்சையேற்புக்கான கோப்பகத்தைத் தேர்வு செய்க</translation>
+        <translation>தன்னிச்சையேற்புக்கான கோப்பகத்தைத் தேர்வு செய்க</translation>
     </message>
     <message>
         <source>New message</source>
@@ -1113,7 +1113,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">தோழரை நீக்கு</translation>
+        <translation>தோழரை நீக்கு</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1128,19 +1128,19 @@ so you can save the file on Windows.</source>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
-        <translation type="unfinished">பொதுப்படை</translation>
+        <translation>பொதுப்படை</translation>
     </message>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">தன்னிச்சையேற்புக்கான கோப்பகத்தைத் தேர்வு செய்க</translation>
+        <translation>தன்னிச்சையேற்புக்கான கோப்பகத்தைத் தேர்வு செய்க</translation>
     </message>
 </context>
 <context>
     <name>GeneralSettings</name>
     <message>
         <source>General Settings</source>
-        <translation type="unfinished">பொதுப்படை அமைப்புகள்</translation>
+        <translation>பொதுப்படை அமைப்புகள்</translation>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
@@ -1174,11 +1174,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation type="unfinished">பின்னணிப் பெட்டகத்தில் மறைந்தியங்கு</translation>
+        <translation>பின்னணிப் பெட்டகத்தில் மறைந்தியங்கு</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation type="unfinished">பின்னணிப் பெட்டகத்தில் சாளரமறைத்தியங்கு</translation>
+        <translation>பின்னணிப் பெட்டகத்தில் சாளரமறைத்தியங்கு</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1214,7 +1214,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">கோப்புகளை சேமிக்க பொது கோப்பகம்:</translation>
+        <translation>கோப்புகளை சேமிக்க பொது கோப்பகம்:</translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -1320,11 +1320,11 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">அரட்டை வரலாற்றை திரையேற்று...</translation>
+        <translation>அரட்டை வரலாற்றை திரையேற்று...</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation type="unfinished">தனிக்கோப்பாக்கு</translation>
+        <translation>தனிக்கோப்பாக்கு</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
@@ -1413,7 +1413,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">தொடர்பிலுள்ளார்</translation>
+        <translation>தொடர்பிலுள்ளார்</translation>
     </message>
     <message>
         <source>Change your name in this group</source>
@@ -1428,7 +1428,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Tox ID</source>
-        <translation type="unfinished">Tox அடையாளச்சரம்</translation>
+        <translation>Tox அடையாளச்சரம்</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
@@ -1467,7 +1467,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Save image</source>
-        <translation type="unfinished">எண்ணியற் படத்தைச் சேமி</translation>
+        <translation>எண்ணியற் படத்தைச் சேமி</translation>
     </message>
     <message>
         <source>Copy image</source>
@@ -1535,11 +1535,11 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Rename profile.</source>
-        <translation type="unfinished">விவரமமைப்புத்தொகுப்பை மறுபெயரிடு.</translation>
+        <translation>விவரமமைப்புத்தொகுப்பை மறுபெயரிடு.</translation>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation type="unfinished">விவரமமைப்புத்தொகுப்பை அழி.</translation>
+        <translation>விவரமமைப்புத்தொகுப்பை அழி.</translation>
     </message>
     <message>
         <source>Export profile</source>
@@ -1846,7 +1846,7 @@ Please make sure to enter the same password twice.</source>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox காணொளி</translation>
+        <translation>Tox காணொளி</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1862,7 +1862,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">ஒலிவாங்கியை ஒலியணை</translation>
+        <translation>ஒலிவாங்கியை ஒலியணை</translation>
     </message>
     <message>
         <source>End video call</source>
@@ -1926,7 +1926,7 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">புதிய செய்தி</translation>
+        <translation>புதிய செய்தி</translation>
     </message>
     <message>
         <source>New group message</source>
@@ -2042,7 +2042,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished">qTox இல் Tox செய்கிறேன்</translation>
+        <translation>qTox இல் Tox செய்கிறேன்</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
@@ -2092,7 +2092,7 @@ Please use another image.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">தங்கள்  கோப்பகத்தில் எழுதுதல் இயலாது</translation>
+        <translation>தங்கள்  கோப்பகத்தில் எழுதுதல் இயலாது</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
@@ -2129,7 +2129,7 @@ Please use another image.</source>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation type="unfinished">கடவுச்சரம் மாற்று</translation>
+        <translation>கடவுச்சரம் மாற்று</translation>
     </message>
     <message>
         <source>Set profile password</source>
@@ -2229,7 +2229,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">கடவுச்சரம் நீக்கு</translation>
+        <translation>கடவுச்சரம் நீக்கு</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2305,11 +2305,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished">ஆம்</translation>
+        <translation>ஆம்</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished">இல்லை</translation>
+        <translation>இல்லை</translation>
     </message>
     <message>
         <source>LTR</source>
@@ -2321,12 +2321,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished">தோழரைச் சேர்க்க இயலவில்லை</translation>
+        <translation>தோழரைச் சேர்க்க இயலவில்லை</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation type="unfinished">தங்களையே தமக்குத் தோழராக்க இயலாது!</translation>
+        <translation>தங்களையே தமக்குத் தோழராக்க இயலாது!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
@@ -2362,12 +2362,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation type="unfinished">இது %1! Tox செய்வோமா?</translation>
+        <translation>இது %1! Tox செய்வோமா?</translation>
     </message>
     <message>
         <source>None</source>
         <comment>No camera device set</comment>
-        <translation type="unfinished">ஏதிலை</translation>
+        <translation>ஏதிலை</translation>
     </message>
     <message>
         <source>Desktop</source>
@@ -2405,22 +2405,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">தொடர்பிலுள்ளார்</translation>
+        <translation>தொடர்பிலுள்ளார்</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">விலகியுள்ளார்</translation>
+        <translation>விலகியுள்ளார்</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">வேறுவினையேற்றுள்ளார்</translation>
+        <translation>வேறுவினையேற்றுள்ளார்</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">தொடர்பற்றுள்ளார்</translation>
+        <translation>தொடர்பற்றுள்ளார்</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2449,7 +2449,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">கோப்பு %1 அனுப்ப இயலவில்லை</translation>
+        <translation>கோப்பு %1 அனுப்ப இயலவில்லை</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
@@ -2469,7 +2469,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">திரைத்தெளிவாக்கப்பட்டது</translation>
+        <translation>திரைத்தெளிவாக்கப்பட்டது</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
@@ -2477,20 +2477,20 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">%1 உடனான அழைப்பு முடிவடைந்தது. %2</translation>
+        <translation>%1 உடனான அழைப்பு முடிவடைந்தது. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 இப்பொழுது %2</translation>
+        <translation>%1 இப்பொழுது %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">%1 அழைக்கப்படுகிறார்</translation>
+        <translation>%1 அழைக்கப்படுகிறார்</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 அழைக்கிறார்</translation>
+        <translation>%1 அழைக்கிறார்</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2518,7 +2518,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">இடைநிறுத்தப்பட்டுள்ளது</translation>
+        <translation>இடைநிறுத்தப்பட்டுள்ளது</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -2573,7 +2573,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">தோழரை நீக்கு</translation>
+        <translation>தோழரை நீக்கு</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
@@ -2635,7 +2635,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchSettingsForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">படிவம்</translation>
+        <translation>படிவம்</translation>
     </message>
     <message>
         <source>Start search:</source>
@@ -2749,7 +2749,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add a friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">தோழரைச் சேர்க</translation>
+        <translation>தோழரைச் சேர்க</translation>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
@@ -2757,11 +2757,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>User ID:</source>
-        <translation type="unfinished">பயனர் அடையாளச்சரம்:</translation>
+        <translation>பயனர் அடையாளச்சரம்:</translation>
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation type="unfinished">தோழராக்க வேண்டுகோள் செய்தி:</translation>
+        <translation>தோழராக்க வேண்டுகோள் செய்தி:</translation>
     </message>
     <message>
         <source>Send</source>
@@ -2778,7 +2778,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>UserInterfaceForm</name>
     <message>
         <source>None</source>
-        <translation type="unfinished">ஏதிலை</translation>
+        <translation>ஏதிலை</translation>
     </message>
     <message>
         <source>User Interface</source>
@@ -2829,7 +2829,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">புதிய செய்தி</translation>
+        <translation>புதிய செய்தி</translation>
     </message>
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
@@ -2920,11 +2920,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished">ஒலியெழுப்பு</translation>
+        <translation>ஒலியெழுப்பு</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished">வேறுவினையேற்றுள்ளபோது ஒலியெழுப்பு</translation>
+        <translation>வேறுவினையேற்றுள்ளபோது ஒலியெழுப்பு</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -2964,17 +2964,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
-        <translation type="unfinished">தொடர்பிலுள்ளார்</translation>
+        <translation>தொடர்பிலுள்ளார்</translation>
     </message>
     <message>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
-        <translation type="unfinished">விலகியுள்ளார்</translation>
+        <translation>விலகியுள்ளார்</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
-        <translation type="unfinished">வேறுவினையேற்றுள்ளார்</translation>
+        <translation>வேறுவினையேற்றுள்ளார்</translation>
     </message>
     <message>
         <source>File</source>
@@ -2987,7 +2987,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation type="unfinished">வெளியே கடவு</translation>
+        <translation>வெளியே கடவு</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3027,12 +3027,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">தொடர்பிலுள்ளார்</translation>
+        <translation>தொடர்பிலுள்ளார்</translation>
     </message>
     <message>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">தொடர்பற்றுள்ளார்</translation>
+        <translation>தொடர்பற்றுள்ளார்</translation>
     </message>
     <message>
         <source>Friends</source>
@@ -3040,7 +3040,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Groups</source>
-        <translation type="unfinished">தோழர்க்குழுக்கள்</translation>
+        <translation>தோழர்க்குழுக்கள்</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3063,7 +3063,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Group invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">தோழர்க்குழு அழைப்புகள்</translation>
+        <translation>தோழர்க்குழு அழைப்புகள்</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3122,7 +3122,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">வெளியே கடவு</translation>
+        <translation>வெளியே கடவு</translation>
     </message>
     <message>
         <source>Add contact...</source>
