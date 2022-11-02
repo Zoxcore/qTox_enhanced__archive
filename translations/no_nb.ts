@@ -5,7 +5,7 @@
     <name>AVForm</name>
     <message>
         <source>Audio/Video</source>
-        <translation>Audio/Video</translation>
+        <translation>Lyd/video</translation>
     </message>
     <message>
         <source>Default resolution</source>
@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Volume</source>
-        <translation>Volum</translation>
+        <translation>Lydstyrke</translation>
     </message>
     <message>
         <source>Video Settings</source>
@@ -59,9 +59,9 @@ Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translation>Sett oppløsningen for ditt kamera.
 Høyere verdier øker sjansen for at dine venner får bedre videokvalitet.
-NB! Høyere videokvalitet krever raskere internett-tilkobling.
+NB! Høyere videokvalitet krever raskere Internett-tilkobling.
 Det kan oppstå problemer med videosamtalene hvis du har valgt høyere
-videokvalitet enn det din internett-tilkobling klarer å levere.</translation>
+videokvalitet enn det din Internett-tilkobling klarer å levere.</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -73,7 +73,7 @@ videokvalitet enn det din internett-tilkobling klarer å levere.</translation>
     </message>
     <message>
         <source>Test Sound</source>
-        <translation>Testlyd</translation>
+        <translation type="unfinished">Testlyd</translation>
     </message>
     <message>
         <source>Audio quality</source>
@@ -133,35 +133,35 @@ noe som kan forårsake problemer i videosamtaler.</translation>
     </message>
     <message>
         <source>Screen Capture FPS</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildetakt for skjermopptak</translation>
     </message>
     <message>
         <source>Change framerate and video bitrate for screen capture.</source>
-        <translation type="unfinished"></translation>
+        <translation>Endre bildetakt og video-bitrate for skjermopptak.</translation>
     </message>
     <message>
         <source>HD (200 kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">HD (200 kbps)</translation>
     </message>
     <message>
         <source>HD (128 kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">HD (128 kbps)</translation>
     </message>
     <message>
         <source> 5 FPS / dynamic vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> 5 BPS/dynamisk vbitrate</translation>
     </message>
     <message>
         <source>30 FPS / 10000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">30 BPS/10000 kbit/s vbitrate</translation>
     </message>
     <message>
         <source>25 FPS / 10000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">25 BPS/10000 kbit/s vbitrate</translation>
     </message>
     <message>
         <source>20 FPS /  8000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">20 BPS/8000kbit/s vbitrate</translation>
     </message>
 </context>
 <context>
@@ -249,7 +249,7 @@ noe som kan forårsake problemer i videosamtaler.</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation>Standard mappe for fillagring:</translation>
+        <translation>Forvalgt mappe for fillagring:</translation>
     </message>
     <message>
         <source>Manual</source>
@@ -458,7 +458,7 @@ noe som kan forårsake problemer i videosamtaler.</translation>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation>%1 her! Tox meg kanskje?</translation>
+        <translation>%1 her! Tox meg?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -491,19 +491,19 @@ noe som kan forårsake problemer i videosamtaler.</translation>
     </message>
     <message>
         <source>NGC Public Group ID, 64 hexadecimal characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Offentlig NGC-gruppe-ID, 64 heksadesimale tegn</translation>
     </message>
     <message>
         <source>Type in the NGC Public Group ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv inn offentlig NGC-gruppe-ID</translation>
     </message>
     <message>
         <source>NGC ID invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>NGC-ID-en er ugyldig</translation>
     </message>
     <message>
         <source>Couldn&apos;t join NGC Public Group, or NGC ID error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke ta del i offentlig NGC-gruppe, eller fikk NGC-ID-feil</translation>
     </message>
 </context>
 <context>
@@ -909,11 +909,11 @@ slik at du kan lagre filen på Windows.</translation>
     </message>
     <message>
         <source>10Mb</source>
-        <translation></translation>
+        <translation type="unfinished">10 Mb</translation>
     </message>
     <message>
         <source>0kb/s</source>
-        <translation></translation>
+        <translation type="unfinished">0 kb/s</translation>
     </message>
     <message>
         <source>ETA:10:10</source>
@@ -926,7 +926,7 @@ slik at du kan lagre filen på Windows.</translation>
     <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
-        <translation>Venter på å sende...</translation>
+        <translation>Venter på å sende …</translation>
     </message>
     <message>
         <source>Accept to receive this file</source>
@@ -936,17 +936,17 @@ slik at du kan lagre filen på Windows.</translation>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation>Lokasjon ikke skrivbar</translation>
+        <translation>Lagringsstedet er ikke skrivbart</translation>
     </message>
     <message>
         <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation>Du har ikke skriverettigheter til den lokasjonen. Velg en annen, eller avbryt lagringsdialogen.</translation>
+        <translation>Du har ikke skriverettigheter til det lagringsstedet. Velg et annen, eller avbryt lagringsdialogen.</translation>
     </message>
     <message>
         <source>Resuming...</source>
         <comment>file transfer widget</comment>
-        <translation>Fortsetter...</translation>
+        <translation>Fortsetter …</translation>
     </message>
     <message>
         <source>Cancel transfer</source>
@@ -1041,7 +1041,7 @@ slik at du kan lagre filen på Windows.</translation>
     <message>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
-        <translation>Flytt til sirkel…</translation>
+        <translation>Flytt til sirkel …</translation>
     </message>
     <message>
         <source>To new circle</source>
@@ -1053,7 +1053,7 @@ slik at du kan lagre filen på Windows.</translation>
     </message>
     <message>
         <source>Set alias...</source>
-        <translation>Sett alias...</translation>
+        <translation>Sett alias …</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
@@ -1266,11 +1266,21 @@ the only allowed Push Servers are (no other servers will ever be contacted):
   &quot;https://gotify1.unifiedpush.org/&quot;
   &quot;https://ntfy.sh/&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dyttingsmerknader hjelper mobilbrukere av Tox (med TRIfA og Antidote) å spare batteri og nettverksdata.
+Denne funksjonen kontakter en HTTPS-nett-tjener med et dyttingssymbol for din venn. Ingen annen info sendes.
+Dette avslører IP-adressen din til nett-tjeneren, og også tiden du sendte ekkoforespørsel til din venn.
+Du kan forhindre IP-en din fra å bli sendt ved bruk av en mellomtjener (som f.eks. Tor).
+Skrur du av dette vil mobilbrukere kanskje motta meldingene dine mye senere enn du sender dem.
+Dette er de tillatte dyttingstjenerne (ingen andre tjenere kan kontaktes):
+
+  &quot;https://tox.zoff.xyz/toxfcm/&quot;
+  &quot;https://gotify1.unifiedpush.org/&quot;
+  &quot;https://ntfy.sh/&quot;
+</translation>
     </message>
     <message>
         <source>enable Push Notification</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">skru på dyttingsmerknad</translation>
     </message>
 </context>
 <context>
@@ -1293,7 +1303,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Save chat log</source>
-        <translation>Lagre chat-logg</translation>
+        <translation>Lagre sludringslogg</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
@@ -1418,14 +1428,14 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Change your name in this group</source>
-        <translation type="unfinished"></translation>
+        <translation>Endre navnet ditt i denne gruppen</translation>
     </message>
 </context>
 <context>
     <name>IdentitySettings</name>
     <message>
         <source>Public Information</source>
-        <translation>Offentlig Informasjon</translation>
+        <translation>Offentlig info</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -2374,7 +2384,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation>%1 her! Tox meg kanskje?</translation>
+        <translation>%1 her! Tox meg?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2506,7 +2516,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Mislyktes å sende melding</translation>
+        <translation>Kunne ikke sende melding</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2574,11 +2584,11 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kunne ikke laste inn sludringshistorikken</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Databaseversjon (%1) er nyere en høyest støttet (%2). Oppgrader qTox.</translation>
     </message>
 </context>
 <context>
@@ -2753,7 +2763,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Klarte ikke å laste inn globale innstillinger</translation>
     </message>
 </context>
 <context>
