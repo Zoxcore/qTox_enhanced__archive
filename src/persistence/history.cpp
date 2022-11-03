@@ -508,8 +508,11 @@ void History::addNewSystemMessage(const ChatId& chatId, const SystemMessage& sys
  */
 void History::addNewMessage(const ChatId& chatId, const QString& message, const ToxPk& sender,
                             const QDateTime& time, bool isDelivered, ExtensionSet extensionSet,
-                            QString dispName, const std::function<void(RowId)>& insertIdCallback)
+                            QString dispName, const std::function<void(RowId)>& insertIdCallback,
+                            const uint8_t hasIdType)
 {
+    std::ignore = hasIdType;
+
     if (historyAccessBlocked()) {
         return;
     }

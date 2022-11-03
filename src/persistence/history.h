@@ -223,7 +223,8 @@ public:
     void removeChatHistory(const ChatId& chatId);
     void addNewMessage(const ChatId& chatId, const QString& message, const ToxPk& sender,
                        const QDateTime& time, bool isDelivered, ExtensionSet extensions,
-                       QString dispName, const std::function<void(RowId)>& insertIdCallback = {});
+                       QString dispName, const std::function<void(RowId)>& insertIdCallback = {},
+                       const uint8_t hasIdType = 0);
 
     void addPushtoken(const ToxPk& sender, const QString& pushtoken);
     QString getPushtoken(const ToxPk& friendPk);
