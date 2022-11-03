@@ -99,12 +99,6 @@ COPY ./buildscripts/build_qt_linux.sh /build/build_qt_linux.sh
 #  /build/build_qt_linux.sh && \
 #  rm -fr /src/qt
 
-COPY ./buildscripts/download/download_toxcore.sh /build/download/download_toxcore.sh
-COPY ./buildscripts/download/download_toxext.sh /build/download/download_toxext.sh
-COPY ./buildscripts/download/download_toxext_messages.sh /build/download/download_toxext_messages.sh
-COPY ./buildscripts/build_toxcore_linux.sh /build/build_toxcore_linux.sh
-COPY ./buildscripts/patches/*.patch /build/patches/
-
 RUN apt-get update && \
         apt-get -y --force-yes install \
         libx264-dev \
@@ -164,6 +158,13 @@ RUN apt-get update && \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+COPY ./buildscripts/download/download_toxext.sh /build/download/download_toxext.sh
+COPY ./buildscripts/download/download_toxext_messages.sh /build/download/download_toxext_messages.sh
+
+COPY ./buildscripts/patches/*.patch /build/patches/
+COPY ./buildscripts/build_toxcore_linux.sh /build/build_toxcore_linux.sh
+COPY ./buildscripts/download/download_toxcore.sh /build/download/download_toxcore.sh
 
 RUN mkdir -p /src/tox && \
     cd /src/tox && \
