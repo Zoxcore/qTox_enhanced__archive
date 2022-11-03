@@ -499,7 +499,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>NGC ID invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>NGC ID ungültig</translation>
     </message>
     <message>
         <source>Couldn&apos;t join NGC Public Group, or NGC ID error</source>
