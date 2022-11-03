@@ -214,7 +214,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation>contributors</translation>
+        <translation>기여자</translation>
     </message>
 </context>
 <context>
