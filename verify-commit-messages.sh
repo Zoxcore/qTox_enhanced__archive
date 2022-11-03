@@ -38,11 +38,10 @@ echo "" # ← formatting
 grep_for_invalid() {
     # differentiate what is allowed for commit messages and merge messages
     git log --no-merges --format=format:'%s' "$ARG" \
+        | grep -v '^Translated using Weblate' \
         | grep -v -E '^(feat|fix|docs|style|refactor|perf|revert|test|chore)(\(.{,12}\))?:.{1,68}$' \
         || git log --merges --format=format:'%s' "$ARG" \
-            | grep -v -E '^Merge .{1,70}$' \
-        || git log --merges --format=format:'%s' "$ARG" \
-            | grep -v -E '^Translated using Weblate'
+            | grep -v -E '^Merge .{1,70}$'
 }
 
 # Conform, /OR ELSE/.
