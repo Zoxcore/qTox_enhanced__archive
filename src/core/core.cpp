@@ -706,8 +706,13 @@ void Core::onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Messa
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
     bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
-    QString message = ToxString(cMessage, length).getQString();
-    emit core->groupMessageReceived(groupId, peerId, message, isAction);
+    if (length > 9) {
+        // HINT: we need to strip 9 bytes of "hex msd id as utf-8 string and ':'"
+        QString message = ToxString((cMessage + 9), (length - 9)).getQString();
+        emit core->groupMessageReceived(groupId, peerId, message, isAction);
+    } else {
+        qWarning() << QString("onGroupMessage:group message length from tox less than 10. length:") << length;
+    }
 }
 
 void Core::onGroupPeerListChange(Tox* tox, uint32_t groupId, void* vCore)
