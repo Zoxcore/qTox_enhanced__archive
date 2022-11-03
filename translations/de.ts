@@ -1275,7 +1275,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>enable Push Notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Push Notification erlauben</translation>
     </message>
 </context>
 <context>
