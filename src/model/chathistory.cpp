@@ -268,7 +268,7 @@ void ChatHistory::onFileTransferBrokenUnbroken(const ToxPk& sender, const ToxFil
     sessionChatLog.onFileTransferBrokenUnbroken(sender, file, broken);
 }
 
-void ChatHistory::onMessageReceived(const ToxPk& sender, const Message& message)
+void ChatHistory::onMessageReceived(const ToxPk& sender, const Message& message, const int hasIdType)
 {
     if (canUseHistory()) {
         auto& chatId = chat.getPersistentId();
@@ -278,7 +278,8 @@ void ChatHistory::onMessageReceived(const ToxPk& sender, const Message& message)
             content = ChatForm::ACTION_PREFIX + content;
         }
 
-        history->addNewMessage(chatId, content, sender, message.timestamp, true, message.extensionSet, displayName);
+        history->addNewMessage(chatId, content, sender, message.timestamp, true,
+            message.extensionSet, displayName, {}, hasIdType);
     }
 
     sessionChatLog.onMessageReceived(sender, message);

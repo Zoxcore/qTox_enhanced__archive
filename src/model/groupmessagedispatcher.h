@@ -45,7 +45,7 @@ public:
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendExtendedMessage(const QString& content,
                             ExtensionSet extensions) override;
-    void onMessageReceived(ToxPk const& sender, bool isAction, QString const& content);
+    void onMessageReceived(ToxPk const& sender, bool isAction, QString const& content, const int hasIdType = 0);
 
 private:
     Group& group;

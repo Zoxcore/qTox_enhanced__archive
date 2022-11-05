@@ -113,7 +113,7 @@ RawDatabase::Query generateHistoryTableInsertion(char type, const QDateTime& tim
 QVector<RawDatabase::Query>
 generateNewTextMessageQueries(const ChatId& chatId, const QString& message, const ToxPk& sender,
                               const QDateTime& time, bool isDelivered, ExtensionSet extensionSet,
-                              QString dispName, std::function<void(RowId)> insertIdCallback)
+                              QString dispName, std::function<void(RowId)> insertIdCallback, int hasIdType)
 {
     QVector<RawDatabase::Query> queries;
 
@@ -123,18 +123,57 @@ generateNewTextMessageQueries(const ChatId& chatId, const QString& message, cons
     queries += generateHistoryTableInsertion('T', time, chatId);
 
     QVector<QByteArray> boundParams;
-    QString queryString = QStringLiteral(
-                "INSERT INTO text_messages (id, message_type, sender_alias, message) "
-                "VALUES ( "
-                "    last_insert_rowid(), "
-                "    'T', "
-                "    (SELECT id FROM aliases WHERE owner=");
-    addAuthorIdSubQuery(queryString, boundParams, sender);
-    queryString += " and display_name=?";
-    boundParams += dispName.toUtf8();
-    queryString += "), ?";
-    boundParams += message.toUtf8();
-    queryString += ");";
+    QString queryString;
+
+    if (hasIdType == 2) { // static_cast<int>(Widget::MessageHasIdType::NGC_MSG_ID)
+        QString hexstr = message.section(':', 0, 0);
+        QString message_real = message.section(':', 1);
+        queryString = QStringLiteral(
+                    "INSERT INTO text_messages (id, message_type, sender_alias, message, ngc_msgid) "
+                    "VALUES ( "
+                    "    last_insert_rowid(), "
+                    "    'T', "
+                    "    (SELECT id FROM aliases WHERE owner=");
+        addAuthorIdSubQuery(queryString, boundParams, sender);
+        queryString += " and display_name=?";
+        boundParams += dispName.toUtf8();
+        queryString += "), ?";
+        boundParams += message_real.toUtf8();
+        queryString += ", ?";
+        boundParams += hexstr.toUtf8();
+        queryString += ");";
+    } else if (hasIdType == 3) { // static_cast<int>(Widget::MessageHasIdType::MSGV3_ID)
+        QString hexstr = message.section(':', 0, 0);
+        QString message_real = message.section(':', 1);
+        queryString = QStringLiteral(
+                    "INSERT INTO text_messages (id, message_type, sender_alias, message, msgv3hash) "
+                    "VALUES ( "
+                    "    last_insert_rowid(), "
+                    "    'T', "
+                    "    (SELECT id FROM aliases WHERE owner=");
+        addAuthorIdSubQuery(queryString, boundParams, sender);
+        queryString += " and display_name=?";
+        boundParams += dispName.toUtf8();
+        queryString += "), ?";
+        boundParams += message_real.toUtf8();
+        queryString += ", ?";
+        boundParams += hexstr.toUtf8();
+        queryString += ");";
+    } else {
+        queryString = QStringLiteral(
+                    "INSERT INTO text_messages (id, message_type, sender_alias, message) "
+                    "VALUES ( "
+                    "    last_insert_rowid(), "
+                    "    'T', "
+                    "    (SELECT id FROM aliases WHERE owner=");
+        addAuthorIdSubQuery(queryString, boundParams, sender);
+        queryString += " and display_name=?";
+        boundParams += dispName.toUtf8();
+        queryString += "), ?";
+        boundParams += message.toUtf8();
+        queryString += ");";
+    }
+
     queries += RawDatabase::Query(queryString, boundParams, insertIdCallback);
 
     if (!isDelivered) {
@@ -509,16 +548,16 @@ void History::addNewSystemMessage(const ChatId& chatId, const SystemMessage& sys
 void History::addNewMessage(const ChatId& chatId, const QString& message, const ToxPk& sender,
                             const QDateTime& time, bool isDelivered, ExtensionSet extensionSet,
                             QString dispName, const std::function<void(RowId)>& insertIdCallback,
-                            const uint8_t hasIdType)
+                            const int hasIdType)
 {
-    std::ignore = hasIdType;
+    qDebug() << "addNewMessage:hasIdType:" << hasIdType;
 
     if (historyAccessBlocked()) {
         return;
     }
 
     db->execLater(generateNewTextMessageQueries(chatId, message, sender, time, isDelivered,
-                                                extensionSet, dispName, insertIdCallback));
+                                                extensionSet, dispName, insertIdCallback, hasIdType));
 }
 
 void History::addPushtoken(const ToxPk& sender, const QString& pushtoken)

@@ -127,6 +127,14 @@ private:
     };
 
 public:
+    enum class MessageHasIdType
+    {
+        NONE = 0,
+        CONF_MSG_ID = 1,
+        NGC_MSG_ID = 2,
+        MSGV3_ID = 3,
+    };
+
     Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSource,
         Settings& settings, Style& style, IPC& ipc, Nexus& nexus, QWidget* parent = nullptr);
     ~Widget() override;
@@ -184,7 +192,7 @@ public slots:
     void onFriendUsernameChanged(int friendId, const QString& username);
     void onFriendLoaded(int friendId);
     void onFriendAliasChanged(const ToxPk& friendId, const QString& alias);
-    void onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction);
+    void onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction, const int hasIdType = 0);
     void onFriendPushtokenReceived(uint32_t friendnumber, const QString& pushtoken);
     void onReceiptReceived(int friendId, ReceiptNum receipt);
     void onExtendedMessageSupport(uint32_t friendNumber, bool supported);
@@ -196,7 +204,7 @@ public slots:
     void onGroupJoined(int groupNum, const GroupId& groupId);
     void onGroupInviteReceived(const GroupInvite& inviteInfo);
     void onGroupInviteAccepted(const GroupInvite& inviteInfo);
-    void onGroupMessageReceived(int groupnumber, int peernumber, const QString& message, bool isAction);
+    void onGroupMessageReceived(int groupnumber, int peernumber, const QString& message, bool isAction, const int hasIdType = 0);
     void onGroupPeerlistChanged(uint32_t groupnumber);
     void onGroupPeerNameChanged(uint32_t groupnumber, const ToxPk& peerPk, const QString& newName);
     void onGroupTitleChanged(uint32_t groupnumber, const QString& author, const QString& title);

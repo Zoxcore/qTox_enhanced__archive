@@ -170,7 +170,7 @@ signals:
 
     void fileAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash, uint64_t filesize);
 
-    void friendMessageReceived(uint32_t friendId, const QString& message, bool isAction);
+    void friendMessageReceived(uint32_t friendId, const QString& message, bool isAction, const int hasIdType = 0);
     void friendPushtokenReceived(uint32_t friendId, const QString& pushtoken);
     void friendAdded(uint32_t friendId, const ToxPk& friendPk);
 
@@ -185,7 +185,7 @@ signals:
 
     void emptyGroupCreated(int groupnumber, const GroupId groupId, const QString& title = QString());
     void groupInviteReceived(const GroupInvite& inviteInfo);
-    void groupMessageReceived(int groupnumber, int peernumber, const QString& message, bool isAction);
+    void groupMessageReceived(int groupnumber, int peernumber, const QString& message, bool isAction, const int hasIdType = 0);
     void groupNamelistChanged(int groupnumber, int peernumber, uint8_t change);
     void groupPeerlistChanged(int groupnumber);
     void groupPeerNameChanged(int groupnumber, const ToxPk& peerPk, const QString& newName);

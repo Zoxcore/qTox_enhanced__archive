@@ -42,7 +42,7 @@ public:
                                                                     const QString& content) override;
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendExtendedMessage(const QString& content, ExtensionSet extensions) override;
-    void onMessageReceived(bool isAction, const QString& content);
+    void onMessageReceived(bool isAction, const QString& content, const int hasIdType = 0);
     void onPushtokenReceived(const QString& pushtoken);
     void onReceiptReceived(ReceiptNum receipt);
     void onExtMessageReceived(const QString& content);

@@ -54,7 +54,7 @@ public slots:
 
 
 private slots:
-    void onMessageReceived(const ToxPk& sender, const Message& message);
+    void onMessageReceived(const ToxPk& sender, const Message& message, const int hasIdType = 0);
     void onPushtokenReceived(const ToxPk& sender, const QString& pushtoken);
     void onPushtokenPing(const ToxPk& sender);
     void onMessageSent(DispatchedMessageId id, const Message& message);

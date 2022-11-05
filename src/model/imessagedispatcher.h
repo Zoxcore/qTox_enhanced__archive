@@ -61,7 +61,7 @@ signals:
     /**
      * @brief Emitted when a message is received and processed
      */
-    void messageReceived(const ToxPk& sender, const Message& message);
+    void messageReceived(const ToxPk& sender, const Message& message, const int hasIdType = 0);
 
     /**
      * @brief Emitted when a Pushtoken is received

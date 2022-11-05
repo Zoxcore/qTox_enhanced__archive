@@ -83,9 +83,9 @@ FriendMessageDispatcher::sendExtendedMessage(const QString& content, ExtensionSe
  * @param[in] isAction True if action message
  * @param[in] content Unprocessed toxcore message
  */
-void FriendMessageDispatcher::onMessageReceived(bool isAction, const QString& content)
+void FriendMessageDispatcher::onMessageReceived(bool isAction, const QString& content, const int hasIdType)
 {
-    emit messageReceived(f.getPublicKey(), processor.processIncomingCoreMessage(isAction, content));
+    emit messageReceived(f.getPublicKey(), processor.processIncomingCoreMessage(isAction, content), hasIdType);
 }
 
 void FriendMessageDispatcher::onPushtokenReceived(const QString& pushtoken)

@@ -1424,7 +1424,7 @@ void Widget::openDialog(GenericChatroomWidget* widget, bool newWindow)
     }
 }
 
-void Widget::onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction)
+void Widget::onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction, const int hasIdType)
 {
     const auto& friendId = friendList->id2Key(friendnumber);
     Friend* f = friendList->findFriend(friendId);
@@ -1432,7 +1432,7 @@ void Widget::onFriendMessageReceived(uint32_t friendnumber, const QString& messa
         return;
     }
 
-    friendMessageDispatchers[f->getPublicKey()]->onMessageReceived(isAction, message);
+    friendMessageDispatchers[f->getPublicKey()]->onMessageReceived(isAction, message, hasIdType);
 }
 
 void Widget::onFriendPushtokenReceived(uint32_t friendnumber, const QString& pushtoken)
@@ -2027,12 +2027,12 @@ void Widget::onGroupInviteAccepted(const GroupInvite& inviteInfo)
 }
 
 void Widget::onGroupMessageReceived(int groupnumber, int peernumber, const QString& message,
-                                    bool isAction)
+                                    bool isAction, const int hasIdType)
 {
     const GroupId& groupId = groupList->id2Key(groupnumber);
     assert(groupList->findGroup(groupId));
     ToxPk author = core->getGroupPeerPk(groupnumber, peernumber);
-    groupMessageDispatchers[groupId]->onMessageReceived(author, isAction, message);
+    groupMessageDispatchers[groupId]->onMessageReceived(author, isAction, message, hasIdType);
 }
 
 void Widget::onGroupPeerlistChanged(uint32_t groupnumber)

@@ -33,6 +33,7 @@
 #include "src/model/ibootstraplistgenerator.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
+#include "src/widget/widget.h"
 #include "util/strongtype.h"
 #include "util/compatiblerecursivemutex.h"
 #include "util/toxcoreerrorparser.h"
@@ -465,13 +466,60 @@ void Core::onFriendRequest(Tox* tox, const uint8_t* cFriendPk, const uint8_t* cM
     emit static_cast<Core*>(core)->friendRequestReceived(friendPk, requestMessage);
 }
 
+static size_t xnet_unpack_u16(const uint8_t *bytes, uint16_t *v)
+{
+    uint8_t hi = bytes[0];
+    uint8_t lo = bytes[1];
+    *v = (static_cast<uint16_t>(hi) << 8) | lo;
+    return sizeof(*v);
+}
+
+static size_t xnet_unpack_u32(const uint8_t *bytes, uint32_t *v)
+{
+    const uint8_t *p = bytes;
+    uint16_t hi;
+    uint16_t lo;
+    p += xnet_unpack_u16(p, &hi);
+    p += xnet_unpack_u16(p, &lo);
+    *v = (static_cast<uint32_t>(hi) << 16) | lo;
+    return p - bytes;
+}
+
 void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type, const uint8_t* cMessage,
                            size_t cMessageSize, void* core)
 {
     std::ignore = tox;
+    uint32_t msgV3_timestamp = 0;
     bool isAction = (type == TOX_MESSAGE_TYPE_ACTION);
     QString msg = ToxString(cMessage, cMessageSize).getQString();
-    emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction);
+
+    // HINT: check for msgV3 --------------
+    bool has_msgv3 = false;
+    if ((cMessage) && (cMessageSize > (TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH + TOX_MSGV3_GUARD))) {
+        int pos = cMessageSize - (TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH + TOX_MSGV3_GUARD);
+        uint8_t g1 = *(cMessage + pos);
+        uint8_t g2 = *(cMessage + pos + 1);
+        // check for the msgv3 guard
+        if ((g1 == 0) && (g2 == 0)) {
+            // we have msgV3 meta data
+            const char *msgV3_hash_buffer_bin = reinterpret_cast<const char*>(cMessage + pos + 2);
+            const uint8_t *p = static_cast<const uint8_t *>(cMessage + pos + 2);
+            p = p + 32;
+            p += xnet_unpack_u32(p, &msgV3_timestamp);
+            QByteArray msgv3hash = QByteArray(msgV3_hash_buffer_bin, 32);
+            // qDebug() << "msgv3hash:" << QString::fromUtf8(msgv3hash.toHex()).toUpper();
+            msg = QString::fromUtf8(msgv3hash.toHex()).toUpper() + QString(":") + msg;
+            has_msgv3 = true;
+        }
+    }
+
+    // HINT: check for msgV3 --------------
+    if (has_msgv3) {
+        emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction,
+            static_cast<int>(Widget::MessageHasIdType::MSGV3_ID));
+    } else {
+        emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction);
+    }
 }
 
 void Core::onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName, size_t cNameSize, void* core)
@@ -685,12 +733,18 @@ void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, 
 {
     std::ignore = tox;
     std::ignore = type;
-    std::ignore = message_id;
     Core* core = static_cast<Core*>(vCore);
     QString msg = ToxString(message, length).getQString();
+    uint32_t message_id_hostenc;
+    const uint8_t *p = reinterpret_cast<const uint8_t *>(&message_id);
+    xnet_unpack_u32(p, &message_id_hostenc);
+    QByteArray msgIdhash = QByteArray(reinterpret_cast<const char*>(&message_id_hostenc), 4);
+    // qDebug() << "msgIdhash:" << QString::fromUtf8(msgIdhash.toHex()).toUpper();
+    msg = QString::fromUtf8(msgIdhash.toHex()).toUpper() + QString(":") + msg;
 
     auto peerPk = core->getGroupPeerPk((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id);
-    emit core->groupMessageReceived((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id, msg, false);
+    emit core->groupMessageReceived((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id, msg,
+        false, static_cast<int>(Widget::MessageHasIdType::NGC_MSG_ID));
 }
 
 void Core::onNgcGroupPrivateMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, Tox_Message_Type type,
