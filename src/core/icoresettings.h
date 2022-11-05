@@ -21,6 +21,8 @@
 
 #include "util/interface.h"
 
+#include <tox/tox.h>
+
 #include <QList>
 #include <QNetworkProxy>
 #include <QString>
@@ -55,6 +57,9 @@ public:
 
     virtual ProxyType getProxyType() const = 0;
     virtual void setProxyType(ProxyType type) = 0;
+
+    virtual Tox* getToxcore() const = 0;
+    virtual void setToxcore(Tox *toxcorep) = 0;
 
     virtual quint16 getProxyPort() const = 0;
     virtual void setProxyPort(quint16 port) = 0;

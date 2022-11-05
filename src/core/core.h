@@ -72,7 +72,7 @@ public:
         ERROR_ALLOC
     };
 
-    static ToxCorePtr makeToxCore(const QByteArray& savedata, const ICoreSettings& settings,
+    static ToxCorePtr makeToxCore(const QByteArray& savedata, ICoreSettings& settings,
                                   IBootstrapListGenerator& bootstrapNodes, ToxCoreErrors* err = nullptr);
     const CoreAV* getAv() const;
     CoreAV* getAv();
@@ -200,7 +200,7 @@ signals:
     void failedToRemoveFriend(uint32_t friendId);
 
 private:
-    Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_, const ICoreSettings& settings_);
+    Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_, ICoreSettings& settings_);
 
     static void onFriendRequest(Tox* tox, const uint8_t* cFriendPk, const uint8_t* cMessage,
                                 size_t cMessageSize, void* core);
@@ -291,7 +291,7 @@ private:
 
     std::unique_ptr<QThread> coreThread;
     const IBootstrapListGenerator& bootstrapListGenerator;
-    const ICoreSettings& settings;
+    ICoreSettings& settings;
     bool isConnected = false;
     int tolerance = CORE_DISCONNECT_TOLERANCE;
 };

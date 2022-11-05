@@ -33,6 +33,8 @@
 
 #include "util/compatiblerecursivemutex.h"
 
+#include <tox/tox.h>
+
 #include <QDateTime>
 #include <QFlags>
 #include <QFont>
@@ -298,6 +300,9 @@ public:
 
     ICoreSettings::ProxyType getProxyType() const override;
     void setProxyType(ICoreSettings::ProxyType newValue) override;
+
+    Tox* getToxcore() const override;
+    void setToxcore(Tox *toxcorep) override;
 
     quint16 getProxyPort() const override;
     void setProxyPort(quint16 port) override;
@@ -733,4 +738,5 @@ private:
     int personalSettingsVersion = 0;
     IMessageBoxManager& messageBoxManager;
     const Profile* loadedProfile = nullptr;
+    Tox *pToxcore = nullptr;
 };

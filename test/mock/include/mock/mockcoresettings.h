@@ -65,6 +65,15 @@ public:
         addr = addr_;
     }
 
+    Tox* getToxcore() const override
+    {
+        return pToxcore;
+    }
+    void setToxcore(Tox *toxcorep) override
+    {
+        pToxcore = toxcorep;
+    }
+
     ProxyType getProxyType() const override
     {
         return type;
@@ -99,4 +108,5 @@ private:
     QString addr;
     ProxyType type;
     quint16 port;
+    Tox *pToxcore;
 };

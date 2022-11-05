@@ -20,6 +20,8 @@
 #include "advancedform.h"
 #include "ui_advancedsettings.h"
 
+#include <tox/tox.h>
+
 #include <QApplication>
 #include <QClipboard>
 #include <QDir>
@@ -123,6 +125,26 @@ void AdvancedForm::on_btnExportLog_clicked()
         qDebug() << "Successfully copied to: " << savefile;
     else
         qDebug() << "File was not copied";
+}
+
+void AdvancedForm::on_btnShownetcon_clicked()
+{
+    Tox *toxcore = settings.getToxcore();
+    if (toxcore != nullptr) {
+        qDebug() << "refreshing network connections ...";
+        char *tcp_report = reinterpret_cast<char*>(calloc(1, 66000));
+        char *udp_report = reinterpret_cast<char*>(calloc(1, 66000));
+        if ((tcp_report != nullptr) && (udp_report != nullptr)) {
+            tox_get_all_tcp_relays(toxcore, tcp_report);
+            tox_get_all_udp_connections(toxcore, udp_report);
+            bodyUI->textShownetcon->setText(QString("TCP:\n") +
+                QString::fromUtf8(tcp_report) +
+                QString("\n\nUDP:\n") +
+                QString::fromUtf8(udp_report));
+        }
+        free(tcp_report);
+        free(udp_report);
+    }
 }
 
 void AdvancedForm::on_btnCopyDebug_clicked()

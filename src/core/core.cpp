@@ -74,7 +74,7 @@ QList<DhtServer> shuffleBootstrapNodes(QList<DhtServer> bootstrapNodes)
 
 } // namespace
 
-Core::Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_, const ICoreSettings& settings_)
+Core::Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_, ICoreSettings& settings_)
     : tox(nullptr)
     , toxTimer{new QTimer{this}}
     , coreThread(coreThread_)
@@ -138,9 +138,11 @@ void Core::registerCallbacks(Tox* tox)
  * @param settings Settings specific to Core
  * @return nullptr or a Core object ready to start
  */
-ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& settings,
+ToxCorePtr Core::makeToxCore(const QByteArray& savedata, ICoreSettings& settings,
                              IBootstrapListGenerator& bootstrapNodes, ToxCoreErrors* err)
 {
+    settings.setToxcore(nullptr);
+
     QThread* thread = new QThread();
     if (thread == nullptr) {
         qCritical() << "Could not allocate Core thread";
@@ -262,6 +264,8 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
     // connect the thread with the Core
     connect(thread, &QThread::started, core.get(), &Core::onStarted);
     core->moveToThread(thread);
+
+    settings.setToxcore(core->tox.get());
 
     // when leaving this function 'core' should be ready for it's start() action or
     // a nullptr

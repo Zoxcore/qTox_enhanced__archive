@@ -86,6 +86,7 @@ Settings::Settings(IMessageBoxManager& messageBoxManager_)
 
 Settings::~Settings()
 {
+    pToxcore = nullptr;
     sync();
     settingsThread->exit(0);
     settingsThread->wait();
@@ -1204,6 +1205,18 @@ QNetworkProxy Settings::getProxy() const
     proxy.setHostName(Settings::getProxyAddr());
     proxy.setPort(Settings::getProxyPort());
     return proxy;
+}
+
+Tox* Settings::getToxcore() const
+{
+    QMutexLocker locker{&bigLock};
+    return pToxcore;
+}
+
+void Settings::setToxcore(Tox *toxcorep)
+{
+    QMutexLocker locker{&bigLock};
+    pToxcore = toxcorep;
 }
 
 Settings::ProxyType Settings::getProxyType() const

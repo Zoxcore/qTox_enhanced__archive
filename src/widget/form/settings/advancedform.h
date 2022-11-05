@@ -47,6 +47,7 @@ private slots:
     void on_resetButton_clicked();
     // Debug
     void on_btnCopyDebug_clicked();
+    void on_btnShownetcon_clicked();
     void on_btnExportLog_clicked();
     // Connection
     void on_cbEnableIPv6_stateChanged();
