@@ -43,6 +43,11 @@ for system_to_build_for in $build_for ; do
 cp -av /workspace/build/* /qtox/
 cp -av /workspace/build/.??* /qtox/
 cd /qtox/.ci-scripts/
+
+# disable tests
+sed -i -e "s#^include(Testing)##" /qtox/CMakeLists.txt
+cat /qtox/CMakeLists.txt|grep -i test
+
 ./build-qtox-linux.sh --full --build-type Release
 
 ls -hal /qtox/.ci-scripts/qtox
