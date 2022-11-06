@@ -2753,7 +2753,6 @@ void Widget::retranslateUi()
 
 void Widget::focusChatInput()
 {
-    qDebug() << QString("Widget::focusChatInput()");
     if (activeChatroomWidget) {
         if (const Friend* f = activeChatroomWidget->getFriend()) {
             chatForms[f->getPublicKey()]->focusInput();
@@ -2763,7 +2762,6 @@ void Widget::focusChatInput()
     }
 
     if (addFriendForm->isShown()) {
-        qDebug() << QString("Widget::addFriendForm->showFocusAgain()");
         addFriendForm->showFocusAgain();
     }
 }
