@@ -508,7 +508,7 @@ void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type, c
             p += xnet_unpack_u32(p, &msgV3_timestamp);
             QByteArray msgv3hash = QByteArray(msgV3_hash_buffer_bin, 32);
             // qDebug() << "msgv3hash:" << QString::fromUtf8(msgv3hash.toHex()).toUpper();
-            msg = QString::fromUtf8(msgv3hash.toHex()).toUpper() + QString(":") + msg;
+            msg = QString::fromUtf8(msgv3hash.toHex()).toUpper().rightJustified(64, '0') + QString(":") + msg;
             has_msgv3 = true;
         }
     }
@@ -740,7 +740,7 @@ void Core::onNgcGroupMessage(Tox* tox, uint32_t group_number, uint32_t peer_id, 
     xnet_unpack_u32(p, &message_id_hostenc);
     QByteArray msgIdhash = QByteArray(reinterpret_cast<const char*>(&message_id_hostenc), 4);
     // qDebug() << "msgIdhash:" << QString::fromUtf8(msgIdhash.toHex()).toUpper();
-    msg = QString::fromUtf8(msgIdhash.toHex()).toUpper() + QString(":") + msg;
+    msg = QString::fromUtf8(msgIdhash.toHex()).toUpper().rightJustified(8, '0') + QString(":") + msg;
 
     auto peerPk = core->getGroupPeerPk((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id);
     emit core->groupMessageReceived((Settings::NGC_GROUPNUM_OFFSET + group_number), peer_id, msg,
@@ -765,9 +765,12 @@ void Core::onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Messa
     Core* core = static_cast<Core*>(vCore);
     bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
     if (length > 9) {
-        // HINT: we need to strip 9 bytes of "hex msd id as utf-8 string and ':'"
-        QString message = ToxString((cMessage + 9), (length - 9)).getQString();
-        emit core->groupMessageReceived(groupId, peerId, message, isAction);
+        QString conf_msgid = ToxString(cMessage, 8).getQString();
+        QString message_text = ToxString((cMessage + 9), (length - 9)).getQString();
+        QString wrapped_message = conf_msgid.toUpper().rightJustified(8, '0') + QString(":") + message_text;
+        // qDebug() << QString("onGroupMessage:wrapped_message:") << wrapped_message;
+        emit core->groupMessageReceived(groupId, peerId, wrapped_message, isAction,
+            static_cast<int>(Widget::MessageHasIdType::CONF_MSG_ID));
     } else {
         qWarning() << QString("onGroupMessage:group message length from tox less than 10. length:") << length;
     }

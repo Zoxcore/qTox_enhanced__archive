@@ -29,7 +29,7 @@
 #include <QTranslator>
 
 namespace {
-constexpr int SCHEMA_VERSION = 13;
+constexpr int SCHEMA_VERSION = 14;
 
 std::vector<DbUpgrader::BadEntry> getInvalidPeers(RawDatabase& db)
 {
@@ -253,7 +253,8 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
                                                  dbSchema3to4, dbSchema4to5, dbSchema5to6,
                                                  dbSchema6to7, dbSchema7to8, dbSchema8to9,
                                                  dbSchema9to10, DbTo11::dbSchema10to11,
-                                                 dbSchema11to12, dbSchema12to13};
+                                                 dbSchema11to12, dbSchema12to13,
+                                                 dbSchema13to14};
 
     assert(databaseSchemaVersion < static_cast<int>(upgradeFns.size()));
     assert(upgradeFns.size() == SCHEMA_VERSION);
@@ -648,6 +649,18 @@ bool DbUpgrader::dbSchema12to13(RawDatabase& db)
                                                  "DEFAULT NULL;")};
 
     upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 13;"));
+    return db.execNow(upgradeQueries);
+}
+
+bool DbUpgrader::dbSchema13to14(RawDatabase& db)
+{
+    QVector<RawDatabase::Query> upgradeQueries;
+
+    upgradeQueries += RawDatabase::Query{QString("ALTER TABLE text_messages "
+                                                 "ADD COLUMN conf_msgid BLOB "
+                                                 "DEFAULT NULL;")};
+
+    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 14;"));
     return db.execNow(upgradeQueries);
 }
 

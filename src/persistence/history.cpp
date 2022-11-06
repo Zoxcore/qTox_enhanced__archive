@@ -159,6 +159,24 @@ generateNewTextMessageQueries(const ChatId& chatId, const QString& message, cons
         queryString += ", ?";
         boundParams += hexstr.toUtf8();
         queryString += ");";
+    } else if (hasIdType == 1) { // static_cast<int>(Widget::MessageHasIdType::CONF_MSG_ID)
+        QString hexstr = message.section(':', 0, 0);
+        QString message_real = message.section(':', 1);
+        queryString = QStringLiteral(
+                    "INSERT INTO text_messages (id, message_type, sender_alias, message, conf_msgid) "
+                    "VALUES ( "
+                    "    last_insert_rowid(), "
+                    "    'T', "
+                    "    (SELECT id FROM aliases WHERE owner=");
+        addAuthorIdSubQuery(queryString, boundParams, sender);
+        queryString += " and display_name=?";
+        boundParams += dispName.toUtf8();
+        queryString += "), ?";
+        boundParams += message_real.toUtf8();
+        queryString += ", ?";
+        boundParams += hexstr.toUtf8();
+        queryString += ");";
+
     } else {
         queryString = QStringLiteral(
                     "INSERT INTO text_messages (id, message_type, sender_alias, message) "

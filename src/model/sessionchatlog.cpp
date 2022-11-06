@@ -404,6 +404,10 @@ void SessionChatLog::onMessageReceived(const ToxPk& sender, const Message& messa
         QString hexstr = message.content.section(':', 0, 0);
         std::ignore = hexstr;
         message_real = message.content.section(':', 1);
+    } else if (hasIdType == 1) { // static_cast<int>(Widget::MessageHasIdType::CONF_MSG_ID)
+        QString hexstr = message.content.section(':', 0, 0);
+        std::ignore = hexstr;
+        message_real = message.content.section(':', 1);
     } else {
         message_real = message.content;
     }
