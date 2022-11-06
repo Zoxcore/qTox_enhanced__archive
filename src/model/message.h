@@ -56,6 +56,7 @@ struct Message
     QDateTime timestamp;
     ExtensionSet extensionSet;
     std::vector<MessageMetadata> metadata;
+    QString id_or_hash;
 };
 
 

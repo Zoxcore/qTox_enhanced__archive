@@ -550,8 +550,6 @@ void History::addNewMessage(const ChatId& chatId, const QString& message, const 
                             QString dispName, const std::function<void(RowId)>& insertIdCallback,
                             const int hasIdType)
 {
-    qDebug() << "addNewMessage:hasIdType:" << hasIdType;
-
     if (historyAccessBlocked()) {
         return;
     }

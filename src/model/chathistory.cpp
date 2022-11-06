@@ -282,7 +282,7 @@ void ChatHistory::onMessageReceived(const ToxPk& sender, const Message& message,
             message.extensionSet, displayName, {}, hasIdType);
     }
 
-    sessionChatLog.onMessageReceived(sender, message);
+    sessionChatLog.onMessageReceived(sender, message, hasIdType);
 }
 
 void ChatHistory::onPushtokenReceived(const ToxPk& sender, const QString& pushtoken)
@@ -397,7 +397,7 @@ void ChatHistory::loadHistoryIntoSessionChatLog(ChatLogIdx start) const
             // we hit IMessageDispatcher's signals which history listens for.
             // Items added to history have already been sent so we know they already
             // reflect what was sent/received.
-            auto processedMessage = Message{isAction, messageContent, message.timestamp, {}, {}};
+            auto processedMessage = Message{isAction, messageContent, message.timestamp, {}, {}, QString("")};
 
             auto dispatchedMessageIt =
                 std::find_if(dispatchedMessageRowIdMap.begin(), dispatchedMessageRowIdMap.end(),

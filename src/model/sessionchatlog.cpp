@@ -384,13 +384,35 @@ void SessionChatLog::insertSystemMessageAtIdx(ChatLogIdx idx, SystemMessage mess
  * @brief Inserts message data into the chatlog buffer
  * @note Owner of SessionChatLog is in charge of attaching this to the appropriate IMessageDispatcher
  */
-void SessionChatLog::onMessageReceived(const ToxPk& sender, const Message& message)
+void SessionChatLog::onMessageReceived(const ToxPk& sender, const Message& message, int hasIdType)
 {
     auto messageIdx = nextIdx++;
+    QString message_real;
+
+    Message message3;
+    message3.isAction = message.isAction;
+    message3.content = message.content;
+    message3.timestamp = message.timestamp;
+    message3.extensionSet = message.extensionSet;
+    message3.metadata = message.metadata;
+
+    if (hasIdType == 2) { // static_cast<int>(Widget::MessageHasIdType::NGC_MSG_ID)
+        QString hexstr = message.content.section(':', 0, 0);
+        std::ignore = hexstr;
+        message_real = message.content.section(':', 1);
+    } else if (hasIdType == 3) { // static_cast<int>(Widget::MessageHasIdType::MSGV3_ID)
+        QString hexstr = message.content.section(':', 0, 0);
+        std::ignore = hexstr;
+        message_real = message.content.section(':', 1);
+    } else {
+        message_real = message.content;
+    }
+
+    message3.content = message_real;
 
     ChatLogMessage chatLogMessage;
     chatLogMessage.state = MessageState::complete;
-    chatLogMessage.message = message;
+    chatLogMessage.message = message3;
     items.emplace(messageIdx, ChatLogItem(sender, resolveSenderNameFromSender(sender), chatLogMessage));
 
     emit itemUpdated(messageIdx);
