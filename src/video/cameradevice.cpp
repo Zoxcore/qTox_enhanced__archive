@@ -532,29 +532,41 @@ bool CameraDevice::getDefaultInputFormat()
 // Desktop capture input formats
 #if USING_V4L
     idesktopFormat = av_find_input_format("x11grab");
+    qDebug() << "idesktopFormat=x11grab";
 #endif
 #ifdef Q_OS_WIN
     idesktopFormat = av_find_input_format("gdigrab");
+    qDebug() << "idesktopFormat=gdigrab";
 #endif
 
 // Webcam input formats
 #if USING_V4L
-    if ((iformat = av_find_input_format("v4l2")))
+    if ((iformat = av_find_input_format("v4l2"))) {
+        qDebug() << "iformat=v4l2";
         return true;
+    }
 #endif
 
 #ifdef Q_OS_WIN
-    if ((iformat = av_find_input_format("dshow")))
+    if ((iformat = av_find_input_format("dshow"))) {
+        qDebug() << "iformat=dshow";
         return true;
-    if ((iformat = av_find_input_format("vfwcap")))
+    }
+    if ((iformat = av_find_input_format("vfwcap"))) {
+        qDebug() << "iformat=vfwcap";
         return true;
+    }
 #endif
 
 #ifdef Q_OS_OSX
-    if ((iformat = av_find_input_format("avfoundation")))
+    if ((iformat = av_find_input_format("avfoundation"))) {
+        qDebug() << "iformat=avfoundation";
         return true;
-    if ((iformat = av_find_input_format("qtkit")))
+    }
+    if ((iformat = av_find_input_format("qtkit"))) {
+        qDebug() << "iformat=qtkit";
         return true;
+    }
 #endif
 
     qWarning() << "No valid input format found";
