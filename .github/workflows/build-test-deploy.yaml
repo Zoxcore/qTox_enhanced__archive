@@ -316,7 +316,6 @@ jobs:
           draft: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "setup-qtox-x86_64-release.exe,setup-qtox-x86_64-release.exe.sha256"
-
       - name: Rename zip for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         run: |
@@ -337,8 +336,11 @@ jobs:
       - name: Rename zip for release upload
         if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
         run: |
+          pwd
+          ls -al install-prefix/
+          ls -al install-prefix/qtox-x86_64-${{ matrix.build_type }}.zip
           cp install-prefix/qtox-x86_64-${{ matrix.build_type }}.zip qtox-x86_64.zip
-          sha256sum qtox-nightly-x86_64-${{ matrix.build_type }}.zip > qtox-x86_64.zip.sha256
+          sha256sum install-prefix/qtox-x86_64-${{ matrix.build_type }}.zip > qtox-x86_64.zip.sha256
       - name: Upload zip to versioned release
         if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
         uses: ncipollo/release-action@v1
