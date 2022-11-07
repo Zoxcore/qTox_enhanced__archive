@@ -17,6 +17,7 @@ the encrypted peer-to-peer Tox protocol.
 Status
 =
 [![Github CI](https://github.com/Zoxcore/qTox_enhanced/workflows/Build%2C%20test%2C%20and%20deploy/badge.svg)](https://github.com/Zoxcore/qTox_enhanced/actions?query=workflow%3A%22Build%2C%20test%2C%20and%20deploy%22)
+[![Translations](https://hosted.weblate.org/widgets/qtox_enhanced/-/svg-badge.svg)](https://hosted.weblate.org/engage/qtox_enhanced/)
 <a href="https://github.com/Zoxcore/qTox_enhanced/blob/master/LICENSE">
 <img src="https://img.shields.io/badge/license-GPLv3%2B-blue.svg" alt="GPLv3+" />
 </a>
@@ -25,6 +26,10 @@ Installation
 =
 <a href="https://github.com/Zoxcore/qTox_enhanced/releases/tag/nightly"><img src="https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoxcore/push_notification/doc/on_github.png" width="200">
 
+Help Translate the App in your Language
+=
+Use Weblate:
+[https://hosted.weblate.org/engage/qtox_enhanced/](https://hosted.weblate.org/engage/qtox_enhanced/)
 
 Features
 =
