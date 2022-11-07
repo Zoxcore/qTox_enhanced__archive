@@ -22,6 +22,7 @@ RUN apt-get update && \
         curl \
         ca-certificates \
         elfutils \
+        bzip2 \
         # flatpak-validate-icon uses gdk-pixbuf which needs an svg loader
         librsvg2-common \
         flatpak \

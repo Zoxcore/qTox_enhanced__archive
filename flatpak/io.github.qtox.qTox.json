@@ -1,10 +1,11 @@
 {
-    "app-id": "io.github.qtox.qTox",
+    "app-id": "io.github.qtox.qTox_enhanced",
     "runtime": "org.kde.Platform",
     "sdk": "org.kde.Sdk",
     "runtime-version": "5.15-21.08",
     "command": "qtox",
     "rename-icon": "qtox",
+    "rename-desktop-file" : "io.github.qtox.qTox.desktop",
     "finish-args": [
         "--share=network",
         "--socket=pulseaudio",
@@ -18,18 +19,9 @@
         "--filesystem=xdg-music",
         "--filesystem=xdg-pictures",
         "--filesystem=xdg-videos",
+        "--filesystem=home",
         "--filesystem=/media",
         "--device=all"
-    ],
-    "add-extensions": {
-        "org.freedesktop.Platform.ffmpeg-full": {
-            "directory": "lib/ffmpeg",
-            "version": "20.08",
-            "add-ld-path": "."
-        }
-    },
-    "cleanup-commands": [
-        "mkdir -p /app/lib/ffmpeg"
     ],
     "cleanup": [
         "/include",
@@ -39,6 +31,24 @@
         "*.a"
     ],
     "modules": [
+        {
+            "name": "v4l-utils",
+            "config-opts": [
+                "--disable-static",
+                "--disable-doxygen-doc",
+                "--disable-libdvbv5",
+                "--disable-v4l-utils",
+                "--disable-qv4l2",
+                "--with-udevdir=/app/lib/udev"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.22.0.tar.bz2",
+                    "sha256": "1069e5d7909bcc563baeaadc3a5c496f0e658524c413cf7818816e37bfcea344"
+                }
+            ]
+        },
         {
             "name": "tcl",
             "subdir": "unix",
@@ -69,6 +79,78 @@
                   "path": "/src/libx264"
               }
           ]
+        },
+        {
+            "name": "ffmpeg",
+            "config-opts": [
+                "--enable-rpath",
+                "--enable-gpl",
+                "--disable-static",
+                "--enable-shared",
+                "--extra-cflags=-O2 -g",
+                "--disable-doc",
+              "--disable-debug",
+              "--disable-programs",
+              "--disable-protocols",
+              "--disable-doc",
+              "--disable-sdl2",
+              "--disable-avfilter",
+              "--disable-avresample",
+              "--disable-filters",
+              "--disable-iconv",
+              "--disable-network",
+              "--disable-muxers",
+              "--disable-postproc",
+              "--disable-swresample",
+              "--disable-swscale-alpha",
+              "--disable-dct",
+              "--disable-dwt",
+              "--disable-lsp",
+              "--disable-lzo",
+              "--disable-mdct",
+              "--disable-rdft",
+              "--disable-fft",
+              "--disable-faan",
+              "--disable-vaapi",
+              "--disable-vdpau",
+              "--disable-zlib",
+              "--disable-xlib",
+              "--disable-bzlib",
+              "--disable-lzma",
+              "--disable-encoders",
+              "--disable-decoders",
+              "--disable-demuxers",
+              "--disable-parsers",
+              "--disable-bsfs",
+              "--enable-demuxer=h264",
+              "--enable-demuxer=mjpeg",
+              "--enable-parser=h264",
+              "--enable-parser=mjpeg",
+              "--enable-decoder=h264",
+              "--enable-decoder=mjpeg",
+              "--enable-decoder=rawvideo"
+            ],
+            "build-options": {
+                "arch": {
+                    "x86_64": {
+                        "prepend-path": "/usr/lib/sdk/llvm12/bin",
+                        "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib",
+                        "config-opts": [
+                            "--disable-ffnvcodec"
+                        ]
+                    }
+                }
+            },
+            "cleanup": [
+                "/share/ffmpeg/examples"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/FFmpeg/FFmpeg/archive/refs/tags/n4.4.1.tar.gz",
+                    "sha256": "82b43cc67296bcd01a59ae6b327cdb50121d3a9e35f41a30de1edd71bb4a6666"
+                }
+            ]
         },
         {
             "name": "sqlcipher",
