@@ -5,7 +5,7 @@
 <img src="https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoxcore/push_notification/doc/screen01.png" width="300"></a>
 <img src="https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoxcore/push_notification/doc/screen02.png" width="300"></a>
 <br><br><br>
-Automated screenshots of the lastest commit:<br>
+Automated screenshots:<br>
 <img src="https://github.com/Zoxcore/qTox_enhanced/releases/download/nightly/screenshot-macos.png" height="200"></a>
 <img src="https://github.com/Zoxcore/qTox_enhanced/releases/download/nightly/screenshot-windows.png" height="200"></a>
 <img src="https://github.com/Zoxcore/qTox_enhanced/releases/download/nightly/screenshot-linux.png" height="200"></a>
