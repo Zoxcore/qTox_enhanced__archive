@@ -31,7 +31,7 @@ RUN apt-get update && \
 
 # Pre-download kde flatpak environment to speed up flatpak builds
 RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
-    flatpak --system install flathub -y org.kde.Sdk/x86_64/5.15
+    flatpak --system install flathub -y org.kde.Sdk/x86_64/5.15-21.08
 
 COPY download/common.sh /build/download/common.sh
 COPY download/download_sodium.sh /build/download/download_sodium.sh
@@ -58,5 +58,10 @@ COPY download/download_toxext_messages.sh /build/download/download_toxext_messag
 RUN mkdir -p /src/toxext_messages && \
     cd /src/toxext_messages && \
     /build/download/download_toxext_messages.sh
+
+COPY download/download_libx264.sh /build/download/download_libx264.sh
+RUN mkdir -p /src/libx264 && \
+    cd /src/libx264 && \
+    /build/download/download_libx264.sh
 
 WORKDIR /qtox
