@@ -18,7 +18,7 @@ cd /flatpak-build
 flatpak-builder --disable-rofiles-fuse --install-deps-from=flathub --force-clean --repo=qtox-repo build "$FLATPAK_DESCRIPTOR"
 
 # Create a bundle for distribution
-flatpak build-bundle qtox-repo qtox.flatpak io.github.qtox.qTox_enhanced
+flatpak build-bundle qtox-repo qtox.flatpak com.zoffcc.qtox.qTox_enhanced
 
 cp qtox.flatpak /qtox
 
