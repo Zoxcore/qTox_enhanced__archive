@@ -1,5 +1,7 @@
 name: Build, test, and deploy
 on:
+#  release:
+#    types: [published, edited]
   push:
     paths-ignore:
      - 'README.md'
@@ -211,10 +213,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly.x86_64.AppImage,qTox-nightly.x86_64.AppImage.zsync"
   build-flatpak:
-    if: ${{ true }}
     name: Flatpak
     runs-on: ubuntu-latest
     needs: [build-flatpak-docker, update-nightly-tag]
+    if: |
+      always() &&
+      needs.build-flatpak-docker.result == 'success' &&
+      (needs.update-nightly-tag.result == 'success' ||
+        needs.update-nightly-tag.result == 'skipped')
     permissions:
         contents: write
     steps:
@@ -310,6 +316,7 @@ jobs:
           draft: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "setup-qtox-x86_64-release.exe,setup-qtox-x86_64-release.exe.sha256"
+
       - name: Rename zip for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification'
         run: |
@@ -327,6 +334,19 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qtox-nightly-x86_64-${{ matrix.build_type }}.zip,qtox-nightly-x86_64-${{ matrix.build_type }}.zip.sha256"
+      - name: Rename zip for release upload
+        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
+        run: |
+          cp install-prefix/qtox-x86_64-${{ matrix.build_type }}.zip qtox-x86_64.zip
+          sha256sum qtox-nightly-x86_64-${{ matrix.build_type }}.zip > qtox-x86_64.zip.sha256
+      - name: Upload zip to versioned release
+        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          draft: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "qtox-x86_64.zip,qtox-x86_64.zip.sha256"
       - name: Rename exe for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/zoxcore/push_notification' && matrix.build_type == 'release'
         run: |
