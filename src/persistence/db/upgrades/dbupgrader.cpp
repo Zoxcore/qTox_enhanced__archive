@@ -216,9 +216,25 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
 
     if (newDb) {
         if (!createCurrentSchema(*db)) {
-            qCritical() << "Failed to create current db schema";
+            qCritical() << "Failed to create current db schema(0)";
             return false;
         }
+
+        if (!dbSchema11to12(*db)) {
+            qCritical() << "Failed to create current db schema(1)";
+            return false;
+        }
+
+        if (!dbSchema12to13(*db)) {
+            qCritical() << "Failed to create current db schema(2)";
+            return false;
+        }
+
+        if (!dbSchema13to14(*db)) {
+            qCritical() << "Failed to create current db schema(3)";
+            return false;
+        }
+
         qDebug() << "Database created at schema version" << SCHEMA_VERSION;
         return true;
     }
