@@ -29,7 +29,6 @@ target_compile_options(${PROJECT_NAME} INTERFACE
         -Wmissing-declarations;
         -Wnon-virtual-dtor;
         -Wnull-dereference;
-        -Wold-style-cast;
         -Woverloaded-virtual;
         -Wshadow;
         -Wsign-compare;
@@ -88,3 +87,4 @@ target_compile_options(${PROJECT_NAME} INTERFACE
         -Wstack-protector;
     >
 )
+
