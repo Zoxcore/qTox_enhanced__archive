@@ -1,6 +1,7 @@
-# qTox [with PUSH and NGC features]
+# <img src="https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoxcore/push_notification/img/icons/256x256/qtox.png" height="60" alt="qTox" />&nbsp;&nbsp;&nbsp;qTox [with PUSH and NGC features]
 
-<img src="https://qtox.github.io/assets/imgs/logo_head.png" alt="qTox" />
+<img src="https://github.com/Zoxcore/qTox_enhanced/releases/download/nightly/screenshot-macos.png" width="90%">
+
 
 <img src="https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoxcore/push_notification/doc/screen01.png" width="300"></a>
 <img src="https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoxcore/push_notification/doc/screen02.png" width="300"></a>
@@ -25,9 +26,11 @@ Status
 
 Installation
 =
-<a href="https://github.com/Zoxcore/qTox_enhanced/releases/tag/nightly"><img src="https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoxcore/push_notification/doc/on_github.png" width="200">
 
-Help Translate the App in your Language
+| <a href="https://github.com/Zoxcore/qTox_enhanced/releases/latest"><img src="https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoxcore/push_notification/doc/on_github.png" width="200"></a> | <a href="https://snapcraft.io/qtox-enhanced"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" height="55"></a> | 
+|--------|--------|
+
+ Help Translate the App in your Language
 =
 Use Weblate:
 [https://hosted.weblate.org/engage/qtox_enhanced/](https://hosted.weblate.org/engage/qtox_enhanced/)
