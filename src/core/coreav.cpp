@@ -433,12 +433,14 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
     // filteraudio:X //
     // qDebug() << "filter_audio recorded audio: chans:" << chans << " rate:" << rate;
     if ((chans == 1) && (rate == IAudioControl::AUDIO_SAMPLE_RATE)) {
-        int res_aec = filter_audio(filterer,
-                            // we do not want to copy the buffer, so we cast to NON-const here
-                            const_cast<int16_t *>(pcm),
-                            samples);
-        std::ignore = res_aec;
-        // qDebug() << "filter_audio recorded audio: res:" << res_aec;
+        if (audioSettings.getEchoCancellation()) {
+            int res_aec = filter_audio(filterer,
+                                // we do not want to copy the buffer, so we cast to NON-const here
+                                const_cast<int16_t *>(pcm),
+                                samples);
+            std::ignore = res_aec;
+            // qDebug() << "filter_audio recorded audio: res:" << res_aec;
+        }
     }
 
     // TOXAV_ERR_SEND_FRAME_SYNC means toxav failed to lock, retry 5 times in this case
@@ -969,7 +971,11 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
     // filteraudio:X //
     // qDebug() << "filter_audio playback audio: chans:" << channels << " rate:" << samplingRate;
     if ((channels == 1) && (samplingRate == IAudioControl::AUDIO_SAMPLE_RATE)) {
-        pass_audio_output(self->filterer, pcm, sampleCount);
+        if (self->audioSettings.getEchoCancellation()) {
+            int res_aec = pass_audio_output(self->filterer, pcm, sampleCount);
+            std::ignore = res_aec;
+            // qDebug() << "filter_audio playback audio: res:" << res_aec;
+        }
     }
 
     call.playAudioBuffer(pcm, sampleCount, channels, samplingRate);
