@@ -634,6 +634,11 @@ target_link_libraries(${PROJECT_NAME}_static
   ${ALL_LIBRARIES}
   coverage_config)
 
+# ------- filter_audio -------
+add_subdirectory(filter_audio)
+target_link_libraries(${PROJECT_NAME}_static filteraudio)
+# ------- filter_audio -------
+
 target_link_libraries(${PROJECT_NAME}_static qtox::warnings)
 target_link_libraries(${PROJECT_NAME}_static util_library)
 target_link_libraries(${PROJECT_NAME}_static audio_library)
