@@ -76,8 +76,8 @@ else
     cmake "$SRCDIR" \
         -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
         -DUPDATE_CHECK=ON \
-        -DSTRICT_OPTIONS=ON \
-        -DCODE_COVERAGE=ON \
+        -DSTRICT_OPTIONS=OFF \
+        -DCODE_COVERAGE=OFF \
         -DDESKTOP_NOTIFICATIONS=ON \
         ${COMPILE_COMMANDS} \
         $SANITIZE_ARGS
