@@ -4,3 +4,6 @@ ubuntu_18.04
 nixos/
 windows/
 flatpak/
+ubuntu_20.04/
+toxid_save/
+tox_data/
