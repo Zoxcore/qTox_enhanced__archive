@@ -20,6 +20,7 @@
 
 #pragma once
 
+#include "filter_audio/filter_audio.h"
 #include "src/core/toxcall.h"
 #include "util/compatiblerecursivemutex.h"
 
@@ -168,4 +169,6 @@ private:
     IAudioSettings& audioSettings;
     IGroupSettings& groupSettings;
     CameraSource& cameraSource;
+
+    Filter_Audio* filterer = nullptr;
 };

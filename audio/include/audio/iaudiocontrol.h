@@ -129,7 +129,6 @@ public:
     virtual std::unique_ptr<IAudioSink> makeSink() = 0;
     virtual std::unique_ptr<IAudioSource> makeSource() = 0;
 
-protected:
     // Public default audio settings
     // Samplerate for Tox calls and sounds
     static constexpr uint32_t AUDIO_SAMPLE_RATE = 48000;

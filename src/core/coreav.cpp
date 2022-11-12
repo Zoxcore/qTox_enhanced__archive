@@ -89,6 +89,29 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     assert(coreavThread);
     assert(iterateTimer);
 
+    // filteraudio:X //
+    // HINT: filteraudio only work with MONO and 48kHz audio in both directions
+    assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
+    filterer = new_filter_audio((uint32_t)IAudioControl::AUDIO_SAMPLE_RATE);
+    int16_t audio_latency_in_ms = 30; // HINT: randomly assume 30ms audio latency. any better ideas?
+    /* It's essential that echo delay is set correctly; it's the most important part of the
+     * echo cancellation process. If the delay is not set to the acceptable values the AEC
+     * will not be able to recover. Given that it's not that easy to figure out the exact
+     * time it takes for a signal to get from Output to the Input, setting it to suggested
+     * input device latency + frame duration works really good and gives the filter ability
+     * to adjust it internally after some time (usually up to 6-7 seconds in my tests when
+     * the error is about 20%).
+     */
+    int16_t filterLatency = audio_latency_in_ms + IAudioControl::AUDIO_FRAME_DURATION;
+    qDebug() << "Setting filter delay to: " << filterLatency << "ms";
+    set_echo_delay_ms(filterer, filterLatency);
+    /* Enable/disable filters. 1 to enable, 0 to disable. */
+    int echo_ = 1;
+    int noise_ = 0;
+    int gain_ = 0;
+    int vad_ = 0;
+    enable_disable_filters(filterer, echo_, noise_, gain_, vad_);
+
     coreavThread->setObjectName("qTox CoreAV");
     moveToThread(coreavThread.get());
 
@@ -179,6 +202,10 @@ CoreAV::~CoreAV()
 
     coreavThread->exit(0);
     coreavThread->wait();
+
+    // filteraudio:X //
+    kill_filter_audio(filterer);
+    filterer = NULL;
 }
 
 /**
@@ -401,6 +428,17 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
     if (call.getMuteMic() || !call.isActive()
         || !(call.getState() & TOXAV_FRIEND_CALL_STATE_ACCEPTING_A)) {
         return true;
+    }
+
+    // filteraudio:X //
+    // qDebug() << "filter_audio recorded audio: chans:" << chans << " rate:" << rate;
+    if ((chans == 1) && (rate == IAudioControl::AUDIO_SAMPLE_RATE)) {
+        int res_aec = filter_audio(filterer,
+                            // we do not want to copy the buffer, so we cast to NON-const here
+                            const_cast<int16_t *>(pcm),
+                            samples);
+        std::ignore = res_aec;
+        // qDebug() << "filter_audio recorded audio: res:" << res_aec;
     }
 
     // TOXAV_ERR_SEND_FRAME_SYNC means toxav failed to lock, retry 5 times in this case
@@ -926,6 +964,12 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
 
     if (call.getMuteVol()) {
         return;
+    }
+
+    // filteraudio:X //
+    // qDebug() << "filter_audio playback audio: chans:" << channels << " rate:" << samplingRate;
+    if ((channels == 1) && (samplingRate == IAudioControl::AUDIO_SAMPLE_RATE)) {
+        pass_audio_output(self->filterer, pcm, sampleCount);
     }
 
     call.playAudioBuffer(pcm, sampleCount, channels, samplingRate);
