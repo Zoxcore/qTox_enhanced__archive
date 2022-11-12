@@ -63,6 +63,8 @@ AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
     cbEnableTestSound->setChecked(audioSettings_->getEnableTestSound());
     cbEnableTestSound->setToolTip(tr("Play a test sound while changing the output volume."));
 
+    cbEchoCancellation->setChecked(audioSettings_->getEchoCancellation());
+
     connect(rescanButton, &QPushButton::clicked, this, &AVForm::rescanDevices);
 
     playbackSlider->setTracking(false);
@@ -639,6 +641,13 @@ void AVForm::on_audioThresholdSlider_valueChanged(int sliderSteps)
     audioSettings->setAudioThreshold(normThreshold);
     audio.setInputThreshold(normThreshold);
 }
+
+void AVForm::on_cbEchoCancellation_stateChanged()
+{
+    qWarning() << "on_cbEchoCancellation_stateChanged";
+    audioSettings->setEchoCancellation(cbEchoCancellation->isChecked());
+}
+
 void AVForm::createVideoSurface()
 {
     if (camVideoSurface)

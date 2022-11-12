@@ -128,6 +128,7 @@ class Settings : public QObject,
                    audioOutDevEnabledChanged FINAL)
     Q_PROPERTY(int outVolume READ getOutVolume WRITE setOutVolume NOTIFY outVolumeChanged FINAL)
     Q_PROPERTY(int audioBitrate READ getAudioBitrate WRITE setAudioBitrate NOTIFY audioBitrateChanged FINAL)
+    Q_PROPERTY(bool echoCancellation READ getEchoCancellation WRITE setEchoCancellation NOTIFY echoCancellationChanged FINAL)
 
     // Video
     Q_PROPERTY(QString videoDev READ getVideoDev WRITE setVideoDev NOTIFY videoDevChanged FINAL)
@@ -387,6 +388,9 @@ public:
     bool getEnableTestSound() const override;
     void setEnableTestSound(bool newValue) override;
 
+    bool getEchoCancellation() const override;
+    void setEchoCancellation(bool newValue) override;
+
     SIGNAL_IMPL(Settings, inDevChanged, const QString& device)
     SIGNAL_IMPL(Settings, audioInDevEnabledChanged, bool enabled)
 
@@ -398,6 +402,7 @@ public:
     SIGNAL_IMPL(Settings, outVolumeChanged, int volume)
     SIGNAL_IMPL(Settings, audioBitrateChanged, int bitrate)
     SIGNAL_IMPL(Settings, enableTestSoundChanged, bool newValue)
+    SIGNAL_IMPL(Settings, echoCancellationChanged, bool newValue)
 
     QString getVideoDev() const override;
     void setVideoDev(const QString& deviceSpecifier) override;
@@ -693,6 +698,7 @@ private:
     int outVolume;
     int audioBitrate;
     bool enableTestSound;
+    bool echoCancellation;
 
     // Video
     QString videoDev;

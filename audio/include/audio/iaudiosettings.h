@@ -64,6 +64,9 @@ public:
     virtual int getScreenVideoFPS() const = 0;
     virtual void setScreenVideoFPS(int newValue) = 0;
 
+    virtual bool getEchoCancellation() const = 0;
+    virtual void setEchoCancellation(bool newValue) = 0;
+
     DECLARE_SIGNAL(inDevChanged, const QString& device);
     DECLARE_SIGNAL(audioInDevEnabledChanged, bool enabled);
 
@@ -77,4 +80,5 @@ public:
     DECLARE_SIGNAL(enableTestSoundChanged, bool newValue);
 
     DECLARE_SIGNAL(screenVideoFPSChanged, int fps);
+    DECLARE_SIGNAL(echoCancellationChanged, bool newValue);
 };

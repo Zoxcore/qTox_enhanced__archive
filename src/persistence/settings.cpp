@@ -255,6 +255,7 @@ void Settings::loadGlobal()
         audioOutDevEnabled = s.value("audioOutDevEnabled", true).toBool();
         audioInGainDecibel = s.value("inGain", 0).toReal();
         audioThreshold = s.value("audioThreshold", 0).toReal();
+        echoCancellation = s.value("echoCancellation", true).toBool();
         outVolume = s.value("outVolume", 100).toInt();
         enableTestSound = s.value("enableTestSound", true).toBool();
         audioBitrate = s.value("audioBitrate", 64).toInt();
@@ -733,6 +734,7 @@ void Settings::saveGlobal()
         s.setValue("outVolume", outVolume);
         s.setValue("enableTestSound", enableTestSound);
         s.setValue("audioBitrate", audioBitrate);
+        s.setValue("echoCancellation", echoCancellation);
     }
     s.endGroup();
 
@@ -1617,6 +1619,19 @@ void Settings::setUsePushNotification(bool newValue)
 {
     if (setVal(usePushNotification, newValue)) {
         emit usePushNotificationChanged(newValue);
+    }
+}
+
+bool Settings::getEchoCancellation() const
+{
+    QMutexLocker locker{&bigLock};
+    return echoCancellation;
+}
+
+void Settings::setEchoCancellation(bool newValue)
+{
+    if (setVal(echoCancellation, newValue)) {
+        emit echoCancellationChanged(newValue);
     }
 }
 

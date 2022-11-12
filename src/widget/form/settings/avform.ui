@@ -42,7 +42,7 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
           <property name="bottomMargin">
-           <number>6</number>
+           <number>7</number>
           </property>
           <item row="2" column="0">
            <widget class="QLabel" name="inDevLabel">
@@ -143,6 +143,13 @@
            <widget class="QLabel" name="audioQualityLabel">
             <property name="text">
              <string>Audio quality</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1" colspan="2">
+           <widget class="QCheckBox" name="cbEchoCancellation">
+            <property name="text">
+             <string>enable Acoustic Echo Cancellation</string>
             </property>
            </widget>
           </item>
