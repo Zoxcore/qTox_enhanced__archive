@@ -38,6 +38,8 @@
 #include "util/compatiblerecursivemutex.h"
 #include "util/toxcoreerrorparser.h"
 
+#include "filter_audio/filter_audio.h"
+
 #include <QCoreApplication>
 #include <QDateTime>
 // zoff
@@ -267,6 +269,18 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, ICoreSettings& settings
     core->moveToThread(thread);
 
     settings.setToxcore(core->tox.get());
+
+    // ********** DEBUG **********
+    // ********** DEBUG **********
+    // ********** DEBUG **********
+    Filter_Audio *filteraudio = NULL;
+    uint32_t in_samplerate = 48000;
+    filteraudio = new_filter_audio(in_samplerate);
+    std::ignore = filteraudio;
+    // ********** DEBUG **********
+    // ********** DEBUG **********
+    // ********** DEBUG **********
+
 
     // when leaving this function 'core' should be ready for it's start() action or
     // a nullptr
