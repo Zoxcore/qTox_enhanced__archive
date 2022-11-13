@@ -129,6 +129,7 @@ class Settings : public QObject,
     Q_PROPERTY(int outVolume READ getOutVolume WRITE setOutVolume NOTIFY outVolumeChanged FINAL)
     Q_PROPERTY(int audioBitrate READ getAudioBitrate WRITE setAudioBitrate NOTIFY audioBitrateChanged FINAL)
     Q_PROPERTY(bool echoCancellation READ getEchoCancellation WRITE setEchoCancellation NOTIFY echoCancellationChanged FINAL)
+    Q_PROPERTY(int echoLatency READ getEchoLatency WRITE setEchoLatency NOTIFY echoLatencyChanged FINAL)
 
     // Video
     Q_PROPERTY(QString videoDev READ getVideoDev WRITE setVideoDev NOTIFY videoDevChanged FINAL)
@@ -391,6 +392,9 @@ public:
     bool getEchoCancellation() const override;
     void setEchoCancellation(bool newValue) override;
 
+    int getEchoLatency() const override;
+    void setEchoLatency(int newValue) override;
+
     SIGNAL_IMPL(Settings, inDevChanged, const QString& device)
     SIGNAL_IMPL(Settings, audioInDevEnabledChanged, bool enabled)
 
@@ -403,6 +407,7 @@ public:
     SIGNAL_IMPL(Settings, audioBitrateChanged, int bitrate)
     SIGNAL_IMPL(Settings, enableTestSoundChanged, bool newValue)
     SIGNAL_IMPL(Settings, echoCancellationChanged, bool newValue)
+    SIGNAL_IMPL(Settings, echoLatencyChanged, int latency_ms)
 
     QString getVideoDev() const override;
     void setVideoDev(const QString& deviceSpecifier) override;
@@ -699,6 +704,7 @@ private:
     int audioBitrate;
     bool enableTestSound;
     bool echoCancellation;
+    int echoLatency;
 
     // Video
     QString videoDev;

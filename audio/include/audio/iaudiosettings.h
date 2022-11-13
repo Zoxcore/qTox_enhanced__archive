@@ -67,6 +67,9 @@ public:
     virtual bool getEchoCancellation() const = 0;
     virtual void setEchoCancellation(bool newValue) = 0;
 
+    virtual int getEchoLatency() const = 0;
+    virtual void setEchoLatency(int newValue) = 0;
+
     DECLARE_SIGNAL(inDevChanged, const QString& device);
     DECLARE_SIGNAL(audioInDevEnabledChanged, bool enabled);
 
@@ -81,4 +84,5 @@ public:
 
     DECLARE_SIGNAL(screenVideoFPSChanged, int fps);
     DECLARE_SIGNAL(echoCancellationChanged, bool newValue);
+    DECLARE_SIGNAL(echoLatencyChanged, int latency_ms);
 };

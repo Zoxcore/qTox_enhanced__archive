@@ -256,6 +256,7 @@ void Settings::loadGlobal()
         audioInGainDecibel = s.value("inGain", 0).toReal();
         audioThreshold = s.value("audioThreshold", 0).toReal();
         echoCancellation = s.value("echoCancellation", true).toBool();
+        echoLatency = s.value("echoLatency", 20).toInt();
         outVolume = s.value("outVolume", 100).toInt();
         enableTestSound = s.value("enableTestSound", true).toBool();
         audioBitrate = s.value("audioBitrate", 64).toInt();
@@ -735,6 +736,7 @@ void Settings::saveGlobal()
         s.setValue("enableTestSound", enableTestSound);
         s.setValue("audioBitrate", audioBitrate);
         s.setValue("echoCancellation", echoCancellation);
+        s.setValue("echoLatency", echoLatency);
     }
     s.endGroup();
 
@@ -1632,6 +1634,25 @@ void Settings::setEchoCancellation(bool newValue)
 {
     if (setVal(echoCancellation, newValue)) {
         emit echoCancellationChanged(newValue);
+    }
+}
+
+int Settings::getEchoLatency() const
+{
+    QMutexLocker locker{&bigLock};
+    if ((echoLatency >= 0) && (echoLatency <= 300)) {
+        return echoLatency;
+    } else {
+        return 20;
+    }
+}
+
+void Settings::setEchoLatency(int newValue)
+{
+    if ((newValue >= 0) && (newValue <= 300)) {
+        if (setVal(echoLatency, newValue)) {
+            emit echoLatencyChanged(newValue);
+        }
     }
 }
 

@@ -64,6 +64,7 @@ AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
     cbEnableTestSound->setToolTip(tr("Play a test sound while changing the output volume."));
 
     cbEchoCancellation->setChecked(audioSettings_->getEchoCancellation());
+    echoLatency->setValue(audioSettings_->getEchoLatency());
 
     connect(rescanButton, &QPushButton::clicked, this, &AVForm::rescanDevices);
 
@@ -644,8 +645,14 @@ void AVForm::on_audioThresholdSlider_valueChanged(int sliderSteps)
 
 void AVForm::on_cbEchoCancellation_stateChanged()
 {
-    qWarning() << "on_cbEchoCancellation_stateChanged";
+    qWarning() << "on_cbEchoCancellation_stateChanged:" << cbEchoCancellation->isChecked();
     audioSettings->setEchoCancellation(cbEchoCancellation->isChecked());
+}
+
+void AVForm::on_echoLatency_valueChanged(int latency_ms)
+{
+    qWarning() << "on_echoLatency_valueChanged:" << latency_ms;
+    audioSettings->setEchoLatency(latency_ms);
 }
 
 void AVForm::createVideoSurface()
