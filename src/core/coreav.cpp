@@ -93,7 +93,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     // HINT: filteraudio only work with MONO and 48kHz audio in both directions
     assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
     filterer = new_filter_audio((uint32_t)IAudioControl::AUDIO_SAMPLE_RATE);
-    int16_t audio_latency_in_ms = 30; // HINT: randomly assume 30ms audio latency. any better ideas?
+    int16_t audio_latency_in_ms = 20; // HINT: randomly assume 20ms audio latency. any better ideas?
     /* It's essential that echo delay is set correctly; it's the most important part of the
      * echo cancellation process. If the delay is not set to the acceptable values the AEC
      * will not be able to recover. Given that it's not that easy to figure out the exact
