@@ -93,7 +93,6 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     // HINT: filteraudio only work with MONO and 48kHz audio in both directions
     assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
     filterer = new_filter_audio((uint32_t)IAudioControl::AUDIO_SAMPLE_RATE);
-    int16_t audio_latency_in_ms = 20; // HINT: randomly assume 20ms audio latency. any better ideas?
     /* It's essential that echo delay is set correctly; it's the most important part of the
      * echo cancellation process. If the delay is not set to the acceptable values the AEC
      * will not be able to recover. Given that it's not that easy to figure out the exact
@@ -102,7 +101,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
      * to adjust it internally after some time (usually up to 6-7 seconds in my tests when
      * the error is about 20%).
      */
-    int16_t filterLatency = audio_latency_in_ms + IAudioControl::AUDIO_FRAME_DURATION;
+    int16_t filterLatency = audioSettings.getEchoLatency() + IAudioControl::AUDIO_FRAME_DURATION;
     qDebug() << "Setting filter delay to: " << filterLatency << "ms";
     set_echo_delay_ms(filterer, filterLatency);
     /* Enable/disable filters. 1 to enable, 0 to disable. */
@@ -430,16 +429,26 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
         return true;
     }
 
+    static int current_echo_latency;
+
     // filteraudio:X //
     // qDebug() << "filter_audio recorded audio: chans:" << chans << " rate:" << rate;
     if ((chans == 1) && (rate == IAudioControl::AUDIO_SAMPLE_RATE)) {
         if (audioSettings.getEchoCancellation()) {
+            int new_echo_latency = audioSettings.getEchoLatency();
+            if (new_echo_latency != current_echo_latency) {
+                current_echo_latency = new_echo_latency;
+                int16_t filterLatency = current_echo_latency + IAudioControl::AUDIO_FRAME_DURATION;
+                qDebug() << "Setting filter delay to: " << filterLatency << "ms";
+                set_echo_delay_ms(filterer, filterLatency);
+            }
+
             int res_aec = filter_audio(filterer,
                                 // we do not want to copy the buffer, so we cast to NON-const here
                                 const_cast<int16_t *>(pcm),
                                 samples);
             std::ignore = res_aec;
-            // qDebug() << "filter_audio recorded audio: res:" << res_aec;
+            qDebug() << "filter_audio recorded audio: res:" << res_aec;
         }
     }
 
