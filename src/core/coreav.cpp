@@ -429,9 +429,8 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
         return true;
     }
 
-    static int current_echo_latency;
-
     // filteraudio:X //
+    static int current_echo_latency; // HINT: static, to remember the value on the next calls
     // qDebug() << "filter_audio recorded audio: chans:" << chans << " rate:" << rate;
     if ((chans == 1) && (rate == IAudioControl::AUDIO_SAMPLE_RATE)) {
         if (audioSettings.getEchoCancellation()) {
@@ -448,7 +447,7 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
                                 const_cast<int16_t *>(pcm),
                                 samples);
             std::ignore = res_aec;
-            qDebug() << "filter_audio recorded audio: res:" << res_aec;
+            // qDebug() << "filter_audio recorded audio: res:" << res_aec;
         }
     }
 
