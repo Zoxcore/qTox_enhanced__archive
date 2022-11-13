@@ -236,8 +236,7 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
     std::map<int, VideoMode> idealModes;
     idealModes[120] = VideoMode(160, 120);
     idealModes[240] = VideoMode(430, 240);
-    idealModes[360] = VideoMode(640, 360);
-    idealModes[480] = VideoMode(854, 480);
+    idealModes[480] = VideoMode(640, 480);
     idealModes[720] = VideoMode(1280, 720);
     idealModes[1080] = VideoMode(1920, 1080);
     idealModes[1440] = VideoMode(2560, 1440);
@@ -246,6 +245,8 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
     std::map<int, int> bestModeInds;
     for (int i = 0; i < allVideoModes.size(); ++i) {
         VideoMode mode = allVideoModes[i];
+
+        qCritical() << "selectBestModes: fps:" << mode.FPS << " x y Width Height" << mode.x << mode.y << mode.width << mode.height;
 
         // PS3-Cam protection, everything above 60fps makes no sense
         if (mode.FPS > 60)
@@ -394,7 +395,7 @@ void AVForm::fillScreenFpsComboBox()
     const bool previouslyBlocked = screenFpsComboBox->blockSignals(true);
     screenFpsComboBox->clear();
 
-    screenFpsComboBox->addItem(tr(" 5 FPS / dynamic vbitrate"), 5);
+    screenFpsComboBox->addItem(tr("10 FPS / dynamic vbitrate"), 10);
     screenFpsComboBox->addItem(tr("30 FPS / 10000 kbit/s vbitrate"), 30);
     screenFpsComboBox->addItem(tr("25 FPS / 10000 kbit/s vbitrate"), 25);
     screenFpsComboBox->addItem(tr("20 FPS /  8000 kbit/s vbitrate"), 20);
