@@ -101,7 +101,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
      * to adjust it internally after some time (usually up to 6-7 seconds in my tests when
      * the error is about 20%).
      */
-    int16_t filterLatency = audioSettings.getEchoLatency() + IAudioControl::AUDIO_FRAME_DURATION;
+    int16_t filterLatency = audioSettings.getEchoLatency();
     qDebug() << "Setting filter delay to: " << filterLatency << "ms";
     set_echo_delay_ms(filterer, filterLatency);
     /* Enable/disable filters. 1 to enable, 0 to disable. */
@@ -437,7 +437,7 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
             int new_echo_latency = audioSettings.getEchoLatency();
             if (new_echo_latency != current_echo_latency) {
                 current_echo_latency = new_echo_latency;
-                int16_t filterLatency = current_echo_latency + IAudioControl::AUDIO_FRAME_DURATION;
+                int16_t filterLatency = current_echo_latency;
                 qDebug() << "Setting filter delay to: " << filterLatency << "ms";
                 set_echo_delay_ms(filterer, filterLatency);
             }
