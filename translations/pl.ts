@@ -148,10 +148,6 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> 5 FPS / dynamic vbitrate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>30 FPS / 10000 kbit/s vbitrate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -161,6 +157,22 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>20 FPS /  8000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enable Acoustic Echo Cancellation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC Audio Latency</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the Audio Latency for Acoustic Echo Cancellation in ms. The default value is 20 ms.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>10 FPS / dynamic vbitrate</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -643,6 +655,18 @@ co może powodować problemy z rozmowami wideo.</translation>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Wyłączenie tej opcji umożliwia np. używanie Tox przez sieć Tor. Zwiększa to jednak obciążenie sieci Tox, więc odznacz to pole tylko wtedy, gdy jest to konieczne.</translation>
+    </message>
+    <message>
+        <source>Network Connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is still in BETA. It will show the network connections that toxcore is currently using</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Tox Network Connections</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

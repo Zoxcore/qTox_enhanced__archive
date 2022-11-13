@@ -148,10 +148,6 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> 5 FPS / dynamic vbitrate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>30 FPS / 10000 kbit/s vbitrate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -161,6 +157,22 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>20 FPS /  8000 kbit/s vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enable Acoustic Echo Cancellation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC Audio Latency</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the Audio Latency for Acoustic Echo Cancellation in ms. The default value is 20 ms.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>10 FPS / dynamic vbitrate</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -636,6 +648,18 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Wenn deaktiviert, lässt sich z.B. qTox über Tor verwenden. Die Deaktivierung belastet allerdings das Tox-Netzwerk, also bitte deaktiviere es nur wenn nötig.</translation>
+    </message>
+    <message>
+        <source>Network Connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is still in BETA. It will show the network connections that toxcore is currently using</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Tox Network Connections</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
