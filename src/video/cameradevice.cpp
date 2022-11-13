@@ -191,6 +191,7 @@ CameraDevice* CameraDevice::open(QString devName, Settings& settings, VideoMode 
         } else {
             QScreen* defaultScreen = QApplication::primaryScreen();
             qreal pixRatio = defaultScreen->devicePixelRatio();
+            std::ignore = pixRatio;
             screen = defaultScreen->size();
         }
         const std::string screenVideoSize = QStringLiteral("%1x%2").arg(screen.width()).arg(screen.height()).toStdString();
