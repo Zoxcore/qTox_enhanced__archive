@@ -164,8 +164,8 @@ CameraDevice* CameraDevice::open(QString devName, Settings& settings, VideoMode 
 
     float FPS = settings.getScreenVideoFPS();
     qDebug() << "getScreenVideoFPS:" << FPS;
-    if (FPS < 5) {
-        FPS = 5;
+    if (FPS < 10) {
+        FPS = 10;
         qDebug() << "FPS:a:" << FPS;
     }
 
@@ -191,12 +191,7 @@ CameraDevice* CameraDevice::open(QString devName, Settings& settings, VideoMode 
         } else {
             QScreen* defaultScreen = QApplication::primaryScreen();
             qreal pixRatio = defaultScreen->devicePixelRatio();
-
             screen = defaultScreen->size();
-            // Workaround https://trac.ffmpeg.org/ticket/4574 by choping 1 px bottom and right
-            // Actually, let's chop two pixels, toxav hates odd resolutions (off by one stride)
-            screen.setWidth((screen.width() * pixRatio) - 2);
-            screen.setHeight((screen.height() * pixRatio) - 2);
         }
         const std::string screenVideoSize = QStringLiteral("%1x%2").arg(screen.width()).arg(screen.height()).toStdString();
         av_dict_set(&options, "video_size", screenVideoSize.c_str(), 0);
