@@ -20,7 +20,12 @@
 
 #pragma once
 
+#if 0
 #include "filter_audio/filter_audio.h"
+#else
+#include "webrtc/echo_control_mobile.h"
+#endif
+
 #include "src/core/toxcall.h"
 #include "util/compatiblerecursivemutex.h"
 
@@ -170,5 +175,10 @@ private:
     IGroupSettings& groupSettings;
     CameraSource& cameraSource;
 
+    // filteraudio:X //
+#if 0
     Filter_Audio* filterer = nullptr;
+#else
+    void *webrtc_aecmInst = nullptr;
+#endif
 };
