@@ -116,10 +116,10 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
     WebRtcAecm_Create(&webrtc_aecmInst);
     WebRtcAecm_InitCustom(webrtc_aecmInst, (int32_t)IAudioControl::AUDIO_SAMPLE_RATE);
-    AecmConfig config;
-    config.echoMode = AecmTrue;
-    config.cngMode = 4;
-    WebRtcAecm_set_config(webrtc_aecmInst, config);
+    // AecmConfig config;
+    // config.echoMode = AecmTrue;
+    // config.cngMode = 3;
+    // WebRtcAecm_set_config(webrtc_aecmInst, config);
 #endif
 
     coreavThread->setObjectName("qTox CoreAV");
