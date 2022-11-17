@@ -118,7 +118,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     WebRtcAecm_InitCustom(webrtc_aecmInst, (int32_t)IAudioControl::AUDIO_SAMPLE_RATE);
     AecmConfig config;
     config.echoMode = AecmTrue;
-    config.cngMode = 3;
+    config.cngMode = 4;
     WebRtcAecm_set_config(webrtc_aecmInst, config);
 #endif
 
