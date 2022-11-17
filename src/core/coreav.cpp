@@ -493,7 +493,7 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
                         );
                 aec_mutex.unlock();
                 std::ignore = res;
-                // printf("WebRtcAecm_Process:%d\n", res);
+                printf("WebRtcAecm_Process:%d\n", res);
             }
             memcpy(const_cast<int16_t *>(pcm), pcm_buf_out, 2 * samples);
 #endif
@@ -1049,7 +1049,7 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
                                     );
                     self->aec_mutex.unlock();
                     std::ignore = res;
-                    // printf("WebRtcAecm_BufferFarend:#%d %d\n", x, res);
+                    printf("WebRtcAecm_BufferFarend:#%d %d\n", x, res);
                 }
             }
 #endif
