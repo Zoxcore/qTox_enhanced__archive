@@ -255,7 +255,7 @@ void Settings::loadGlobal()
         audioOutDevEnabled = s.value("audioOutDevEnabled", true).toBool();
         audioInGainDecibel = s.value("inGain", 0).toReal();
         audioThreshold = s.value("audioThreshold", 0).toReal();
-        echoCancellation = s.value("echoCancellation", true).toBool();
+        echoCancellation = s.value("echoCancellation", false).toBool();
         echoLatency = s.value("echoLatency", 20).toInt();
         outVolume = s.value("outVolume", 100).toInt();
         enableTestSound = s.value("enableTestSound", true).toBool();
