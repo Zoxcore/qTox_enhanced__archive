@@ -31,6 +31,7 @@
 
 #include <QCoreApplication>
 #include <QDebug>
+#include <QMutex>
 #include <QThread>
 #include <QTimer>
 #include <QtConcurrent/QtConcurrentRun>
@@ -112,6 +113,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     int vad_ = 0;
     enable_disable_filters(filterer, echo_, noise_, gain_, vad_);
 #else
+    assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
     WebRtcAecm_Create(&webrtc_aecmInst);
     WebRtcAecm_InitCustom(webrtc_aecmInst, (int32_t)IAudioControl::AUDIO_SAMPLE_RATE);
     AecmConfig config;
@@ -217,6 +219,7 @@ CoreAV::~CoreAV()
     filterer = NULL;
 #else
     WebRtcAecm_Free(webrtc_aecmInst);
+    free(pcm_buf_out);
 #endif
 }
 
@@ -467,10 +470,19 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
 #else
             const int split_factor = (IAudioControl::AUDIO_FRAME_DURATION / 10);
             const int sample_count_split = samples / split_factor;
-            int16_t *pcm_buf_out = (int16_t *)calloc(1, 2 * samples);
+
+            if (pcm_buf_out_samples != samples) {
+                free(pcm_buf_out);
+                pcm_buf_out = nullptr;
+            }
+            if (pcm_buf_out == nullptr) {
+                pcm_buf_out = (int16_t *)calloc(1, 2 * samples);
+                pcm_buf_out_samples = samples;
+            }
+
             for (int x=0;x<split_factor;x++)
             {
-                // pthread_mutex_lock(&audio_mutex);
+                aec_mutex.lock();
                 int32_t res = WebRtcAecm_ProcessCustom(
                         webrtc_aecmInst,
                         const_cast<int16_t *>(pcm + (x * sample_count_split)),
@@ -479,11 +491,11 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
                         sample_count_split,
                         current_echo_latency + IAudioControl::AUDIO_FRAME_DURATION
                         );
-                // pthread_mutex_unlock(&audio_mutex);
-                printf("WebRtcAecm_Process:%d\n", res);
+                aec_mutex.unlock();
+                std::ignore = res;
+                // printf("WebRtcAecm_Process:%d\n", res);
             }
             memcpy(const_cast<int16_t *>(pcm), pcm_buf_out, 2 * samples);
-            free(pcm_buf_out);
 #endif
         }
     }
@@ -1029,14 +1041,15 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
                 for (int x=0;x<split_factor;x++)
                 {
                     const int sample_count_split = sampleCount / split_factor;
-                    // pthread_mutex_lock(&audio_mutex);
+                    self->aec_mutex.lock();
                     int32_t res = WebRtcAecm_BufferFarendCustom(
                                     self->webrtc_aecmInst,
                                     const_cast<int16_t *>(pcm + (x * sample_count_split)),
                                     (int16_t)(sample_count_split)
                                     );
-                    // pthread_mutex_unlock(&audio_mutex);
-                    printf("WebRtcAecm_BufferFarend:#%d %d\n", x, res);
+                    self->aec_mutex.unlock();
+                    std::ignore = res;
+                    // printf("WebRtcAecm_BufferFarend:#%d %d\n", x, res);
                 }
             }
 #endif
