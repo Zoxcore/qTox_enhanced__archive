@@ -199,7 +199,7 @@ namespace FileTransferList
         int rowIdx = 0;
 
         if (idxIt == idToRow.end()) {
-            if (files.size() >= std::numeric_limits<int>::max()) {
+            if (files.size() >= (long unsigned int)(std::numeric_limits<int>::max())) {
                 // Bug waiting to happen, but also what can we do if qt just doesn't
                 // support this many items in a list
                 qWarning("Too many file transfers rendered, ignoring");
