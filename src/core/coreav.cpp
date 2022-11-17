@@ -1035,6 +1035,7 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
             // qDebug() << "filter_audio playback audio: res:" << res_aec;
 #else
             const int audio_frame_in_ms = (sampleCount * 1000) / samplingRate;
+            printf("WebRtcAecm_BufferFarend:audio_frame_in_ms:%d\n", audio_frame_in_ms);
             if (audio_frame_in_ms >= 10)
             {
                 const int split_factor = (audio_frame_in_ms / 10);
