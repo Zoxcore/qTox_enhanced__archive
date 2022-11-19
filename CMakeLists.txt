@@ -635,13 +635,9 @@ target_link_libraries(${PROJECT_NAME}_static
   coverage_config)
 
 # ------- filter_audio -------
-add_subdirectory(filter_audio)
-target_link_libraries(${PROJECT_NAME}_static filteraudio)
-# ------- filter_audio -------
-
-# ------- filter_audio -------
-add_subdirectory(webrtc)
-target_link_libraries(${PROJECT_NAME}_static webrtc)
+add_subdirectory(webrtc6)
+target_link_libraries(${PROJECT_NAME}_static webrtc6)
+include_directories(webrtc6)
 # ------- filter_audio -------
 
 target_link_libraries(${PROJECT_NAME}_static qtox::warnings)
