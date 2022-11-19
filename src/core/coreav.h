@@ -23,7 +23,13 @@
 #if 0
 #include "filter_audio/filter_audio.h"
 #else
-#include "webrtc/echo_control_mobile.h"
+// commit 051b62014cfa18adf7ca7caf327b0c0882353f22
+// Author: kjellander <kjellander@webrtc.org>
+// Date:   Wed Dec 30 11:58:12 2015 -0800
+//
+//     Roll chromium_revision 58e631b..d66326c (367148:367167)
+#include "webrtc6/webrtc/modules/audio_processing/aecm/echo_control_mobile.h"
+#include "webrtc6/webrtc/modules/audio_processing/ns/noise_suppression_x.h"
 #endif
 
 #include "src/core/toxcall.h"
@@ -137,6 +143,9 @@ private:
                                    int32_t ystride, int32_t ustride, int32_t vstride, void* self);
     static void videoCommCallback(ToxAV *av, uint32_t friend_number, TOXAV_CALL_COMM_INFO comm_value,
                                 int64_t comm_number, void *vSelf);
+
+    static int32_t downsample_48000_to_16000_basic(const int16_t* in, int16_t *out, int32_t sample_count);
+    static int32_t upsample_16000_to_48000_basic(const int16_t* in, int16_t *out, int32_t sample_count);
 private:
     static constexpr uint32_t VIDEO_DEFAULT_BITRATE = 8000;
 
@@ -179,6 +188,7 @@ private:
 #if 0
     Filter_Audio* filterer = nullptr;
 #else
+    NsxHandle* nsxInst = nullptr;
     void *webrtc_aecmInst = nullptr;
     mutable int16_t *pcm_buf_out = nullptr;
     mutable size_t pcm_buf_out_samples = 0;

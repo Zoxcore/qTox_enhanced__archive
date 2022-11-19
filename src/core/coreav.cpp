@@ -114,12 +114,19 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     enable_disable_filters(filterer, echo_, noise_, gain_, vad_);
 #else
     assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
-    WebRtcAecm_Create(&webrtc_aecmInst);
-    WebRtcAecm_InitCustom(webrtc_aecmInst, (int32_t)IAudioControl::AUDIO_SAMPLE_RATE);
+    webrtc_aecmInst = WebRtcAecm_Create();
+    int32_t res1 = WebRtcAecm_Init(webrtc_aecmInst, (int32_t)(IAudioControl::AUDIO_SAMPLE_RATE / 3));
+    printf("WebRtcAecm_Init -----> %d\n", res1);
     // AecmConfig config;
     // config.echoMode = AecmTrue;
     // config.cngMode = 3;
     // WebRtcAecm_set_config(webrtc_aecmInst, config);
+
+    nsxInst = WebRtcNsx_Create();
+    int res2 = WebRtcNsx_Init(nsxInst, (int32_t)(IAudioControl::AUDIO_SAMPLE_RATE / 3));
+    printf("WebRtcNsx_Init -----> %d\n", res2);
+    int res3 = WebRtcNsx_set_policy(nsxInst, 1);
+    printf("WebRtcNsx_set_policy -----> %d\n", res3);
 #endif
 
     coreavThread->setObjectName("qTox CoreAV");
@@ -480,21 +487,33 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
                 pcm_buf_out_samples = samples;
             }
 
+            // downsample to 16khz
+            int16_t *pcm_buf_resampled = (int16_t *)calloc(1, sizeof(int16_t) * (samples / 3));
+            downsample_48000_to_16000_basic(pcm, pcm_buf_resampled, samples);
+            printf("WebRtcAecm_Process:samples=%lld split_factor=%d sample_count_split=%d\n", samples, split_factor, sample_count_split);
+            int16_t *pcm_buf_out_resampled = (int16_t *)calloc(1, sizeof(int16_t) * (samples / 3));
+
             for (int x=0;x<split_factor;x++)
             {
                 aec_mutex.lock();
-                int32_t res = WebRtcAecm_ProcessCustom(
+                int32_t res = WebRtcAecm_Process(
                         webrtc_aecmInst,
-                        const_cast<int16_t *>(pcm + (x * sample_count_split)),
+                        const_cast<int16_t *>(pcm_buf_resampled + (x * (sample_count_split / 3))),
                         NULL,
-                        pcm_buf_out + (x * sample_count_split),
-                        sample_count_split,
+                        pcm_buf_out_resampled + (x * (sample_count_split / 3)),
+                        (sample_count_split / 3),
                         current_echo_latency + IAudioControl::AUDIO_FRAME_DURATION
                         );
                 aec_mutex.unlock();
                 std::ignore = res;
-                // printf("WebRtcAecm_Process:%d\n", res);
+                printf("WebRtcAecm_Process:%d\n", res);
             }
+
+            // upsample back to 48khz
+            upsample_16000_to_48000_basic(pcm_buf_out_resampled, pcm_buf_out, samples / 3);
+            free(pcm_buf_resampled);
+            free(pcm_buf_out_resampled);
+
             memcpy(const_cast<int16_t *>(pcm), pcm_buf_out, 2 * samples);
 #endif
         }
@@ -1026,8 +1045,8 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
     }
 
     // filteraudio:X //
-    // qDebug() << "filter_audio playback audio: chans:" << channels << " rate:" << samplingRate;
-    if ((channels == 1) && (samplingRate == IAudioControl::AUDIO_SAMPLE_RATE)) {
+    qDebug() << "filter_audio playback audio: chans:" << channels << "rate:" << samplingRate << "sampleCount:" << sampleCount;
+    if ((channels == 1) && (samplingRate == IAudioControl::AUDIO_SAMPLE_RATE) && (sampleCount == 1920) || (sampleCount == 2880)) {
         if (self->audioSettings.getEchoCancellation()) {
 #if 0
             int res_aec = pass_audio_output(self->filterer, pcm, sampleCount);
@@ -1035,23 +1054,32 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
             // qDebug() << "filter_audio playback audio: res:" << res_aec;
 #else
             const int audio_frame_in_ms = (sampleCount * 1000) / samplingRate;
-            // printf("WebRtcAecm_BufferFarend:audio_frame_in_ms:%d\n", audio_frame_in_ms);
+            // HINT: we allow 40ms and 60ms sound incoming @48kHz Mono
+            printf("WebRtcAecm_BufferFarend:audio_frame_in_ms:%d\n", audio_frame_in_ms);
             if (audio_frame_in_ms >= 10)
             {
+                // downsample to 16khz
+                int16_t *pcm_buf_resampled = (int16_t *)calloc(1, sizeof(int16_t) * (sampleCount / 3));
+                downsample_48000_to_16000_basic(pcm, pcm_buf_resampled, sampleCount);
+
                 const int split_factor = (audio_frame_in_ms / 10);
+                const int sample_count_split = sampleCount / split_factor;
+                printf("WebRtcAecm_BufferFarend:audio_frame_in_ms:split_factor=%d sampleCount=%lld sample_count_split=%d\n",
+                        split_factor, sampleCount, sample_count_split);
                 for (int x=0;x<split_factor;x++)
                 {
-                    const int sample_count_split = sampleCount / split_factor;
                     self->aec_mutex.lock();
-                    int32_t res = WebRtcAecm_BufferFarendCustom(
+                    int32_t res = WebRtcAecm_BufferFarend(
                                     self->webrtc_aecmInst,
-                                    const_cast<int16_t *>(pcm + (x * sample_count_split)),
-                                    (int16_t)(sample_count_split)
+                                    pcm_buf_resampled + (x * (sample_count_split / 3)),
+                                    (int16_t)(sample_count_split / 3)
                                     );
                     self->aec_mutex.unlock();
                     std::ignore = res;
                     // printf("WebRtcAecm_BufferFarend:#%d %d\n", x, res);
                 }
+
+                free(pcm_buf_resampled);
             }
 #endif
         }
@@ -1114,4 +1142,50 @@ void CoreAV::videoCommCallback(ToxAV* toxAV, uint32_t friend_number, TOXAV_CALL_
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 8000, NULL);
         }
     }
+}
+
+int32_t CoreAV::upsample_16000_to_48000_basic(const int16_t* in, int16_t *out, int32_t sample_count)
+{
+    if (sample_count < 1)
+    {
+        return -1;
+    }
+
+    int16_t tmp1;
+    int16_t tmp2;
+    int16_t v1;
+    int16_t v2;
+    for (int i=0;i<sample_count;i++)
+    {
+        tmp1 = *(in);
+        tmp2 = *(in + 1);
+        v1 =   (int16_t)((float)(tmp2 - tmp1) / 3.0f);
+        v2 =   (int16_t)(((float)(tmp2 - tmp1) * 2.0f) / 3.0f);
+        *out = tmp1;
+        out++;
+        *out = tmp1 + v1;
+        out++;
+        *out = tmp1 + v2;
+        out++;
+        in++;
+    }
+
+    return 0;
+}
+
+int32_t CoreAV::downsample_48000_to_16000_basic(const int16_t* in, int16_t *out, int32_t sample_count)
+{
+    if (sample_count < 3)
+    {
+        return -1;
+    }
+
+    for (int i=0;i<(sample_count / 3);i++)
+    {
+        *out = *(in + 0);
+        out++;
+        in = in + 3;
+    }
+
+    return 0;
 }
