@@ -76,6 +76,7 @@ QCheckBox::indicator {
 
 QCheckBox::indicator:checked {
     image: url("@getImagePath(settings/checkboxChecked.svg)");
+    background: #00ff00;
 }
 
 QCheckBox::indicator:checked:pressed,
