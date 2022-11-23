@@ -475,17 +475,31 @@ void CoreAV::timeoutCall(uint32_t friendNum)
 bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, uint8_t chans,
                            uint32_t rate) const
 {
+#ifdef AV_TIMING_DEBUG
+    qDebug() << "THREAD:sendCallAudio" <<  QThread::currentThread();
+    static qint64 recurring_send_audio = QDateTime::currentDateTime().toMSecsSinceEpoch();
+    qint64 old = recurring_send_audio;
+    recurring_send_audio = QDateTime::currentDateTime().toMSecsSinceEpoch();
+    qDebug() << "THREAD:sendCallAudio:recurr:" <<  (recurring_send_audio - old);
+    QTime myTimer;
+    myTimer.start();
+#endif
+
+/*
     if (!callsLock.tryLockForWrite()) {
         return false;
     } else {
         callsLock.unlock();
     }
+*/
+/*
     my_writelock();
     QWriteLocker locker{&callsLock};
+*/
 
     auto it = calls.find(callId);
     if (it == calls.end()) {
-        my_unlockwritelock();
+        //my_unlockwritelock();
         return false;
     }
 
@@ -493,7 +507,7 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
 
     if (call.getMuteMic() || !call.isActive()
         || !(call.getState() & TOXAV_FRIEND_CALL_STATE_ACCEPTING_A)) {
-        my_unlockwritelock();
+        //my_unlockwritelock();
         return true;
     }
 
@@ -574,18 +588,32 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
                 qDebug() << "toxav_audio_send_frame error: " << err;
             }
         }
-    } while (err == TOXAV_ERR_SEND_FRAME_SYNC && retries < 5);
+    } while (err == TOXAV_ERR_SEND_FRAME_SYNC && retries < 3);
     if (err == TOXAV_ERR_SEND_FRAME_SYNC) {
         qDebug() << "toxav_audio_send_frame error: Lock busy, dropping frame";
     }
 
-    my_unlockwritelock();
+    //my_unlockwritelock();
+#ifdef AV_TIMING_DEBUG
+    qDebug() << "THREAD:sendCallAudio:duration:" << myTimer.elapsed();
+#endif
     return true;
 }
 
 void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
 {
+#ifdef AV_TIMING_DEBUG
+    qDebug() << "THREAD:sendCallVideo" <<  QThread::currentThread();
+    static qint64 recurring_send_video = QDateTime::currentDateTime().toMSecsSinceEpoch();
+    qint64 old = recurring_send_video;
+    recurring_send_video = QDateTime::currentDateTime().toMSecsSinceEpoch();
+    qDebug() << "THREAD:sendCallVideo:recurr:" <<  (recurring_send_video - old);
+    QTime myTimer;
+    myTimer.start();
+#endif
+
     if (!callsLock.tryLockForRead()) {
+        qDebug() << "sendCallVideo:tryLockForRead failed";
         return;
     } else {
         callsLock.unlock();
@@ -643,6 +671,9 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
     }
 
     my_unlockreadlock();
+#ifdef AV_TIMING_DEBUG
+    qDebug() << "THREAD:sendCallVideo:duration:" << myTimer.elapsed();
+#endif
 }
 
 /**
@@ -1180,7 +1211,7 @@ void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, ui
     auto self = static_cast<CoreAV*>(vSelf);
     // This callback should come from the CoreAV thread
     assert(QThread::currentThread() == self->coreavThread.get());
-    // QReadLocker locker{&self->callsLock};
+    QReadLocker locker{&self->callsLock};
 
     auto it = self->calls.find(friendNum);
     if (it == self->calls.end()) {
