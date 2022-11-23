@@ -364,19 +364,13 @@ void Core::process()
     fflush(stdout);
 #endif
 
-    static int64_t checks = 0;
-    const int64_t check_every = 5;
-    checks++;
-
-    if (checks > check_every) {
-        checks = 0;
-        // TODO(sudden6): recheck if this is still necessary
-        if (checkConnection()) {
-            tolerance = CORE_DISCONNECT_TOLERANCE;
-        } else if (!(--tolerance)) {
-            bootstrapDht();
-            tolerance = 3 * CORE_DISCONNECT_TOLERANCE;
-        }
+    // HINT: checking the connection on every iteration is overkill and does lots of locking in toxcore
+    //       sadly when fixing this, core_test keeps failing. meh.
+    if (checkConnection()) {
+        tolerance = CORE_DISCONNECT_TOLERANCE;
+    } else if (!(--tolerance)) {
+        bootstrapDht();
+        tolerance = 3 * CORE_DISCONNECT_TOLERANCE;
     }
 
     unsigned sleeptime =
