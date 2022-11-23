@@ -21,6 +21,7 @@
 
 #include "audio/iaudiosettings.h"
 
+#include <QDateTime>
 #include <QDebug>
 #include <QFile>
 #include <QMutexLocker>
@@ -73,6 +74,8 @@ OpenAL::OpenAL(IAudioSettings& _settings)
     QObject::connect(audioThread, &QThread::finished, &captureTimer, &QTimer::stop);
     QObject::connect(audioThread, &QThread::finished, audioThread, &QThread::deleteLater);
 
+    // audioThread->setPriority(QThread::HighPriority);
+
     moveToThread(audioThread);
 
     voiceTimer.setSingleShot(true);
@@ -82,7 +85,7 @@ OpenAL::OpenAL(IAudioSettings& _settings)
     connect(&voiceTimer, &QTimer::timeout, this, &OpenAL::stopActive);
 
     connect(&captureTimer, &QTimer::timeout, this, &OpenAL::doAudio);
-    captureTimer.setInterval(AUDIO_FRAME_DURATION / 2);
+    captureTimer.setInterval(AUDIO_FRAME_DURATION / 4);
     captureTimer.setSingleShot(false);
     captureTimer.moveToThread(audioThread);
     // TODO for Qt 5.6+: use qOverload
@@ -642,6 +645,15 @@ void OpenAL::doInput()
     if (!isActive) {
         return;
     }
+
+/*
+    static qint64 delta = QDateTime::currentDateTimeUtc().toMSecsSinceEpoch();
+    qint64 prev = delta;
+    delta = QDateTime::currentDateTimeUtc().toMSecsSinceEpoch();
+    qDebug() << "doInput:1:" << QThread::currentThread()
+            << "prio:" << QThread::currentThread()->priority()
+            << "delta_ms=" << (delta - prev);
+*/
 
     // NOTE(sudden6): this loop probably doesn't scale too well with many sources
     for (auto source : sources) {
