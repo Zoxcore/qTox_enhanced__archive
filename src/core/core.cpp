@@ -365,7 +365,7 @@ void Core::process()
 #endif
 
     static int64_t checks = 0;
-    const int64_t check_every = 500;
+    const int64_t check_every = 5;
     checks++;
 
     if (checks > check_every) {
