@@ -91,28 +91,6 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     assert(iterateTimer);
 
     // filteraudio:X //
-#if 0
-    // HINT: filteraudio only work with MONO and 48kHz audio in both directions
-    assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
-    filterer = new_filter_audio((uint32_t)IAudioControl::AUDIO_SAMPLE_RATE);
-    /* It's essential that echo delay is set correctly; it's the most important part of the
-     * echo cancellation process. If the delay is not set to the acceptable values the AEC
-     * will not be able to recover. Given that it's not that easy to figure out the exact
-     * time it takes for a signal to get from Output to the Input, setting it to suggested
-     * input device latency + frame duration works really good and gives the filter ability
-     * to adjust it internally after some time (usually up to 6-7 seconds in my tests when
-     * the error is about 20%).
-     */
-    int16_t filterLatency = audioSettings.getEchoLatency();
-    qDebug() << "Setting filter delay to: " << filterLatency << "ms";
-    set_echo_delay_ms(filterer, filterLatency);
-    /* Enable/disable filters. 1 to enable, 0 to disable. */
-    int echo_ = 1;
-    int noise_ = 0;
-    int gain_ = 0;
-    int vad_ = 0;
-    enable_disable_filters(filterer, echo_, noise_, gain_, vad_);
-#else
     assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
     webrtc_aecmInst = WebRtcAecm_Create();
     int32_t res1 = WebRtcAecm_Init(webrtc_aecmInst, (int32_t)(IAudioControl::AUDIO_SAMPLE_RATE / 3));
@@ -127,7 +105,6 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     printf("WebRtcNsx_Init -----> %d\n", res2);
     int res3 = WebRtcNsx_set_policy(nsxInst, 1);
     printf("WebRtcNsx_set_policy -----> %d\n", res3);
-#endif
 
     coreavThread->setObjectName("qTox CoreAV");
     moveToThread(coreavThread.get());
@@ -221,13 +198,8 @@ CoreAV::~CoreAV()
     coreavThread->wait();
 
     // filteraudio:X //
-#if 0
-    kill_filter_audio(filterer);
-    filterer = NULL;
-#else
     WebRtcAecm_Free(webrtc_aecmInst);
     free(pcm_buf_out);
-#endif
 }
 
 /**
@@ -330,10 +302,10 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
             toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
             toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
         } else if (audioSettings.getScreenVideoFPS() == 20) {
-            qDebug() << "answerCall:setting HQ bitrate: 8000";
-            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
-            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8100, NULL);
-            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 8000, NULL);
+            qDebug() << "answerCall:setting HQ bitrate: AUTOSET";
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 1, NULL);
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 180, NULL);
+            toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 2700, NULL);
         }
 
         return true;
@@ -387,10 +359,10 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
         toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
         toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
     } else if (audioSettings.getScreenVideoFPS() == 20) {
-        qDebug() << "startCall:setting HQ bitrate: 8000";
-        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
-        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8100, NULL);
-        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 8000, NULL);
+        qDebug() << "startCall:setting HQ bitrate: AUTOSET";
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 1, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 180, NULL);
+        toxav_option_set(toxav.get(), friendNum, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 2700, NULL);
     }
 
     return true;
@@ -462,19 +434,8 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
                 current_echo_latency = new_echo_latency;
                 int16_t filterLatency = current_echo_latency;
                 qDebug() << "Setting filter delay to: " << filterLatency << "ms";
-#if 0
-                set_echo_delay_ms(filterer, filterLatency);
-#endif
             }
 
-#if 0
-            int res_aec = filter_audio(filterer,
-                                // we do not want to copy the buffer, so we cast to NON-const here
-                                const_cast<int16_t *>(pcm),
-                                samples);
-            std::ignore = res_aec;
-            // qDebug() << "filter_audio recorded audio: res:" << res_aec;
-#else
             const int split_factor = (IAudioControl::AUDIO_FRAME_DURATION / 10);
             const int sample_count_split = samples / split_factor;
 
@@ -525,7 +486,6 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
             free(pcm_buf_out_resampled);
 
             memcpy(const_cast<int16_t *>(pcm), pcm_buf_out, 2 * samples);
-#endif
         }
     }
 
@@ -593,20 +553,9 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
     // TOXAV_ERR_SEND_FRAME_SYNC means toxav failed to lock, retry 5 times in this case
     // We don't want to be dropping iframes because of some lock held by toxav_iterate
     Toxav_Err_Send_Frame err;
-    int retries = 0;
-    do {
-        if (!toxav_video_send_frame(toxav.get(), callId, frame.width, frame.height, frame.y,
-                                    frame.u, frame.v, &err)) {
-            if (err == TOXAV_ERR_SEND_FRAME_SYNC) {
-                ++retries;
-                QThread::usleep(500);
-            } else {
-                qDebug() << "toxav_video_send_frame error: " << err;
-            }
-        }
-    } while (err == TOXAV_ERR_SEND_FRAME_SYNC && retries < 5);
-    if (err == TOXAV_ERR_SEND_FRAME_SYNC) {
-        qDebug() << "toxav_video_send_frame error: Lock busy, dropping frame";
+    if (!toxav_video_send_frame(toxav.get(), callId, frame.width, frame.height, frame.y,
+                                frame.u, frame.v, &err)) {
+            qDebug() << "toxav_video_send_frame error: " << err;
     }
 }
 
@@ -1061,11 +1010,6 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
             && ((sampleCount == 1920) || (sampleCount == 2880))
         ) {
         if (self->audioSettings.getEchoCancellation()) {
-#if 0
-            int res_aec = pass_audio_output(self->filterer, pcm, sampleCount);
-            std::ignore = res_aec;
-            // qDebug() << "filter_audio playback audio: res:" << res_aec;
-#else
             const int audio_frame_in_ms = (sampleCount * 1000) / samplingRate;
             // HINT: we allow 40ms and 60ms sound incoming @48kHz Mono
             printf("WebRtcAecm_BufferFarend:audio_frame_in_ms:%d\n", audio_frame_in_ms);
@@ -1094,7 +1038,6 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
 
                 free(pcm_buf_resampled);
             }
-#endif
         }
     }
 
@@ -1150,9 +1093,9 @@ void CoreAV::videoCommCallback(ToxAV* toxAV, uint32_t friend_number, TOXAV_CALL_
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 11000, NULL);
             toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 10000, NULL);
         } else if (self->audioSettings.getScreenVideoFPS() == 20) {
-            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 0, NULL);
-            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 8100, NULL);
-            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 8000, NULL);
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_BITRATE_AUTOSET, 1, NULL);
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MAX_BITRATE, 180, NULL);
+            toxav_option_set(toxAV, friend_number, TOXAV_ENCODER_VIDEO_MIN_BITRATE, 2700, NULL);
         }
     }
 }
