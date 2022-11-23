@@ -185,13 +185,9 @@ private:
     CameraSource& cameraSource;
 
     // filteraudio:X //
-#if 0
-    Filter_Audio* filterer = nullptr;
-#else
     NsxHandle* nsxInst = nullptr;
     void *webrtc_aecmInst = nullptr;
     mutable int16_t *pcm_buf_out = nullptr;
     mutable size_t pcm_buf_out_samples = 0;
     mutable QMutex aec_mutex;
-#endif
 };
