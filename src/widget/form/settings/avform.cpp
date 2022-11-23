@@ -398,7 +398,7 @@ void AVForm::fillScreenFpsComboBox()
     screenFpsComboBox->addItem(tr("10 FPS / dynamic vbitrate"), 10);
     screenFpsComboBox->addItem(tr("30 FPS / 10000 kbit/s vbitrate"), 30);
     screenFpsComboBox->addItem(tr("25 FPS / 10000 kbit/s vbitrate"), 25);
-    screenFpsComboBox->addItem(tr("20 FPS /  8000 kbit/s vbitrate"), 20);
+    screenFpsComboBox->addItem(tr("20 FPS / dynamic vbitrate"), 20);
 
     const int currentFps = videoSettings->getScreenVideoFPS();
     const int index = screenFpsComboBox->findData(currentFps);
