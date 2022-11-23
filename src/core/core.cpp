@@ -364,12 +364,19 @@ void Core::process()
     fflush(stdout);
 #endif
 
-    // TODO(sudden6): recheck if this is still necessary
-    if (checkConnection()) {
-        tolerance = CORE_DISCONNECT_TOLERANCE;
-    } else if (!(--tolerance)) {
-        bootstrapDht();
-        tolerance = 3 * CORE_DISCONNECT_TOLERANCE;
+    static int64_t checks = 0;
+    const int64_t check_every = 500;
+    checks++;
+
+    if (checks > check_every) {
+        checks = 0;
+        // TODO(sudden6): recheck if this is still necessary
+        if (checkConnection()) {
+            tolerance = CORE_DISCONNECT_TOLERANCE;
+        } else if (!(--tolerance)) {
+            bootstrapDht();
+            tolerance = 3 * CORE_DISCONNECT_TOLERANCE;
+        }
     }
 
     unsigned sleeptime =
