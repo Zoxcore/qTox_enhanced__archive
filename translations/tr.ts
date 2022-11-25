@@ -134,47 +134,47 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>Screen Capture FPS</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran Kaydı FPS&apos;si</translation>
     </message>
     <message>
         <source>Change framerate and video bitrate for screen capture.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran kaydı için kare hızını ve video bit hızını değiştirin.</translation>
     </message>
     <message>
         <source>HD (200 kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>HD (200 kbps)</translation>
     </message>
     <message>
         <source>HD (128 kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>HD (128 kbps)</translation>
     </message>
     <message>
         <source>30 FPS / 10000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>30 FPS / 10000 kbit/s değişken bit hızı</translation>
     </message>
     <message>
         <source>25 FPS / 10000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>25 FPS / 10000 kbit/s değişken bit hızı</translation>
     </message>
     <message>
         <source>20 FPS /  8000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>20 FPS /  8000 kbit/s değişken bit hızı</translation>
     </message>
     <message>
         <source>enable Acoustic Echo Cancellation</source>
-        <translation type="unfinished"></translation>
+        <translation>Akustik Yankı Engellemeyi etkinleştir</translation>
     </message>
     <message>
         <source>AEC Audio Latency</source>
-        <translation type="unfinished"></translation>
+        <translation>AYE Ses Gecikmesi</translation>
     </message>
     <message>
         <source>Set the Audio Latency for Acoustic Echo Cancellation in ms. The default value is 20 ms.</source>
-        <translation type="unfinished"></translation>
+        <translation>Akustik Yankı Engelleme için Ses Gecikmesini ms cinsinden ayarlayın. Öntanımlı değer 20 ms&apos;dir.</translation>
     </message>
     <message>
         <source>10 FPS / dynamic vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>10 FPS / dinamik değişken bit hızı</translation>
     </message>
 </context>
 <context>
@@ -504,19 +504,19 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>NGC Public Group ID, 64 hexadecimal characters</source>
-        <translation type="unfinished"></translation>
+        <translation>NGC Açık Grup Kimliği, 64 onaltılık karakter</translation>
     </message>
     <message>
         <source>Type in the NGC Public Group ID</source>
-        <translation type="unfinished"></translation>
+        <translation>NGC Açık Grup Kimliğini yazın</translation>
     </message>
     <message>
         <source>NGC ID invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>NGC Kimliği geçersiz</translation>
     </message>
     <message>
         <source>Couldn&apos;t join NGC Public Group, or NGC ID error</source>
-        <translation type="unfinished"></translation>
+        <translation>NGC Açık Grubuna katılamadı veya NGC Kimliği hatası</translation>
     </message>
 </context>
 <context>
@@ -653,15 +653,15 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>Network Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Ağ Bağlantıları</translation>
     </message>
     <message>
         <source>This is still in BETA. It will show the network connections that toxcore is currently using</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu hala BETA aşamasındadır. toxcore tarafından şu anda kullanılan ağ bağlantılarını gösterecektir</translation>
     </message>
     <message>
         <source>Show Tox Network Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Tox Ağ Bağlantılarını Göster</translation>
     </message>
 </context>
 <context>
@@ -1291,11 +1291,21 @@ the only allowed Push Servers are (no other servers will ever be contacted):
   &quot;https://gotify1.unifiedpush.org/&quot;
   &quot;https://ntfy.sh/&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık Bildirimler, Tox&apos;un mobil kullanıcılarının (TRIfA ve Antidote ile) pil ve ağ bant genişliğinden tasarruf etmelerine yardımcı olur.
+Bu özellik, arkadaşınız için Anlık Belirteç ile bant dışı bir HTTPS web sunucusuyla iletişime geçecek, başka hiçbir bilgi gönderilmeyecektir!
+Ancak bu, IP adresinizi ve ayrıca arkadaşınızla iletişime geçtiğiniz zamanı web sunucusuna gösterecektir.
+Bir proxy sunucusu (Tor gibi) kullanarak IP adresinizin gönderilmesini engelleyebilirsiniz.
+Bu ayarı devre dışı bırakırsanız, mobil kullanıcılar mesajlarınızı gönderdiğinizden çok daha sonra alabilir.
+İzin verilen tek Anlık Bildirim Sunucuları şunlardır (başka hiçbir sunucuyla iletişim kurulmayacaktır):
+
+  &quot;https://tox.zoff.xyz/toxfcm/&quot;
+  &quot;https://gotify1.unifiedpush.org/&quot;
+  &quot;https://ntfy.sh/&quot;
+</translation>
     </message>
     <message>
         <source>enable Push Notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık Bildirimleri Etkinleştir</translation>
     </message>
 </context>
 <context>
@@ -1441,7 +1451,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Change your name in this group</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu gruptaki adınızı değiştirin</translation>
     </message>
 </context>
 <context>
