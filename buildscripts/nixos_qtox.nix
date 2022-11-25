@@ -9,11 +9,11 @@ let
         # build a custom libtoxcore
         prev.libtoxcore.overrideAttrs ({ ... }: {
           src = fetchFromGitHub {
-            owner = "TokTok";
+            owner = "zoff99";
             repo = "c-toxcore";
-            rev = "201a859f0bc9484b727d523ae8850dfeda214687";
+            rev = "e9e3b4e9c29ba9d30f0d2ed32c44666b68b4ad2f";
             fetchSubmodules = true;
-            sha256 = "sha256-9ET8um1/sLbeDR+z6L2t8LHpAtxEgvg4fT5H8/LSIN4=";
+            sha256 = "sha256-Mpwr7ng7m5aJO8iD0XepL6v36pepP+0scdMFUtBAvEM=";
           };
           buildInputs = [
             libsodium msgpack ncurses libconfig
