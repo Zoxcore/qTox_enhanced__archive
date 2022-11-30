@@ -175,6 +175,7 @@ signals:
     void friendAdded(uint32_t friendId, const ToxPk& friendPk);
 
     void friendStatusChanged(uint32_t friendId, Status::Status status);
+    void onFriendConnectionStatusFullChanged(uint32_t friendId, uint32_t status);
     void friendStatusMessageChanged(uint32_t friendId, const QString& message);
     void friendUsernameChanged(uint32_t friendId, const QString& username);
     void friendLoaded(uint32_t friendId);

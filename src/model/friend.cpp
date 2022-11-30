@@ -40,6 +40,7 @@ Friend::Friend(uint32_t friendId_, const ToxPk& friendPk_, const QString& userAl
     if (userName_.isEmpty()) {
         userName = friendPk.toString();
     }
+    connectionStatusFull = 0;
 }
 
 /**
@@ -210,6 +211,18 @@ void Friend::setExtendedMessageSupport(bool supported)
     if (supportedExtensions.all()) {
         onNegotiationComplete();
     }
+}
+
+void Friend::setConnectionStatusFull(const uint32_t connection_status_full)
+{
+    connectionStatusFull = connection_status_full;
+    qDebug() << "setConnectionStatusFull:" << connectionStatusFull;
+    emit statusChangedFull(friendPk, connectionStatusFull);
+}
+
+uint32_t Friend::getConnectionStatusFull() const
+{
+    return connectionStatusFull;
 }
 
 void Friend::setPushToken(const QString& newpushtoken)

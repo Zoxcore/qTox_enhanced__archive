@@ -187,6 +187,7 @@ public slots:
     void addFriendFailed(const ToxPk& userId, const QString& errorInfo = QString());
     void onCoreFriendStatusChanged(int friendId, Status::Status status);
     void onFriendStatusChanged(const ToxPk& friendPk, Status::Status status);
+    void onFriendStatusChangedFull(const ToxPk& friendPk, const uint32_t connection_status_full);
     void onFriendStatusMessageChanged(int friendId, const QString& message);
     void onFriendDisplayedNameChanged(const QString& displayed);
     void onFriendUsernameChanged(int friendId, const QString& username);
@@ -194,6 +195,7 @@ public slots:
     void onFriendAliasChanged(const ToxPk& friendId, const QString& alias);
     void onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction, const int hasIdType = 0);
     void onFriendPushtokenReceived(uint32_t friendnumber, const QString& pushtoken);
+    void onFriendConnectionStatusFullChanged(uint32_t friendnumber, const uint32_t connection_status_full);
     void onReceiptReceived(int friendId, ReceiptNum receipt);
     void onExtendedMessageSupport(uint32_t friendNumber, bool supported);
     void onFriendExtMessageReceived(uint32_t friendNumber, const QString& message);

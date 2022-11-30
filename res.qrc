@@ -27,7 +27,9 @@
         <file>img/status/offline.svg</file>
         <file>img/status/offline_notification.svg</file>
         <file>img/status/online.svg</file>
+        <file>img/status/tcponline.svg</file>
         <file>img/status/online_notification.svg</file>
+        <file>img/status/tcponline_notification.svg</file>
         <file>img/status/extensions_available.svg</file>
         <file>img/status/extensions_partial.svg</file>
         <file>img/status/extensions_unavailable.svg</file>

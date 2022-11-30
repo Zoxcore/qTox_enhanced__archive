@@ -725,6 +725,7 @@ void Widget::onCoreChanged(Core& core_)
     connect(core, &Core::friendRequestReceived, this, &Widget::onFriendRequestReceived);
     connect(core, &Core::friendMessageReceived, this, &Widget::onFriendMessageReceived);
     connect(core, &Core::friendPushtokenReceived, this, &Widget::onFriendPushtokenReceived);
+    connect(core, &Core::onFriendConnectionStatusFullChanged, this, &Widget::onFriendConnectionStatusFullChanged);
     connect(core, &Core::receiptRecieved, this, &Widget::onReceiptReceived);
     connect(core, &Core::groupInviteReceived, this, &Widget::onGroupInviteReceived);
     connect(core, &Core::groupMessageReceived, this, &Widget::onGroupMessageReceived);
@@ -1210,6 +1211,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     connect(newfriend, &Friend::aliasChanged, this, &Widget::onFriendAliasChanged);
     connect(newfriend, &Friend::displayedNameChanged, this, &Widget::onFriendDisplayedNameChanged);
     connect(newfriend, &Friend::statusChanged, this, &Widget::onFriendStatusChanged);
+    connect(newfriend, &Friend::statusChangedFull, this, &Widget::onFriendStatusChangedFull);
 
     connect(friendForm, &ChatForm::incomingNotification, this, &Widget::incomingNotification);
     connect(friendForm, &ChatForm::outgoingNotification, this, &Widget::outgoingNotification);
@@ -1272,6 +1274,12 @@ void Widget::onCoreFriendStatusChanged(int friendId, Status::Status status)
 
     // Any widget behavior will be triggered based off of the status
     // transformations done by the Friend class
+}
+
+void Widget::onFriendStatusChangedFull(const ToxPk& friendPk, const uint32_t connection_status_full)
+{
+    FriendWidget* widget = friendWidgets[friendPk];
+    widget->updateStatusLight();
 }
 
 void Widget::onFriendStatusChanged(const ToxPk& friendPk, Status::Status status)
@@ -1433,6 +1441,17 @@ void Widget::onFriendMessageReceived(uint32_t friendnumber, const QString& messa
     }
 
     friendMessageDispatchers[f->getPublicKey()]->onMessageReceived(isAction, message, hasIdType);
+}
+
+void Widget::onFriendConnectionStatusFullChanged(uint32_t friendnumber, const uint32_t connection_status_full)
+{
+    const auto& friendId = friendList->id2Key(friendnumber);
+    Friend* f = friendList->findFriend(friendId);
+    if (!f) {
+        return;
+    }
+
+    f->setConnectionStatusFull(connection_status_full);
 }
 
 void Widget::onFriendPushtokenReceived(uint32_t friendnumber, const QString& pushtoken)

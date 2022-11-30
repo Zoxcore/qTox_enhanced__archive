@@ -50,7 +50,9 @@ public:
 
     const ToxPk& getPublicKey() const;
     void setPushToken(const QString& newpushtoken);
+    void setConnectionStatusFull(const uint32_t connection_status_full);
     QString getPushToken() const;
+    uint32_t getConnectionStatusFull() const;
     uint32_t getId() const override;
     const ChatId& getPersistentId() const override;
 
@@ -65,6 +67,7 @@ signals:
     void nameChanged(const ToxPk& friendId, const QString& name);
     void aliasChanged(const ToxPk& friendId, QString alias);
     void statusChanged(const ToxPk& friendId, Status::Status status);
+    void statusChangedFull(const ToxPk& friendId, uint32_t connection_status_full);
     void onlineOfflineChanged(const ToxPk& friendId, bool isOnline);
     void statusMessageChanged(const ToxPk& friendId, const QString& message);
     void extensionSupportChanged(ExtensionSet extensions);
@@ -77,6 +80,7 @@ private:
     QString userAlias;
     QString statusMessage;
     QString pushtoken;
+    uint32_t connectionStatusFull;
     ToxPk friendPk;
     uint32_t friendId;
     bool hasNewEvents;

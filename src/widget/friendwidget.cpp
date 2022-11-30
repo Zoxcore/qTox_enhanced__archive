@@ -352,6 +352,21 @@ void FriendWidget::updateStatusLight()
             statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Away, event)));
         }
     }
+    else
+    {
+        qDebug() << "updateStatusLight:status full:" << frnd->getConnectionStatusFull();
+        if (frnd->getConnectionStatusFull() == 1) // 1 == TOX_CONNECTION_TCP
+        {
+            if (event)
+            {
+                statusPic.setPixmap(QPixmap(":/img/status/tcponline_notification.svg"));
+            }
+            else
+            {
+                statusPic.setPixmap(QPixmap(":/img/status/tcponline.svg"));
+            }
+        }
+    }
 
     statusPic.setMargin(event ? 1 : 3);
 }
