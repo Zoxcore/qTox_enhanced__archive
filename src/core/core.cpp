@@ -406,7 +406,7 @@ bool Core::checkConnection()
 
     if (toxConnected && !isConnected) {
         qDebug().noquote() << "Connected to" << connectionName;
-        emit connected();
+        emit connected(static_cast<uint32_t>(selfConnection));
     } else if (!toxConnected && isConnected) {
         qDebug() << "Disconnected from the DHT";
         emit disconnected();

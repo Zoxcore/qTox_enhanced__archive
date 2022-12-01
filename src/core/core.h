@@ -142,7 +142,7 @@ public slots:
     void setNospam(uint32_t nospam);
 
 signals:
-    void connected();
+    void connected(uint32_t self_connection_status_full);
     void disconnected();
 
     void friendRequestReceived(const ToxPk& friendPk, const QString& message);

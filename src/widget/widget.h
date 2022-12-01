@@ -175,7 +175,7 @@ public slots:
     void onSeparateWindowChanged(bool separate, bool clicked);
     void setWindowTitle(const QString& title);
     void forceShow();
-    void onConnected();
+    void onConnected(uint32_t self_connection_status_full);
     void onDisconnected();
     void onStatusSet(Status::Status status);
     void onFailedToStartCore();

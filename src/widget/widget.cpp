@@ -288,6 +288,9 @@ void Widget::init()
     statusButtonMenu->addAction(statusBusy);
     ui->statusButton->setMenu(statusButtonMenu);
 
+    ui->connectionStatusFullIcon->load(QString(":/img/status/online.svg"));
+    ui->connectionStatusFullIcon->setVisible(false);
+
     // disable proportional scaling
     ui->mainSplitter->setStretchFactor(0, 0);
     ui->mainSplitter->setStretchFactor(1, 1);
@@ -754,8 +757,21 @@ void Widget::onCoreChanged(Core& core_)
     sharedMessageProcessorParams->setPublicKey(core->getSelfPublicKey().toString());
 }
 
-void Widget::onConnected()
+void Widget::onConnected(uint32_t self_connection_status_full)
 {
+    std::ignore = self_connection_status_full;
+
+    if (self_connection_status_full == 1) { // 1 == TCP
+        ui->connectionStatusFullIcon->load(QString(":/img/status/tcponline.svg"));
+        ui->connectionStatusFullIcon->setVisible(true);
+    } else if (self_connection_status_full == 2) { // == 2 (UDP)
+        ui->connectionStatusFullIcon->load(QString(":/img/status/online.svg"));
+        ui->connectionStatusFullIcon->setVisible(true);
+    } else { // == 2 (OFFLINE)
+        ui->connectionStatusFullIcon->load(QString(":/img/status/offline.svg"));
+        ui->connectionStatusFullIcon->setVisible(false);
+    }
+
     ui->statusButton->setEnabled(true);
     emit core->statusSet(core->getStatus());
 }

@@ -735,6 +735,43 @@
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QSvgWidget" name="connectionStatusFullIcon" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>1</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="iconSize" stdset="0">
+                <size>
+                 <width>1</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="autoExclusive" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="autoDefault" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="default" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="flat" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
             </layout>
            </item>
           </layout>
@@ -1083,6 +1120,11 @@
    <extends>QScrollArea</extends>
    <header location="global">src/widget/notificationscrollarea.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QSvgWidget</class>
+   <extends>QWidget</extends>
+   <header>qsvgwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources>
