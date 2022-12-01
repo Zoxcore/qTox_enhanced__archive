@@ -600,7 +600,7 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
         emit core->friendStatusChanged(friendId, friendStatus);
         core->checkLastOnline(friendId);
     }
-    emit core->onFriendConnectionStatusFullChanged(friendId, static_cast<const uint32_t>(status));
+    emit core->onFriendConnectionStatusFullChanged(friendId, static_cast<uint32_t>(status));
 }
 
 void Core::onGroupInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,

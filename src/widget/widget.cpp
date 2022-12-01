@@ -1278,6 +1278,7 @@ void Widget::onCoreFriendStatusChanged(int friendId, Status::Status status)
 
 void Widget::onFriendStatusChangedFull(const ToxPk& friendPk, const uint32_t connection_status_full)
 {
+    std::ignore = connection_status_full;
     FriendWidget* widget = friendWidgets[friendPk];
     widget->updateStatusLight();
 }
