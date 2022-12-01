@@ -28,6 +28,8 @@
         <file>img/status/offline_notification.svg</file>
         <file>img/status/online.svg</file>
         <file>img/status/tcponline.svg</file>
+        <file>img/status/onlinebar.svg</file>
+        <file>img/status/tcponlinebar.svg</file>
         <file>img/status/online_notification.svg</file>
         <file>img/status/tcponline_notification.svg</file>
         <file>img/status/extensions_available.svg</file>
@@ -86,7 +88,7 @@
         <file>themes/dark/emoticonWidget/dot_page_hover.svg</file>
         <file>themes/dark/emoticonWidget/emoticonWidget.css</file>
         <file>themes/dark/friendList/friendList.css</file>
-	<file>themes/dark/genericChatRoomWidget/genericChatRoomWidget.css</file>
+        <file>themes/dark/genericChatRoomWidget/genericChatRoomWidget.css</file>
         <file>themes/dark/msgEdit/msgEdit.css</file>
         <file>themes/dark/settings/mainHead.css</file>
         <file>themes/dark/settings/checkboxChecked.svg</file>
@@ -155,7 +157,7 @@
         <file>themes/default/emoticonWidget/dot_page_hover.svg</file>
         <file>themes/default/emoticonWidget/emoticonWidget.css</file>
         <file>themes/default/friendList/friendList.css</file>
-	<file>themes/default/genericChatRoomWidget/genericChatRoomWidget.css</file>
+        <file>themes/default/genericChatRoomWidget/genericChatRoomWidget.css</file>
         <file>themes/default/msgEdit/msgEdit.css</file>
         <file>themes/default/settings/mainHead.css</file>
         <file>themes/default/statusButton/statusButton.css</file>
