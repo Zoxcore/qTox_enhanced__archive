@@ -39,7 +39,19 @@
 #include <tox/toxav.h>
 
 #define MINIAUDIO_IMPLEMENTATION
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
+#pragma GCC diagnostic ignored "-Watomic-implicit-seq-cst"
+#pragma GCC diagnostic ignored "-Wbad-function-cast"
+#pragma GCC diagnostic ignored "-Wswitch-enum"
+#pragma GCC diagnostic ignored "-Wvector-conversion"
+#pragma GCC diagnostic ignored "-Wtautological-type-limit-compare"
+#pragma GCC diagnostic ignored "-Wpedantic"
+#pragma GCC diagnostic ignored "-Wextra"
+#pragma GCC diagnostic ignored "-Wall"
 #include "miniaudio.h"
+#pragma GCC diagnostic pop
+
 
 #include <cassert>
 
