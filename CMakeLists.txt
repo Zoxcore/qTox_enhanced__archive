@@ -640,6 +640,10 @@ target_link_libraries(${PROJECT_NAME}_static webrtc6)
 include_directories(webrtc6)
 # ------- filter_audio -------
 
+if (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+target_link_libraries(${PROJECT_NAME}_static ${CMAKE_DL_LIBS})
+endif()
+
 target_link_libraries(${PROJECT_NAME}_static qtox::warnings)
 target_link_libraries(${PROJECT_NAME}_static util_library)
 target_link_libraries(${PROJECT_NAME}_static audio_library)
