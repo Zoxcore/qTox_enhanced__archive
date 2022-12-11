@@ -38,6 +38,9 @@
 
 #include <tox/toxav.h>
 
+#define MINIAUDIO_IMPLEMENTATION
+#include "miniaudio.h"
+
 #include <cassert>
 
 #ifdef QTDEBUGMUTEXLOCKS
@@ -107,6 +110,11 @@ void my_wunlock_aux(const char *file, int line, const char *function)
  * deadlock.
  */
 
+ma_resampler_config miniaudio_downsample_config;
+ma_resampler miniaudio_downsample_resampler;
+ma_resampler_config miniaudio_upsample_config;
+ma_resampler miniaudio_upsample_resampler;
+
 CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveMutex& toxCoreLock,
                IAudioSettings& audioSettings_, IGroupSettings& groupSettings_, CameraSource& cameraSource_)
     : audio{nullptr}
@@ -123,6 +131,34 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
 
     // filteraudio:X //
     assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
+
+    miniaudio_downsample_config = ma_resampler_config_init(
+        ma_format_s16,
+        1,
+        48000,
+        16000,
+        ma_resample_algorithm_linear);
+
+    ma_result result1 = ma_resampler_init(&miniaudio_downsample_config, nullptr, &miniaudio_downsample_resampler);
+    if (result1 != MA_SUCCESS) {
+        printf("ma_resampler_init downsample -----> ERROR\n");
+    }
+    ma_resampler_set_rate(&miniaudio_downsample_resampler, 48000, 16000);
+
+    miniaudio_upsample_config = ma_resampler_config_init(
+        ma_format_s16,
+        1,
+        16000,
+        48000,
+        ma_resample_algorithm_linear);
+
+    ma_result result2 = ma_resampler_init(&miniaudio_upsample_config, nullptr, &miniaudio_upsample_resampler);
+    if (result2 != MA_SUCCESS) {
+        printf("ma_resampler_init upsample -----> ERROR\n");
+    }
+    ma_resampler_set_rate(&miniaudio_upsample_resampler, 16000, 48000);
+
+
     webrtc_aecmInst = WebRtcAecm_Create();
     int32_t res1 = WebRtcAecm_Init(webrtc_aecmInst, (int32_t)(IAudioControl::AUDIO_SAMPLE_RATE / 3));
     printf("WebRtcAecm_Init -----> %d\n", res1);
@@ -231,6 +267,9 @@ CoreAV::~CoreAV()
     // filteraudio:X //
     WebRtcAecm_Free(webrtc_aecmInst);
     free(pcm_buf_out);
+
+    ma_resampler_uninit(&miniaudio_downsample_resampler, nullptr);
+    ma_resampler_uninit(&miniaudio_upsample_resampler, nullptr);
 }
 
 /**
@@ -1266,6 +1305,14 @@ int32_t CoreAV::upsample_16000_to_48000_basic(const int16_t* in, int16_t *out, i
         return -1;
     }
 
+    ma_uint64 frameCountIn  = sample_count;
+    ma_uint64 frameCountOut = sample_count * 3;
+    ma_result result = ma_resampler_process_pcm_frames(&miniaudio_upsample_resampler, in, &frameCountIn, out, &frameCountOut);
+    if (result != MA_SUCCESS) {
+        qDebug() << "upsample_16000_to_48000_basic:error!!";
+    }
+
+#if 0
     int16_t tmp1;
     int16_t tmp2;
     int16_t v1;
@@ -1284,6 +1331,7 @@ int32_t CoreAV::upsample_16000_to_48000_basic(const int16_t* in, int16_t *out, i
         out++;
         in++;
     }
+#endif
 
     return 0;
 }
@@ -1295,12 +1343,21 @@ int32_t CoreAV::downsample_48000_to_16000_basic(const int16_t* in, int16_t *out,
         return -1;
     }
 
+    ma_uint64 frameCountIn  = sample_count;
+    ma_uint64 frameCountOut = sample_count / 3;
+    ma_result result = ma_resampler_process_pcm_frames(&miniaudio_downsample_resampler, in, &frameCountIn, out, &frameCountOut);
+    if (result != MA_SUCCESS) {
+        qDebug() << "downsample_48000_to_16000_basic:error!!";
+    }
+
+#if 0
     for (int i=0;i<(sample_count / 3);i++)
     {
         *out = *(in + 0);
         out++;
         in = in + 3;
     }
+#endif
 
     return 0;
 }

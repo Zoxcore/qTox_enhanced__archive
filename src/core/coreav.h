@@ -146,6 +146,8 @@ private:
 
     static int32_t downsample_48000_to_16000_basic(const int16_t* in, int16_t *out, int32_t sample_count);
     static int32_t upsample_16000_to_48000_basic(const int16_t* in, int16_t *out, int32_t sample_count);
+    static int32_t downsample_48000_to_16000_advanced_001(const int16_t* in, int16_t *out, int32_t sample_count);
+    static int32_t downsample_48000_to_16000_advanced_002(const int16_t* in, int16_t *out, int32_t sample_count);
 private:
     static constexpr uint32_t VIDEO_DEFAULT_BITRATE = 8000;
 
