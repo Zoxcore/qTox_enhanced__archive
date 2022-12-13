@@ -51,9 +51,6 @@
 #pragma GCC diagnostic ignored "-Wmissing-declarations"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 #pragma GCC diagnostic ignored "-Wunused-function"
-#pragma GCC diagnostic ignored "-Wnull-dereference"
-#pragma GCC diagnostic ignored "-Wshadow"
-#pragma GCC diagnostic ignored "-Wformat"
 #pragma GCC diagnostic ignored "-Wpedantic"
 #pragma GCC diagnostic ignored "-Wextra"
 #pragma GCC diagnostic ignored "-Wall"
@@ -604,11 +601,18 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
 
             for (int x=0;x<split_factor;x++)
             {
+                short const *const tmp1[] = { pcm_buf_resampled + (x * (sample_count_split / 3)), 0 };
+                short *const tmp2[] = { pcm_buf_filtered_out_resampled + (x * (sample_count_split / 3)), 0 };
+                WebRtcNsx_Process(nsxInst,
+                                tmp1,
+                                1,
+                                tmp2);
+
                 aec_mutex.lock();
                 int32_t res = WebRtcAecm_Process(
                         webrtc_aecmInst,
                         const_cast<int16_t *>(pcm_buf_resampled + (x * (sample_count_split / 3))),
-                        nullptr,
+                        const_cast<int16_t *>(pcm_buf_filtered_out_resampled + (x * (sample_count_split / 3))),
                         pcm_buf_out_resampled + (x * (sample_count_split / 3)),
                         (sample_count_split / 3),
                         current_echo_latency + IAudioControl::AUDIO_FRAME_DURATION
