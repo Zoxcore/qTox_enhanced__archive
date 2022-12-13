@@ -152,6 +152,11 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     // filteraudio:X //
     assert(IAudioControl::AUDIO_SAMPLE_RATE == 48000);
 
+
+
+    // ----------------------------------------------------------
+    // Audio Resampling
+    //
     miniaudio_downsample_config = ma_resampler_config_init(
         ma_format_s16,
         1,
@@ -177,21 +182,47 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
         printf("ma_resampler_init upsample -----> ERROR\n");
     }
     ma_resampler_set_rate(&miniaudio_upsample_resampler, 16000, 48000);
+    //
+    // ----------------------------------------------------------
 
 
+
+    // ----------------------------------------------------------
+    // Acoustic Echo Cancellation
+    //
     webrtc_aecmInst = WebRtcAecm_Create();
     int32_t res1 = WebRtcAecm_Init(webrtc_aecmInst, (int32_t)(IAudioControl::AUDIO_SAMPLE_RATE / 3));
     printf("WebRtcAecm_Init -----> %d\n", res1);
-    // AecmConfig config;
-    // config.echoMode = AecmTrue;
-    // config.cngMode = 3;
-    // WebRtcAecm_set_config(webrtc_aecmInst, config);
+    // ----------------------------------------------------------
+    // typedef struct {
+    //     int16_t cngMode;            // AecmFalse, AecmTrue (default)
+    //     int16_t echoMode;           // 0, 1, 2, 3 (default), 4
+    // } AecmConfig;
+    // ----------------------------------------------------------
+    AecmConfig config;
+    config.echoMode = AecmTrue;
+    config.cngMode = 4;
+    WebRtcAecm_set_config(webrtc_aecmInst, config);
+    //
+    // ----------------------------------------------------------
 
+
+
+    // ----------------------------------------------------------
+    // Noise Suppression
+    //
     nsxInst = WebRtcNsx_Create();
     int res2 = WebRtcNsx_Init(nsxInst, (int32_t)(IAudioControl::AUDIO_SAMPLE_RATE / 3));
     printf("WebRtcNsx_Init -----> %d\n", res2);
-    int res3 = WebRtcNsx_set_policy(nsxInst, 1);
+    // ----------------------------------------------------------
+    // mode          : 0: Mild, 1: Medium , 2: Aggressive
+    // ----------------------------------------------------------
+    int res3 = WebRtcNsx_set_policy(nsxInst, 2);
     printf("WebRtcNsx_set_policy -----> %d\n", res3);
+    //
+    // ----------------------------------------------------------
+
+
 
     coreavThread->setObjectName("qTox CoreAV");
     moveToThread(coreavThread.get());
