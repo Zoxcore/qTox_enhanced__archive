@@ -217,7 +217,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     // ----------------------------------------------------------
     // mode          : 0: Mild, 1: Medium , 2: Aggressive
     // ----------------------------------------------------------
-    int res3 = WebRtcNsx_set_policy(nsxInst, 2);
+    int res3 = WebRtcNsx_set_policy(nsxInst, 0);
     qDebug() << "WebRtcNsx_set_policy ----->" << res3;
     //
     // ----------------------------------------------------------
