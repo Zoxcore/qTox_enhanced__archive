@@ -166,7 +166,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
 
     ma_result result1 = ma_resampler_init(&miniaudio_downsample_config, nullptr, &miniaudio_downsample_resampler);
     if (result1 != MA_SUCCESS) {
-        printf("ma_resampler_init downsample -----> ERROR\n");
+        qDebug() << "ma_resampler_init downsample -----> ERROR";
     }
     ma_resampler_set_rate(&miniaudio_downsample_resampler, 48000, 16000);
 
@@ -179,7 +179,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
 
     ma_result result2 = ma_resampler_init(&miniaudio_upsample_config, nullptr, &miniaudio_upsample_resampler);
     if (result2 != MA_SUCCESS) {
-        printf("ma_resampler_init upsample -----> ERROR\n");
+        qDebug() << "ma_resampler_init upsample -----> ERROR";
     }
     ma_resampler_set_rate(&miniaudio_upsample_resampler, 16000, 48000);
     //
@@ -192,7 +192,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     //
     webrtc_aecmInst = WebRtcAecm_Create();
     int32_t res1 = WebRtcAecm_Init(webrtc_aecmInst, (int32_t)(IAudioControl::AUDIO_SAMPLE_RATE / 3));
-    printf("WebRtcAecm_Init -----> %d\n", res1);
+    qDebug() << "WebRtcAecm_Init ----->" << res1;
     // ----------------------------------------------------------
     // typedef struct {
     //     int16_t cngMode;            // AecmFalse, AecmTrue (default)
@@ -213,12 +213,12 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     //
     nsxInst = WebRtcNsx_Create();
     int res2 = WebRtcNsx_Init(nsxInst, (int32_t)(IAudioControl::AUDIO_SAMPLE_RATE / 3));
-    printf("WebRtcNsx_Init -----> %d\n", res2);
+    qDebug() << "WebRtcNsx_Init ----->" << res2;
     // ----------------------------------------------------------
     // mode          : 0: Mild, 1: Medium , 2: Aggressive
     // ----------------------------------------------------------
     int res3 = WebRtcNsx_set_policy(nsxInst, 2);
-    printf("WebRtcNsx_set_policy -----> %d\n", res3);
+    qDebug() << "WebRtcNsx_set_policy ----->" << res3;
     //
     // ----------------------------------------------------------
 
