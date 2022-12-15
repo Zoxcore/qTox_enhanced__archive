@@ -201,7 +201,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     // ----------------------------------------------------------
     AecmConfig config;
     config.echoMode = AecmTrue;
-    config.cngMode = 4;
+    config.cngMode = 3;
     WebRtcAecm_set_config(webrtc_aecmInst, config);
     //
     // ----------------------------------------------------------
@@ -217,7 +217,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     // ----------------------------------------------------------
     // mode          : 0: Mild, 1: Medium , 2: Aggressive
     // ----------------------------------------------------------
-    int res3 = WebRtcNsx_set_policy(nsxInst, 0);
+    int res3 = WebRtcNsx_set_policy(nsxInst, 1);
     qDebug() << "WebRtcNsx_set_policy ----->" << res3;
     //
     // ----------------------------------------------------------
