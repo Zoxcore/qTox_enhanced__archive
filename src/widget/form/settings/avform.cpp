@@ -65,6 +65,8 @@ AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
 
     cbEchoCancellation->setChecked(audioSettings_->getEchoCancellation());
     echoLatency->setValue(audioSettings_->getEchoLatency());
+    aecechomode->setValue(audioSettings_->getAecechomode());
+    aecechonsmode->setValue(audioSettings_->getAecechonsmode());
 
     connect(rescanButton, &QPushButton::clicked, this, &AVForm::rescanDevices);
 
@@ -654,6 +656,18 @@ void AVForm::on_echoLatency_valueChanged(int latency_ms)
 {
     qWarning() << "on_echoLatency_valueChanged:" << latency_ms;
     audioSettings->setEchoLatency(latency_ms);
+}
+
+void AVForm::on_aecechomode_valueChanged(int mode)
+{
+    qWarning() << "on_aecechomode_valueChanged:" << mode;
+    audioSettings->setAecechomode(mode);
+}
+
+void AVForm::on_aecechonsmode_valueChanged(int mode)
+{
+    qWarning() << "on_aecechonsmode_valueChanged:" << mode;
+    audioSettings->setAecechonsmode(mode);
 }
 
 void AVForm::createVideoSurface()

@@ -70,6 +70,12 @@ public:
     virtual int getEchoLatency() const = 0;
     virtual void setEchoLatency(int newValue) = 0;
 
+    virtual int getAecechomode() const = 0;
+    virtual void setAecechomode(int newValue) = 0;
+
+    virtual int getAecechonsmode() const = 0;
+    virtual void setAecechonsmode(int newValue) = 0;
+
     DECLARE_SIGNAL(inDevChanged, const QString& device);
     DECLARE_SIGNAL(audioInDevEnabledChanged, bool enabled);
 
@@ -85,4 +91,6 @@ public:
     DECLARE_SIGNAL(screenVideoFPSChanged, int fps);
     DECLARE_SIGNAL(echoCancellationChanged, bool newValue);
     DECLARE_SIGNAL(echoLatencyChanged, int latency_ms);
+    DECLARE_SIGNAL(aecechomodeChanged, int mode);
+    DECLARE_SIGNAL(aecechonsmodeChanged, int mode);
 };

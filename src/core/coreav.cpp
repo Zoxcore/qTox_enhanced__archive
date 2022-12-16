@@ -201,8 +201,9 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     // ----------------------------------------------------------
     AecmConfig config;
     config.echoMode = AecmTrue;
-    config.cngMode = 3;
+    config.cngMode = audioSettings.getAecechomode();
     WebRtcAecm_set_config(webrtc_aecmInst, config);
+    qDebug() << "WebRtcAecm_set_config ----->" << audioSettings.getAecechomode();
     //
     // ----------------------------------------------------------
 
@@ -215,10 +216,10 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveM
     int res2 = WebRtcNsx_Init(nsxInst, (int32_t)(IAudioControl::AUDIO_SAMPLE_RATE / 3));
     qDebug() << "WebRtcNsx_Init ----->" << res2;
     // ----------------------------------------------------------
-    // mode          : 0: Mild, 1: Medium , 2: Aggressive
+    // mode          : 0: Mild, 1: Medium , 2: Aggressive, 3: more Aggressive
     // ----------------------------------------------------------
-    int res3 = WebRtcNsx_set_policy(nsxInst, 1);
-    qDebug() << "WebRtcNsx_set_policy ----->" << res3;
+    int res3 = WebRtcNsx_set_policy(nsxInst, audioSettings.getAecechonsmode());
+    qDebug() << "WebRtcNsx_set_policy: mode: " <<  audioSettings.getAecechonsmode() << "res :----->" << res3;
     //
     // ----------------------------------------------------------
 
@@ -602,7 +603,9 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
     }
 
     // filteraudio:X //
-    static int current_echo_latency; // HINT: static, to remember the value on the next calls
+    static int current_echo_latency = 80; // HINT: static, to remember the value on the next calls
+    static int current_aec_echo_mode = 0; // HINT: static, to remember the value on the next calls
+    static int current_aec_ns_echo_mode = 0; // HINT: static, to remember the value on the next calls
     // qDebug() << "filter_audio recorded audio: chans:" << chans << " rate:" << rate;
     if ((chans == 1) && (rate == IAudioControl::AUDIO_SAMPLE_RATE)) {
         if (audioSettings.getEchoCancellation()) {
@@ -611,6 +614,26 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
                 current_echo_latency = new_echo_latency;
                 int16_t filterLatency = current_echo_latency;
                 qDebug() << "Setting filter delay to: " << filterLatency << "ms";
+            }
+
+            int new_aec_echo_mode = audioSettings.getAecechomode();
+            if (new_aec_echo_mode != current_aec_echo_mode) {
+                current_aec_echo_mode = new_aec_echo_mode;
+                qDebug() << "Setting AEC Mode to: " << current_aec_echo_mode;
+
+                AecmConfig config;
+                config.echoMode = AecmTrue;
+                config.cngMode = current_aec_echo_mode;
+                WebRtcAecm_set_config(webrtc_aecmInst, config);
+                qDebug() << "WebRtcAecm_set_config ----->" << audioSettings.getAecechomode();
+            }
+
+            int new_aec_ns_echo_mode = audioSettings.getAecechonsmode();
+            if (new_aec_ns_echo_mode != current_aec_ns_echo_mode) {
+                current_aec_ns_echo_mode = new_aec_ns_echo_mode;
+                qDebug() << "Setting AEC NS Mode to: " << new_aec_ns_echo_mode;
+                int res3 = WebRtcNsx_set_policy(nsxInst, new_aec_ns_echo_mode);
+                qDebug() << "WebRtcNsx_set_policy: mode: " <<  new_aec_ns_echo_mode << "res :----->" << res3;
             }
 
             const int split_factor = (IAudioControl::AUDIO_FRAME_DURATION / 10);

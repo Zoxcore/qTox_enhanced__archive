@@ -256,7 +256,9 @@ void Settings::loadGlobal()
         audioInGainDecibel = s.value("inGain", 0).toReal();
         audioThreshold = s.value("audioThreshold", 0).toReal();
         echoCancellation = s.value("echoCancellation", false).toBool();
-        echoLatency = s.value("echoLatency", 20).toInt();
+        echoLatency = s.value("echoLatency", 80).toInt();
+        aecechomode = s.value("aecechomode", 0).toInt();
+        aecechonsmode = s.value("aecechonsmode", 0).toInt();
         outVolume = s.value("outVolume", 100).toInt();
         enableTestSound = s.value("enableTestSound", true).toBool();
         audioBitrate = s.value("audioBitrate", 64).toInt();
@@ -737,6 +739,8 @@ void Settings::saveGlobal()
         s.setValue("audioBitrate", audioBitrate);
         s.setValue("echoCancellation", echoCancellation);
         s.setValue("echoLatency", echoLatency);
+        s.setValue("aecechomode", aecechomode);
+        s.setValue("aecechonsmode", aecechonsmode);
     }
     s.endGroup();
 
@@ -1643,7 +1647,7 @@ int Settings::getEchoLatency() const
     if ((echoLatency >= 0) && (echoLatency <= 300)) {
         return echoLatency;
     } else {
-        return 20;
+        return 80;
     }
 }
 
@@ -1652,6 +1656,44 @@ void Settings::setEchoLatency(int newValue)
     if ((newValue >= 0) && (newValue <= 300)) {
         if (setVal(echoLatency, newValue)) {
             emit echoLatencyChanged(newValue);
+        }
+    }
+}
+
+int Settings::getAecechomode() const
+{
+    QMutexLocker locker{&bigLock};
+    if ((aecechomode >= 0) && (aecechomode <= 4)) {
+        return aecechomode;
+    } else {
+        return 0;
+    }
+}
+
+void Settings::setAecechomode(int newValue)
+{
+    if ((newValue >= 0) && (newValue <= 4)) {
+        if (setVal(aecechomode, newValue)) {
+            emit aecechomodeChanged(newValue);
+        }
+    }
+}
+
+int Settings::getAecechonsmode() const
+{
+    QMutexLocker locker{&bigLock};
+    if ((aecechonsmode >= 0) && (aecechonsmode <= 3)) {
+        return aecechonsmode;
+    } else {
+        return 0;
+    }
+}
+
+void Settings::setAecechonsmode(int newValue)
+{
+    if ((newValue >= 0) && (newValue <= 3)) {
+        if (setVal(aecechonsmode, newValue)) {
+            emit aecechonsmodeChanged(newValue);
         }
     }
 }

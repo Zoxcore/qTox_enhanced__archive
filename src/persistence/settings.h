@@ -130,6 +130,8 @@ class Settings : public QObject,
     Q_PROPERTY(int audioBitrate READ getAudioBitrate WRITE setAudioBitrate NOTIFY audioBitrateChanged FINAL)
     Q_PROPERTY(bool echoCancellation READ getEchoCancellation WRITE setEchoCancellation NOTIFY echoCancellationChanged FINAL)
     Q_PROPERTY(int echoLatency READ getEchoLatency WRITE setEchoLatency NOTIFY echoLatencyChanged FINAL)
+    Q_PROPERTY(int aecechomode READ getAecechomode WRITE setAecechomode NOTIFY aecechomodeChanged FINAL)
+    Q_PROPERTY(int aecechonsmode READ getAecechonsmode WRITE setAecechonsmode NOTIFY aecechonsmodeChanged FINAL)
 
     // Video
     Q_PROPERTY(QString videoDev READ getVideoDev WRITE setVideoDev NOTIFY videoDevChanged FINAL)
@@ -395,6 +397,12 @@ public:
     int getEchoLatency() const override;
     void setEchoLatency(int newValue) override;
 
+    int getAecechomode() const override;
+    void setAecechomode(int newValue) override;
+
+    int getAecechonsmode() const override;
+    void setAecechonsmode(int newValue) override;
+
     SIGNAL_IMPL(Settings, inDevChanged, const QString& device)
     SIGNAL_IMPL(Settings, audioInDevEnabledChanged, bool enabled)
 
@@ -408,6 +416,8 @@ public:
     SIGNAL_IMPL(Settings, enableTestSoundChanged, bool newValue)
     SIGNAL_IMPL(Settings, echoCancellationChanged, bool newValue)
     SIGNAL_IMPL(Settings, echoLatencyChanged, int latency_ms)
+    SIGNAL_IMPL(Settings, aecechomodeChanged, int mode)
+    SIGNAL_IMPL(Settings, aecechonsmodeChanged, int mode)
 
     QString getVideoDev() const override;
     void setVideoDev(const QString& deviceSpecifier) override;
@@ -705,6 +715,8 @@ private:
     bool enableTestSound;
     bool echoCancellation;
     int echoLatency;
+    int aecechomode;
+    int aecechonsmode;
 
     // Video
     QString videoDev;

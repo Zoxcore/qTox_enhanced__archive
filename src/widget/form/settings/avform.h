@@ -79,6 +79,8 @@ private slots:
     void on_audioQualityComboBox_currentIndexChanged(int index);
     void on_cbEchoCancellation_stateChanged();
     void on_echoLatency_valueChanged(int latency_ms);
+    void on_aecechomode_valueChanged(int mode);
+    void on_aecechonsmode_valueChanged(int mode);
 
     // camera
     void on_videoDevCombobox_currentIndexChanged(int index);
