@@ -459,7 +459,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Homebrew dependencies to build dependencies
-        run: brew update ; brew bundle --file ./osx/Brewfile-DepBuildDeps ; brew upgrade || echo "some errors"
+        run: brew update ; brew bundle --file ./osx/Brewfile-DepBuildDeps || echo "some errors" ; brew upgrade || echo "some errors"
       - name: Build dependencies
         run: ./.ci-scripts/build-osx-deps.sh
       - name: Build qTox
