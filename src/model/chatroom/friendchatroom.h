@@ -65,6 +65,7 @@ public slots:
     QString getCircleName() const;
 
     void inviteToNewGroup();
+    void inviteToNewAudioGroup();
     void inviteFriend(const Group* group);
 
     bool autoAcceptEnabled() const;

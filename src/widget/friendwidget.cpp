@@ -134,8 +134,12 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
     QMenu* inviteMenu =
         menu.addMenu(tr("Invite to group", "Menu to invite a friend to a groupchat"));
     inviteMenu->setEnabled(chatroom->canBeInvited());
-    const auto newGroupAction = inviteMenu->addAction(tr("To new group"));
+    const auto newGroupAction = inviteMenu->addAction(tr("To new group") + QString(" [text group]"));
     connect(newGroupAction, &QAction::triggered, chatroom.get(), &FriendChatroom::inviteToNewGroup);
+
+    const auto newAudioGroupAction = inviteMenu->addAction(tr("To new group") + QString(" [audio group]"));
+    connect(newAudioGroupAction, &QAction::triggered, chatroom.get(), &FriendChatroom::inviteToNewAudioGroup);
+
     inviteMenu->addSeparator();
 
     for (const auto& group : chatroom->getGroups()) {

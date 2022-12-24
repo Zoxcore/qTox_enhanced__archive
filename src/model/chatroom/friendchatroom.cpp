@@ -89,7 +89,14 @@ QString FriendChatroom::getCircleName() const
 void FriendChatroom::inviteToNewGroup()
 {
     const auto friendId = frnd->getId();
-    const auto groupId = core.createGroup();
+    const auto groupId = core.createGroup(TOX_CONFERENCE_TYPE_TEXT);
+    core.groupInviteFriend(friendId, groupId);
+}
+
+void FriendChatroom::inviteToNewAudioGroup()
+{
+    const auto friendId = frnd->getId();
+    const auto groupId = core.createGroup(TOX_CONFERENCE_TYPE_AV);
     core.groupInviteFriend(friendId, groupId);
 }
 

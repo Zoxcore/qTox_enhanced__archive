@@ -56,7 +56,7 @@ GroupInviteForm::GroupInviteForm(Settings& settings_, Core& core_)
 {
     QVBoxLayout* layout = new QVBoxLayout(this);
     connect(createButton, &QPushButton::clicked,
-            [this]() { emit groupCreate(TOX_CONFERENCE_TYPE_AV); });
+            [this]() { emit groupCreate(TOX_CONFERENCE_TYPE_TEXT); });
 
     QWidget* innerWidget = new QWidget(scroll);
     innerWidget->setLayout(new QVBoxLayout());
@@ -169,7 +169,7 @@ void GroupInviteForm::retranslateUi()
 {
     headLabel->setText(tr("Groups"));
     if (createButton) {
-        createButton->setText(tr("Create new group"));
+        createButton->setText(tr("Create new group") + QString(" [Text only Group]"));
     }
     inviteBox->setTitle(tr("Group invites"));
     for (GroupInviteWidget* invite : invites) {
