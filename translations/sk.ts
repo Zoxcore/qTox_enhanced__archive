@@ -156,10 +156,6 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>20 FPS /  8000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>enable Acoustic Echo Cancellation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -173,6 +169,26 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
     </message>
     <message>
         <source>10 FPS / dynamic vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC Audio Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC Mode 0 to 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC NS Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC NS Mode 0 to 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>20 FPS / dynamic vbitrate</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

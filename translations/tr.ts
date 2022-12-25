@@ -157,10 +157,6 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translation>25 FPS / 10000 kbit/s değişken bit hızı</translation>
     </message>
     <message>
-        <source>20 FPS /  8000 kbit/s vbitrate</source>
-        <translation>20 FPS /  8000 kbit/s değişken bit hızı</translation>
-    </message>
-    <message>
         <source>enable Acoustic Echo Cancellation</source>
         <translation>Akustik Yankı Engellemeyi etkinleştir</translation>
     </message>
@@ -175,6 +171,26 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     <message>
         <source>10 FPS / dynamic vbitrate</source>
         <translation>10 FPS / dinamik değişken bit hızı</translation>
+    </message>
+    <message>
+        <source>AEC Audio Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC Mode 0 to 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC NS Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC NS Mode 0 to 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>20 FPS / dynamic vbitrate</source>
+        <translation type="unfinished">10 FPS / dinamik değişken bit hızı {20 ?}</translation>
     </message>
 </context>
 <context>

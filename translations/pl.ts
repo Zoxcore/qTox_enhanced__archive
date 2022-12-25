@@ -105,7 +105,7 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation>Jakość nadawanego audio. Ustaw niższą wartość jeśli twoje połączenie z internetem nie jest wystarczająco dobre lub jeśli chcesz ograniczyć transmisję danych.</translation>
+        <translation>Jakość nadawanego audio. Ustaw niższą wartość&#xa0;jeśli twoje połączenie z internetem nie jest wystarczająco dobre lub jeśli chcesz ograniczyć transmisję danych.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -156,10 +156,6 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>20 FPS /  8000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>enable Acoustic Echo Cancellation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -173,6 +169,26 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>10 FPS / dynamic vbitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC Audio Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC Mode 0 to 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC NS Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AEC NS Mode 0 to 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>20 FPS / dynamic vbitrate</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
