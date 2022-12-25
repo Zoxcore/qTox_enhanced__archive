@@ -11,9 +11,9 @@ let
           src = fetchFromGitHub {
             owner = "zoff99";
             repo = "c-toxcore";
-            rev = "4932f9dcf7181d30a0abb4a12b1144ccb1a741fa";
+            rev = "e94dd666a23888e38add3ea4e1481f16546fbf47";
             fetchSubmodules = true;
-            sha256 = "sha256-cNVUZe4xfl88quk8Tm6jeG4ov1L6q/wh81WZIotVbnk=";
+            sha256 = "sha256-+tLdNgVhCBiT4GiwH6M4W8s2xUC9xW3MaNI+aNlmm2c=";
           };
           buildInputs = [
             libsodium msgpack ncurses libconfig
