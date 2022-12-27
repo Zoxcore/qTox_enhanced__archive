@@ -159,7 +159,7 @@
              <string>AEC Audio Latency</string>
             </property>
             <property name="toolTip">
-             <string>Set the Audio Latency for Acoustic Echo Cancellation in ms. The default value is 20 ms.</string>
+             <string>Set the Audio Latency for Acoustic Echo Cancellation in ms. The default value is 80 ms.</string>
             </property>
            </widget>
           </item>
