@@ -174,23 +174,23 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>AEC Audio Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>AEC Ses Modu</translation>
     </message>
     <message>
         <source>AEC Mode 0 to 4</source>
-        <translation type="unfinished"></translation>
+        <translation>AEC Modu 0 ila 4</translation>
     </message>
     <message>
         <source>AEC NS Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>AEC NS Modu</translation>
     </message>
     <message>
         <source>AEC NS Mode 0 to 3</source>
-        <translation type="unfinished"></translation>
+        <translation>AEC NS Modu 0 ila 3</translation>
     </message>
     <message>
         <source>20 FPS / dynamic vbitrate</source>
-        <translation type="unfinished">10 FPS / dinamik değişken bit hızı {20 ?}</translation>
+        <translation>20 FPS / dinamik değişken bit hızı</translation>
     </message>
 </context>
 <context>
