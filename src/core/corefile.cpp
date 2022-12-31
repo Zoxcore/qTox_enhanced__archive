@@ -590,6 +590,10 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
     if (file->fileKind == TOX_FILE_KIND_AVATAR) {
         file->avatarData.append(reinterpret_cast<const char*>(data), length);
     } else {
+        if (file->fileKind == TOX_FILE_KIND_FTV2) {
+            length = length - TOX_FILE_ID_LENGTH;
+            data = data + TOX_FILE_ID_LENGTH;
+        }
         file->file->write(reinterpret_cast<const char*>(data), length);
     }
     file->progress.addSample(file->progress.getBytesSent() + length);
