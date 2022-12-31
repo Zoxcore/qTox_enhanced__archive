@@ -34,6 +34,8 @@ RUN apt-get update && \
 RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
     flatpak --system install flathub -y org.kde.Sdk/x86_64/5.15-21.08
 
+COPY patches/*.patch /build/patches/
+
 COPY download/common.sh /build/download/common.sh
 COPY download/download_sodium.sh /build/download/download_sodium.sh
 RUN mkdir -p /src/libsodium && \
@@ -49,6 +51,8 @@ COPY download/download_toxcore.sh /build/download/download_toxcore.sh
 RUN mkdir -p /src/toxcore && \
     cd /src/toxcore && \
     /build/download/download_toxcore.sh
+
+RUN cd /src/toxcore && patch -Np1 < /build/patches/tc___ftv2_capabilities.patch
 
 COPY download/download_toxext.sh /build/download/download_toxext.sh
 RUN mkdir -p /src/toxext && \

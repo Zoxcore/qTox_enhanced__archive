@@ -39,6 +39,8 @@
 #include <cassert>
 #include <memory>
 
+#define TOX_CAPABILITY_FTV2 ((uint64_t)1) << 4
+
 /**
  * @class CoreFile
  * @brief Manages the file transfer service of toxcore
@@ -75,7 +77,7 @@ unsigned CoreFile::corefileIterationInterval()
        comes to CPU usage – just keep the CPU usage low when there are no file
        transfers, and speed things up when there is an ongoing file transfer.
     */
-    constexpr unsigned fileInterval = 10, idleInterval = 1000;
+    constexpr unsigned fileInterval = 4, idleInterval = 1000;
 
     for (ToxFile& file : fileMap) {
         if (file.status == ToxFile::TRANSMITTING) {
@@ -118,8 +120,7 @@ void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
         return;
     }
 
-    ToxFile file{fileNum, friendId, "", "", filesize, ToxFile::SENDING};
-    file.fileKind = TOX_FILE_KIND_AVATAR;
+    ToxFile file{fileNum, friendId, "", "", filesize, ToxFile::SENDING, static_cast<uint32_t>(TOX_FILE_KIND_AVATAR)};
     file.avatarData = data;
     file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
     Tox_Err_File_Get fileGetErr;
@@ -138,16 +139,27 @@ void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath,
 
     ToxString fileName(filename);
     Tox_Err_File_Send sendErr;
-    uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_DATA, filesize,
+    uint32_t file_kind;
+
+    if ((tox_friend_get_capabilities(tox, friendId) & TOX_CAPABILITY_FTV2) != 0)
+    {
+        file_kind = TOX_FILE_KIND_FTV2;
+    }
+    else
+    {
+        file_kind = TOX_FILE_KIND_DATA;
+    }
+
+    uint32_t fileNum = tox_file_send(tox, friendId, file_kind, filesize,
                                      nullptr, fileName.data(), fileName.size(), &sendErr);
 
     if (!PARSE_ERR(sendErr)) {
         emit fileSendFailed(friendId, fileName.getQString());
         return;
     }
-    qDebug() << QString("sendFile: Created file sender %1 with friend %2").arg(fileNum).arg(friendId);
+    qDebug() << QString("sendFile: Created file sender %1 with friend %2 type %3").arg(fileNum).arg(friendId).arg(file_kind);
 
-    ToxFile file{fileNum, friendId, fileName.getQString(), filePath, static_cast<uint64_t>(filesize), ToxFile::SENDING};
+    ToxFile file{fileNum, friendId, fileName.getQString(), filePath, static_cast<uint64_t>(filesize), ToxFile::SENDING, file_kind};
     file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
     Tox_Err_File_Get fileGetErr;
     tox_file_get_file_id(tox, friendId, fileNum, reinterpret_cast<uint8_t*>(file.resumeFileId.data()),
@@ -379,8 +391,7 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     #endif
     qDebug() << QString("Received file request %1:%2 kind %3").arg(friendId).arg(fileId).arg(kind);
 
-    ToxFile file{fileId, friendId, filename.getQString(), "", filesize, ToxFile::RECEIVING};
-    file.fileKind = kind;
+    ToxFile file{fileId, friendId, filename.getQString(), "", filesize, ToxFile::RECEIVING, kind};
     file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
     Tox_Err_File_Get fileGetErr;
     tox_file_get_file_id(tox, friendId, fileId, reinterpret_cast<uint8_t*>(file.resumeFileId.data()),
@@ -418,8 +429,7 @@ void CoreFile::handleAvatarOffer(uint32_t friendId, uint32_t fileId, bool accept
                     .arg(friendId)
                     .arg(fileId);
 
-    ToxFile file{fileId, friendId, "<avatar>", "", filesize, ToxFile::RECEIVING};
-    file.fileKind = TOX_FILE_KIND_AVATAR;
+    ToxFile file{fileId, friendId, "<avatar>", "", filesize, ToxFile::RECEIVING, static_cast<uint32_t>(TOX_FILE_KIND_AVATAR)};
     file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
     Tox_Err_File_Get getErr;
     tox_file_get_file_id(tox, friendId, fileId, reinterpret_cast<uint8_t*>(file.resumeFileId.data()),
@@ -513,7 +523,19 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
     }
 
     Tox_Err_File_Send_Chunk err;
-    tox_file_send_chunk(tox, friendId, fileId, pos, data.get(), nread, &err);
+
+    if (file->fileKind == TOX_FILE_KIND_FTV2) {
+        uint8_t *f_data = reinterpret_cast<uint8_t*>(calloc(1, nread + TOX_FILE_ID_LENGTH));
+        if (f_data == nullptr) {
+            return;
+        }
+        memcpy((f_data + TOX_FILE_ID_LENGTH), data.get(), nread);
+        memcpy(f_data, reinterpret_cast<uint8_t*>(file->resumeFileId.data()), TOX_FILE_ID_LENGTH);
+        tox_file_send_chunk(tox, friendId, fileId, pos, f_data, nread + TOX_FILE_ID_LENGTH, &err);
+        free(f_data);
+    } else {
+        tox_file_send_chunk(tox, friendId, fileId, pos, data.get(), nread, &err);
+    }
     if (!PARSE_ERR(err)) {
         return;
     }
