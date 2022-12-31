@@ -47,8 +47,8 @@ ToxFile::ToxFile()
  * @brief ToxFile constructor
  */
 ToxFile::ToxFile(uint32_t fileNum_, uint32_t friendId_, QString fileName_, QString filePath_,
-                 uint64_t filesize, FileDirection direction_)
-    : fileKind{TOX_FILE_KIND_DATA}
+                 uint64_t filesize, FileDirection direction_, uint32_t fileKind_)
+    : fileKind{fileKind_}
     , fileNum(fileNum_)
     , friendId(friendId_)
     , fileName{fileName_}

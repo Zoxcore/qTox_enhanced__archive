@@ -871,8 +871,7 @@ QList<History::HistMessage> History::getMessagesForChat(const ChatId& chatId, si
             const auto direction = static_cast<ToxFile::FileDirection>((*it++).toLongLong());
             const auto status = static_cast<ToxFile::FileStatus>((*it++).toLongLong());
 
-            ToxFile file(0, 0, fileName, filePath, filesize, direction);
-            file.fileKind = fileKind;
+            ToxFile file(0, 0, fileName, filePath, filesize, direction, fileKind);
             file.resumeFileId = resumeFileId;
             file.status = status;
 
