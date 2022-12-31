@@ -113,6 +113,7 @@ namespace {
         switch (kind)
         {
             case TOX_FILE_KIND_DATA: return true;
+            case TOX_FILE_KIND_FTV2: return true;
             // Avatar sharing should be seamless, the user does not need to see
             // these in their file transfer list.
             case TOX_FILE_KIND_AVATAR: return false;

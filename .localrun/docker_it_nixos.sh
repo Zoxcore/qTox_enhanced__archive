@@ -46,6 +46,9 @@ let
             fetchSubmodules = true;
             sha256 = "sha256-+tLdNgVhCBiT4GiwH6M4W8s2xUC9xW3MaNI+aNlmm2c=";
           };
+          patches = [
+            /workspace/build/buildscripts/patches/tc___ftv2_capabilities.patch
+          ];
           buildInputs = [
             libsodium msgpack ncurses libconfig
             libopus libvpx x264 ffmpeg

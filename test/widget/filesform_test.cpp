@@ -87,7 +87,7 @@ void TestFileTransferList::testFileName()
 
 void TestFileTransferList::testProgress()
 {
-    ToxFile file(0, 0, "", "", 1000, ToxFile::FileDirection::SENDING);
+    ToxFile file(0, 0, "", "", 1000, ToxFile::FileDirection::SENDING, static_cast<uint32_t>(TOX_FILE_KIND_DATA));
     file.progress.addSample(100, QTime(1, 0, 0));
     model->onFileUpdated(file);
 
@@ -100,7 +100,7 @@ void TestFileTransferList::testProgress()
 
 void TestFileTransferList::testSize()
 {
-    ToxFile file(0, 0, "", "", 1000, ToxFile::FileDirection::SENDING);
+    ToxFile file(0, 0, "", "", 1000, ToxFile::FileDirection::SENDING, static_cast<uint32_t>(TOX_FILE_KIND_DATA));
     model->onFileUpdated(file);
 
     const auto idx = model->index(0, static_cast<int>(Column::size));
@@ -110,7 +110,7 @@ void TestFileTransferList::testSize()
     QCOMPARE(size.toString(), QString("1000B"));
 
     // 1GB + a little to avoid floating point inaccuracy
-    file = ToxFile(0, 0, "", "", 1024 * 1024 * 1024 + 2, ToxFile::FileDirection::SENDING);
+    file = ToxFile(0, 0, "", "", 1024 * 1024 * 1024 + 2, ToxFile::FileDirection::SENDING, static_cast<uint32_t>(TOX_FILE_KIND_DATA));
     model->onFileUpdated(file);
     size = idx.data();
     QCOMPARE(size.toString(), QString("1.00GiB"));
@@ -118,7 +118,7 @@ void TestFileTransferList::testSize()
 
 void TestFileTransferList::testSpeed()
 {
-    ToxFile file(0, 0, "", "", 1024 * 1024, ToxFile::FileDirection::SENDING);
+    ToxFile file(0, 0, "", "", 1024 * 1024, ToxFile::FileDirection::SENDING, static_cast<uint32_t>(TOX_FILE_KIND_DATA));
     file.progress.addSample(100 * 1024, QTime(1, 0, 0));
     file.progress.addSample(200 * 1024, QTime(1, 0, 1));
     model->onFileUpdated(file);
@@ -132,7 +132,7 @@ void TestFileTransferList::testSpeed()
 
 void TestFileTransferList::testStatus()
 {
-    ToxFile file(0, 0, "", "", 1024 * 1024, ToxFile::FileDirection::SENDING);
+    ToxFile file(0, 0, "", "", 1024 * 1024, ToxFile::FileDirection::SENDING, static_cast<uint32_t>(TOX_FILE_KIND_DATA));
     file.status = ToxFile::TRANSMITTING;
     model->onFileUpdated(file);
 
@@ -172,7 +172,7 @@ void TestFileTransferList::testControl()
         pauseCalled = true;
     });
 
-    ToxFile file(0, 0, "", "", 1024 * 1024, ToxFile::FileDirection::SENDING);
+    ToxFile file(0, 0, "", "", 1024 * 1024, ToxFile::FileDirection::SENDING, static_cast<uint32_t>(TOX_FILE_KIND_DATA));
     file.status = ToxFile::TRANSMITTING;
     model->onFileUpdated(file);
 
