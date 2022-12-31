@@ -616,8 +616,15 @@ void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state
     // (fileId)
     ToxFile::FileStatus status = !isOffline ? ToxFile::TRANSMITTING : ToxFile::BROKEN;
     for (uint64_t key : fileMap.keys()) {
-        if (key >> 32 != friendId)
+        if (key >> 32 != friendId) {
             continue;
+        }
+        // HINT: do not cancel FTV2 file transfers on connection change
+        if (fileMap[key].fileKind == TOX_FILE_KIND_FTV2) {
+            qDebug() << "onConnectionStatusChanged:TOX_FILE_KIND_FTV2 filenum:" << fileMap[key].fileNum;
+            continue;
+        }
+
         fileMap[key].status = status;
         emit fileTransferBrokenUnbroken(fileMap[key], isOffline);
         removeFile(friendId, fileMap[key].fileNum);
