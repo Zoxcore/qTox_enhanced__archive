@@ -577,6 +577,7 @@ void Core::onSelfConnectionStatusChanged(Tox* tox, Tox_Connection status, void* 
 {
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
+    std::ignore = core;
 
     switch (status)
     {
