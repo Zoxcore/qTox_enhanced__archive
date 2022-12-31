@@ -17,3 +17,4 @@ jobs:
                 options: -v ${{ github.workspace }}:/work
                 run: |
                     id;ls -al /work/; # compile command here
+                    nix-build /work/buildscripts/nixos_qtox.nix
