@@ -15,6 +15,13 @@ let
             fetchSubmodules = true;
             sha256 = "sha256-+tLdNgVhCBiT4GiwH6M4W8s2xUC9xW3MaNI+aNlmm2c=";
           };
+          patches = [
+            (fetchpatch {
+              url =
+                "https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoff99/add_ftv2/buildscripts/patches/tc___ftv2_capabilities.patch";
+              sha256 = "sha256-LU4EDwEKLh5m3OByt/Mc1dyM3huCFwHFgWo083s6lKg=";
+            })
+          ];
           buildInputs = [
             libsodium msgpack ncurses libconfig
             libopus libvpx x264 ffmpeg
