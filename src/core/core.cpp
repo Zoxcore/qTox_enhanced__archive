@@ -110,6 +110,7 @@ Core::~Core()
  */
 void Core::registerCallbacks(Tox* tox)
 {
+    tox_callback_self_connection_status(tox, onSelfConnectionStatusChanged);
     tox_callback_friend_request(tox, onFriendRequest);
     tox_callback_friend_message(tox, onFriendMessage);
     tox_callback_friend_name(tox, onFriendNameChange);
@@ -570,6 +571,26 @@ void Core::onUserStatusChanged(Tox* tox, uint32_t friendId, Tox_User_Status user
 
     // no saveRequest, this callback is called on every connection, not just on name change
     emit static_cast<Core*>(core)->friendStatusChanged(friendId, status);
+}
+
+void Core::onSelfConnectionStatusChanged(Tox* tox, Tox_Connection status, void* vCore)
+{
+    std::ignore = tox;
+    Core* core = static_cast<Core*>(vCore);
+
+    switch (status)
+    {
+        case TOX_CONNECTION_NONE:
+            qDebug() << "Disconnected from Tox Network";
+            break;
+        case TOX_CONNECTION_TCP:
+            qDebug() << "Connected to Tox Network through a TCP relay";
+            break;
+        case TOX_CONNECTION_UDP:
+            qDebug() << "Connected to Tox Network directly with UDP";
+            break;
+        qWarning() << "tox_callback_self_connection_status returned unknown enum!";
+    }
 }
 
 void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection status, void* vCore)

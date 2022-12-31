@@ -214,6 +214,8 @@ private:
                                        size_t cMessageSize, void* core);
     static void onUserStatusChanged(Tox* tox, uint32_t friendId, Tox_User_Status userstatus,
                                     void* core);
+    static void onSelfConnectionStatusChanged(Tox* tox, Tox_Connection status,
+                                          void* vCore);
     static void onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection status,
                                           void* vCore);
     static void onGroupInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
