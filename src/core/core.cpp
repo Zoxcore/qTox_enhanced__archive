@@ -472,6 +472,21 @@ void Core::onFriendRequest(Tox* tox, const uint8_t* cFriendPk, const uint8_t* cM
     emit static_cast<Core*>(core)->friendRequestReceived(friendPk, requestMessage);
 }
 
+static size_t xnet_pack_u16(uint8_t *bytes, uint16_t v)
+{
+    bytes[0] = (v >> 8) & 0xff;
+    bytes[1] = v & 0xff;
+    return sizeof(v);
+}
+
+static size_t xnet_pack_u32(uint8_t *bytes, uint32_t v)
+{
+    uint8_t *p = bytes;
+    p += xnet_pack_u16(p, (v >> 16) & 0xffff);
+    p += xnet_pack_u16(p, v & 0xffff);
+    return p - bytes;
+}
+
 static size_t xnet_unpack_u16(const uint8_t *bytes, uint16_t *v)
 {
     uint8_t hi = bytes[0];
@@ -975,8 +990,8 @@ void Core::requestFriendship(const ToxId& friendId, const QString& message)
     }
 }
 
-bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type,
-                               ReceiptNum& receipt)
+bool Core::sendMessageWithType(uint32_t friendId, const QString& message, const QString& id_or_hash, const QDateTime& timestamp,
+                               Tox_Message_Type type, ReceiptNum& receipt)
 {
     int size = message.toUtf8().size();
     auto maxSize = static_cast<int>(TOX_MSGV3_MAX_MESSAGE_LENGTH);
@@ -988,9 +1003,36 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
     }
 
     ToxString cMessage(message);
+
+    uint8_t *message_str_v3 =
+                    static_cast<uint8_t *>(calloc(1, (size_t)(
+                    cMessage.size() + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH)));
+    if (!message_str_v3)
+    {
+        return false;
+    }
+
+    uint32_t timestamp_unix = static_cast<uint32_t>((timestamp.toMSecsSinceEpoch() / 1000));
+    uint32_t timestamp_unix_buf;
+    xnet_pack_u32(reinterpret_cast<uint8_t*>(&timestamp_unix_buf), timestamp_unix);
+
+    uint8_t* position = message_str_v3;
+    memcpy(position, cMessage.data(), static_cast<size_t>(cMessage.size()));
+    position = position + cMessage.size();
+    position = position + TOX_MSGV3_GUARD;
+    QByteArray hash_buffer_bytes = QByteArray::fromHex(id_or_hash.toLatin1());
+    const uint8_t *hash_buffer_c = reinterpret_cast<const uint8_t*>(hash_buffer_bytes.constData());
+    memcpy(position, hash_buffer_c, static_cast<size_t>(TOX_MSGV3_MSGID_LENGTH));
+    position = position + TOX_MSGV3_MSGID_LENGTH;
+    memcpy(position, &timestamp_unix_buf, static_cast<size_t>(TOX_MSGV3_TIMESTAMP_LENGTH));
+
+    size_t new_len = cMessage.size() + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH;
+
     Tox_Err_Friend_Send_Message error;
-    receipt = ReceiptNum{tox_friend_send_message(tox.get(), friendId, type, cMessage.data(),
-                                                 cMessage.size(), &error)};
+    receipt = ReceiptNum{tox_friend_send_message(tox.get(), friendId, type, message_str_v3,
+                                                 new_len, &error)};
+    free(message_str_v3);
+
     if (PARSE_ERR(error)) {
         return true;
     }
@@ -1000,17 +1042,13 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
 bool Core::sendMessage(uint32_t friendId, const QString& message, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt)
 {
     QMutexLocker ml(&coreLoopLock);
-    std::ignore = id_or_hash;
-    std::ignore = timestamp;
-    return sendMessageWithType(friendId, message, TOX_MESSAGE_TYPE_NORMAL, receipt);
+    return sendMessageWithType(friendId, message, id_or_hash, timestamp, TOX_MESSAGE_TYPE_NORMAL, receipt);
 }
 
 bool Core::sendAction(uint32_t friendId, const QString& action, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt)
 {
     QMutexLocker ml(&coreLoopLock);
-    std::ignore = id_or_hash;
-    std::ignore = timestamp;
-    return sendMessageWithType(friendId, action, TOX_MESSAGE_TYPE_ACTION, receipt);
+    return sendMessageWithType(friendId, action, id_or_hash, timestamp, TOX_MESSAGE_TYPE_ACTION, receipt);
 }
 
 void Core::sendTyping(uint32_t friendId, bool typing)

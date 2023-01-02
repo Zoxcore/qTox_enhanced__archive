@@ -248,7 +248,8 @@ private:
     static void onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core);
 
     void sendGroupMessageWithType(int groupId, const QString& message, Tox_Message_Type type);
-    bool sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type, ReceiptNum& receipt);
+    bool sendMessageWithType(uint32_t friendId, const QString& message, const QString& id_or_hash, const QDateTime& timestamp,
+                               Tox_Message_Type type, ReceiptNum& receipt);
     bool checkConnection();
 
     void makeTox(QByteArray savedata, ICoreSettings* s);
