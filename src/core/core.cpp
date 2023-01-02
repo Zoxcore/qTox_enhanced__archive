@@ -506,6 +506,41 @@ static size_t xnet_unpack_u32(const uint8_t *bytes, uint32_t *v)
     return p - bytes;
 }
 
+static void send_highlevel_ack(Tox* tox, uint32_t friendId, QByteArray& hash_buffer_bytes)
+{
+    const uint8_t *hash_buffer_c = reinterpret_cast<const uint8_t*>(hash_buffer_bytes.constData());
+    int dummy_messge_size = 1;
+    uint8_t dummy_messge = 95; // "_" char
+    uint8_t *dummy_messge_buf = reinterpret_cast<uint8_t*>(&dummy_messge);
+
+    uint8_t *message_str_v3 =
+                    static_cast<uint8_t *>(calloc(1, (size_t)(
+                    dummy_messge_size + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH)));
+    if (!message_str_v3)
+    {
+        return;
+    }
+
+    uint32_t timestamp_unix = static_cast<uint32_t>((QDateTime::currentDateTime().toMSecsSinceEpoch() / 1000));
+    uint32_t timestamp_unix_buf;
+    xnet_pack_u32(reinterpret_cast<uint8_t*>(&timestamp_unix_buf), timestamp_unix);
+
+    uint8_t* position = message_str_v3;
+    memcpy(position, dummy_messge_buf, static_cast<size_t>(dummy_messge_size));
+    position = position + dummy_messge_size;
+    position = position + TOX_MSGV3_GUARD;
+    memcpy(position, hash_buffer_c, static_cast<size_t>(TOX_MSGV3_MSGID_LENGTH));
+    position = position + TOX_MSGV3_MSGID_LENGTH;
+    memcpy(position, &timestamp_unix_buf, static_cast<size_t>(TOX_MSGV3_TIMESTAMP_LENGTH));
+
+    size_t new_len = dummy_messge_size + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH;
+
+    Tox_Err_Friend_Send_Message error;
+    uint32_t res = tox_friend_send_message(tox, friendId, TOX_MESSAGE_TYPE_HIGH_LEVEL_ACK, message_str_v3, new_len, &error);
+    qDebug() << "sent high level ack, res:" << res << " errcode:" << error;
+    free(message_str_v3);
+}
+
 void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type, const uint8_t* cMessage,
                            size_t cMessageSize, void* core)
 {
@@ -513,6 +548,7 @@ void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type, c
     uint32_t msgV3_timestamp = 0;
     bool isAction = (type == TOX_MESSAGE_TYPE_ACTION);
     QString msg = ToxString(cMessage, cMessageSize).getQString();
+    QByteArray msgv3hash;
 
     // HINT: check for msgV3 --------------
     bool has_msgv3 = false;
@@ -527,17 +563,28 @@ void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type, c
             const uint8_t *p = static_cast<const uint8_t *>(cMessage + pos + 2);
             p = p + 32;
             p += xnet_unpack_u32(p, &msgV3_timestamp);
-            QByteArray msgv3hash = QByteArray(msgV3_hash_buffer_bin, 32);
+            msgv3hash = QByteArray(msgV3_hash_buffer_bin, 32);
             // qDebug() << "msgv3hash:" << QString::fromUtf8(msgv3hash.toHex()).toUpper();
             msg = QString::fromUtf8(msgv3hash.toHex()).toUpper().rightJustified(64, '0') + QString(":") + msg;
             has_msgv3 = true;
+
+            if (type == TOX_MESSAGE_TYPE_HIGH_LEVEL_ACK) {
+                // TODO: process high level ack here
+                qDebug() << "high level ack received";
+            }
         }
+    }
+
+    if (type == TOX_MESSAGE_TYPE_HIGH_LEVEL_ACK) {
+        // high level ack is not a normal message, so return here
+        return;
     }
 
     // HINT: check for msgV3 --------------
     if (has_msgv3) {
         emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction,
             static_cast<int>(Widget::MessageHasIdType::MSGV3_ID));
+        send_highlevel_ack(tox, friendId, msgv3hash);
     } else {
         emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction);
     }
