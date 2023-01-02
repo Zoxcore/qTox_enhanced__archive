@@ -81,9 +81,9 @@ std::unique_ptr<ICoreExtPacket> MockCoreExtPacketAllocator::getPacket(uint32_t f
 class MockFriendMessageSender : public ICoreFriendMessageSender
 {
 public:
-    bool sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt) override;
+    bool sendAction(uint32_t friendId, const QString& action, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt) override;
 
-    bool sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt) override;
+    bool sendMessage(uint32_t friendId, const QString& message, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt) override;
 
     bool canSend = true;
     ReceiptNum receiptNum{0};
@@ -91,10 +91,12 @@ public:
     size_t numSentMessages = 0;
 };
 
-bool MockFriendMessageSender::sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt)
+bool MockFriendMessageSender::sendAction(uint32_t friendId, const QString& action, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt)
 {
     std::ignore = friendId;
     std::ignore = action;
+    std::ignore = id_or_hash;
+    std::ignore = timestamp;
     if (canSend) {
         numSentActions++;
         receipt = receiptNum;
@@ -103,10 +105,12 @@ bool MockFriendMessageSender::sendAction(uint32_t friendId, const QString& actio
     return canSend;
 }
 
-bool MockFriendMessageSender::sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt)
+bool MockFriendMessageSender::sendMessage(uint32_t friendId, const QString& message, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt)
 {
     std::ignore = friendId;
     std::ignore = message;
+    std::ignore = id_or_hash;
+    std::ignore = timestamp;
     if (canSend) {
         numSentMessages++;
         receipt = receiptNum;
