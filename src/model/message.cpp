@@ -21,6 +21,8 @@
 #include "friend.h"
 #include "src/core/core.h"
 
+#include <QDebug>
+
 #include <cassert>
 
 namespace {
@@ -83,7 +85,7 @@ MessageProcessor::MessageProcessor(const MessageProcessor::SharedParams& sharedP
 /**
  * @brief Converts an outgoing message into one (or many) sanitized Message(s)
  */
-std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, QString const& content, ExtensionSet extensions)
+std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, QString const& content, ExtensionSet extensions, bool is_friend_message)
 {
     std::vector<Message> ret;
 
@@ -106,6 +108,17 @@ std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, QSt
                        // required but since Core owns the splitting logic it
                        // isn't trivial to do that now
                        message.extensionSet = extensions;
+                       if (is_friend_message) {
+                           uint8_t *msgv3_id_bin = reinterpret_cast<uint8_t*>(calloc(1, TOX_HASH_LENGTH));
+
+                           tox_messagev3_get_new_message_id(msgv3_id_bin);
+                           const char *msgV3_hash_buffer_bin = reinterpret_cast<const char*>(msgv3_id_bin);
+                           QByteArray msgv3hash = QByteArray(msgV3_hash_buffer_bin, 32);
+                           message.id_or_hash = QString::fromUtf8(msgv3hash.toHex()).toUpper().rightJustified(64, '0');
+                           qDebug() << "processOutgoingMessage msgv3hash:" << message.id_or_hash;
+
+                           free(msgv3_id_bin);
+                       }
                        return message;
                    });
 

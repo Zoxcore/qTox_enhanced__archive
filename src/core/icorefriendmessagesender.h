@@ -33,6 +33,6 @@ public:
     ICoreFriendMessageSender& operator=(const ICoreFriendMessageSender&) = default;
     ICoreFriendMessageSender(ICoreFriendMessageSender&&) = default;
     ICoreFriendMessageSender& operator=(ICoreFriendMessageSender&&) = default;
-    virtual bool sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt) = 0;
-    virtual bool sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt) = 0;
+    virtual bool sendAction(uint32_t friendId, const QString& action, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt) = 0;
+    virtual bool sendMessage(uint32_t friendId, const QString& message, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt) = 0;
 };

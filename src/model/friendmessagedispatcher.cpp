@@ -45,7 +45,7 @@ FriendMessageDispatcher::sendMessage(bool isAction, const QString& content)
 {
     const auto firstId = nextMessageId;
     auto lastId = nextMessageId;
-    for (const auto& message : processor.processOutgoingMessage(isAction, content, f.getSupportedExtensions())) {
+    for (const auto& message : processor.processOutgoingMessage(isAction, content, f.getSupportedExtensions(), true)) {
         auto messageId = nextMessageId++;
         lastId = messageId;
 
@@ -66,7 +66,7 @@ FriendMessageDispatcher::sendExtendedMessage(const QString& content, ExtensionSe
     const auto firstId = nextMessageId;
     auto lastId = nextMessageId;
 
-    for (const auto& message : processor.processOutgoingMessage(false, content, extensions)) {
+    for (const auto& message : processor.processOutgoingMessage(false, content, extensions, true)) {
         auto messageId = nextMessageId++;
         lastId = messageId;
 
@@ -189,7 +189,7 @@ void FriendMessageDispatcher::sendCoreProcessedMessage(Message const& message, O
     auto sendFn = message.isAction ? std::mem_fn(&ICoreFriendMessageSender::sendAction)
                                    : std::mem_fn(&ICoreFriendMessageSender::sendMessage);
 
-    const auto messageSent = sendFn(messageSender, friendId, message.content, receipt);
+    const auto messageSent = sendFn(messageSender, friendId, message.content, message.id_or_hash, message.timestamp, receipt);
 
     if (messageSent) {
         offlineMsgEngine.addSentCoreMessage(receipt, message, onOfflineMsgComplete);

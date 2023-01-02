@@ -132,11 +132,11 @@ public slots:
     void setUsername(const QString& username);
     void setStatusMessage(const QString& message);
 
-    bool sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt) override;
+    bool sendMessage(uint32_t friendId, const QString& message, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt) override;
     void sendGroupMessage(int groupId, const QString& message) override;
     void sendGroupAction(int groupId, const QString& message) override;
     void changeGroupTitle(int groupId, const QString& title);
-    bool sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt) override;
+    bool sendAction(uint32_t friendId, const QString& action, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt) override;
     void sendTyping(uint32_t friendId, bool typing);
 
     void setNospam(uint32_t nospam);
