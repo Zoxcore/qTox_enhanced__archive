@@ -846,7 +846,7 @@ void Core::onLosslessPacket(Tox* tox, uint32_t friendId,
 {
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
-    core->ext->onLosslessPacket(friendId, data, length);
+    //* disable toxext handling for now *// core->ext->onLosslessPacket(friendId, data, length);
 
     // zoff
     // qDebug() << "onLosslessPacket:fn=" << friendId << " data:" << (int)data[0] << (int)data[1] << (int)data[2];
@@ -979,7 +979,7 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
                                ReceiptNum& receipt)
 {
     int size = message.toUtf8().size();
-    auto maxSize = static_cast<int>(getMaxMessageSize());
+    auto maxSize = static_cast<int>(TOX_MSGV3_MAX_MESSAGE_LENGTH);
     if (size > maxSize) {
         assert(false);
         qCritical() << "Core::sendMessageWithType called with message of size:" << size
@@ -997,15 +997,19 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
     return false;
 }
 
-bool Core::sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt)
+bool Core::sendMessage(uint32_t friendId, const QString& message, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt)
 {
     QMutexLocker ml(&coreLoopLock);
+    std::ignore = id_or_hash;
+    std::ignore = timestamp;
     return sendMessageWithType(friendId, message, TOX_MESSAGE_TYPE_NORMAL, receipt);
 }
 
-bool Core::sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt)
+bool Core::sendAction(uint32_t friendId, const QString& action, const QString& id_or_hash, const QDateTime& timestamp, ReceiptNum& receipt)
 {
     QMutexLocker ml(&coreLoopLock);
+    std::ignore = id_or_hash;
+    std::ignore = timestamp;
     return sendMessageWithType(friendId, action, TOX_MESSAGE_TYPE_ACTION, receipt);
 }
 

@@ -269,7 +269,7 @@ void Widget::init()
     core = &profile.getCore();
     auto coreExt = core->getExt();
 
-    sharedMessageProcessorParams.reset(new MessageProcessor::SharedParams(core->getMaxMessageSize(), coreExt->getMaxExtendedMessageSize()));
+    sharedMessageProcessorParams.reset(new MessageProcessor::SharedParams(static_cast<uint64_t>(TOX_MSGV3_MAX_MESSAGE_LENGTH), coreExt->getMaxExtendedMessageSize()));
 
     chatListWidget = new FriendListWidget(*core, this, settings, style,
         *messageBoxManager, *friendList, *groupList, profile, settings.getGroupchatPosition());

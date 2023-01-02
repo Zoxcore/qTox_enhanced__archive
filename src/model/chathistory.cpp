@@ -310,8 +310,16 @@ void ChatHistory::onMessageSent(DispatchedMessageId id, const Message& message)
 
         auto onInsertion = [this, id](RowId historyId) { handleDispatchedMessage(id, historyId); };
 
-        history->addNewMessage(chatId, content, selfPk, message.timestamp, false, message.extensionSet, username,
-                               onInsertion);
+        if (!message.id_or_hash.isEmpty()) {
+            history->addNewMessage(chatId, message.id_or_hash + QString(":") + content,
+                                   selfPk, message.timestamp, false,
+                                   message.extensionSet, username,
+                                   onInsertion, 3);
+                                   // 3 == static_cast<int>(Widget::MessageHasIdType::MSGV3_ID)
+        } else {
+            history->addNewMessage(chatId, content, selfPk, message.timestamp, false, message.extensionSet, username,
+                                   onInsertion);
+        }
     }
 
     sessionChatLog.onMessageSent(id, message);
