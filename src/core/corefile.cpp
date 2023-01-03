@@ -591,6 +591,10 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
         file->avatarData.append(reinterpret_cast<const char*>(data), length);
     } else {
         if (file->fileKind == TOX_FILE_KIND_FTV2) {
+            if (length < (TOX_FILE_ID_LENGTH + 1)) {
+                qWarning("onFileRecvChunkCallback: The data we received is too short, ignore this chunk");
+                return;
+            }
             length = length - TOX_FILE_ID_LENGTH;
             data = data + TOX_FILE_ID_LENGTH;
         }
