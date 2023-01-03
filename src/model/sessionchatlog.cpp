@@ -20,6 +20,7 @@
 #include "sessionchatlog.h"
 #include "src/friendlist.h"
 #include "src/grouplist.h"
+#include "src/widget/widget.h"
 
 #include <QDebug>
 #include <QtGlobal>
@@ -396,15 +397,15 @@ void SessionChatLog::onMessageReceived(const ToxPk& sender, const Message& messa
     message3.extensionSet = message.extensionSet;
     message3.metadata = message.metadata;
 
-    if (hasIdType == 2) { // static_cast<int>(Widget::MessageHasIdType::NGC_MSG_ID)
+    if (hasIdType == static_cast<int>(Widget::MessageHasIdType::NGC_MSG_ID)) {
         QString hexstr = message.content.section(':', 0, 0);
         std::ignore = hexstr;
         message_real = message.content.section(':', 1);
-    } else if (hasIdType == 3) { // static_cast<int>(Widget::MessageHasIdType::MSGV3_ID)
+    } else if (hasIdType == static_cast<int>(Widget::MessageHasIdType::MSGV3_ID)) {
         QString hexstr = message.content.section(':', 0, 0);
         std::ignore = hexstr;
         message_real = message.content.section(':', 1);
-    } else if (hasIdType == 1) { // static_cast<int>(Widget::MessageHasIdType::CONF_MSG_ID)
+    } else if (hasIdType == static_cast<int>(Widget::MessageHasIdType::CONF_MSG_ID)) {
         QString hexstr = message.content.section(':', 0, 0);
         std::ignore = hexstr;
         message_real = message.content.section(':', 1);

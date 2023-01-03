@@ -20,6 +20,7 @@
 #include "chathistory.h"
 #include "src/persistence/settings.h"
 #include "src/core/chatid.h"
+#include "src/widget/widget.h"
 #include "src/widget/form/chatform.h"
 
 namespace {
@@ -314,8 +315,8 @@ void ChatHistory::onMessageSent(DispatchedMessageId id, const Message& message)
             history->addNewMessage(chatId, message.id_or_hash + QString(":") + content,
                                    selfPk, message.timestamp, false,
                                    message.extensionSet, username,
-                                   onInsertion, 3);
-                                   // 3 == static_cast<int>(Widget::MessageHasIdType::MSGV3_ID)
+                                   onInsertion,
+                                   static_cast<int>(Widget::MessageHasIdType::MSGV3_ID));
         } else {
             history->addNewMessage(chatId, content, selfPk, message.timestamp, false, message.extensionSet, username,
                                    onInsertion);
