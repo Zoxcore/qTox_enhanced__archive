@@ -509,34 +509,36 @@ static size_t xnet_unpack_u32(const uint8_t *bytes, uint32_t *v)
 static void send_highlevel_ack(Tox* tox, uint32_t friendId, QByteArray& hash_buffer_bytes)
 {
     const uint8_t *hash_buffer_c = reinterpret_cast<const uint8_t*>(hash_buffer_bytes.constData());
-    int dummy_messge_size = 1;
-    uint8_t dummy_messge = 95; // "_" char
-    uint8_t *dummy_messge_buf = reinterpret_cast<uint8_t*>(&dummy_messge);
+    // HINT: ACK has a dummy text message with text "_" which das a length of "1" byte.
+    const int dummy_message_size = 1;
+    const uint8_t dummy_message = 95; // "_" char
+    const uint8_t *dummy_message_buf = reinterpret_cast<const uint8_t*>(&dummy_message);
 
     uint8_t *message_str_v3 =
                     static_cast<uint8_t *>(calloc(1, (size_t)(
-                    dummy_messge_size + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH)));
+                    dummy_message_size + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH)));
     if (!message_str_v3)
     {
         return;
     }
 
-    uint32_t timestamp_unix = static_cast<uint32_t>((QDateTime::currentDateTime().toMSecsSinceEpoch() / 1000));
     uint32_t timestamp_unix_buf;
-    xnet_pack_u32(reinterpret_cast<uint8_t*>(&timestamp_unix_buf), timestamp_unix);
+    xnet_pack_u32(reinterpret_cast<uint8_t*>(&timestamp_unix_buf),
+            static_cast<uint32_t>((QDateTime::currentDateTime().toMSecsSinceEpoch() / 1000)));
 
     uint8_t* position = message_str_v3;
-    memcpy(position, dummy_messge_buf, static_cast<size_t>(dummy_messge_size));
-    position = position + dummy_messge_size;
-    position = position + TOX_MSGV3_GUARD;
+    memcpy(position, dummy_message_buf, static_cast<size_t>(dummy_message_size));
+
+    position = position + dummy_message_size + TOX_MSGV3_GUARD;
     memcpy(position, hash_buffer_c, static_cast<size_t>(TOX_MSGV3_MSGID_LENGTH));
+
     position = position + TOX_MSGV3_MSGID_LENGTH;
     memcpy(position, &timestamp_unix_buf, static_cast<size_t>(TOX_MSGV3_TIMESTAMP_LENGTH));
 
-    size_t new_len = dummy_messge_size + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH;
+    const size_t new_len = dummy_message_size + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH;
 
     Tox_Err_Friend_Send_Message error;
-    uint32_t res = tox_friend_send_message(tox, friendId, TOX_MESSAGE_TYPE_HIGH_LEVEL_ACK, message_str_v3, new_len, &error);
+    const uint32_t res = tox_friend_send_message(tox, friendId, TOX_MESSAGE_TYPE_HIGH_LEVEL_ACK, message_str_v3, new_len, &error);
     qDebug() << "sent high level ack, res:" << res << " errcode:" << error;
     free(message_str_v3);
 }
