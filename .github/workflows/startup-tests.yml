@@ -91,6 +91,8 @@ jobs:
            sendkeys -a "qTox" -c "<c:u:command>"
            sleep 5
            sendkeys -a "qTox" -c "<c:u:ctrl>"
+           sleep 1
+           cliclick -m verbose c:706,608
            sleep 60
            sleep 90
            pwd
@@ -131,17 +133,21 @@ jobs:
                sudo apt-get update
                sudo apt-get install imagemagick
                sudo apt-get install xdotool xclip
+               sudo apt-get install x11-apps x11-utils
                sudo apt-get install xvfb
 
         - name: create runscript
           run: |
                printf '#!/bin/bash\n' > /tmp/a.sh
+               printf 'xclock -digital -geometry 300x45+100+600 &\n' >> /tmp/a.sh
                printf 'xclip -selection c /tmp/g.txt\n' >> /tmp/a.sh
                printf '/home/runner/work/qTox_enhanced/qTox_enhanced/squashfs-root/local/bin/qtox &\n' >> /tmp/a.sh
                printf 'sleep 3\n' >> /tmp/a.sh
                printf 'xdotool key u s e r l Return\n' >> /tmp/a.sh
                printf 'sleep 5\n' >> /tmp/a.sh
                printf 'xdotool key ctrl+u\n' >> /tmp/a.sh
+               printf 'xwininfo -id $(xdotool getactivewindow)\n' >> /tmp/a.sh
+               printf 'xdotool mousemove 512 386 click 1\n' >> /tmp/a.sh
                printf 'sleep 70\n' >> /tmp/a.sh
                printf 'import -window root /tmp/screenshot-linux.png\n' >> /tmp/a.sh
                cat /tmp/a.sh
@@ -204,6 +210,7 @@ jobs:
       - name: startup-app
         shell: pwsh
         run: |
+          [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
           [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
           Start-Sleep -Seconds 30
           Set-Clipboard -Value "360497DA684BCE2A500C1AF9B3A5CE949BBB9F6FB1F91589806FB04CA039E313"
@@ -212,7 +219,17 @@ jobs:
           [System.Windows.Forms.SendKeys]::SendWait("userw")
           [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
           Start-Sleep -Seconds 8
-          [System.Windows.Forms.SendKeys]::SendWait("^{u}")
+          $signature=@'
+          [DllImport("user32.dll",CharSet=CharSet.Auto,CallingConvention=CallingConvention.StdCall)]
+          public static extern void mouse_event(long dwFlags, long dx, long dy, long cButtons, long dwExtraInfo);
+          '@
+          $SendMouseClick = Add-Type -memberDefinition $signature -name "Win32MouseEventNew" -namespace Win32Functions -passThru
+          $x = 650
+          $y = 544
+          [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point($x, $y)
+          sleep -Seconds 01
+          $SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0);
+          $SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0);
           Start-Sleep -Seconds 60
 
       - name: capture-screen
