@@ -125,10 +125,6 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     connect(&ngcId, &QLineEdit::textChanged, this, &AddFriendForm::onNgcIdChanged);
     connect(tabWidget, &QTabWidget::currentChanged, this, &AddFriendForm::onCurrentChanged);
     connect(&sendButton, &QPushButton::clicked, this, &AddFriendForm::onSendTriggered);
-
-    auto* const addShortcut2 = new QShortcut(Qt::CTRL + Qt::Key_U, main);
-    connect(addShortcut2, &QShortcut::activated, this, &AddFriendForm::onSendTriggered);
-
     connect(&importSendButton, &QPushButton::clicked, this, &AddFriendForm::onImportSendClicked);
     connect(&importFileButton, &QPushButton::clicked, this, &AddFriendForm::onImportOpenClicked);
     connect(&core, &Core::usernameSet, this, &AddFriendForm::onUsernameSet);
