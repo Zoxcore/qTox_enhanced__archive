@@ -60,6 +60,13 @@
 #include <memory>
 #include <random>
 
+#undef TOX_HAVE_TOXUTIL
+#define TOX_HAVE_TOXUTIL 1
+
+#ifdef TOX_HAVE_TOXUTIL
+#include <tox/toxutil.h>  //for communication with ToxProxy
+#endif
+
 const QString Core::TOX_EXT = ".tox";
 
 #define ASSERT_CORE_THREAD assert(QThread::currentThread() == coreThread.get())
@@ -132,6 +139,7 @@ void Core::registerCallbacks(Tox* tox)
     tox_callback_group_peer_name(tox, onNgcPeerName);
     tox_callback_group_message(tox, onNgcGroupMessage);
     tox_callback_group_private_message(tox, onNgcGroupPrivateMessage);
+    tox_utils_callback_friend_message_v2(tox, onFriendMessageV2); //for communication with ToxProxy
 
     // HINT: print Qt compiles and runtime versions
     qDebug() << "QT_COMPILE_VERSION:" << QT_VERSION_STR << "QT_RUNTIME_VERSION:" << qVersion();
@@ -593,6 +601,11 @@ void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type, c
     } else {
         emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction);
     }
+}
+
+void Core::onFriendMessageV2(Tox* tox, uint32_t friendId, const uint8_t *raw_message, size_t raw_message_len)
+{
+     qDebug() << "Message V2 received!";
 }
 
 void Core::onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName, size_t cNameSize, void* core)

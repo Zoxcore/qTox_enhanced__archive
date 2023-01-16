@@ -207,6 +207,8 @@ private:
                                 size_t cMessageSize, void* core);
     static void onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type,
                                 const uint8_t* cMessage, size_t cMessageSize, void* core);
+    static void onFriendMessageV2(Tox* tox, uint32_t friendId,
+                                const uint8_t *raw_message, size_t raw_message_len);
     static void onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName,
                                    size_t cNameSize, void* core);
     static void onFriendTypingChange(Tox* tox, uint32_t friendId, bool isTyping, void* core);
