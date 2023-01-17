@@ -60,13 +60,6 @@
 #include <memory>
 #include <random>
 
-#undef TOX_HAVE_TOXUTIL
-#define TOX_HAVE_TOXUTIL 1
-
-#ifdef TOX_HAVE_TOXUTIL
-#include <tox/toxutil.h>  //for communication with ToxProxy
-#endif
-
 
 
 const QString Core::TOX_EXT = ".tox";

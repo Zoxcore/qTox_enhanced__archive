@@ -43,6 +43,13 @@
 #include <functional>
 #include <memory>
 
+#undef TOX_HAVE_TOXUTIL
+#define TOX_HAVE_TOXUTIL 1
+
+#ifdef TOX_HAVE_TOXUTIL
+#include <tox/toxutil.h>  //for communication with ToxProxy
+#endif
+
 class CoreAV;
 class CoreFile;
 class CoreExt;
@@ -273,7 +280,13 @@ private:
     {
         void operator()(Tox* tox_)
         {
+
+#ifdef TOX_HAVE_TOXUTIL
+            tox_utils_kill(tox_);
+#else
             tox_kill(tox_);
+#endif
+
         }
     };
     /* Using the now commented out statements in checkConnection(), I watched how
