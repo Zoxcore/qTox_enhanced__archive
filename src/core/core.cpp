@@ -67,17 +67,7 @@
 #include <tox/toxutil.h>  //for communication with ToxProxy
 #endif
 
-#ifdef TOX_HAVE_TOXUTIL
-    tox_utils_kill(tox);
-#else
-    tox_kill(tox);
-#endif
 
-#ifdef TOX_HAVE_TOXUTIL
-    tox = tox_utils_new(&options, NULL);
-#else
-    tox = tox_new(&options, NULL);
-#endif
 
 const QString Core::TOX_EXT = ".tox";
 
@@ -151,7 +141,10 @@ void Core::registerCallbacks(Tox* tox)
     tox_callback_group_peer_name(tox, onNgcPeerName);
     tox_callback_group_message(tox, onNgcGroupMessage);
     tox_callback_group_private_message(tox, onNgcGroupPrivateMessage);
+
+#ifdef TOX_HAVE_TOXUTIL
     tox_utils_callback_friend_message_v2(tox, onFriendMessageV2); //for communication with ToxProxy
+#endif
 
     // HINT: print Qt compiles and runtime versions
     qDebug() << "QT_COMPILE_VERSION:" << QT_VERSION_STR << "QT_RUNTIME_VERSION:" << qVersion();
@@ -193,7 +186,26 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, ICoreSettings& settings
     }
 
     Tox_Err_New tox_err;
+
+
+#ifdef TOX_HAVE_TOXUTIL
+    TOX_ERR_NEW error;
+    core->tox = ToxPtr(tox_utils_new(*toxOptions, &error));
+
+    switch (error) {
+                case TOX_ERR_OPTIONS_NEW_OK:
+                    tox_err = TOX_ERR_NEW_OK;
+                    break;
+
+                case TOX_ERR_OPTIONS_NEW_MALLOC:
+                    tox_err = TOX_ERR_NEW_MALLOC;
+                    break;
+            }
+
+#else
     core->tox = ToxPtr(tox_new(*toxOptions, &tox_err));
+#endif
+
 
     switch (tox_err) {
     case TOX_ERR_NEW_OK:
@@ -2011,3 +2023,6 @@ void Core::setNospam(uint32_t nospam)
     tox_self_set_nospam(tox.get(), nospam);
     emit idSet(getSelfId());
 }
+
+
+
