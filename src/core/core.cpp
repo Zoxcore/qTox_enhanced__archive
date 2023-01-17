@@ -67,6 +67,18 @@
 #include <tox/toxutil.h>  //for communication with ToxProxy
 #endif
 
+#ifdef TOX_HAVE_TOXUTIL
+    tox_utils_kill(tox);
+#else
+    tox_kill(tox);
+#endif
+
+#ifdef TOX_HAVE_TOXUTIL
+    tox = tox_utils_new(&options, NULL);
+#else
+    tox = tox_new(&options, NULL);
+#endif
+
 const QString Core::TOX_EXT = ".tox";
 
 #define ASSERT_CORE_THREAD assert(QThread::currentThread() == coreThread.get())
