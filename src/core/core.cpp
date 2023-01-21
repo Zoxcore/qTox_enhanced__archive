@@ -608,7 +608,11 @@ void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type, c
 
 void Core::onFriendMessageV2(Tox* tox, uint32_t friendId, const uint8_t *raw_message, size_t raw_message_len)
 {
-     qDebug() << "Message V2 received!";
+    std::ignore = tox;
+    std::ignore = friendId;
+    std::ignore = raw_message;
+    std::ignore = raw_message_len;
+    qDebug() << "Message V2 received!";
 }
 
 void Core::onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName, size_t cNameSize, void* core)
