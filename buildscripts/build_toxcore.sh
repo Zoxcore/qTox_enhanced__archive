@@ -20,7 +20,7 @@ build_toxcore() {
 
     "${SCRIPT_DIR}/download/download_toxcore.sh"
 
-    patch -Np1 < "${SCRIPT_DIR}/patches/tc___ftv2_capabilities.patch"
+    patch -Np1 < "${SCRIPT_DIR}/patches/tc___msgv2_and_ftv2_capabilities.patch"
 
     cmake "-DCMAKE_INSTALL_PREFIX=${DEP_PREFIX}" \
             -DCMAKE_C_FLAGS="-fstack-protector-all --param=ssp-buffer-size=1" \
