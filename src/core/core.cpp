@@ -180,25 +180,11 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, ICoreSettings& settings
 
     Tox_Err_New tox_err;
 
-
 #ifdef TOX_HAVE_TOXUTIL
-    TOX_ERR_NEW error;
-    core->tox = ToxPtr(tox_utils_new(*toxOptions, &error));
-
-    switch (error) {
-                case TOX_ERR_OPTIONS_NEW_OK:
-                    tox_err = TOX_ERR_NEW_OK;
-                    break;
-
-                case TOX_ERR_OPTIONS_NEW_MALLOC:
-                    tox_err = TOX_ERR_NEW_MALLOC;
-                    break;
-            }
-
+    core->tox = ToxPtr(tox_utils_new(*toxOptions, &tox_err));
 #else
     core->tox = ToxPtr(tox_new(*toxOptions, &tox_err));
 #endif
-
 
     switch (tox_err) {
     case TOX_ERR_NEW_OK:
