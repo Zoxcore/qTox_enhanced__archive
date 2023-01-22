@@ -11,9 +11,9 @@ let
           src = fetchFromGitHub {
             owner = "zoff99";
             repo = "c-toxcore";
-            rev = "e94dd666a23888e38add3ea4e1481f16546fbf47";
+            rev = "c030ca31e5399537735a0cacac096565e42cab7e";
             fetchSubmodules = true;
-            sha256 = "sha256-+tLdNgVhCBiT4GiwH6M4W8s2xUC9xW3MaNI+aNlmm2c=";
+            sha256 = "ssha256-c721bbg21HKCzaZGwwQclQTTGG+Qhaa/Yz5dMtQ1xh8=";
           };
           patches = [
             (fetchpatch {
