@@ -133,63 +133,63 @@ lo que puede provocar problemas en las videollamadas.</translation>
     </message>
     <message>
         <source>Screen Capture FPS</source>
-        <translation type="unfinished"></translation>
+        <translation>Captura de pantalla en FPS</translation>
     </message>
     <message>
         <source>Change framerate and video bitrate for screen capture.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia la velocidad de los fotogramas y la tasa de bits del vídeo para la captura de pantalla.</translation>
     </message>
     <message>
         <source>HD (200 kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>HD (200 kbps)</translation>
     </message>
     <message>
         <source>HD (128 kbps)</source>
-        <translation type="unfinished"></translation>
+        <translation>HD (128 kbps)</translation>
     </message>
     <message>
         <source>30 FPS / 10000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>30 FPS / 10000 kbit/s velocidad de bits</translation>
     </message>
     <message>
         <source>25 FPS / 10000 kbit/s vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>25 FPS / 10000 kbit/s velocidad de bits</translation>
     </message>
     <message>
         <source>enable Acoustic Echo Cancellation</source>
-        <translation type="unfinished"></translation>
+        <translation>activar la cancelación de eco acústico</translation>
     </message>
     <message>
         <source>AEC Audio Latency</source>
-        <translation type="unfinished"></translation>
+        <translation>Latencia de audio AEC</translation>
     </message>
     <message>
         <source>Set the Audio Latency for Acoustic Echo Cancellation in ms. The default value is 20 ms.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste la latencia de audio para la cancelación de eco acústico en ms. El valor predeterminado es 20 ms.</translation>
     </message>
     <message>
         <source>10 FPS / dynamic vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>10 FPS / tasa de bits dinámica</translation>
     </message>
     <message>
         <source>AEC Audio Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo de audio AEC</translation>
     </message>
     <message>
         <source>AEC Mode 0 to 4</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo AEC de 0 a 4</translation>
     </message>
     <message>
         <source>AEC NS Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo NS de AEC</translation>
     </message>
     <message>
         <source>AEC NS Mode 0 to 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo AEC NS de 0 a 3</translation>
     </message>
     <message>
         <source>20 FPS / dynamic vbitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>20 FPS / tasa de bits dinámica</translation>
     </message>
 </context>
 <context>
@@ -519,19 +519,19 @@ lo que puede provocar problemas en las videollamadas.</translation>
     </message>
     <message>
         <source>NGC Public Group ID, 64 hexadecimal characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Identificador del grupo público de NGC, 64 caracteres hexadecimales</translation>
     </message>
     <message>
         <source>Type in the NGC Public Group ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribe el Identificador del grupo público de NGC</translation>
     </message>
     <message>
         <source>NGC ID invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Identificador NGC no válido</translation>
     </message>
     <message>
         <source>Couldn&apos;t join NGC Public Group, or NGC ID error</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido entrar en el grupo público de NGC, o error del identificador de NGC</translation>
     </message>
 </context>
 <context>
@@ -668,15 +668,15 @@ lo que puede provocar problemas en las videollamadas.</translation>
     </message>
     <message>
         <source>Network Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Conexiones de red</translation>
     </message>
     <message>
         <source>This is still in BETA. It will show the network connections that toxcore is currently using</source>
-        <translation type="unfinished"></translation>
+        <translation>Esto está todavía en BETA. Mostrará las conexiones de red que toxcore está utilizando actualmente</translation>
     </message>
     <message>
         <source>Show Tox Network Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar las conexiones a la red Tox</translation>
     </message>
 </context>
 <context>
@@ -1305,11 +1305,21 @@ the only allowed Push Servers are (no other servers will ever be contacted):
   &quot;https://gotify1.unifiedpush.org/&quot;
   &quot;https://ntfy.sh/&quot;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Las Notificaciones Push ayudan a los usuarios móviles de Tox (con TRIfA y Antidote) a ahorrar batería y ancho de banda de la red.
+esta función contactará con un servidor web HTTPS fuera de banda con el Token Push de tu amigo, ¡no se envía ninguna otra información!
+pero esto revelará tu dirección IP al servidor web y también la hora a la que hiciste ping a tu amigo.
+Puedes evitar que tu IP sea enviada usando un servidor proxy (como Tor).
+Si desactivas esta opción, los usuarios de móviles pueden recibir tus mensajes mucho más tarde de lo que los envías.
+los únicos servidores Push permitidos son (nunca se contactará con ningún otro servidor)
+
+  &quot;https://tox.zoff.xyz/toxfcm/&quot;
+  &quot;https://gotify1.unifiedpush.org/&quot;
+  &quot;https://ntfy.sh/&quot;
+</translation>
     </message>
     <message>
         <source>enable Push Notification</source>
-        <translation type="unfinished"></translation>
+        <translation>activar las Notificaciones Push</translation>
     </message>
 </context>
 <context>
@@ -1457,7 +1467,7 @@ the only allowed Push Servers are (no other servers will ever be contacted):
     </message>
     <message>
         <source>Change your name in this group</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia tu nombre en este grupo</translation>
     </message>
 </context>
 <context>
