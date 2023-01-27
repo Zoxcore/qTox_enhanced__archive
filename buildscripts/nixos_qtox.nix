@@ -13,7 +13,7 @@ let
             repo = "c-toxcore";
             rev = "c030ca31e5399537735a0cacac096565e42cab7e";
             fetchSubmodules = true;
-            sha256 = "ssha256-c721bbg21HKCzaZGwwQclQTTGG+Qhaa/Yz5dMtQ1xh8=";
+            sha256 = "sha256-c721bbg21HKCzaZGwwQclQTTGG+Qhaa/Yz5dMtQ1xh8=";
           };
           patches = [
             (fetchpatch {
