@@ -43,6 +43,13 @@
 #include <functional>
 #include <memory>
 
+#undef TOX_HAVE_TOXUTIL
+#define TOX_HAVE_TOXUTIL 1
+
+#ifdef TOX_HAVE_TOXUTIL
+#include <tox/toxutil.h>  //for communication with ToxProxy
+#endif
+
 class CoreAV;
 class CoreFile;
 class CoreExt;
@@ -207,6 +214,8 @@ private:
                                 size_t cMessageSize, void* core);
     static void onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type,
                                 const uint8_t* cMessage, size_t cMessageSize, void* core);
+    static void onFriendMessageV2(Tox* tox, uint32_t friendId,
+                                const uint8_t *raw_message, size_t raw_message_len);
     static void onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName,
                                    size_t cNameSize, void* core);
     static void onFriendTypingChange(Tox* tox, uint32_t friendId, bool isTyping, void* core);
@@ -271,7 +280,13 @@ private:
     {
         void operator()(Tox* tox_)
         {
+
+#ifdef TOX_HAVE_TOXUTIL
+            tox_utils_kill(tox_);
+#else
             tox_kill(tox_);
+#endif
+
         }
     };
     /* Using the now commented out statements in checkConnection(), I watched how

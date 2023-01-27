@@ -47,7 +47,7 @@ let
             sha256 = "sha256-c721bbg21HKCzaZGwwQclQTTGG+Qhaa/Yz5dMtQ1xh8=";
           };
           patches = [
-            /workspace/build/buildscripts/patches/tc___ftv2_capabilities.patch
+            /workspace/build/buildscripts/patches/tc___msgv2_and_ftv2_capabilities.patch
           ];
           buildInputs = [
             libsodium msgpack ncurses libconfig

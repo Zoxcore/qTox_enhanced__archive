@@ -18,8 +18,8 @@ let
           patches = [
             (fetchpatch {
               url =
-                "https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/zoxcore/push_notification/buildscripts/patches/tc___ftv2_capabilities.patch";
-              sha256 = "sha256-LU4EDwEKLh5m3OByt/Mc1dyM3huCFwHFgWo083s6lKg=";
+                "https://raw.githubusercontent.com/Zoxcore/qTox_enhanced/630bfee6c1c5c89378e887417a44f50f2d52273b/buildscripts/patches/tc___msgv2_and_ftv2_capabilities.patch";
+              sha256 = "sha256-+bhT38FvK+s7OPI1gycRYhQnNcBi91Q7iQu6w4wkotQ=";
             })
           ];
           buildInputs = [
