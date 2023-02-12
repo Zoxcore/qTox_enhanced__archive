@@ -76,6 +76,6 @@ build_toxext_messages() {
     popd >/dev/null
 }
 
-build_toxcore "$1"
+build_toxcore "${1-}"
 build_toxext
 build_toxext_messages
