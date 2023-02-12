@@ -212,6 +212,13 @@ do
   fi
 done < dlls
 
+# these seem to make problems, until a fix is known, remove from the list
+#   api-ms-win-core-winrt-l1-1-0.dll => not found
+#   api-ms-win-core-winrt-string-l1-1-0.dll => not found
+
+mv dlls-required dlls-required__
+cat dlls-required__ | grep -v 'api-ms-win-core-winrt-l1-1-0.dll' | grep -v 'api-ms-win-core-winrt-string-l1-1-0.dll' > dlls-required
+
 # Check that no dll is missing
 if grep -q 'not found' dlls-required
 then
