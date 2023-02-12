@@ -27,12 +27,22 @@ build_toxcore() {
 
     patch -Np1 < "${SCRIPT_DIR}/patches/tc___ftv2_capabilities.patch"
 
-    cmake . \
-        -DCMAKE_C_FLAGS="-fstack-protector-all --param=ssp-buffer-size=1" \
-        -DCMAKE_CXX_FLAGS="-fstack-protector-all --param=ssp-buffer-size=1" \
-        -DBOOTSTRAP_DAEMON=OFF \
-        -DCMAKE_BUILD_TYPE=Release \
-        .
+    if [ "$1""x" != "x" ]; then
+        echo "using custom flags: -D${1}"
+        cmake . \
+            -DCMAKE_C_FLAGS=" -D${1} -fstack-protector-all --param=ssp-buffer-size=1" \
+            -DCMAKE_CXX_FLAGS=" -D${1} -fstack-protector-all --param=ssp-buffer-size=1" \
+            -DBOOTSTRAP_DAEMON=OFF \
+            -DCMAKE_BUILD_TYPE=Release \
+            .
+    else
+        cmake . \
+            -DCMAKE_C_FLAGS="-fstack-protector-all --param=ssp-buffer-size=1" \
+            -DCMAKE_CXX_FLAGS="-fstack-protector-all --param=ssp-buffer-size=1" \
+            -DBOOTSTRAP_DAEMON=OFF \
+            -DCMAKE_BUILD_TYPE=Release \
+            .
+    fi
 
     cmake --build . -- -j$(nproc)
     cmake --build . --target install
@@ -66,6 +76,6 @@ build_toxext_messages() {
     popd >/dev/null
 }
 
-build_toxcore
+build_toxcore "$1"
 build_toxext
 build_toxext_messages
