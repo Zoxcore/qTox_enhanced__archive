@@ -133,7 +133,7 @@ void Core::registerCallbacks(Tox* tox)
     tox_callback_group_message(tox, onNgcGroupMessage);
     tox_callback_group_private_message(tox, onNgcGroupPrivateMessage);
 
-    // HINT: print Qt compiles and runtime versions
+    // HINT: print Qt compiled and runtime versions
     qDebug() << "QT_COMPILE_VERSION:" << QT_VERSION_STR << "QT_RUNTIME_VERSION:" << qVersion();
 }
 
