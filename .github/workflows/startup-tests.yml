@@ -148,7 +148,7 @@ jobs:
                printf 'xdotool key ctrl+u\n' >> /tmp/a.sh
                printf 'xwininfo -id $(xdotool getactivewindow)\n' >> /tmp/a.sh
                printf 'xdotool mousemove 512 386 click 1\n' >> /tmp/a.sh
-               printf 'sleep 70\n' >> /tmp/a.sh
+               printf 'sleep 120\n' >> /tmp/a.sh
                printf 'import -window root /tmp/screenshot-linux.png\n' >> /tmp/a.sh
                cat /tmp/a.sh
                chmod a+rx /tmp/a.sh
