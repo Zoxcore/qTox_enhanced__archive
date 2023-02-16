@@ -23,7 +23,7 @@ jobs:
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: install cliclick
       run:  brew install cliclick
 
@@ -119,8 +119,8 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: "screenshot-macos.png"
 
-  linux-ub18:
-    runs-on: ubuntu-18.04
+  linux-ub20:
+    runs-on: ubuntu-20.04
     if: ${{ true }}
     permissions:
       contents: write
