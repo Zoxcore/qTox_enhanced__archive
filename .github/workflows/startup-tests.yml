@@ -62,9 +62,8 @@ jobs:
            screencapture -T 50 -x -t png /Users/runner/screen06.png &
            screencapture -T 60 -x -t png /Users/runner/screen07.png &
            screencapture -T 90 -x -t png /Users/runner/screen09.png &
-           screencapture -T 100 -x -t png /Users/runner/screenshot-macos.png &
            screencapture -T 110 -x -t png /Users/runner/screen10.png &
-           screencapture -T 200 -x -t png /Users/runner/screen11.png &
+           screencapture -T 200 -x -t png /Users/runner/screenshot-macos.png &
            screencapture -T 230 -x -t png /Users/runner/screen12.png &
            screencapture -T 300 -x -t png /Users/runner/screen13.png &
            export _HOME_
@@ -95,6 +94,7 @@ jobs:
            cliclick -m verbose c:706,608
            sleep 60
            sleep 90
+           sleep 120
            pwd
            ls -al /Users/runner/
            cp -v /Users/runner/screenshot-macos.png /Users/runner/work/qTox_enhanced/qTox_enhanced/screenshot-macos.png
@@ -230,7 +230,7 @@ jobs:
           sleep -Seconds 01
           $SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0);
           $SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0);
-          Start-Sleep -Seconds 60
+          Start-Sleep -Seconds 180
 
       - name: capture-screen
         shell: pwsh
