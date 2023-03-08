@@ -42,7 +42,7 @@ namespace Status
         case Status::Blocked:
             return QObject::tr("blocked", "contact status");
         case Status::Negotiating:
-            return QObject::tr("negotitating", "contact status");
+            return QObject::tr("negotiating", "contact status");
         }
 
         assert(false);
